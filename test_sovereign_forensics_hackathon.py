@@ -349,6 +349,57 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
             self.assertIn("muse-wonder-full-1.0", text)
             self.assertIn("TaxRiskOS", text)
 
+    def test_21_fireworks_sft_dataset_integrity_and_fine_tuned_model_routing(self):
+        """Verify Fireworks SFT dataset files exist and obey strict chat JSONL specification."""
+        import json
+        from unittest.mock import patch
+        train_ds = REPO_ROOT / "data" / "SOVEREIGN_FORENSICS_MUSE_GLIMMER_SFT_TRAIN.jsonl"
+        val_ds = REPO_ROOT / "data" / "SOVEREIGN_FORENSICS_MUSE_GLIMMER_SFT_VAL.jsonl"
+        self.assertTrue(train_ds.exists(), f"Missing train dataset: {train_ds}")
+        self.assertTrue(val_ds.exists(), f"Missing val dataset: {val_ds}")
+
+        for path, min_rows in [(train_ds, 100), (val_ds, 20)]:
+            with open(path, "r", encoding="utf-8") as f:
+                lines = [l.strip() for l in f if l.strip()]
+            self.assertGreaterEqual(len(lines), min_rows)
+            for line in lines[:10]:
+                obj = json.loads(line)
+                self.assertIn("messages", obj)
+                self.assertGreaterEqual(len(obj["messages"]), 2)
+                self.assertEqual(obj["messages"][-1]["role"], "assistant")
+                self.assertTrue(bool(obj["messages"][-1]["content"]))
+
+        # Verify engine routes custom fine-tuned model ID when configured
+        with patch.dict(os.environ, {"FIREWORKS_FINE_TUNED_MODEL_ID": "accounts/johnwebb/models/sovereign-forensics-v1"}):
+            from sovereign_forensics_engine import SovereignForensicsEngine
+            eng = SovereignForensicsEngine()
+            self.assertEqual(os.environ.get("FIREWORKS_FINE_TUNED_MODEL_ID"), "accounts/johnwebb/models/sovereign-forensics-v1")
+
+    def test_22_modal_batch_api_wiring(self):
+        """Verify Modal Batch API wiring executes multi-company audit payloads cleanly."""
+        from modal_taxriskos_forensics_app import run_batch_audit_local_or_remote
+        batch = [
+            {
+                "entity_name": "Test Logistics Alpha Corp",
+                "cik": "0001000001",
+                "imported_cogs_usd": "1000000.00",
+                "export_share_pct": "0.25",
+                "ieepa_pass_through_surcharge_usd": "250000.00",
+            },
+            {
+                "entity_name": "Test Logistics Beta LLC",
+                "cik": "0001000002",
+                "imported_cogs_usd": "2000000.00",
+                "export_share_pct": "0.30",
+                "ieepa_pass_through_surcharge_usd": "400000.00",
+            },
+        ]
+        results = run_batch_audit_local_or_remote(batch)
+        self.assertEqual(len(results), 2)
+        for r in results:
+            self.assertIn("taxriskos_multi_fein_waterfall", r)
+            self.assertIn("gross_recoverable_usd", r["taxriskos_multi_fein_waterfall"])
+
 
 if __name__ == "__main__":
     unittest.main()

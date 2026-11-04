@@ -496,6 +496,7 @@ class SovereignForensicsEngine:
     def _query_fireworks_council(self, brief: Dict[str, Any]) -> Dict[str, Any]:
         url = self.FIREWORKS_API_BASE
         prompt = f"Perform 3-agent forensic accounting & tariff audit for {brief['entity_name']} (M-Score {brief['beneish_m_score']}, Dechow F-Score {brief.get('dechow_f_score', 'N/A')}). Return JSON."
+        model_name = os.environ.get("FIREWORKS_FINE_TUNED_MODEL_ID") or self.META_MODELS["open_weights_glimmer"]
         req = urllib.request.Request(
             url,
             headers={
@@ -503,7 +504,7 @@ class SovereignForensicsEngine:
                 "Content-Type": "application/json",
             },
             data=json.dumps({
-                "model": self.META_MODELS["open_weights_glimmer"],
+                "model": model_name,
                 "messages": [{"role": "user", "content": prompt}],
                 "response_format": {"type": "json_object"},
                 "temperature": 0.0,

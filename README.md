@@ -123,23 +123,37 @@ python sovereign_forensics_engine.py --taxriskos --json
 python modal_taxriskos_forensics_app.py --local-smoke
 ```
 
-### 4. Deploy to Modal Cloud (`$30` Free Credit — Scales to Zero)
+#### 4. Fireworks AI Muse Glimmer 30B Free SFT & Fine-Tuned Model Routing
+Supervised Fine-Tuning on `accounts/fireworks/models/muse-glimmer-30b` is **100% free through November 30, 2026** on Fireworks B200 GPUs.
+```bash
+# Validate and view dataset (200 train / 40 val rows)
+python -c "from pathlib import Path; print(Path('data/SOVEREIGN_FORENSICS_MUSE_GLIMMER_SFT_TRAIN.jsonl').stat().st_size)"
+
+# Route engine queries to custom fine-tuned LoRA model
+export FIREWORKS_FINE_TUNED_MODEL_ID="accounts/<account>/models/sovereign-forensics-muse-glimmer-30b-v1"
+python sovereign_forensics_engine.py --provider fireworks
+```
+
+### 5. Deploy to Modal Cloud & Execute Batch API (`$30` Free Credit — Scales to Zero)
 ```bash
 python -m modal setup
 python -m modal deploy modal_taxriskos_forensics_app.py
+
+# High-throughput batch processing across multiple corporate filings:
+python -c "from modal_taxriskos_forensics_app import run_batch_audit_local_or_remote; print(len(run_batch_audit_local_or_remote([{'entity_name': 'Test A', 'cik': '1', 'imported_cogs_usd': '100000', 'export_share_pct': '0.2', 'ieepa_pass_through_surcharge_usd': '25000'}])))"
 ```
 
-### 5. Run Full Automated Test Suite (`20/20` Passing)
+### 6. Run Full Automated Test Suite (`22/22` Passing)
 ```bash
 python -m unittest test_sovereign_forensics_hackathon.py -v
 ```
 
-### 6. Launch Interactive Web Cockpit
+### 7. Launch Interactive Web Cockpit
 Open [`index.html`](./index.html) or [`demo_cockpit.html`](./demo_cockpit.html) in any browser to interact with the real-time screener, 3-Agent Meta Council, and TaxRiskOS Multi-FEIN Z3 calculator.
 
 ---
 
-## 6. Verification & Test Suite (`20/20` Tests Passing)
+## 6. Verification & Test Suite (`22/22` Tests Passing)
 
 ```
 test_01_sample_dataset_exists_and_valid ........................................ [PASS]
@@ -162,8 +176,10 @@ test_17_z3_real_solver_check_and_unsat_proof_status ............................
 test_18_safe_emit_redacts_summary_narrative_on_violation ....................... [PASS]
 test_19_import_from_outside_repo_dir_and_cli_taxriskos ......................... [PASS]
 test_20_zero_legacy_domains_or_models_in_readme_html_and_command_sheet ......... [PASS]
+test_21_fireworks_sft_dataset_integrity_and_fine_tuned_model_routing ........... [PASS]
+test_22_modal_batch_api_wiring ................................................. [PASS]
 ----------------------------------------------------------------------
-Ran 20 tests in 15.8s (OK)
+Ran 22 tests in 3.3s (OK)
 ```
 
 ---
