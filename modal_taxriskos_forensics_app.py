@@ -105,13 +105,13 @@ def execute_forensic_audit_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     cik = str(payload.get("cik", "0001090727"))
     fein_count = int(payload.get("fein_count", 4))
 
-    # Financial & Forensic metrics
-    assets = float(payload.get("assets", 250_000_000.0))
-    liabilities = float(payload.get("liabilities", 150_000_000.0))
-    equity = float(payload.get("equity", 100_000_000.0))
-    reported_net_income = float(payload.get("reported_net_income", 25_000_000.0))
-    cfo = float(payload.get("cfo", 10_000_000.0))
-    reconstructed_accruals = float(payload.get("reconstructed_accruals", 15_000_000.0))
+    # Financial & Forensic metrics (Strict Decimal precision — zero float drift)
+    assets_dec = Decimal(str(payload.get("assets", "250000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    liabilities_dec = Decimal(str(payload.get("liabilities", "150000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    equity_dec = Decimal(str(payload.get("equity", "100000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    reported_net_income_dec = Decimal(str(payload.get("reported_net_income", "25000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    cfo_dec = Decimal(str(payload.get("cfo", "10000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    reconstructed_accruals_dec = Decimal(str(payload.get("reconstructed_accruals", "15000000.00"))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
     beneish_m = float(payload.get("beneish_m_score", -1.42))
     dechow_f = float(payload.get("dechow_f_score", 2.15))
@@ -154,7 +154,6 @@ def execute_forensic_audit_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     secondary_72hr_bid = (gross_recovery * Decimal("0.42")).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
     # 4. Z3 SMT Theorem Verification (Balance Sheet + Accrual + Cent Conservation + Fee Cap)
-    solver = z3.Solver()
     A = z3.Real("Assets")
     L = z3.Real("Liabilities")
     E = z3.Real("Equity")
@@ -165,31 +164,51 @@ def execute_forensic_audit_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     F_v = z3.Real("ContingentFee")
     N_v = z3.Real("NetClient")
 
-    solver.add(A == z3.RealVal(assets))
-    solver.add(L == z3.RealVal(liabilities))
-    solver.add(E == z3.RealVal(equity))
-    solver.add(NI == z3.RealVal(reported_net_income))
-    solver.add(CFO_v == z3.RealVal(cfo))
-    solver.add(ACC_v == z3.RealVal(reconstructed_accruals))
+    bs_solver = z3.Solver()
+    bs_solver.add(A == z3.RealVal(str(assets_dec)))
+    bs_solver.add(L == z3.RealVal(str(liabilities_dec)))
+    bs_solver.add(E == z3.RealVal(str(equity_dec)))
+    bs_solver.add(A == L + E)
+    bs_balanced = (bs_solver.check() == z3.sat)
+
+    acc_solver = z3.Solver()
+    acc_solver.add(NI == z3.RealVal(str(reported_net_income_dec)))
+    acc_solver.add(CFO_v == z3.RealVal(str(cfo_dec)))
+    acc_solver.add(ACC_v == z3.RealVal(str(reconstructed_accruals_dec)))
+    acc_solver.add(NI == CFO_v + ACC_v)
+    accrual_reconciled = (acc_solver.check() == z3.sat)
+
+    solver = z3.Solver()
+    solver.add(A == z3.RealVal(str(assets_dec)), L == z3.RealVal(str(liabilities_dec)), E == z3.RealVal(str(equity_dec)))
+    solver.add(A == L + E)
+    solver.add(NI == z3.RealVal(str(reported_net_income_dec)), CFO_v == z3.RealVal(str(cfo_dec)), ACC_v == z3.RealVal(str(reconstructed_accruals_dec)))
+    solver.add(NI == CFO_v + ACC_v)
     solver.add(G_v == z3.RealVal(str(gross_recovery)))
     solver.add(F_v == z3.RealVal(str(contingent_fee)))
     solver.add(N_v == z3.RealVal(str(net_client_recovery)))
     solver.add(G_v == F_v + N_v)
     solver.add(F_v <= G_v * z3.RealVal(str(statutory_cap)))
 
-    bs_balanced = abs(assets - (liabilities + equity)) < 0.01
-    accrual_reconciled = abs(reported_net_income - (cfo + reconstructed_accruals)) < 0.01
     cent_conserved = (contingent_fee + net_client_recovery == gross_recovery)
     z3_sat = (solver.check() == z3.sat) and bs_balanced and accrual_reconciled and cent_conserved
 
-    summary_narrative = (
+    raw_narrative = (
         f"TaxRiskOS // SovereignForensics verified {entity_name} (CIK {cik}, {fein_count} FEINs): "
         f"Beneish M-Score={beneish_m:.2f}, Dechow F-Score={dechow_f:.2f}, Sloan Accrual={sloan_acc:.4f}, "
         f"IEEPA Tariff Distortion Index={tariff_idx:.2f}. Total verified statutory recovery across "
         f"19 U.S.C. § 1313 duty drawback (${drawback_1313}), KRS 139.470(9) utility exemption (${utility_refund}), "
-        f"and UCC § 2-717 tariff setoff (${ieepa_surcharge}) equals ${gross_recovery} gross / ${net_client_recovery} net to client."
+        f"and UCC § 2-717 tariff setoff (${ieepa_surcharge}) equals ${gross_recovery} gross / ${net_client_recovery} net to client. "
+        "Workflow intake and arithmetic illustration only; not tax, legal, or attest advice."
     )
-    safety_gate = safe_emit_guard(summary_narrative)
+    extra_draft = str(payload.get("draft_memo", "")) + " " + str(payload.get("summary_narrative", ""))
+    safety_gate = safe_emit_guard(raw_narrative + " " + extra_draft)
+    if safety_gate["safe_to_emit"]:
+        summary_narrative = raw_narrative
+    else:
+        summary_narrative = (
+            "[BLOCKED_BY_TAXRISKOS_SAFE_EMIT_GATE: Output suppressed due to prohibited unauthorized "
+            "legal/tax representation language under KRS 325.380(4)-(5) / AICPA ET § 1.295.]"
+        )
 
     return {
         "engine": "TaxRiskOS // SovereignForensics Modal Serverless & Z3 Engine v2.0",
@@ -226,6 +245,7 @@ def execute_forensic_audit_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
             "accruals_reconciled": accrual_reconciled,
             "statutory_fee_cap_verified": fee_rate <= statutory_cap,
             "arithmetic_hallucination_rate": "0.000%",
+            "smt_formal_proof": "PROVEN_AUDIT_STABLE" if z3_sat else "UNSAT_INVARIANT_VIOLATION",
         },
         "taxriskos_safe_emit_gate": safety_gate,
         "summary_narrative": summary_narrative,
@@ -242,6 +262,9 @@ def audit_filing_and_tariff_endpoint(payload: Dict[str, Any]) -> Dict[str, Any]:
     res = execute_forensic_audit_payload(payload)
     res["modal_runtime"] = "modal_serverless_fastapi_endpoint"
     return res
+
+
+audit_company_web_endpoint = audit_filing_and_tariff_endpoint
 
 
 @app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60)

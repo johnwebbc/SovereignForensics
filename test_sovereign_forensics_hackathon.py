@@ -181,7 +181,10 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
         self.assertIn("sec_facts_rows_scanned", telemetry)
         self.assertIn("supported_meta_models", telemetry)
         self.assertGreater(len(telemetry["supported_meta_models"]), 3)
-        self.assertIn("muse-wonder-full (1M context via Muse Code CLI)", telemetry["supported_meta_models"])
+        self.assertIn(
+            "muse-wonder-full-1.0 (1M context via Meta Model API & Muse Code CLI)",
+            telemetry["supported_meta_models"],
+        )
 
     def test_11_canonical_meta_baseten_fireworks_modal_endpoints(self):
         """Verify canonical API URLs and official Meta Hackathon model IDs (zero fake domains)."""
@@ -261,6 +264,90 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
         delib = self.engine.deliberate_candidate(candidate, provider="ollama_rtx4090")
         self.assertEqual(delib["provider_used"], "ollama_rtx4090")
         self.assertIn("council_consensus", delib)
+
+    def test_16_strict_rfc8259_json_no_nan_in_screener_and_benchmarks(self):
+        """Verify screener and benchmark artifacts contain zero NaN/Infinity tokens under strict RFC 8259 JSON."""
+        import json
+        results = self.engine.run_market_screener(limit=10)
+        serialized = json.dumps(results, allow_nan=False)
+        self.assertNotIn("NaN", serialized)
+
+        bench_path = REPO_ROOT / "data" / "rtx4090_live_forensic_council_benchmarks.json"
+        self.assertTrue(bench_path.exists())
+        raw = bench_path.read_text(encoding="utf-8")
+        self.assertNotIn("NaN", raw)
+        parsed = json.loads(raw)
+        json.dumps(parsed, allow_nan=False)
+        # Ensure Spirit AeroSystems council consensus does not claim low manipulation
+        spirit_synth = parsed["live_rtx4090_council_audits"][0]["rtx4090_live_synthesis"]
+        self.assertNotIn("low earnings manipulation", spirit_synth.lower())
+
+    def test_17_z3_real_solver_check_and_unsat_proof_status(self):
+        """Verify Z3 solver actually checks A == L + E and NI == CFO + ACC and returns UNSAT_INVARIANT_VIOLATION on mismatch."""
+        import modal_taxriskos_forensics_app as modal_app
+        bad_eng = self.engine.verify_financial_invariants_with_z3(
+            assets=100.00,
+            liabilities=60.00,
+            equity=30.00,
+            reported_net_income=20.00,
+            cfo=12.00,
+            reconstructed_accruals=8.00,
+        )
+        self.assertFalse(bad_eng["balance_sheet_balanced"])
+        self.assertEqual(bad_eng["z3_solver_status"], "INVARIANT_VIOLATION_DETECTED")
+        self.assertEqual(bad_eng["smt_formal_proof"], "UNSAT_INVARIANT_VIOLATION")
+
+        bad_modal = modal_app.execute_forensic_audit_payload({
+            "assets": "100.00",
+            "liabilities": "60.00",
+            "equity": "40.00",
+            "reported_net_income": "20.00",
+            "cfo": "10.00",
+            "reconstructed_accruals": "5.00",
+        })
+        self.assertTrue(bad_modal["z3_smt_verification"]["balance_sheet_balanced"])
+        self.assertFalse(bad_modal["z3_smt_verification"]["accruals_reconciled"])
+        self.assertEqual(bad_modal["z3_smt_verification"]["z3_solver_status"], "INVARIANT_VIOLATION_DETECTED")
+        self.assertEqual(bad_modal["z3_smt_verification"]["smt_formal_proof"], "UNSAT_INVARIANT_VIOLATION")
+
+    def test_18_safe_emit_redacts_summary_narrative_on_violation(self):
+        """Verify execute_forensic_audit_payload redacts summary_narrative if safe_to_emit is False."""
+        import modal_taxriskos_forensics_app as modal_app
+        res = modal_app.execute_forensic_audit_payload({
+            "entity_name": "Unsafe Narrative Test LLC",
+            "draft_memo": "We represent you before the IRS and provide formal legal advice with a guaranteed tax refund.",
+        })
+        self.assertFalse(res["taxriskos_safe_emit_gate"]["safe_to_emit"])
+        self.assertTrue(res["summary_narrative"].startswith("[BLOCKED_BY_TAXRISKOS_SAFE_EMIT_GATE:"))
+
+    def test_19_import_from_outside_repo_dir_and_cli_taxriskos(self):
+        """Verify sovereign_forensics_engine imports cleanly outside REPO_ROOT and supports --taxriskos CLI."""
+        import subprocess
+        cmd = [
+            sys.executable,
+            str(REPO_ROOT / "sovereign_forensics_engine.py"),
+            "--taxriskos",
+        ]
+        proc = subprocess.run(cmd, cwd="O:\\", capture_output=True, text=True, timeout=30)
+        self.assertEqual(proc.returncode, 0, msg=proc.stderr)
+        self.assertIn("gross_recoverable_usd", proc.stdout)
+
+    def test_20_zero_legacy_domains_or_models_in_readme_html_and_command_sheet(self):
+        """Verify README.md, demo_cockpit.html, index.html, and command sheet contain canonical models and zero fake domains."""
+        files_to_check = [
+            REPO_ROOT / "README.md",
+            REPO_ROOT / "demo_cockpit.html",
+            REPO_ROOT / "index.html",
+        ]
+        for fp in files_to_check:
+            self.assertTrue(fp.exists(), f"Missing {fp}")
+            text = fp.read_text(encoding="utf-8")
+            self.assertNotIn("bridge.baseten.co", text)
+            self.assertNotIn("api.dev.meta.ai", text)
+            self.assertNotIn("llama-3.1-70b-instruct", text)
+            self.assertNotIn("llama-3.1-405b-instruct", text)
+            self.assertIn("muse-wonder-full-1.0", text)
+            self.assertIn("TaxRiskOS", text)
 
 
 if __name__ == "__main__":
