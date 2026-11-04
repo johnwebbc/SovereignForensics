@@ -400,6 +400,34 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
             self.assertIn("taxriskos_multi_fein_waterfall", r)
             self.assertIn("gross_recoverable_usd", r["taxriskos_multi_fein_waterfall"])
 
+    def test_23_modal_duckdb_parquet_warehouse_and_z3_verification(self):
+        """Verify modal_sovereign_forensics_warehouse DuckDB OLAP engine and Z3 formal solver."""
+        import duckdb
+        from modal_sovereign_forensics_warehouse import (
+            init_warehouse_schema,
+            query_warehouse_screener,
+            verify_statutory_accrual_with_z3,
+        )
+        parquet_path = REPO_ROOT / "data" / "sample_sec_facts.parquet"
+        self.assertTrue(parquet_path.exists())
+
+        con = duckdb.connect()
+        init_warehouse_schema(con, parquet_path=parquet_path)
+        count = con.execute("SELECT count(*) FROM forensic_screener_results").fetchone()[0]
+        self.assertGreater(count, 0)
+
+        flagged = query_warehouse_screener(con, min_m_score=-1.78, limit=10)
+        self.assertGreater(len(flagged), 0)
+        top = flagged[0]
+        self.assertIn("entity_name", top)
+        self.assertIn("beneish_m_score", top)
+        self.assertIn("est_ieepa_recovery_usd", top)
+
+        z3_res = verify_statutory_accrual_with_z3(top)
+        self.assertTrue(z3_res["mathematically_satisfiable"])
+        self.assertEqual(z3_res["smt_formal_proof"], "BOUNDARIES_VERIFIED")
+
 
 if __name__ == "__main__":
     unittest.main()
+

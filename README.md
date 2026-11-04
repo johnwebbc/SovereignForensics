@@ -141,9 +141,13 @@ python -m modal deploy modal_taxriskos_forensics_app.py
 
 # High-throughput batch processing across multiple corporate filings:
 python -c "from modal_taxriskos_forensics_app import run_batch_audit_local_or_remote; print(len(run_batch_audit_local_or_remote([{'entity_name': 'Test A', 'cik': '1', 'imported_cogs_usd': '100000', 'export_share_pct': '0.2', 'ieepa_pass_through_surcharge_usd': '25000'}])))"
+
+# Serverless DuckDB + Parquet Data Warehouse with Volume persistence & GPU function:
+python modal_sovereign_forensics_warehouse.py --local-smoke
+python -m modal deploy modal_sovereign_forensics_warehouse.py
 ```
 
-### 6. Run Full Automated Test Suite (`22/22` Passing)
+### 6. Run Full Automated Test Suite (`23/23` Passing)
 ```bash
 python -m unittest test_sovereign_forensics_hackathon.py -v
 ```
@@ -153,7 +157,7 @@ Open [`index.html`](./index.html) or [`demo_cockpit.html`](./demo_cockpit.html) 
 
 ---
 
-## 6. Verification & Test Suite (`22/22` Tests Passing)
+## 6. Verification & Test Suite (`23/23` Tests Passing)
 
 ```
 test_01_sample_dataset_exists_and_valid ........................................ [PASS]
@@ -178,8 +182,9 @@ test_19_import_from_outside_repo_dir_and_cli_taxriskos .........................
 test_20_zero_legacy_domains_or_models_in_readme_html_and_command_sheet ......... [PASS]
 test_21_fireworks_sft_dataset_integrity_and_fine_tuned_model_routing ........... [PASS]
 test_22_modal_batch_api_wiring ................................................. [PASS]
+test_23_modal_duckdb_parquet_warehouse_and_z3_verification .................... [PASS]
 ----------------------------------------------------------------------
-Ran 22 tests in 3.3s (OK)
+Ran 23 tests in 7.6s (OK)
 ```
 
 ---
