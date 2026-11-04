@@ -10,8 +10,10 @@
 > **Meta Global AI Developer Hackathon Submission (`Application ID: b55d2cdb-9d50-4751-a7dc-9505f2f7e4d4`)**  
 > **Tracks:** Startups Track ($500K) & Indie Developer Track ($500K)  
 > **Themes:** *Push the Frontier* & *Build for Your World*  
-> **Live Web Cockpit:** [`index.html`](./index.html) / [`demo_cockpit.html`](./demo_cockpit.html)  
-> **Modal Serverless & Z3 App:** [`modal_taxriskos_forensics_app.py`](./modal_taxriskos_forensics_app.py)  
+> **Live Web Cockpit (Modal Cloud):** [https://johnwebbc--sovereign-forensics-warehouse-fastapi-warehouse-app.us-east.modal.run](https://johnwebbc--sovereign-forensics-warehouse-fastapi-warehouse-app.us-east.modal.run)  
+> **Live Z3 SMT Audit API (Modal Cloud):** [https://johnwebbc--taxriskos-forensic-audit.us-east.modal.run](https://johnwebbc--taxriskos-forensic-audit.us-east.modal.run)  
+> **Interactive Local Cockpit:** [`index.html`](./index.html) / [`demo_cockpit.html`](./demo_cockpit.html)  
+> **Modal Warehouse & Z3 Apps:** [`modal_sovereign_forensics_warehouse.py`](./modal_sovereign_forensics_warehouse.py) & [`modal_taxriskos_forensics_app.py`](./modal_taxriskos_forensics_app.py)  
 > **Narrated 3-Minute Demo Video:** [`SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4`](./SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4)
 
 ---
