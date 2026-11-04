@@ -400,6 +400,13 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
             self.assertIn("taxriskos_multi_fein_waterfall", r)
             self.assertIn("gross_recoverable_usd", r["taxriskos_multi_fein_waterfall"])
 
+        # Explicit regression check: verify typing annotations resolve cleanly without NameError
+        import typing
+        th = typing.get_type_hints(run_batch_audit_local_or_remote)
+        self.assertIn("payloads", th)
+        self.assertIn("return", th)
+
+
     def test_23_modal_duckdb_parquet_warehouse_and_z3_verification(self):
         """Verify modal_sovereign_forensics_warehouse DuckDB OLAP engine and Z3 formal solver."""
         import duckdb
