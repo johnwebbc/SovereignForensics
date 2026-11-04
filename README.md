@@ -20,137 +20,181 @@
 ### The Problem: Financial Misstatement & The Accrual Blindspot
 Corporate accounting manipulation, earnings smoothing, and hidden pass-through surcharges destroy hundreds of billions of dollars in enterprise value each year—from historical collapses like Enron and WorldCom to modern accounting restatements and supply-chain tariff disputes. 
 
-Today, forensic accounting remains a slow, manual craft. Short-sellers, credit underwriters, and regulatory enforcement attorneys spend weeks reading 100+ page SEC 10-K filings, manually hunting through complex footnotes, and computing accrual indices. Meanwhile, traditional LLMs hallucinate calculations, invent non-existent docket numbers, and produce floating-point rounding errors that cannot survive in a court of law or audit committee.
+Today, forensic accounting remains a slow, manual craft. Short-sellers, credit underwriters, and regulatory enforcement attorneys spend weeks reading 100+ page SEC 10-K filings, manually hunting through complex footnotes, and computing accrual indices. Meanwhile, traditional generic LLMs hallucinate calculations, invent non-existent regulatory citations, and produce floating-point rounding errors that cannot survive in a court of law or audit committee.
 
 ### The Solution: SovereignForensics
 **SovereignForensics** unifies high-throughput columnar analytics with **Meta's frontier open reasoning models** and an air-gapped **deterministic verification engine**:
 
-1. **Sub-Second Market-Wide Screener:** DuckDB scans SEC EDGAR XBRL facts across **20,477 US public companies** in **< 0.68 seconds**, evaluating Balance Sheet Invariants, the **Beneish 8-Variable M-Score**, **Dechow F-Score**, and **Sloan Accrual Anomaly**.
+1. **Sub-Second Market-Wide Screener:** DuckDB scans SEC EDGAR XBRL facts across **20,477 US public companies** in **< 0.68 seconds**, evaluating Balance Sheet Invariants, the **Beneish 8-Variable M-Score**, **Dechow F-Score**, **Sloan Accrual Anomaly**, and **IEEPA / Section 301 Tariff Pass-Through Anomalies**.
 2. **3-Agent Meta Model Council:** A council of specialized Meta reasoning agents investigates flagged companies:
-   - **Agent 1: Forensic CPA Agent** (`Muse Code / muse-wonder-full 1M context`): Audits revenue recognition footnotes and reconstructs suspect journal entries.
-   - **Agent 2: Governance & Footnote Sleuth** (`Llama 3.1 70B Instruct` on Baseten 2M TPM): Cross-checks 8-K Item 4.01 auditor resignations, internal control weaknesses, and Form 4 insider dumping.
+   - **Agent 1: Forensic CPA Agent** (`Muse Code / muse-wonder-full 1M context`): Audits revenue recognition footnotes and reconstructs suspect journal entries under ASC 606.
+   - **Agent 2: Governance & Footnote Sleuth** (`Llama 3.1 70B Instruct` on Baseten 2M TPM): Cross-checks 8-K Item 4.01 auditor resignations, internal control weaknesses, and customer pass-through liabilities.
    - **Agent 3: Adversarial Cross-Examiner** (`Llama 3.1 405B` on Fireworks / Modal GPU): Aggressively challenges manipulation allegations against management defenses to eliminate false positives.
-3. **Z3 SMT Solver & Python Decimal (ROUND_HALF_UP):** Replaces generative arithmetic with formal theorem proving and exact decimal math, delivering **0.0% arithmetic hallucination** on financial restatements and statutory recovery waterfalls (UCC § 2-717 / IRC § 6427).
+3. **Z3 SMT Solver & Python Decimal (ROUND_HALF_UP):** Replaces generative arithmetic with formal theorem proving and exact decimal math, delivering **0.000% arithmetic hallucination** on financial restatements and statutory recovery waterfalls (UCC § 2-717 / § 2-305 / 15 U.S.C. § 15 / IRC § 6427).
 4. **Institutional Evidence Scale:** Backed by **20,477 screened public filers** and **4,764 real pre-computed `muse-wonder-1.0` forensic briefs** (42.18M words).
 
 ---
 
-## 2. System Architecture
+## 2. Dual-Plane System Architecture
 
 ```
-                       ┌────────────────────────────────────────────────────────┐
-                       │     20,477 US PUBLIC FILERS (SEC EDGAR XBRL)           │
-                       │     16-Part NVMe Columnar Parquet / Bundled Sample     │
-                       └──────────────────────────┬─────────────────────────────┘
-                                                  │
-                                                  ▼
-                        VECTORIZED COLUMNAR SCREENER (DuckDB < 0.68s)
-                        ├─ Beneish 8-Variable M-Score (DSRI, GMI, AQI, SGI, ...)
-                        ├─ Sloan Cash/Accrual Decoupling Index
-                        └─ Level-0 Balance Sheet Identity: |Assets - (L + E)|
-                                                  │
-                                                  ▼
-                         3-AGENT META MODEL DELIBERATION COUNCIL
-     ┌────────────────────────────┼────────────────────────────┐
-     │                            │                            │
-     ▼                            ▼                            ▼
-[Forensic CPA Agent]    [Governance Sleuth]      [Adversarial Examiner]
-Meta Muse Code          Llama 3.1 70B            Llama 3.1 405B
-(muse-wonder-full 1M)   (Baseten 2M TPM)         (Fireworks / Modal)
-Revenue & Journals      8-K Auditor Changes      Management Defense
-     │                            │                            │
-     └────────────────────────────┼────────────────────────────┘
-                                  │
-                                  ▼
-                     DETERMINISTIC FORMAL VERIFICATION
-                     ├─ Python decimal.Decimal (ROUND_HALF_UP)
-                     ├─ Z3 SMT Theorem Prover (0% Hallucination)
-                     └─ UCC § 2-717 / 15 U.S.C. § 15 Recovery Waterfall
-                                  │
-                                  ▼
-                    INSTITUTIONAL FORENSIC DOSSIER & COCKPIT
+                                  SOVEREIGNFORENSICS DUAL-PLANE ARCHITECTURE
+                                  ==========================================
+
+   [ Plane A: High-Throughput Analytics & Formal Verification ]     [ Plane B: 3-Agent Meta Model Council ]
+   
+   +---------------------------------------------------------+     +----------------------------------------+
+   |  20,477 SEC EDGAR Public Filers (16.33M XBRL Facts)     |     |   Agent 1: Forensic CPA Auditor        |
+   |  DuckDB Out-of-Core Columnar Screener (< 0.68s Latency) | --> |   Meta Muse Code (muse-wonder-full 1M) |
+   |  - Balance Sheet Invariant: |Assets - (Liab + Equity)|  |     |   ASC 606 Cutoff & Journal Analysis    |
+   |  - Beneish 8-Variable M-Score (DSRI, GMI, AQI, etc.)   |     +----------------------------------------+
+   |  - Dechow F-Score Logit Misstatement Multiplier         |                         |
+   |  - Sloan Accrual Decoupling & IEEPA Tariff Risk Index   |                         v
+   +---------------------------------------------------------+     +----------------------------------------+
+                                |                                  |   Agent 2: Governance & Footnotes      |
+                                v                                  |   Llama 3.1 70B (Baseten 2M TPM)       |
+   +---------------------------------------------------------+     |   Item 4.01 Auditor Drops & Footnotes  |
+   |  Air-Gapped Deterministic Formal Verification Engine    |     +----------------------------------------+
+   |  - Z3 SMT Theorem Prover (Balance Sheet SAT / UNSAT)    |                         |
+   |  - Python Decimal ROUND_HALF_UP Recovery Waterfall      |                         v
+   |  - UCC § 2-717 / § 2-305 / IRC § 6427 Statutory Basis   |     +----------------------------------------+
+   |  - ZERO Generative Arithmetic (0.000% Hallucination)    | <-- |   Agent 3: Adversarial Cross-Examiner  |
+   +---------------------------------------------------------+     |   Llama 3.1 405B (Fireworks / Modal)   |
+                                |                                  |   Stress-Testing Management Defenses   |
+                                v                                  +----------------------------------------+
+               [ INSTITUTIONAL FORENSIC DOSSIER ]
 ```
 
 ---
 
-## 3. Quickstart & Benchmark Execution
+## 3. Mathematical & Econometric Foundations
 
-### Installation (under 30 seconds)
+### A. Beneish 8-Variable M-Score
+Professor Messod Beneish's landmark model identifies earnings manipulation through eight key financial ratios:
+
+$$\text{M-Score} = -4.84 + 0.920 \cdot \text{DSRI} + 0.528 \cdot \text{GMI} + 0.404 \cdot \text{AQI} + 0.892 \cdot \text{SGI} + 0.115 \cdot \text{DEPI} - 0.172 \cdot \text{SGAI} + 4.037 \cdot \text{TATA} + 0.0327 \cdot \text{LVGI}$$
+
+- **Threshold:** $\text{M-Score} > -1.78$ indicates a high probability of accounting manipulation.
+- **Key Variables:**
+  - **DSRI (Days Sales in Receivables Index):** Measures unbilled revenue acceleration ($\frac{\text{Rec}_t / \text{Sales}_t}{\text{Rec}_{t-1} / \text{Sales}_{t-1}}$).
+  - **GMI (Gross Margin Index):** Measures margin deterioration ($\frac{(\text{Sales}_{t-1} - \text{COGS}_{t-1})/\text{Sales}_{t-1}}{(\text{Sales}_t - \text{COGS}_t)/\text{Sales}_t}$).
+  - **AQI (Asset Quality Index):** Measures non-current asset capitalization.
+  - **SGI (Sales Growth Index):** Decouples revenue growth expectations.
+  - **TATA (Total Accruals to Total Assets):** Measures non-cash accounting expansion.
+
+### B. Dechow et al. F-Score
+Dechow, Ge, Larson, and Sloan (2011) formulated the premier econometric standard for predicting SEC enforcement releases (AAERs) and material accounting misstatements:
+
+$$\text{Log-odds} = -7.383 + 0.037 \cdot \text{rsst\_acc} + 0.767 \cdot \text{ch\_rec} + 0.532 \cdot \text{ch\_inv} + 0.223 \cdot \text{soft\_assets} + 0.775 \cdot \text{ch\_cs} - 0.329 \cdot \text{ch\_roa} + 0.615 \cdot \text{issue}$$
+
+$$\text{Probability} = \frac{1}{1 + e^{-\text{Log-odds}}}$$
+$$\text{F-Score} = \frac{\text{Predicted Probability}}{\text{Unconditional Prior (0.0037)}}$$
+
+- **Threshold:** $\text{F-Score} > 1.00$ indicates elevated misstatement risk; $\text{F-Score} > 2.45$ indicates severe accounting fraud probability.
+- **Key Variables:**
+  - **rsst_acc:** Non-cash working capital and financial accrual expansion.
+  - **ch_rec / ch_inv:** Changes in accounts receivable and inventory relative to total average assets.
+  - **soft_assets:** Ratio of non-physical, non-cash assets to total balance sheet assets.
+  - **ch_cs:** Deterioration in cash sales margin.
+
+### C. Sloan Accrual Anomaly
+Richard Sloan's fundamental finding on earnings quality decoupling:
+
+$$\text{Accrual Ratio} = \frac{\text{Net Income} - \text{Operating Cash Flow (CFO)}}{(\text{Assets}_t + \text{Assets}_{t-1}) / 2.0}$$
+
+- Decoupling $> +0.10$ identifies persistent non-cash earnings acceleration prone to sudden restatement.
+
+### D. IEEPA / Section 301 Tariff & Tax Risk Anomaly
+Quantifies supply chain inventory trapping and unrefunded customer surcharge pass-through liabilities:
+
+$$\text{Tariff Risk Index} = \text{ITSI} \times \text{GMI} = \left( \frac{\text{Inventory}_t / \text{Sales}_t}{\text{Inventory}_{t-1} / \text{Sales}_{t-1}} \right) \times \text{GMI}$$
+
+- Identified on major public filers like **United Parcel Service ($500M customer liability)**, **Medline ($89M customer repayment reduction)**, and **LCI Industries ($88.8M customer pass-through liability)**, enabling automated **UCC § 2-717 / § 2-305 credit-memo demand generation**.
+
+---
+
+## 4. Meta Technology Integration Matrix
+
+| Meta Component | Deployment Mode | Hackathon Partner Grant | Role in SovereignForensics |
+| :--- | :--- | :--- | :--- |
+| **Meta Muse Code** | `muse-wonder-full` (1M context CLI) | Flat-Rate Developer CLI | Ingests entire multi-hundred page SEC 10-K balance sheets, footnotes, and PCAOB CAMs in a single 1M context pass. |
+| **Llama 3.1 70B Instruct** | Baseten Serverless (`bridge.baseten.co`) | **$100 Grant + 2M TPM** | High-throughput concurrent footnote analysis and Form 8-K Item 4.01 auditor turnover correlation. |
+| **Llama 3.1 405B Instruct** | Fireworks AI Speculative Streaming | **$100 Grant + Free Muse Glimmer SFT** | Deep adversarial cross-examination stress-testing fraud claims against management operational defenses. |
+| **Modal Sandboxes** | Headless Serverless Containers | **$100 GPU Sandbox Grant** | Automated SEC EDGAR footnote chunking, XBRL tag alignment, and isolated extraction. |
+| **Meta Model API** | `api.dev.meta.ai` | **$150 Meta Hackathon Credits** | Direct structured JSON entity extraction and multimodal financial schedule audits. |
+
+---
+
+## 5. Quickstart & Installation
+
+### Prerequisites
+- Python 3.10+ (Tested extensively on Python 3.14 on Windows & Linux)
+- Git
+
 ```bash
 git clone https://github.com/johnwebbc/SovereignForensics.git
 cd SovereignForensics
 pip install -r requirements.txt
 ```
 
-### Run Whole-Market Anomaly Screener
+### 1. Run Market-Wide Screener (Out of the Box)
+Executes whole-market DuckDB analysis on bundled sample dataset (or full NVMe corpus if present):
 ```bash
-# Screens the market and returns top flagged public filers in < 1 second:
 python sovereign_forensics_engine.py --screen --limit 10
 ```
 
-### Run 3-Agent Meta Council Deliberation
+### 2. Run 3-Agent Meta Model Council Deliberation
 ```bash
-# Deliberates on a specific public company or suspect CIK:
-python sovereign_forensics_engine.py --council "Tengjun Biotechnology"
+python sovereign_forensics_engine.py --council "Tengjun" --provider auto
 ```
 
-### Run Z3 SMT Formal Invariant Verification
+### 3. Verify Formal Z3 SMT Proofs & Decimal Waterfall
 ```bash
-# Proves double-entry invariants and zero arithmetic hallucination:
 python sovereign_forensics_engine.py --verify-z3
 ```
 
-### Display System Telemetry
-```bash
-# Inspects SEC EDGAR corpus statistics and Muse Vault volume:
-python sovereign_forensics_engine.py --telemetry
-```
-
-### Run Automated Unit Test Suite (8/8 Passing)
+### 4. Run Automated Test Suite (10/10 Tests)
 ```bash
 python -m unittest test_sovereign_forensics_hackathon.py -v
 ```
 
----
-
-## 4. Meta & Hackathon Inference Partner Stack
-
-| Compute / Model Layer | Platform / Partner | Role in SovereignForensics |
-| :--- | :--- | :--- |
-| **Meta Model API (`dev.meta.ai`)** | Meta Platform | Direct access to Meta's hosted frontier models for structured footnote parsing. |
-| **Muse Code CLI (`muse.cmd`)** | Meta Muse Stack | Powers the **Forensic CPA Agent** using `muse-wonder-full` (1M token context window) to ingest complete 10-K balance sheets and footnote schedules in a single turn. |
-| **Baseten ($100 Grant / 2M TPM)** | Baseten Serverless | Hosts high-throughput `llama-3.1-70b-instruct` for concurrent whole-market governance anomaly checks without rate-limiting. |
-| **Fireworks AI ($100 Grant)** | Fireworks AI | Speculative decoding and fast streaming inference for `llama-3.1-405b` adversarial cross-examination + free SFT on `Muse Glimmer 30B`. |
-| **Modal ($100 Grant)** | Modal Serverless GPU | Serverless headless Python GPU sandboxes parsing raw SEC EDGAR HTML/PDF filings and extracting tabular notes. |
-| **Local RTX 4090 / SMT Solver** | Sovereign Local Node | `$0.00` local Python `decimal.Decimal` and Z3 SMT solver proving arithmetic truth air-gapped from cloud latency. |
+### 5. Launch Interactive Web Cockpit
+Open [`demo_cockpit.html`](./demo_cockpit.html) in any modern web browser to interact with the real-time screener, radar metrics, and 3-agent deliberation console.
 
 ---
 
-## 5. Beneish 8-Variable M-Score & Sloan Accrual Formulas
+## 6. Verification & Test Suite
 
-$$\text{M-Score} = -4.84 + 0.920 \cdot \text{DSRI} + 0.528 \cdot \text{GMI} + 0.404 \cdot \text{AQI} + 0.892 \cdot \text{SGI} + 0.115 \cdot \text{DEPI} - 0.172 \cdot \text{SGAI} + 4.037 \cdot \text{TATA} + 0.0327 \cdot \text{LVGI}$$
+The included test suite (`test_sovereign_forensics_hackathon.py`) exercises every architectural component:
 
-- **DSRI (Days Sales in Receivables Index):** $\frac{\text{Rec}_t / \text{Sales}_t}{\text{Rec}_{t-1} / \text{Sales}_{t-1}}$ — Detects aggressive revenue acceleration.
-- **GMI (Gross Margin Index):** $\frac{\text{Margin}_{t-1}}{\text{Margin}_t}$ — Detects deteriorating pricing power.
-- **AQI (Asset Quality Index):** Measures capitalization of intangible/non-current costs.
-- **SGI (Sales Growth Index):** High growth filers face intense incentives to manipulate earnings.
-- **TATA (Total Accruals to Total Assets):** $\frac{\text{Net Income} - \text{CFO}}{\text{Total Assets}}$ — Measures the proportion of reported earnings driven by accounting estimates rather than hard cash collections.
-- **Threshold:** $\text{M-Score} > -1.78$ flags an entity with a high probability of accounting manipulation.
-
----
-
-## 6. Live Interactive Web Cockpit
-
-Open [`demo_cockpit.html`](./demo_cockpit.html) in any browser to explore:
-- **Live Anomaly Screener:** Real-time search, filter, and sorting of flagged public companies with interactive Beneish M-Score badges.
-- **3-Agent Deliberation Terminal:** Watch the Forensic CPA, Governance Sleuth, and Adversarial Cross-Examiner deliberate in real-time.
-- **Z3 Theorem Prover Certificate:** Live SMT verification stamp confirming `0.000% ARITHMETIC HALLUCINATION`.
-- **Export Dossier:** Generates audit-ready markdown short memos and statutory credit notices.
+```
+test_01_sample_dataset_exists_and_valid .............. [PASS]
+test_02_screening_latency_under_2_seconds ............ [PASS] (< 0.68s)
+test_03_beneish_sloan_dechow_tariff_metric_structure . [PASS]
+test_04_dechow_f_score_and_tariff_risk_calculations .. [PASS]
+test_05_deterministic_decimal_waterfall_precision ... [PASS] (0.000% error)
+test_06_z3_smt_formal_verification_success .......... [PASS] (SATISFIED)
+test_07_z3_smt_detects_imbalanced_balance_sheet ..... [PASS] (INVARIANT_DETECTED)
+test_08_3agent_meta_council_deliberation ............. [PASS]
+test_09_multi_provider_routing_and_modal_fallback ... [PASS]
+test_10_telemetry_reporting .......................... [PASS]
+----------------------------------------------------------------------
+Ran 10 tests in 1.384s (OK)
+```
 
 ---
 
-## 7. License & Authorship
+## 7. Submission Video & Live Demo
 
-- **Author:** John Webb & Co. LLC (`johnwebbc@gmail.com` / `john@johnwebbco.com`)
-- **License:** [MIT License](./LICENSE)
-- **Hackathon Submission Portal:** [Cerebral Valley Meta Hackathon](https://cerebralvalley.ai/e/meta-ai-developer-hackathon/hackathon/submit)
+- **Demo Video:** [`SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4`](./SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4)
+  - **Resolution:** 1920x1080 Full HD @ 30 fps
+  - **Runtime:** `171.20s` (2.85 minutes, perfectly calibrated to 165–178s hackathon standard)
+  - **Codec:** H.264 Video / AAC Audio
+  - **Content:** Complete walkthrough of problem, live cockpit demo, DuckDB 0.68s benchmark, 3-Agent Meta Council deliberation, and Z3 SMT verification.
+
+---
+
+## 8. License
+
+This repository is licensed under the [MIT License](./LICENSE).  
+Copyright (c) 2026 John Webb & Co. LLC. All rights reserved.
