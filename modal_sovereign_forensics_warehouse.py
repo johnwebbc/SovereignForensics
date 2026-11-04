@@ -378,7 +378,9 @@ def verify_statutory_accrual_with_z3(metrics: Dict[str, Any]) -> Dict[str, Any]:
 if HAS_MODAL:
     @app.function(
         volumes={"/data": data_volume},
-        timeout=180
+        timeout=180,
+        scaledown_window=60,
+        min_containers=0,
     )
     def sync_and_init_volume_warehouse():
         """Initializes or refreshes the DuckDB warehouse on the persistent Modal Volume."""
@@ -395,6 +397,8 @@ if HAS_MODAL:
         gpu="T4",
         timeout=300,
         enable_memory_snapshot=True,
+        scaledown_window=60,
+        min_containers=0,
     )
     def gpu_forensic_agent(payload: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -430,7 +434,9 @@ if HAS_MODAL:
 
 
     @app.function(
-        volumes={"/data": data_volume}
+        volumes={"/data": data_volume},
+        scaledown_window=60,
+        min_containers=0,
     )
     @modal.concurrent(max_inputs=100)
     @modal.asgi_app()
@@ -495,6 +501,30 @@ if HAS_MODAL:
             return HTMLResponse(content="<h1>SovereignForensics Modal Warehouse Online</h1><p>Visit <a href='/api/screen'>/api/screen</a></p>")
 
         return web_app
+
+
+    @app.local_entrypoint()
+    def main():
+        print("=== Running SovereignForensics Warehouse on Modal Cloud ===")
+        print("1. Initializing DuckDB Volume Warehouse...")
+        sync_res = sync_and_init_volume_warehouse.remote()
+        print("Volume Warehouse Sync Result:", json.dumps(sync_res, indent=2))
+
+        print("\n2. Executing GPU Forensic Agent on NVIDIA T4...")
+        sample_payload = {
+            "entity_name": "United Parcel Service, Inc. (SEC 10-K IEEPA Surcharge Audit)",
+            "cik": "0001090727",
+            "beneish_m_score": -1.42,
+            "cogs": 50000000.0,
+            "revenue": 100000000.0,
+        }
+        gpu_res = gpu_forensic_agent.remote(sample_payload)
+        print("GPU Forensic Result:\n", json.dumps(gpu_res, indent=2))
+
+        print("\n3. Testing Statutory Z3 Accrual Verification...")
+        z3_res = verify_statutory_accrual_with_z3(sample_payload)
+        print("Z3 Verification Result:\n", json.dumps(z3_res, indent=2))
+        print("\n=== Modal Cloud Execution Succeeded! ===")
 
 
 # -----------------------------------------------------------------------------

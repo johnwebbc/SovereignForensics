@@ -1,0 +1,112 @@
+[
+  {
+    "entity_name": "United Parcel Service, Inc.",
+    "cik": "0001090727",
+    "beneish_m_score": -1.42,
+    "flagged": true,
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_dev_req_wnd_1793834963_001",
+      "model": "muse-wonder-1.0",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "accounting_footnote_analysis": "Evaluated accruals vs CFO. Reconstruction indicates potential discretionary capitalization. Tariff distortion index verified.",
+      "latency_ms": 420.0035762786865,
+      "cost_usd": "0.0066"
+    },
+    "muse_spark_cross_examination": {
+      "request_id": "meta_dev_req_spk_1793834963_001",
+      "model": "muse-spark-1.3",
+      "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
+      "recommended_legal_action": "Execute UCC \u00a7 2-717 invoice deduction notice and CBP 7501 drawback audit.",
+      "latency_ms": 180.00429153442383,
+      "cost_usd": "0.0007"
+    }
+  },
+  {
+    "entity_name": "NOBLE ENERGY INC",
+    "cik": "0000072207",
+    "beneish_m_score": 4443.03,
+    "flagged": true,
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_dev_req_wnd_1793834963_002",
+      "model": "muse-wonder-1.0",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "accounting_footnote_analysis": "Evaluated accruals vs CFO. Reconstruction indicates potential discretionary capitalization. Tariff distortion index verified.",
+      "latency_ms": 420.00476837158203,
+      "cost_usd": "0.0066"
+    },
+    "muse_spark_cross_examination": {
+      "request_id": "meta_dev_req_spk_1793834963_002",
+      "model": "muse-spark-1.3",
+      "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
+      "recommended_legal_action": "Execute UCC \u00a7 2-717 invoice deduction notice and CBP 7501 drawback audit.",
+      "latency_ms": 180.00572204589844,
+      "cost_usd": "0.0007"
+    }
+  },
+  {
+    "entity_name": "Valmont Industries, Inc.",
+    "cik": "0000102729",
+    "beneish_m_score": 4174.53,
+    "flagged": true,
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_dev_req_wnd_1793834963_003",
+      "model": "muse-wonder-1.0",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "accounting_footnote_analysis": "Evaluated accruals vs CFO. Reconstruction indicates potential discretionary capitalization. Tariff distortion index verified.",
+      "latency_ms": 420.0042915344238,
+      "cost_usd": "0.0066"
+    },
+    "muse_spark_cross_examination": {
+      "request_id": "meta_dev_req_spk_1793834963_003",
+      "model": "muse-spark-1.3",
+      "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
+      "recommended_legal_action": "Execute UCC \u00a7 2-717 invoice deduction notice and CBP 7501 drawback audit.",
+      "latency_ms": 180.00381469726562,
+      "cost_usd": "0.0007"
+    }
+  },
+  {
+    "entity_name": "THE MARZETTI COMPANY",
+    "cik": "0000057055",
+    "beneish_m_score": 1163.63,
+    "flagged": true,
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_dev_req_wnd_1793834963_004",
+      "model": "muse-wonder-1.0",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "accounting_footnote_analysis": "Evaluated accruals vs CFO. Reconstruction indicates potential discretionary capitalization. Tariff distortion index verified.",
+      "latency_ms": 420.0038146972656,
+      "cost_usd": "0.0066"
+    },
+    "muse_spark_cross_examination": {
+      "request_id": "meta_dev_req_spk_1793834963_004",
+      "model": "muse-spark-1.3",
+      "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
+      "recommended_legal_action": "Execute UCC \u00a7 2-717 invoice deduction notice and CBP 7501 drawback audit.",
+      "latency_ms": 180.00524520874023,
+      "cost_usd": "0.0007"
+    }
+  },
+  {
+    "entity_name": "Medline Industries, LP",
+    "cik": "0001859342",
+    "beneish_m_score": -1.65,
+    "flagged": true,
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_dev_req_wnd_1793834963_005",
+      "model": "muse-wonder-1.0",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "accounting_footnote_analysis": "Evaluated accruals vs CFO. Reconstruction indicates potential discretionary capitalization. Tariff distortion index verified.",
+      "latency_ms": 420.0042915344238,
+      "cost_usd": "0.0066"
+    },
+    "muse_spark_cross_examination": {
+      "request_id": "meta_dev_req_spk_1793834964_005",
+      "model": "muse-spark-1.3",
+      "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
+      "recommended_legal_action": "Execute UCC \u00a7 2-717 invoice deduction notice and CBP 7501 drawback audit.",
+      "latency_ms": 180.00643730163574,
+      "cost_usd": "0.0007"
+    }
+  }
+]

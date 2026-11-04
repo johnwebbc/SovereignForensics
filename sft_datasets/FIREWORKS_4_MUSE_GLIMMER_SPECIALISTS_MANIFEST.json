@@ -1,0 +1,50 @@
+[
+  {
+    "specialist": "sovereign_forensics_sec_aaer",
+    "train_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_sec_aaer_train.jsonl",
+    "val_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_sec_aaer_val.jsonl",
+    "downloads_train_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_sec_aaer_train.jsonl",
+    "downloads_val_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_sec_aaer_val.jsonl",
+    "train_count": 200,
+    "val_count": 40,
+    "base_model": "accounts/fireworks/models/muse-glimmer-30b",
+    "b200_estimated_training_time": "~5 minutes",
+    "cost_usd": "0.00 (Free through Nov 30, 2026)"
+  },
+  {
+    "specialist": "sovereign_forensics_ieepa_tariff",
+    "train_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_ieepa_tariff_train.jsonl",
+    "val_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_ieepa_tariff_val.jsonl",
+    "downloads_train_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_ieepa_tariff_train.jsonl",
+    "downloads_val_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_ieepa_tariff_val.jsonl",
+    "train_count": 200,
+    "val_count": 40,
+    "base_model": "accounts/fireworks/models/muse-glimmer-30b",
+    "b200_estimated_training_time": "~5 minutes",
+    "cost_usd": "0.00 (Free through Nov 30, 2026)"
+  },
+  {
+    "specialist": "sovereign_forensics_duckdb200_sql",
+    "train_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_duckdb200_sql_train.jsonl",
+    "val_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_duckdb200_sql_val.jsonl",
+    "downloads_train_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_duckdb200_sql_train.jsonl",
+    "downloads_val_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_duckdb200_sql_val.jsonl",
+    "train_count": 200,
+    "val_count": 40,
+    "base_model": "accounts/fireworks/models/muse-glimmer-30b",
+    "b200_estimated_training_time": "~5 minutes",
+    "cost_usd": "0.00 (Free through Nov 30, 2026)"
+  },
+  {
+    "specialist": "sovereign_forensics_dlai_rag_triad",
+    "train_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_dlai_rag_triad_train.jsonl",
+    "val_file": "O:\\outputs\\SovereignForensics_MetaHackathon_Repo\\sft_datasets\\sovereign_forensics_dlai_rag_triad_val.jsonl",
+    "downloads_train_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_dlai_rag_triad_train.jsonl",
+    "downloads_val_file": "M:\\Users\\John\\Downloads\\sovereign_forensics_dlai_rag_triad_val.jsonl",
+    "train_count": 200,
+    "val_count": 40,
+    "base_model": "accounts/fireworks/models/muse-glimmer-30b",
+    "b200_estimated_training_time": "~5 minutes",
+    "cost_usd": "0.00 (Free through Nov 30, 2026)"
+  }
+]

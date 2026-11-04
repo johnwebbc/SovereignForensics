@@ -252,7 +252,7 @@ def execute_forensic_audit_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60)
+@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60, min_containers=0)
 @modal.fastapi_endpoint(method="POST", label="taxriskos-forensic-audit")
 def audit_filing_and_tariff_endpoint(payload: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -267,7 +267,7 @@ def audit_filing_and_tariff_endpoint(payload: Dict[str, Any]) -> Dict[str, Any]:
 audit_company_web_endpoint = audit_filing_and_tariff_endpoint
 
 
-@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60)
+@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60, min_containers=0)
 def audit_company_serverless(payload: Dict[str, Any]) -> Dict[str, Any]:
     """
     Callable via `modal.Function.from_name('taxriskos-sovereign-forensics', 'audit_company_serverless').remote(payload)`.
@@ -277,7 +277,7 @@ def audit_company_serverless(payload: Dict[str, Any]) -> Dict[str, Any]:
     return res
 
 
-@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60)
+@app.function(image=forensic_image, cpu=2.0, memory=4096, scaledown_window=60, min_containers=0)
 def audit_batch_serverless(payloads: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Modal Batch API Processing: Maps forensic audits across multiple filings/customs manifests
