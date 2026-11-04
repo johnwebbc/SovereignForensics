@@ -153,7 +153,7 @@ python sovereign_forensics_engine.py --council "Tengjun" --provider auto
 python sovereign_forensics_engine.py --verify-z3
 ```
 
-### 4. Run Automated Test Suite (10/10 Tests)
+### 4. Run Automated Test Suite (15/15 Tests)
 ```bash
 python -m unittest test_sovereign_forensics_hackathon.py -v
 ```

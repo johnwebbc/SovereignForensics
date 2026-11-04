@@ -183,6 +183,85 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
         self.assertGreater(len(telemetry["supported_meta_models"]), 3)
         self.assertIn("muse-wonder-full (1M context via Muse Code CLI)", telemetry["supported_meta_models"])
 
+    def test_11_canonical_meta_baseten_fireworks_modal_endpoints(self):
+        """Verify canonical API URLs and official Meta Hackathon model IDs (zero fake domains)."""
+        self.assertEqual(self.engine.META_API_BASE, "https://api.meta.ai/v1/chat/completions")
+        self.assertEqual(self.engine.BASETEN_API_BASE, "https://inference.baseten.co/v1/chat/completions")
+        self.assertEqual(self.engine.FIREWORKS_API_BASE, "https://api.fireworks.ai/inference/v1/chat/completions")
+        self.assertEqual(self.engine.META_MODELS["flagship_1m"], "muse-wonder-full-1.0")
+        self.assertEqual(self.engine.META_MODELS["fast_extract"], "muse-spark-1.3")
+        self.assertEqual(self.engine.META_MODELS["segmentation"], "sam-3.1")
+        self.assertEqual(self.engine.META_MODELS["open_weights_glimmer"], "accounts/fireworks/models/muse-glimmer-30b")
+        self.assertEqual(self.engine.META_MODELS["modal_dedicated_glimmer"], "meta/muse-glimmer-30b-nvfp4")
+
+    def test_12_taxriskos_multi_fein_waterfall_and_z3(self):
+        """Verify TaxRiskOS Multi-FEIN 19 U.S.C. § 1313 drawback, KRS 139.470(9), and UCC § 2-717 waterfall."""
+        payload = {
+            "entity_name": "Medline Industries / Multi-FEIN Supply Chain",
+            "cik": "0001832568",
+            "fein_count": 5,
+            "imported_cogs_usd": "20000000.00",
+            "export_share_pct": "0.20",
+            "plant_utility_spend_usd": "1000000.00",
+            "ieepa_pass_through_surcharge_usd": "890000.00",
+            "fee_rate": "0.20",
+        }
+        res = self.engine.evaluate_taxriskos_multi_fein_and_notice(payload)
+        wf = res["taxriskos_multi_fein_waterfall"]
+        # 20M * 0.25 duty = 5M; * 0.20 export = 1M; * 0.99 = 990,000.00
+        self.assertEqual(wf["duty_drawback_19usc1313_usd"], "990000.00")
+        # 1M * 0.06 * 4 yrs = 240,000.00
+        self.assertEqual(wf["utility_exemption_krs139_470_usd"], "240000.00")
+        # 990,000 + 240,000 + 890,000 = 2,120,000.00
+        self.assertEqual(wf["gross_recoverable_usd"], "2120000.00")
+        self.assertEqual(wf["contingent_success_fee_usd"], "424000.00")
+        self.assertEqual(wf["net_cash_to_client_usd"], "1696000.00")
+        self.assertTrue(wf["cent_conservation_verified"])
+        self.assertEqual(res["z3_smt_verification"]["z3_solver_status"], "SATISFIED")
+        self.assertTrue(res["taxriskos_safe_emit_gate"]["safe_to_emit"])
+
+    def test_13_taxriskos_safe_emit_upl_boundary_gate(self):
+        """Verify TaxRiskOS safeEmit() blocks prohibited legal/tax advice and passes compliant workpapers."""
+        import modal_taxriskos_forensics_app as modal_app
+        clean = modal_app.safe_emit_guard(
+            "Workflow intake and arithmetic illustration only; not tax, legal, or attest advice."
+        )
+        self.assertTrue(clean["safe_to_emit"])
+        self.assertEqual(len(clean["violations_detected"]), 0)
+
+        unsafe = modal_app.safe_emit_guard(
+            "We represent you before the IRS and this constitutes formal legal advice with a guaranteed tax refund."
+        )
+        self.assertFalse(unsafe["safe_to_emit"])
+        self.assertGreaterEqual(len(unsafe["violations_detected"]), 3)
+
+    def test_14_modal_serverless_app_and_sandbox_fallback(self):
+        """Verify Modal app definition and Sandbox fallback execution."""
+        import modal_taxriskos_forensics_app as modal_app
+        self.assertEqual(modal_app.APP_NAME, "taxriskos-sovereign-forensics")
+        sb_res = modal_app.run_modal_sandbox_verification({
+            "entity_name": "LCI Industries (SEC 10-K IEEPA Surcharge)",
+            "cik": "0000763744",
+            "ieepa_pass_through_surcharge_usd": "888000.00",
+        })
+        self.assertIn("modal_sandbox_status", sb_res)
+        self.assertEqual(sb_res["z3_smt_verification"]["z3_solver_status"], "SATISFIED")
+
+    def test_15_live_rtx4090_ollama_sovereign_council(self):
+        """Verify live RTX 4090 Ollama 3-Agent Council deliberation (with deterministic fallback if offline)."""
+        candidate = {
+            "entity_name": "United Parcel Service, Inc. (IEEPA $500M Surcharge Filer)",
+            "cik": "0001090727",
+            "beneish_m_score": -1.42,
+            "dechow_f_score": 2.15,
+            "sloan_accrual": 0.142,
+            "tariff_risk_index": 1.64,
+            "assets": 250000000,
+        }
+        delib = self.engine.deliberate_candidate(candidate, provider="ollama_rtx4090")
+        self.assertEqual(delib["provider_used"], "ollama_rtx4090")
+        self.assertIn("council_consensus", delib)
+
 
 if __name__ == "__main__":
     unittest.main()
