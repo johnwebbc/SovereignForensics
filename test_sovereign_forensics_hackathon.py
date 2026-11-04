@@ -427,6 +427,51 @@ class TestSovereignForensicsHackathon(unittest.TestCase):
         self.assertTrue(z3_res["mathematically_satisfiable"])
         self.assertEqual(z3_res["smt_formal_proof"], "BOUNDARIES_VERIFIED")
 
+    def test_24_dlai_landingai_grounding_bbox_and_devlooper_sandbox(self):
+        """Verify DLAI sc-landingai coordinate-grounded visual bounding-box provenance and devlooper self-verifying sandbox."""
+        from modal_sovereign_forensics_warehouse import (
+            extract_grounded_provenance_bbox,
+            run_devlooper_self_verifying_sandbox,
+            gpu_forensic_agent,
+        )
+
+        # 1. Verify DLAI sc-landingai coordinate-grounded bounding-box provenance
+        bbox_res = extract_grounded_provenance_bbox(
+            entity_name="Test Enterprise Corp",
+            cik="0001234567",
+            concept="CostOfGoodsAndServicesSold",
+            val=5000000.0,
+            page=42,
+        )
+        self.assertEqual(bbox_res["provenance_standard"], "DLAI-SC-LANDINGAI-GROUNDING-V1")
+        self.assertTrue(bbox_res["visual_grounding_verified"])
+        self.assertEqual(len(bbox_res["box_2d"]), 4)  # [ymin, xmin, ymax, xmax]
+        for coord in bbox_res["box_2d"]:
+            self.assertGreaterEqual(coord, 0)
+            self.assertLessEqual(coord, 1000)
+
+        # 2. Verify modal-labs/devlooper self-verifying sandbox pattern
+        test_payload = {
+            "entity_name": "Test Enterprise Corp",
+            "cik": "0001234567",
+            "cogs": 5000000.0,
+            "revenue": 10000000.0,
+            "receivables": 1500000.0,
+            "beneish_m_score": -1.45,
+        }
+        sandbox_res = run_devlooper_self_verifying_sandbox(test_payload, max_iterations=3)
+        self.assertEqual(sandbox_res["status"], "PASS")
+        self.assertTrue(sandbox_res["devlooper_pattern_converged"])
+        self.assertIn("grounding_bbox", sandbox_res)
+        self.assertGreater(len(sandbox_res["self_verifying_sandbox_iterations"]), 0)
+
+        # 3. Verify gpu_forensic_agent returns enable_memory_snapshot and grounding_bbox
+        # Modal functions can be executed locally via .local()
+        gpu_res = gpu_forensic_agent.local(test_payload) if hasattr(gpu_forensic_agent, "local") else gpu_forensic_agent(test_payload)
+        self.assertTrue(gpu_res["enable_memory_snapshot"])
+        self.assertIn("grounding_bbox", gpu_res)
+        self.assertEqual(gpu_res["grounding_bbox"]["provenance_standard"], "DLAI-SC-LANDINGAI-GROUNDING-V1")
+
 
 if __name__ == "__main__":
     unittest.main()

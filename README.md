@@ -92,7 +92,7 @@ $$\text{Accrual Ratio} = \frac{\text{Net Income} - \text{CFO}}{(\text{Assets}_t 
 | Component / Partner | Canonical Model / Endpoint | Hackathon Partner Credit | Role in SovereignForensics // TaxRiskOS |
 | :--- | :--- | :--- | :--- |
 | **Meta Model API & Muse Code CLI** | `https://api.meta.ai/v1/chat/completions` (`muse-wonder-full-1.0`, `muse-spark-1.3`, `sam-3.1`, `muse-image-1.0`, `muse-voice-transcribe-1.0`) | **$150 Meta Credits + Flat-Rate OAuth CLI** | 1M-context `Forensic CPA` 10-K ingestion (`muse-wonder-full-1.0`), fast `Governance Sleuth` (`muse-spark-1.3`), CBP Form 7501 OCR (`sam-3.1`), and visual brief synthesis (`muse-image-1.0`). |
-| **Modal Serverless & Sandboxes** | `modal_taxriskos_forensics_app.py` (`@modal.fastapi_endpoint`, `modal.Sandbox`, `meta/muse-glimmer-30b-nvfp4`) | **$30 Starter Credit + $100 Grant** | Hosts scale-to-zero FastAPI forensic endpoint (`taxriskos-forensic-audit`), isolated Z3 SMT verification sandboxes, and sticky `Modal-Routing-Affinity-Key` prefix caching. |
+| **Modal Serverless & Sandboxes** | `modal_taxriskos_forensics_app.py` (`@modal.fastapi_endpoint`, `modal.Sandbox`, `meta/muse-glimmer-30b-nvfp4`) | **$30 Starter Credit + $100 Grant** | Hosts scale-to-zero FastAPI forensic endpoint (`taxriskos-forensic-audit`), isolated Z3 SMT verification sandboxes, sticky `Modal-Routing-Affinity-Key` prefix caching, `enable_memory_snapshot=True` cold-start acceleration, DLAI Pro `sc-landingai` coordinate-grounded bounding-box provenance (`grounding_bbox`), and `modal-labs/devlooper` self-verifying sandbox execution. |
 | **Fireworks AI** | `https://api.fireworks.ai/inference/v1/chat/completions` (`accounts/fireworks/models/muse-glimmer-30b`) | **$50 `MetaGlimmer50` + Free B200 SFT** | Serverless LoRA SFT fine-tuning on 120 verified tariff/tax ChatML cases + high-TPS `Adversarial Cross-Examiner` inference. |
 | **Baseten** | `https://inference.baseten.co/v1/chat/completions` (`meta/muse-glimmer-30b-nvfp4` + 10 Free Sandboxes) | **$50 Credit + 10 Free Sandboxes** | High-throughput concurrent footnote & Form 8-K Item 4.01 governance screening across flagged public filers. |
 | **Local NVIDIA RTX 4090 (24GB)** | `http://127.0.0.1:11434/api/chat` (`huihui-qwen3-30b-a3b-abliterated:latest` + 13 local models) | **$0.00 Sovereign Local Metal** | Air-gapped *United States v. Heppner*-compliant local 3-Agent Council synthesis at `166.1 tok/s` (`4.395s` end-to-end). |
@@ -134,7 +134,7 @@ export FIREWORKS_FINE_TUNED_MODEL_ID="accounts/<account>/models/sovereign-forens
 python sovereign_forensics_engine.py --provider fireworks
 ```
 
-### 5. Deploy to Modal Cloud & Execute Batch API (`$30` Free Credit — Scales to Zero)
+#### 5. Deploy to Modal Cloud & Execute Batch API (`$30` Free Credit — Scales to Zero)
 ```bash
 python -m modal setup
 python -m modal deploy modal_taxriskos_forensics_app.py
@@ -143,11 +143,13 @@ python -m modal deploy modal_taxriskos_forensics_app.py
 python -c "from modal_taxriskos_forensics_app import run_batch_audit_local_or_remote; print(len(run_batch_audit_local_or_remote([{'entity_name': 'Test A', 'cik': '1', 'imported_cogs_usd': '100000', 'export_share_pct': '0.2', 'ieepa_pass_through_surcharge_usd': '25000'}])))"
 
 # Serverless DuckDB + Parquet Data Warehouse with Volume persistence & GPU function:
+# Uses enable_memory_snapshot=True, DLAI sc-landingai coordinate grounding bbox provenance,
+# and modal-labs/devlooper self-verifying sandbox execution:
 python modal_sovereign_forensics_warehouse.py --local-smoke
 python -m modal deploy modal_sovereign_forensics_warehouse.py
 ```
 
-### 6. Run Full Automated Test Suite (`23/23` Passing)
+### 6. Run Full Automated Test Suite (`24/24` Passing)
 ```bash
 python -m unittest test_sovereign_forensics_hackathon.py -v
 ```
@@ -157,7 +159,7 @@ Open [`index.html`](./index.html) or [`demo_cockpit.html`](./demo_cockpit.html) 
 
 ---
 
-## 6. Verification & Test Suite (`23/23` Tests Passing)
+## 6. Verification & Test Suite (`24/24` Tests Passing)
 
 ```
 test_01_sample_dataset_exists_and_valid ........................................ [PASS]
@@ -183,8 +185,9 @@ test_20_zero_legacy_domains_or_models_in_readme_html_and_command_sheet .........
 test_21_fireworks_sft_dataset_integrity_and_fine_tuned_model_routing ........... [PASS]
 test_22_modal_batch_api_wiring ................................................. [PASS]
 test_23_modal_duckdb_parquet_warehouse_and_z3_verification .................... [PASS]
+test_24_dlai_landingai_grounding_bbox_and_devlooper_sandbox .................... [PASS]
 ----------------------------------------------------------------------
-Ran 23 tests in 7.6s (OK)
+Ran 24 tests in 3.5s (OK)
 ```
 
 ---

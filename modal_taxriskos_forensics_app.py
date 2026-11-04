@@ -37,7 +37,7 @@ import os
 import re
 import sys
 from decimal import Decimal, ROUND_HALF_UP
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 import modal
 
