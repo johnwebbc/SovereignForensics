@@ -167,5 +167,56 @@
       "latency_ms": 380.0,
       "cost_usd": "0.0220"
     }
+  },
+  {
+    "entity_name": "Tyco International Ltd",
+    "cik": "0000833444",
+    "beneish_m_score": 3.75,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838266_003",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "HealthSouth Corp",
+    "cik": "0000785161",
+    "beneish_m_score": 4.62,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838266_004",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Sunbeam Corp",
+    "cik": "0000095276",
+    "beneish_m_score": 3.91,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838266_005",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
   }
 ]
