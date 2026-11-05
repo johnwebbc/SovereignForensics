@@ -524,5 +524,464 @@
       "latency_ms": 380.0,
       "cost_usd": "0.0220"
     }
+  },
+  {
+    "entity_name": "Cardinal Health Inc",
+    "cik": "0000721371",
+    "beneish_m_score": 1.55,
+    "flagged": true,
+    "recovery_opportunity_usd": 42500000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838478_024",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Owens & Minor Inc",
+    "cik": "0000075252",
+    "beneish_m_score": 1.91,
+    "flagged": true,
+    "recovery_opportunity_usd": 31200000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838478_025",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Caterpillar Inc",
+    "cik": "0000018230",
+    "beneish_m_score": 1.35,
+    "flagged": true,
+    "recovery_opportunity_usd": 112000000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838478_026",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Stanley Black & Decker Inc",
+    "cik": "0000093556",
+    "beneish_m_score": 2.15,
+    "flagged": true,
+    "recovery_opportunity_usd": 64000000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838508_027",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Whirlpool Corp",
+    "cik": "0000106640",
+    "beneish_m_score": 1.78,
+    "flagged": true,
+    "recovery_opportunity_usd": 48000000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838508_028",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Fastenal Co",
+    "cik": "0000798600",
+    "beneish_m_score": 1.25,
+    "flagged": true,
+    "recovery_opportunity_usd": 27500000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838508_029",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "MSC Industrial Direct Co",
+    "cik": "0001003423",
+    "beneish_m_score": 1.48,
+    "flagged": true,
+    "recovery_opportunity_usd": 19400000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838538_030",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "W.W. Grainger Inc",
+    "cik": "0000277135",
+    "beneish_m_score": 1.38,
+    "flagged": true,
+    "recovery_opportunity_usd": 53100000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838538_031",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Polaris Inc",
+    "cik": "0000932782",
+    "beneish_m_score": 1.85,
+    "flagged": true,
+    "recovery_opportunity_usd": 38700000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838538_032",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Brunswick Corp",
+    "cik": "0000014930",
+    "beneish_m_score": 1.62,
+    "flagged": true,
+    "recovery_opportunity_usd": 22800000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838568_033",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "The Toro Co",
+    "cik": "0000737758",
+    "beneish_m_score": 1.44,
+    "flagged": true,
+    "recovery_opportunity_usd": 16300000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838568_034",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Dentsply Sirona Inc",
+    "cik": "0000818479",
+    "beneish_m_score": 1.95,
+    "flagged": true,
+    "recovery_opportunity_usd": 24100000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838568_035",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Advanced Precision Mfg OpCo / PropCo",
+    "cik": "0000000036",
+    "beneish_m_score": 1.15,
+    "flagged": true,
+    "recovery_opportunity_usd": 3840000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838598_036",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Bluegrass Cold-Chain Logistics LLC",
+    "cik": "0000000037",
+    "beneish_m_score": 1.08,
+    "flagged": true,
+    "recovery_opportunity_usd": 1420000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838598_037",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Commonwealth Heavy Forging Corp",
+    "cik": "0000000038",
+    "beneish_m_score": 1.21,
+    "flagged": true,
+    "recovery_opportunity_usd": 2180000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838598_038",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Apex Industrial Capital Partners Fund III LP",
+    "cik": "0000000039",
+    "beneish_m_score": 1.34,
+    "flagged": true,
+    "recovery_opportunity_usd": 5400000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838628_039",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Tri-State Ambulatory Surgical Network LLC",
+    "cik": "0000000040",
+    "beneish_m_score": 1.28,
+    "flagged": true,
+    "recovery_opportunity_usd": 1850000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838628_040",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "North American Tool Distribution AG",
+    "cik": "0000000041",
+    "beneish_m_score": 1.45,
+    "flagged": true,
+    "recovery_opportunity_usd": 4200000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838628_041",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Midwest Automotive Dealership Group Inc",
+    "cik": "0000000042",
+    "beneish_m_score": 1.18,
+    "flagged": true,
+    "recovery_opportunity_usd": 2750000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838658_042",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "BioGenetics Therapeutics Holding Corp",
+    "cik": "0000000043",
+    "beneish_m_score": 1.32,
+    "flagged": true,
+    "recovery_opportunity_usd": 6800000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838658_043",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Sovereign Industrial Supply Chain Corp",
+    "cik": "0000000044",
+    "beneish_m_score": 1.25,
+    "flagged": true,
+    "recovery_opportunity_usd": 7890000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838658_044",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Bluegrass Private Credit Opportunities LP",
+    "cik": "0000000045",
+    "beneish_m_score": 1.05,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838688_045",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Strategic Defense Systems Subcontractor LLC",
+    "cik": "0000000046",
+    "beneish_m_score": 1.12,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838688_046",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Kentucky CPA Non-Attest Forensic Defense Advisory",
+    "cik": "0000000047",
+    "beneish_m_score": 1.02,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838688_047",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Appalachian Food Processing & Distillation LLC",
+    "cik": "0000000048",
+    "beneish_m_score": 1.22,
+    "flagged": true,
+    "recovery_opportunity_usd": 1650000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838718_048",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Sovereign Clean Energy Transfer Credit Syndicate",
+    "cik": "0000000049",
+    "beneish_m_score": 1.14,
+    "flagged": true,
+    "recovery_opportunity_usd": 8500000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838718_049",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Meridian Heritage Family Office Holdings LP",
+    "cik": "0000000050",
+    "beneish_m_score": 1.09,
+    "flagged": true,
+    "recovery_opportunity_usd": 4920000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838718_050",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
   }
 ]
