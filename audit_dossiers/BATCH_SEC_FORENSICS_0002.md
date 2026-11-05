@@ -1,5 +1,5 @@
 # SovereignForensics // Batch SEC Audit 0002
-**Model:** `muse-wonder-1.0` | **Tokens:** 1735 (Cached: 1140) in / 1500 out | **Cost:** $0.0326
+**Model:** `muse-wonder-1.0` | **Tokens:** 1735 (Cached: 1652) in / 1500 out | **Cost:** $0.0307
 
 ## Filers Screened:
 MICRO-BATCH LANE 1 #SEC_0002 (5 REAL SEC FILERS):
@@ -10,4 +10,25 @@ MICRO-BATCH LANE 1 #SEC_0002 (5 REAL SEC FILERS):
 5. VALERITAS HOLDINGS INC. (CIK: 0001619250, FY: 2016) | Assets: $34,516,000 | Sales: $19,550,000 | NetInc: $-46,367,000 | CFO: $nan | M-Score: 4753.82 | F-Score: 0.28 | TariffRisk: 2.36 | Flag: CRITICAL: BALANCE SHEET IMBALANCE
 
 ## Meta Model Deliberation:
-{"batch_id": "MICRO-BATCH LANE 1 #SEC_0002", "targets_count": 5, "results": [{"index": 1, "entity_name": "SRX Global Inc.", "identifier": "CIK: 0001471727, FY: 2019", "statutory_hook": "Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices", "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 8010.71 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.02 < 1.0 low Dechow misstatement signal, Sloan = (-6026000 - (-6903000))/53532000 = 0.0164 < 0.10 does not flag Sloan anomaly. No verified tariff recovery.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -6026000 == -6903000 + 877000 holds arithmetically, but Assets/Liabilities/Equity balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.", "actionable_memo": "DO NOT DEDUCT under UCC 2-717 on this record. Quarantine vendor claim, obtain complete SEC 10-K/Q financial statements, prior-year Beneish inputs, AP vendor master, tariff surcharge invoices and CBP 7501s, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA, and reconcile balance sheet before any credit memo."}, {"index": 2, "entity_name": "Peekay Boutiques, Inc.", "identifier": "CIK: 0001595552, FY: 2015", "statutory_hook": "Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices", "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 7562.39 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.43 < 1.0 low Dechow signal, Sloan = (-4181890 - 552869)/52433166 = -0.0903 < 0.10 no positive Sloan flag, TariffRisk 1.0 elevated but undocumented. No verified tariff recovery.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -4181890 == 552869 + -4734759 holds arithmetically, but balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.", "actionable_memo": "DO NOT DEDUCT under UCC 2-
+{
+  "batch_id": "SEC_0002",
+  "targets_count": 5,
+  "results": [
+    {
+      "index": 1,
+      "entity_name": "SRX Global Inc.",
+      "identifier": "CIK: 0001471727, FY: 2019",
+      "statutory_hook": "UCC \u00a7 2-717 Deduction of Damages From Price; UCC \u00a7 2-305(2) Open Price Terms in Good Faith; 19 U.S.C. \u00a7 1313 Duty Drawback; Beneish M-Score > -1.78 and Dechow F-Score forensic audit",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE flagged. Beneish M-Score 8010.71 >> -1.78 signals extreme manipulation probability, likely from distorted DSRI/GMI/AQI inputs or filing imbalance. F-Score 0.02 < 1.0 signals low Dechow misstatement multiplier. Sloan Accrual = (-6026000 - (-6903000))/53532000 = 0.0164 < 0.10, no severe Sloan anomaly. Earnings unverifiable until balance sheet reconciled.",
+      "estimated_claim_or_surcharge_usd": 85673,
+      "z3_smt_invariant": "SAT for arithmetic identity only: NetIncome -6026000 = CFO -6903000 + Accruals 877000; Accruals/AvgAssets = 0.0164. UNSAT for balance-sheet integrity per CRITICAL imbalance flag - Assets != Liabilities + Equity as filed requires Z3 re-verification against SEC 10-K.",
+      "actionable_memo": "MF-02/MF-05/MF-07: Anchor to SEC 10-K FY2019 and CBP Form 7501. Estimated surcharge at risk = Sales 15577000 x 5% midpoint surcharge x TariffRisk 0.11 = 85673. Issue UCC 2-717 deduction notice and suspend surcharge remittance pending supplier CBP refund pass-through proof and reconciled balance sheet within 48 hours. Non-advisory calculation only."
+    },
+    {
+      "index": 2,
+      "entity_name": "Peekay Boutiques, Inc.",
+      "identifier": "CIK: 0001595552, FY: 2015",
+      "statutory_hook": "UCC \u00a7 2-717 Deduction of Damages From Price; UCC \u00a7 2-305(2) Open Price Terms in Good Faith; 19 U.S.C. \u00a7 1313 Duty Drawback; Beneish M-Score > -1.78 forensic audit",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE flagged. Beneish M-Score 7562.39 >> -1.78 signals extreme manipulation probability. F-Score 0.43 < 1.0 signals low Dechow misstatement multiplier. Sloan Accrual = (-4181890 - 552869)/52433166 = -0.0903, absolute value approaching 0.10 threshold, negative accrual divergence despite positive CFO. TariffRisk 1.0 is maximum exposure.",
+      "estimated_claim_or_surcharge_usd": 2070851,
+      "z3_smt_invariant": "SAT for arithmetic identity only: NetIncome -4181890 = CFO 552869 + Accruals -4734759; Accruals

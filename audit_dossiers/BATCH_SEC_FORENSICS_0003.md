@@ -1,5 +1,5 @@
 # SovereignForensics // Batch SEC Audit 0003
-**Model:** `muse-wonder-1.0` | **Tokens:** 1742 (Cached: 1140) in / 1500 out | **Cost:** $0.0326
+**Model:** `muse-wonder-1.0` | **Tokens:** 1742 (Cached: 1652) in / 1500 out | **Cost:** $0.0307
 
 ## Filers Screened:
 MICRO-BATCH LANE 1 #SEC_0003 (5 REAL SEC FILERS):
@@ -10,4 +10,33 @@ MICRO-BATCH LANE 1 #SEC_0003 (5 REAL SEC FILERS):
 5. MOON RIVER STUDIOS, INC. (CIK: 0001476278, FY: 2013) | Assets: $48,951,444 | Sales: $3,267,825 | NetInc: $-117,630 | CFO: $-2,099,533 | M-Score: 3790.14 | F-Score: 0.41 | TariffRisk: 1.0 | Flag: ELEVATED: BENEISH OUTLIER
 
 ## Meta Model Deliberation:
-{"batch_id": "MICRO-BATCH LANE 1 #SEC_0003", "targets_count": 5, "results": [{"index": 1, "entity_name": "VirnetX Holding Corporation", "identifier": "CIK: 0001082324, FY: 2023", "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)", "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / BENEISH OUTLIER - M-Score 4325.28 >> -1.78 signals extreme Beneish distortion, likely driven by Sales $48,000 vs Assets $152,975,000 denominator effects; F-Score 0.32 < 1.0 does not confirm Dechow misstatement; Sloan = (-27,871,000 - (-16,893,000))/152,975,000 = -0.0718, not > 0.10. No verifiable tariff recovery.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "Z3 CHECK: NetIncome == CFO + Accruals => -27,871,000 == -16,893,000 + (-10,978,000) SAT; Sloan -0.0718 <= 0.10 SAT", "actionable_memo": "Do not execute UCC 2-717 deduction. Reconcile balance sheet imbalance from primary 10-K, recompute Beneish DSRI/GMI/AQI/SGI components with prior-year comparatives, and require AP vendor master and CBP records before any claim. MF-01/MF-02 fail for tariff recovery."}, {"index": 2, "entity_name": "First America Resources Corporation", "identifier": "CIK: 0001525306, FY: 2025", "statutory_hook": "Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)", "forensic_verdict": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4270.87 >> -1.78 and F-Score 7.7 > 1.0; Sloan = (211,112 - 458,921)/6,884,472 = -0.0360, not > 0.10, indicating risk is Beneish/Dechow component-driven not Sloan cash-accrual driven. TariffRisk -4.38 is non-economic and unverifiable.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "Z3 CHECK: NetIncome == CFO + Accruals => 211,112 == 458,921 + (-247,809) SAT; Sloan -0.0360 <= 0.10 SAT", "actionable_memo": "Escalate for forensic review of RSST accruals, ChgRec, ChgInv, SoftAssets and Beneish inputs from filed 10-K/Q. Do not withhold AP under UCC 2-717 without documented unrefunded tariff surcharge invoices. MF-02/MF-06 require primary-source verification."}, {"index": 3, "entity_name": "Titan Environmental Solutions Inc.", "identifier": "CIK: 0001514056, FY: 2023", "statutory_hook": "Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)", "forensic_verdict": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4175.01 >> -1.78 and F-Score 270.27 >> 1.0, extreme Dechow outlier requiring recomputation; Sloan = (-658,663 - (-312,264))/22,175,474 = -0.0156, not > 0.10. TariffRisk -226.17 is invalid as a tariff exposure measure.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "Z3 CHECK: NetIncome
+{
+  "batch_id": "MICRO-BATCH LANE 1 #SEC_0003",
+  "targets_count": 5,
+  "results": [
+    {
+      "index": 1,
+      "entity_name": "VirnetX Holding Corporation",
+      "identifier": "CIK: 0001082324, FY: 2023",
+      "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly audit; UCC 2-717 / 19 U.S.C. 1313 NOT established - no CBP Form 7501, importer AP, or tariff surcharge evidence in provided data",
+      "forensic_verdict": "CRITICAL BALANCE SHEET IMBALANCE / BENEISH OUTLIER - REJECT M-SCORE AT FACE VALUE: M-Score 4325.28 >> -1.78, F-Score 0.32 < 1.0. Sales $48,000 vs Assets $152,975,000 makes SGI/DSRI/GMI mathematically explosive and non-deterministic. Sloan = (-27,871,000 - (-16,893,000))/152,975,000 = -0.0718, below +0.10 threshold. Net loss with negative CFO, no verifiable tariff claim.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "Z3 SAT: NetIncome == CFO + Accruals => -27871000 == -16893000 + (-10978000); Sloan=-0.0718 <= 0.10",
+      "actionable_memo": "MF-02/MF-09 FAIL on tariff recovery: Do not deduct under UCC 2-717. Require full 10-K balance sheet tie-out Assets=Liabilities+Equity, prior-year Beneish inputs, and receivables/sales detail to explain 4325.28 outlier. No $50k+ MF-05 tariff claim verified; estimated claim $0 pending primary documents."
+    },
+    {
+      "index": 2,
+      "entity_name": "First America Resources Corporation",
+      "identifier": "CIK: 0001525306, FY: 2025",
+      "statutory_hook": "Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent misstatement risk; UCC 2-717 / 19 U.S.C. 1313 NOT established - TariffRisk -4.38 is invalid/non-physical and no CBP/AP surcharge evidence provided",
+      "forensic_verdict": "CRITICAL CONCURRENT BENEISH + DECHOW RISK: M-Score 4270.87 >> -1.78, F-Score 7.7 >> 1.0 signals high manipulation/misstatement probability per supplied models, but extreme M-Score indicates input distortion vs Sales $18,790,946 / Assets $6,884,472. Sloan = (211,112 - 458,921)/6,884,472 = -0.0360, below +0.10, CFO exceeds NetInc. Requires restatement-level review, not tariff deduction.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "Z3 SAT: NetIncome == CFO + Accruals => 211112 == 458921 + (-247809); Sloan=-0.0360 <= 0.10",
+      "actionable_memo": "Halt AP deduction. Under MF-02/MF-09, demand audited 10-K prior-year comparatives for RSST, ChgRec, ChgInv, SoftAssets, issuance, and Beneish 8 variables; reconcile F-Score 7.7 drivers. Negative TariffRisk invalidates tariff model. No verified MF-05/MF-06 counterparty surcharge; claim $0."
+    },
+    {
+      "index": 3,
+      "entity_name": "Titan Environmental Solutions Inc.",
+      "identifier": "CIK: 0001514056, FY: 2023",
+      "statutory_hook": "Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent misstatement risk; UCC 2-717 / 19 U.S.C. 1313 NOT established - TariffRisk -226.17 invalid and no CBP Form 7501 or AP surcharge evidence provided",
+      "forensic_verdict": "CRITICAL CONCURRENT BENEISH + DECHOW RISK - EXTREME OUTLIER: M-Score 4175.01 >> -1.78, F-Score 270.27 >> 1

@@ -1,5 +1,5 @@
 # SovereignForensics // Batch SEC Audit 0004
-**Model:** `muse-wonder-1.0` | **Tokens:** 1734 (Cached: 1140) in / 1500 out | **Cost:** $0.0326
+**Model:** `muse-wonder-1.0` | **Tokens:** 1734 (Cached: 1652) in / 1500 out | **Cost:** $0.0307
 
 ## Filers Screened:
 MICRO-BATCH LANE 1 #SEC_0004 (5 REAL SEC FILERS):
@@ -10,33 +10,4 @@ MICRO-BATCH LANE 1 #SEC_0004 (5 REAL SEC FILERS):
 5. Swisher Hygiene Inc. (CIK: 0001504747, FY: 2015) | Assets: $113,199,000 | Sales: $0 | NetInc: $-46,808,000 | CFO: $-8,453,000 | M-Score: 1974.26 | F-Score: 0.19 | TariffRisk: 1.0 | Flag: CRITICAL: BALANCE SHEET IMBALANCE
 
 ## Meta Model Deliberation:
-{
-  "batch_id": "SEC_0004",
-  "targets_count": 5,
-  "results": [
-    {
-      "index": 1,
-      "entity_name": "VirnetX Holding Corporation",
-      "identifier": "CIK: 0001082324, FY: 2020",
-      "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no documented UCC \u00a7 2-717 tariff surcharge, UCC \u00a7 2-305(2) pass-through, or 19 U.S.C. \u00a7 1313 drawback claim in provided record",
-      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 3171.99 >> -1.78 signals extreme model outlier, but F-Score 0.19 < 1.0 and Sloan -0.0041 do not corroborate accrual manipulation; M-Score likely distorted by non-recurring licensing revenue/scale variables and requires prior-year DSRI/GMI/AQI/SGI recomputation before any finding",
-      "estimated_claim_or_surcharge_usd": 0,
-      "z3_smt_invariant": "SAT: NetIncome 280429000 = CFO 281389000 + Accruals -960000; Sloan=(280429000-281389000)/234793000=-0.0041 <= 0.10",
-      "actionable_memo": "Do not execute UCC 2-717 AP deduction on this record: no CBP Form 7501, supplier surcharge invoice, or AP vendor balance >=$50000 is verified. Recompute Beneish 8 variables from FY2019/FY2020 10-K, isolate non-recurring patent-litigation revenue, and close unless primary filings corroborate manipulation."
-    },
-    {
-      "index": 2,
-      "entity_name": "Gyre Therapeutics, Inc.",
-      "identifier": "CIK: 0001124105, FY: 2020",
-      "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no documented UCC \u00a7 2-717 tariff surcharge, UCC \u00a7 2-305(2) pass-through, or 19 U.S.C. \u00a7 1313 drawback claim in provided record",
-      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / BENEISH OUTLIER - M-Score 3111.41 >> -1.78, but F-Score 0.22 < 1.0 and Sloan -0.1173 show negative, not income-inflating, accruals; loss-making biotech profile can distort SGI/DSRI/GMI inputs, so manipulation is unproven on supplied totals",
-      "estimated_claim_or_surcharge_usd": 0,
-      "z3_smt_invariant": "SAT: NetIncome -55178000 = CFO -43613000 + Accruals -11565000; Sloan=(-55178000+43613000)/98554000=-0.1173 <= 0.10",
-      "actionable_memo": "Do not execute UCC 2-717 AP deduction on this record: no tariff surcharge, CBP entry, or verified AP balance is documented. Obtain FY2019/FY2020 10-K balance-sheet components, verify assets/liabilities/equity identity, and recompute DSRI, AQI, LVGI and TATA before escalating."
-    },
-    {
-      "index": 3,
-      "entity_name": "Datacentrex, Inc.",
-      "identifier": "CIK: 0001853825, FY: 2025",
-      "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no documented UCC \u00a7 2-717 tariff surcharge, UCC \u00a7 2-305(2) pass-through, or 19 U.S.C. \u00a7 1313 drawback claim in provided record",
-      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 
+{"batch_id": "SEC_0004", "targets_count": 5, "results": [{"index": 1, "entity_name": "VirnetX Holding Corporation", "identifier": "CIK: 0001082324, FY: 2020", "statutory_hook": "UCC 2-717 and 19 USC 1313 evaluated; no CBP Form 7501, AP vendor record, or documented tariff surcharge in provided data to support deduction or drawback. Beneish and Sloan screening only.", "forensic_verdict": "ELEVATED BENEISH OUTLIER: M-Score 3171.99 >> -1.78 threshold, but F-Score 0.19 < 1.0 and Sloan accrual ratio -0.0041 not > 0.10. Extreme M-Score likely distorted by non-recurring patent-litigation revenue and prior-year denominators; not independently sufficient to prove manipulation or a tariff claim.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "SAT: NetIncome = CFO + Accruals; 280429000 = 281389000 + (-960000); Sloan = -960000/234793000 = -0.00409", "actionable_memo": "DO NOT DEDUCT on current record. Obtain audited 10-K balance-sheet comparatives to recompute all 8 Beneish variables, isolate non-recurring litigation revenue, and request CBP 7501/AP surcharge ledgers before asserting any UCC 2-717 or 1313 recovery."}, {"index": 2, "entity_name": "Gyre Therapeutics, Inc.", "identifier": "CIK: 0001124105, FY: 2020", "statutory_hook": "UCC 2-717 and 19 USC 1313 evaluated; no CBP Form 7501, AP vendor record, or documented tariff surcharge in provided data to support deduction or drawback. Beneish and Sloan screening only.", "forensic_verdict": "CRITICAL SCREENING ANOMALY BUT UNVERIFIED: M-Score 3111.41 >> -1.78, F-Score 0.22 < 1.0, Sloan -0.1173 not > 0.10. Negative accruals indicate CFO exceeded net income on accrual basis despite net loss; balance-sheet imbalance flag requires source filing verification and may reflect recapitalization, predecessor/successor, or data-mapping errors.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "SAT: NetIncome = CFO + Accruals; -55178000 = -43613000 + (-11565000); Sloan = -11565000/98554000 = -0.11735", "actionable_memo": "DO NOT DEDUCT on current record. Reconcile FY2020 10-K assets, liabilities, and equity from EDGAR, verify entity/predecessor mapping for CIK 0001124105, recompute Beneish inputs, and obtain CBP/AP records before any tariff recovery claim."}, {"index": 3, "entity_name": "Datacentrex, Inc.", "identifier": "CIK: 0001853825, FY: 2025", "statutory_hook": "UCC 2-717 and 19 USC 1313 evaluated; no CBP Form 7501, AP vendor record, or documented tariff surcharge in provided data to support deduction or drawback. Beneish and Sloan screening only.", "forensic_verdict": "ELEVATED BENEISH OUTLIER: M-Score 3029.91 >> -1.78, F-Score 0.27 < 1.0, Sloan -0.0307 not > 0.10. Net loss with less-negative CFO produces negative accruals; extreme M-Score is not corroborated by F
