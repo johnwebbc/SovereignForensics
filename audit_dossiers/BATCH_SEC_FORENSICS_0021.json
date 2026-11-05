@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0021",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:50:10.012414+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0021",
+    "req_id": "meta_mb_1793847000_LANE1_SEC_0021_c361",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1754,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0327",
+    "elapsed_sec": 9.5,
+    "response_text": "{\"batch_id\": \"SEC_0021\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Miramar Labs, Inc.\", \"identifier\": \"CIK: 0001586727, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; Sloan Accrual Anomaly; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 contingent on CBP Form 7501 verification\", \"forensic_verdict\": \"ELEVATED: DECHOW MISSTATEMENT RISK - M-Score 200.32 >> -1.78 signals high manipulation probability, F-Score 1.04 > 1.0 signals misstatement risk. Sloan accrual (-14494248 - (-11871054))/13377790 = -0.1961, absolute accrual magnitude severe but negative direction, not > +0.10 cash-to-accrual inflation. No tariff recovery asserted without verified surcharge pass-through.\", \"estimated_claim_or_surcharge_usd\": 2623194, \"z3_smt_invariant\": \"VERIFIED: NetIncome = CFO + Accruals => -14494248 = -11871054 + (-2623194); Sloan = -0.1961; M-Score 200.32 > -1.78 SAT for manipulation flag\", \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K FY2016, recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Dechow RSST/ChgRec/ChgInv from primary filings; extreme M-Score suggests balance-sheet imbalance/data scaling error requiring deterministic re-verification before any UCC \u00a7 2-717 deduction. Do not withhold AP absent documented 3%-8% tariff surcharge and unrefunded CBP refund.\"}, {\"index\": 2, \"entity_name\": \"General Agriculture Corp\", \"identifier\": \"CIK: 0001519894, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly > 0.10; Dechow F-Score model; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 contingent on CBP Form 7501 verification\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 199.23 >> -1.78, Sloan (8172458 - 110240)/42161547 = 0.1912 > 0.10 flags severe cash-to-accrual manipulation. Net income $8.17M on CFO only $0.11M is accrual-driven. F-Score 0.37 < 1.0 does not offset Beneish/Sloan convergence.\", \"estimated_claim_or_surcharge_usd\": 8062218, \"z3_smt_invariant\": \"VERIFIED: NetIncome = CFO + Accruals => 8172458 = 110240 + 8062218; Sloan = 0.1912 > 0.10 SAT for severe accrual anomaly\", \"actionable_memo\": \"MF-02/MF-05/MF-09: Pull SEC filing FY2013 and vendor AP master, isolate receivables/inventory accruals driving $8,062,218 gap. Quantified accrual exposure $8,062,218 is audit claim magnitude, not an automatic tariff claim. Apply UCC \u00a7 2-717 deduction only to documented unrefunded tariff surcharges with CBP 7501 and invoice proof; otherwise forensic restatement referral.\"}, {\"index\": 3, \"entity_name\": \"SUNCOKE ENERGY, INC.\", \"identifier\": \"CIK: 0001514705, FY: 2025\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; "
+  },
+  "input_filers": [
+    {
+      "cik": 1586727,
+      "entity_name": "Miramar Labs, Inc.",
+      "fy": 2016,
+      "assets": 13377790.0,
+      "sales": 20446533.0,
+      "net_income": -14494248.0,
+      "cfo": -11871054.0,
+      "beneish_m_score": 200.32,
+      "dechow_f_score": 1.04,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: DECHOW MISSTATEMENT RISK",
+      "bs_imbalance_usd": 725597.0
+    },
+    {
+      "cik": 1519894,
+      "entity_name": "General Agriculture Corp",
+      "fy": 2013,
+      "assets": 42161547.0,
+      "sales": 17490837.0,
+      "net_income": 8172458.0,
+      "cfo": 110240.0,
+      "beneish_m_score": 199.23,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1514705,
+      "entity_name": "SUNCOKE ENERGY, INC.",
+      "fy": 2025,
+      "assets": 1789900000.0,
+      "sales": 2063200000.0,
+      "net_income": 95900000.0,
+      "cfo": 249000000.0,
+      "beneish_m_score": 195.35,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.2,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 54100000.0
+    },
+    {
+      "cik": 864839,
+      "entity_name": "ROYALE ENERGY FUNDS, INC.",
+      "fy": 2014,
+      "assets": 14815692.0,
+      "sales": 3221498.0,
+      "net_income": 1149153.0,
+      "cfo": -2911000.0,
+      "beneish_m_score": 192.13,
+      "dechow_f_score": 0.14,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 898035.0
+    },
+    {
+      "cik": 894871,
+      "entity_name": "THE ARENA GROUP HOLDINGS, INC.",
+      "fy": 2018,
+      "assets": 37157803.0,
+      "sales": 5700199.0,
+      "net_income": -6284313.0,
+      "cfo": -4194392.0,
+      "beneish_m_score": 191.41,
+      "dechow_f_score": 270.22,
+      "tariff_risk_index": 57.72,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 4512318.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0021\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Miramar Labs, Inc.\", \"identifier\": \"CIK: 0001586727, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; Sloan Accrual Anomaly; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 contingent on CBP Form 7501 verification\", \"forensic_verdict\": \"ELEVATED: DECHOW MISSTATEMENT RISK - M-Score 200.32 >> -1.78 signals high manipulation probability, F-Score 1.04 > 1.0 signals misstatement risk. Sloan accrual (-14494248 - (-11871054))/13377790 = -0.1961, absolute accrual magnitude severe but negative direction, not > +0.10 cash-to-accrual inflation. No tariff recovery asserted without verified surcharge pass-through.\", \"estimated_claim_or_surcharge_usd\": 2623194, \"z3_smt_invariant\": \"VERIFIED: NetIncome = CFO + Accruals => -14494248 = -11871054 + (-2623194); Sloan = -0.1961; M-Score 200.32 > -1.78 SAT for manipulation flag\", \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K FY2016, recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Dechow RSST/ChgRec/ChgInv from primary filings; extreme M-Score suggests balance-sheet imbalance/data scaling error requiring deterministic re-verification before any UCC \u00a7 2-717 deduction. Do not withhold AP absent documented 3%-8% tariff surcharge and unrefunded CBP refund.\"}, {\"index\": 2, \"entity_name\": \"General Agriculture Corp\", \"identifier\": \"CIK: 0001519894, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly > 0.10; Dechow F-Score model; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 contingent on CBP Form 7501 verification\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 199.23 >> -1.78, Sloan (8172458 - 110240)/42161547 = 0.1912 > 0.10 flags severe cash-to-accrual manipulation. Net income $8.17M on CFO only $0.11M is accrual-driven. F-Score 0.37 < 1.0 does not offset Beneish/Sloan convergence.\", \"estimated_claim_or_surcharge_usd\": 8062218, \"z3_smt_invariant\": \"VERIFIED: NetIncome = CFO + Accruals => 8172458 = 110240 + 8062218; Sloan = 0.1912 > 0.10 SAT for severe accrual anomaly\", \"actionable_memo\": \"MF-02/MF-05/MF-09: Pull SEC filing FY2013 and vendor AP master, isolate receivables/inventory accruals driving $8,062,218 gap. Quantified accrual exposure $8,062,218 is audit claim magnitude, not an automatic tariff claim. Apply UCC \u00a7 2-717 deduction only to documented unrefunded tariff surcharges with CBP 7501 and invoice proof; otherwise forensic restatement referral.\"}, {\"index\": 3, \"entity_name\": \"SUNCOKE ENERGY, INC.\", \"identifier\": \"CIK: 0001514705, FY: 2025\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; "
+}

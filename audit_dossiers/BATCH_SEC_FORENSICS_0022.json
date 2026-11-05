@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0022",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:50:20.776815+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0022",
+    "req_id": "meta_mb_1793847010_LANE1_SEC_0022_45af",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1754,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0327",
+    "elapsed_sec": 10.25,
+    "response_text": "{\n  \"batch_id\": \"SEC_0022\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"SCIENTURE HOLDINGS, INC.\",\n      \"identifier\": \"CIK: 0001382574, FY: 2025\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly > 0.10; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff pass-through review - TariffRisk: 35.91\",\n      \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 188.13 >> -1.78, Sloan = (9065798 - (-13379683))/104853805 = 0.2141 > 0.10. F-Score 0.35 < 1.0 does not offset Beneish/Sloan. Positive Net Income despite $-13,379,683 CFO indicates severe non-cash accrual earnings.\",\n      \"estimated_claim_or_surcharge_usd\": 22445481,\n      \"z3_smt_invariant\": \"Z3 VERIFIED: NetIncome == CFO + Accruals => 9065798 == -13379683 + 22445481; SloanRatio=0.2141 > 0.10 INVARIANT VIOLATED\",\n      \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K/Q CIK 0001382574. Quantify accrual gap $22,445,481 and audit tariff surcharge on $431,609 sales at TariffRisk 35.91 before any UCC \u00a7 2-717 deduction. Non-advisory calculation only; require CBP Form 7501 / AP vendor proof, MF-05 magnitude review, independent counsel/CPA confirmation.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"WPX Energy, Inc.\",\n      \"identifier\": \"CIK: 0001518832, FY: 2018\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; Dechow F-Score; UCC \u00a7 2-717 deduction only if documented tariff surcharge exists - TariffRisk: 0.65\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / M-SCORE ARTIFACT RISK - M-Score 183.46 >> -1.78 but F-Score 0.17 < 1.0 and Sloan = (354000000 - 883000000)/8207000000 = -0.0645 < 0.10. CFO exceeds Net Income; no Sloan cash-to-accrual manipulation signal. Extreme M-Score likely driven by input imbalance / DSRI, GMI, AQI or LVGI outlier requiring recomputation.\",\n      \"estimated_claim_or_surcharge_usd\": 529000000,\n      \"z3_smt_invariant\": \"Z3 VERIFIED: NetIncome == CFO + Accruals => 354000000 == 883000000 + (-529000000); SloanRatio=-0.0645 <= 0.10 INVARIANT SATISFIED\",\n      \"actionable_memo\": \"MF-02/MF-09: Recompute Beneish 8 variables from SEC filing CIK 0001518832 original 10-K; do not assert manipulation on M-Score alone. Accrual gap absolute $529,000,000 is negative accrual / cash-backed earnings. TariffRisk 0.65 low; no UCC \u00a7 2-717 credit memo without supplier invoice and CBP proof. Non-advisory calculation only.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"PROTHENA CORPORATION PUBLIC LIMITED COMPANY\",\n      \"identifier\": \"CIK: 0001559053, FY: 2021\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78;"
+  },
+  "input_filers": [
+    {
+      "cik": 1382574,
+      "entity_name": "SCIENTURE HOLDINGS, INC.",
+      "fy": 2025,
+      "assets": 104853805.0,
+      "sales": 431609.0,
+      "net_income": 9065798.0,
+      "cfo": -13379683.0,
+      "beneish_m_score": 188.13,
+      "dechow_f_score": 0.35,
+      "tariff_risk_index": 35.91,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1518832,
+      "entity_name": "WPX Energy, Inc.",
+      "fy": 2018,
+      "assets": 8207000000.0,
+      "sales": 2310000000.0,
+      "net_income": 354000000.0,
+      "cfo": 883000000.0,
+      "beneish_m_score": 183.46,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 0.65,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8207000000.0
+    },
+    {
+      "cik": 1559053,
+      "entity_name": "PROTHENA CORPORATION PUBLIC LIMITED COMPANY",
+      "fy": 2021,
+      "assets": 609366000.0,
+      "sales": 200577000.0,
+      "net_income": 66975000.0,
+      "cfo": 92605000.0,
+      "beneish_m_score": 183.1,
+      "dechow_f_score": 0.3,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5645000.0
+    },
+    {
+      "cik": 48039,
+      "entity_name": "HOLLYFRONTIER CORP",
+      "fy": 2017,
+      "assets": 10692154000.0,
+      "sales": 14251299000.0,
+      "net_income": 805395000.0,
+      "cfo": 985868000.0,
+      "beneish_m_score": 180.53,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5321325000.0
+    },
+    {
+      "cik": 1824920,
+      "entity_name": "IonQ, Inc.",
+      "fy": 2023,
+      "assets": 597992000.0,
+      "sales": 22042000.0,
+      "net_income": -48511000.0,
+      "cfo": -44698000.0,
+      "beneish_m_score": 176.08,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 61824000.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0022\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"SCIENTURE HOLDINGS, INC.\",\n      \"identifier\": \"CIK: 0001382574, FY: 2025\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly > 0.10; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff pass-through review - TariffRisk: 35.91\",\n      \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 188.13 >> -1.78, Sloan = (9065798 - (-13379683))/104853805 = 0.2141 > 0.10. F-Score 0.35 < 1.0 does not offset Beneish/Sloan. Positive Net Income despite $-13,379,683 CFO indicates severe non-cash accrual earnings.\",\n      \"estimated_claim_or_surcharge_usd\": 22445481,\n      \"z3_smt_invariant\": \"Z3 VERIFIED: NetIncome == CFO + Accruals => 9065798 == -13379683 + 22445481; SloanRatio=0.2141 > 0.10 INVARIANT VIOLATED\",\n      \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K/Q CIK 0001382574. Quantify accrual gap $22,445,481 and audit tariff surcharge on $431,609 sales at TariffRisk 35.91 before any UCC \u00a7 2-717 deduction. Non-advisory calculation only; require CBP Form 7501 / AP vendor proof, MF-05 magnitude review, independent counsel/CPA confirmation.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"WPX Energy, Inc.\",\n      \"identifier\": \"CIK: 0001518832, FY: 2018\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; Dechow F-Score; UCC \u00a7 2-717 deduction only if documented tariff surcharge exists - TariffRisk: 0.65\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / M-SCORE ARTIFACT RISK - M-Score 183.46 >> -1.78 but F-Score 0.17 < 1.0 and Sloan = (354000000 - 883000000)/8207000000 = -0.0645 < 0.10. CFO exceeds Net Income; no Sloan cash-to-accrual manipulation signal. Extreme M-Score likely driven by input imbalance / DSRI, GMI, AQI or LVGI outlier requiring recomputation.\",\n      \"estimated_claim_or_surcharge_usd\": 529000000,\n      \"z3_smt_invariant\": \"Z3 VERIFIED: NetIncome == CFO + Accruals => 354000000 == 883000000 + (-529000000); SloanRatio=-0.0645 <= 0.10 INVARIANT SATISFIED\",\n      \"actionable_memo\": \"MF-02/MF-09: Recompute Beneish 8 variables from SEC filing CIK 0001518832 original 10-K; do not assert manipulation on M-Score alone. Accrual gap absolute $529,000,000 is negative accrual / cash-backed earnings. TariffRisk 0.65 low; no UCC \u00a7 2-717 credit memo without supplier invoice and CBP proof. Non-advisory calculation only.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"PROTHENA CORPORATION PUBLIC LIMITED COMPANY\",\n      \"identifier\": \"CIK: 0001559053, FY: 2021\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78;"
+}

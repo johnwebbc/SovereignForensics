@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0020",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:50:00.000997+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0020",
+    "req_id": "meta_mb_1793846988_LANE1_SEC_0020_6368",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1728,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 11.55,
+    "response_text": "{\"batch_id\": \"SEC_0020\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"CES Synergies, Inc.\", \"identifier\": \"CIK: 0001556508, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score and Sloan Accrual Anomaly audit; UCC \\u00a7 2-305(2) and UCC \\u00a7 2-717 only if AP tariff surcharge documented on CBP Form 7501 / vendor invoice\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 225.01 >> -1.78 threshold signals high manipulation probability, likely extreme input distortion; F-Score 0.28 < 1.0 low Dechow misstatement risk; Sloan = (389083-872040)/8837007 = -0.0547, not > 0.10, no severe positive accrual anomaly. MF-02/MF-09 require re-verification of DSRI/GMI/AQI/SGI inputs from SEC 10-K before any claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT-COMPUTABLE: Accruals = NetIncome - CFO = 389083 - 872040 = -482957; NetIncome == CFO + Accruals verified arithmetically; M-Score inputs UNVERIFIED pending prior-year balance sheet\", \"actionable_memo\": \"Do not deduct under UCC \\u00a7 2-717 on M-Score alone. Pull FY2012-2013 10-K, recompute Beneish variables, inspect receivables, gross margin and asset quality. No quantified tariff surcharge in record, estimated recoverable = $0. MF-05 $50k minimum not met on present evidence.\"}, {\"index\": 2, \"entity_name\": \"Kitara Media Corp.\", \"identifier\": \"CIK: 0001350773, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score and Sloan Accrual Anomaly audit; UCC \\u00a7 2-305(2) and 19 U.S.C. \\u00a7 1313 only if documented tariff pass-through exists\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 216.49 >> -1.78 signals high manipulation probability / model input failure; F-Score 0.56 < 1.0 low-moderate Dechow risk; Sloan = (-186000 - (-388000))/27916000 = 0.0072, not > 0.10, no Sloan accrual flag; TariffRisk 1.0 baseline, no tariff distortion evidenced.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT-COMPUTABLE: Accruals = -186000 - (-388000) = 202000; NetIncome == CFO + Accruals verified arithmetically; M-Score inputs UNVERIFIED pending prior-year SEC filing\", \"actionable_memo\": \"Forensic recomputation required only. Obtain FY2012 comparative financials, verify DSRI, LVGI, TATA components driving M-Score 216.49. No AP vendor, CBP 7501, or surcharge amount documented; no UCC \\u00a7 2-717 deduction authorized on this record, claim = $0.\"}, {\"index\": 3, \"entity_name\": \"CSP Inc\", \"identifier\": \"CIK: 0000356037, FY: 2025\", \"statutory_hook\": \"Beneish 8-Variable M-Score, Sloan Accrual Anomaly, and balance-sheet integrity audit; UCC \\u00a7 2-305(2) tariff good-faith review, TariffRisk 1.07 baseline\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAGGED - M-Score 215.79 >> -1.78 is not credible as a standalone manipulation proof and indicates corrupted/missing Beneish inputs or imbalance; F-Score 0.22 < 1.0 low Dechow risk; Sloan = (-91000-4213000)/71163000 = -0"
+  },
+  "input_filers": [
+    {
+      "cik": 1556508,
+      "entity_name": "CES Synergies, Inc.",
+      "fy": 2013,
+      "assets": 8837007.0,
+      "sales": 16269345.0,
+      "net_income": 389083.0,
+      "cfo": 872040.0,
+      "beneish_m_score": 225.01,
+      "dechow_f_score": 0.28,
+      "tariff_risk_index": 2.41,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 682324.0
+    },
+    {
+      "cik": 1350773,
+      "entity_name": "Kitara Media Corp.",
+      "fy": 2013,
+      "assets": 27916000.0,
+      "sales": 25377000.0,
+      "net_income": -186000.0,
+      "cfo": -388000.0,
+      "beneish_m_score": 216.49,
+      "dechow_f_score": 0.56,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 356037,
+      "entity_name": "CSP\u00a0Inc",
+      "fy": 2025,
+      "assets": 71163000.0,
+      "sales": 58730000.0,
+      "net_income": -91000.0,
+      "cfo": 4213000.0,
+      "beneish_m_score": 215.79,
+      "dechow_f_score": 0.22,
+      "tariff_risk_index": 1.07,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2719000.0
+    },
+    {
+      "cik": 1357971,
+      "entity_name": "Energy Services of America CORP",
+      "fy": 2020,
+      "assets": 58163286.0,
+      "sales": 174541155.0,
+      "net_income": NaN,
+      "cfo": 14985570.0,
+      "beneish_m_score": 206.2,
+      "dechow_f_score": 0.19,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1581545,
+      "entity_name": "GL Brands, Inc.",
+      "fy": 2019,
+      "assets": 18226575.0,
+      "sales": 2318749.0,
+      "net_income": -4619988.0,
+      "cfo": -1100802.0,
+      "beneish_m_score": 204.2,
+      "dechow_f_score": 0.24,
+      "tariff_risk_index": 739.67,
+      "forensic_flag": "ELEVATED: IEEPA/SEC 301 TARIFF SURCHARGE DISTORTION",
+      "bs_imbalance_usd": 42691.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0020\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"CES Synergies, Inc.\", \"identifier\": \"CIK: 0001556508, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score and Sloan Accrual Anomaly audit; UCC \\u00a7 2-305(2) and UCC \\u00a7 2-717 only if AP tariff surcharge documented on CBP Form 7501 / vendor invoice\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 225.01 >> -1.78 threshold signals high manipulation probability, likely extreme input distortion; F-Score 0.28 < 1.0 low Dechow misstatement risk; Sloan = (389083-872040)/8837007 = -0.0547, not > 0.10, no severe positive accrual anomaly. MF-02/MF-09 require re-verification of DSRI/GMI/AQI/SGI inputs from SEC 10-K before any claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT-COMPUTABLE: Accruals = NetIncome - CFO = 389083 - 872040 = -482957; NetIncome == CFO + Accruals verified arithmetically; M-Score inputs UNVERIFIED pending prior-year balance sheet\", \"actionable_memo\": \"Do not deduct under UCC \\u00a7 2-717 on M-Score alone. Pull FY2012-2013 10-K, recompute Beneish variables, inspect receivables, gross margin and asset quality. No quantified tariff surcharge in record, estimated recoverable = $0. MF-05 $50k minimum not met on present evidence.\"}, {\"index\": 2, \"entity_name\": \"Kitara Media Corp.\", \"identifier\": \"CIK: 0001350773, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score and Sloan Accrual Anomaly audit; UCC \\u00a7 2-305(2) and 19 U.S.C. \\u00a7 1313 only if documented tariff pass-through exists\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 216.49 >> -1.78 signals high manipulation probability / model input failure; F-Score 0.56 < 1.0 low-moderate Dechow risk; Sloan = (-186000 - (-388000))/27916000 = 0.0072, not > 0.10, no Sloan accrual flag; TariffRisk 1.0 baseline, no tariff distortion evidenced.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT-COMPUTABLE: Accruals = -186000 - (-388000) = 202000; NetIncome == CFO + Accruals verified arithmetically; M-Score inputs UNVERIFIED pending prior-year SEC filing\", \"actionable_memo\": \"Forensic recomputation required only. Obtain FY2012 comparative financials, verify DSRI, LVGI, TATA components driving M-Score 216.49. No AP vendor, CBP 7501, or surcharge amount documented; no UCC \\u00a7 2-717 deduction authorized on this record, claim = $0.\"}, {\"index\": 3, \"entity_name\": \"CSP Inc\", \"identifier\": \"CIK: 0000356037, FY: 2025\", \"statutory_hook\": \"Beneish 8-Variable M-Score, Sloan Accrual Anomaly, and balance-sheet integrity audit; UCC \\u00a7 2-305(2) tariff good-faith review, TariffRisk 1.07 baseline\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAGGED - M-Score 215.79 >> -1.78 is not credible as a standalone manipulation proof and indicates corrupted/missing Beneish inputs or imbalance; F-Score 0.22 < 1.0 low Dechow risk; Sloan = (-91000-4213000)/71163000 = -0"
+}
