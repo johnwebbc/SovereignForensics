@@ -1,5 +1,5 @@
 # SovereignForensics // Batch SEC Audit 0011
-**Model:** `muse-wonder-1.0` | **Tokens:** 1739 (Cached: 1140) in / 1500 out | **Cost:** $0.0326
+**Model:** `muse-wonder-1.0` | **Tokens:** 1739 (Cached: 1140) in / 2513 out | **Cost:** $0.0529
 
 ## Filers Screened:
 MICRO-BATCH LANE 1 #SEC_0011 (5 REAL SEC FILERS):
@@ -10,4 +10,59 @@ MICRO-BATCH LANE 1 #SEC_0011 (5 REAL SEC FILERS):
 5. CRISPR THERAPEUTICS AG (CIK: 0001674416, FY: 2023) | Assets: $2,243,057,000 | Sales: $914,963,000 | NetInc: $377,661,000 | CFO: $538,972,000 | M-Score: 600.05 | F-Score: 0.2 | TariffRisk: 1.0 | Flag: CRITICAL: BALANCE SHEET IMBALANCE
 
 ## Meta Model Deliberation:
-{"batch_id": "SEC_0011", "targets_count": 5, "results": [{"index": 1, "entity_name": "Fisker Inc./DE", "identifier": "CIK: 0001720990, FY: 2023", "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2) / 19 U.S.C. § 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only", "forensic_verdict": "CRITICAL DATA-INTEGRITY FLAG - NOT PROVEN MANIPULATION: M-Score 703.12 >> -1.78 threshold is an extreme outlier consistent with balance-sheet imbalance/input error flagged in source. F-Score 0.14 < 1.0 does not signal Dechow misstatement risk. Sloan = (-471341000 - (-301270000))/1831687000 = -0.0929, not > 0.10. Negative earnings and negative CFO require restatement/input verification before any inference.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "UNSAT/UNVERIFIED: Assert NetIncome = CFO + Accruals => -471341000 = -301270000 + (-170071000); arithmetic holds for Sloan accruals, but flagged BALANCE SHEET IMBALANCE prevents deterministic Z3 verification of Assets = Liabilities + Equity from provided fields", "actionable_memo": "Do NOT execute UCC § 2-717 AP deduction. TariffRisk -0.22 provides no CBP Form 7501, invoice surcharge, or 3%-8% pass-through evidence. Obtain audited 10-K balance sheet, receivables/inventory/depreciation inputs for Beneish recalculation, and recompute M-Score; extreme 703.12 likely reflects distorted DSRI/GMI/AQI inputs during pre-revenue scale-up/distress."}, {"index": 2, "entity_name": "SUMMER ENERGY HOLDINGS INC", "identifier": "CIK: 0001396633, FY: 2017", "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2) / 19 U.S.C. § 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only", "forensic_verdict": "ELEVATED BENEISH OUTLIER - NOT PROVEN MANIPULATION: M-Score 656.29 >> -1.78 is mathematically implausible as a calibrated manipulation probability and indicates input distortion/outlier variables. F-Score 0.55 < 1.0 does not signal Dechow misstatement risk. Sloan = (1266608 - (-861401))/33586600 = 0.0634, below 0.10 severe threshold but positive accruals with negative CFO warrant review.", "estimated_claim_or_surcharge_usd": 0, "z3_smt_invariant": "SAT FOR ARITHMETIC, UNVERIFIED FOR BALANCE SHEET: NetIncome = CFO + Accruals => 1266608 = -861401 + 2128009; Sloan 0.0634 < 0.10; full Assets = Liabilities + Equity invariant cannot be verified from provided fields", "actionable_memo": "Do NOT execute UCC § 2-717 AP deduction. TariffRisk 1.0 is a risk index, not invoice-level proof of an unrefunded tariff surcharge or CBP refund. Request 10-K prior-year comparatives to recalculate DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, vendor AP master, and any tariff surcharge invoices before quantifying any claim."}, {"index": 3, "entity_name": "FREEDOM HOLDING CORP.", "identifier": "CIK: 0000924805, FY: 2018", "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2
+{
+  "batch_id": "MICRO-BATCH LANE 1 #SEC_0011",
+  "targets_count": 5,
+  "results": [
+    {
+      "index": 1,
+      "entity_name": "Fisker Inc./DE",
+      "identifier": "CIK: 0001720990, FY: 2023",
+      "statutory_hook": "Beneish 8-Variable M-Score > -1.78; Sloan Accrual Anomaly; MF-02/MF-09 Deterministic Verification - No UCC 2-717 tariff claim established on TariffRisk -0.22",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / BENEISH OUTLIER - M-Score 703.12 >> -1.78 signals high manipulation probability, likely distorted by extreme DSRI/SGI/AQI inputs. F-Score 0.14 < 1.0 does not corroborate Dechow misstatement. Sloan = (-471341000 - (-301270000))/1831687000 = -0.0929, negative accruals, below +0.10 severe threshold. Do not assert fraud without 10-K balance-sheet reconciliation.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "SAT for accrual identity only: Accruals = NetIncome - CFO = -471341000 - (-301270000) = -170071000; NetIncome == CFO + Accruals verified arithmetically, balance-sheet imbalance flag UNSAT pending Assets=Liabilities+Equity source data",
+      "actionable_memo": "HOLD tariff/AP deduction. Pull FY2023 10-K, recompute all 8 Beneish variables from prior-year comparatives, reconcile balance-sheet imbalance, and investigate receivables/inventory accruals. No UCC 2-717 or 19 USC 1313 recovery quantifiable from provided data; MF-05 $50k threshold not met on verifiable surcharge."
+    },
+    {
+      "index": 2,
+      "entity_name": "SUMMER ENERGY HOLDINGS INC",
+      "identifier": "CIK: 0001396633, FY: 2017",
+      "statutory_hook": "Beneish 8-Variable M-Score > -1.78; Sloan Accrual Anomaly; UCC 2-305(2) Good Faith / UCC 2-717 only if CBP 7501 tariff surcharge pass-through documented",
+      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 656.29 >> -1.78 signals high manipulation probability. F-Score 0.55 < 1.0, moderate-low Dechow risk. Sloan = (1266608 - (-861401))/33586600 = 0.0634, elevated positive accruals but below 0.10 severe threshold. Positive earnings despite negative CFO is accrual-quality red flag.",
+      "estimated_claim_or_surcharge_usd": 5884159,
+      "z3_smt_invariant": "SAT: Accruals = 1266608 - (-861401) = 2128009; NetIncome == CFO + Accruals (1266608 == -861401 + 2128009); Sloan 0.0634 < 0.10",
+      "actionable_memo": "Audit FY2017 10-K receivables, unbilled revenue and DSRI/GMI drivers. TariffRisk 1.0: estimated exposure capped at 5% x Sales 117683175 = 5884159 for screening only - require supplier invoices, CBP Form 7501 and surcharge pass-through proof before any UCC 2-717 deduction or credit memo."
+    },
+    {
+      "index": 3,
+      "entity_name": "FREEDOM HOLDING CORP.",
+      "identifier": "CIK: 0000924805, FY: 2018",
+      "statutory_hook": "Beneish 8-Variable M-Score > -1.78; MF-09 Deterministic Verification Failure due to missing CFO - No enforceable UCC 2-717 claim on unverified data",
+      "forensic_verdict": "ELEVATED: BENEISH OUTLIER / UNVERIFIABLE - M-Score 639.18 >> -1.78 signals high manipulation probability. F-Score 0.36 < 1.0. Sloan and Dechow cash components cannot be computed: CFO = NaN. Net income $19,233,000 on sales $55,224,000 (34.8% margin) requires independent verification, especially for financial-services balance-sheet classification where Beneish may be structurally distorted.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "UNSAT/UNKNOWN: NetIncome == CFO + Accruals cannot be verified; CFO is NaN, Accruals undefined; Z3 invariant fails MF-09 deterministic verification",
+      "actionable_memo": "DO NOT EXECUTE deduction. Retrieve FY2018 10-K cash-flow statement from SEC EDGAR, replace NaN CFO, recompute Sloan, TATA, RSST and Beneish. TariffRisk 1.0 is unsupported for a financial holding company without import/AP records; MF-02 public-record verifiability not met, MF-05 claim = $0 until documented."
+    },
+    {
+      "index": 4,
+      "entity_name": "CRAWFORD UNITED CORPORATION",
+      "identifier": "CIK: 0000047307, FY: 2016",
+      "statutory_hook": "Beneish 8-Variable M-Score > -1.78; Sloan Accrual Anomaly > 0.10; UCC 2-305(2) / UCC 2-717 and 19 USC 1313 subject to import documentation",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / SEVERE ACCRUAL ANOMALY - M-Score 607.0 >> -1.78. F-Score 0.37 < 1.0 conflicts with Beneish. Sloan = (5152576 - 2513886)/15434755 = 0.1710 > 0.10, severe cash-to-accrual divergence. Net income is 77.5% of sales, implausible for operating sales alone and suggests non-operating gain, discontinued operation or data misclassification requiring footnote audit.",
+      "estimated_claim_or_surcharge_usd": 332289,
+      "z3_smt_invariant": "SAT for accrual identity: Accruals = 5152576 - 2513886 = 2638690; NetIncome == CFO + Accruals verified; Sloan 0.1710 > 0.10 violates conservative accrual invariant; balance-sheet imbalance UNSAT pending source filing",
+      "actionable_memo": "Priority forensic review: reconcile FY2016 10-K income statement, gain-on-sale/discontinued ops, receivables and balance sheet. TariffRisk 1.67 highest in batch: screening exposure 5% x Sales 6645780 = 332289, recoverable only with CBP 7501, AP vendor master and unrefunded surcharge proof under UCC 2-717; otherwise treat as earnings-quality, not tariff, claim."
+    },
+    {
+      "index": 5,
+      "entity_name": "CRISPR THERAPEUTICS AG",
+      "identifier": "CIK: 0001674416, FY: 2023",
+      "statutory_hook": "Beneish 8-Variable M-Score > -1.78; Sloan Accrual Anomaly; MF-02/MF-09 Verification - No UCC 2-717 tariff claim established without import surcharge records",
+      "forensic_verdict": "CRITICAL FLAG BUT ACCRUAL-CONSERVATIVE: M-Score 600.05 >> -1.78 signals Beneish outlier, likely driven by extreme SGI from collaboration revenue spike (Sales $914,963,000). F-Score 0.20 < 1.0 low Dechow risk. Sloan = (377661000 - 538972000)/2243057000 = -0.0719, negative accruals, CFO exceeds net income, contradicting accrual manipulation hypothesis. Balance-sheet imbalance flag unproven on provided data.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "SAT: Accruals = 377661000 - 538972000 = -161311000; NetIncome == CFO + Accruals (377661000 == 538972000 - 161311000); Sloan -0.0719 < 0.10",
+      "actionable_memo": "Do not pursue tariff deduction on current evidence. Recompute Beneish with FY2022 comparatives and segregate one-time collaboration/license revenue in SGI/DSRI; verify balance-sheet equation from FY2023 10-K. Conservative cash accruals support earnings quality despite M-Score distortion; MF-05 verifiable surcharge = $0."
+    }
+  ]
+}
