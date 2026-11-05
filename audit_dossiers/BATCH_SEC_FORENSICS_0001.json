@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0001",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:45:33.523425+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0001",
+    "req_id": "meta_mb_1793846721_LANE1_SEC_0001_63d9",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1745,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 12.32,
+    "response_text": "{\"batch_id\": \"SEC_0001\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"DFC GLOBAL CORP.\", \"identifier\": \"CIK: 0001271625, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; MF-02 Public Record Verifiability / MF-09 Deterministic Verification\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 96632.95 is mathematically implausible and indicates corrupted inputs/extreme accrual distortion, not a reliable manipulation proof. Sloan = (64200000-275700000)/1749600000 = -0.1209, exceeds 0.10 threshold in absolute terms. F-Score 0.2 is low, contradicting M-Score. No tariff recovery quantified from SEC data alone without CBP Form 7501/AP surcharge proof under UCC 2-717/2-305(2) or 19 USC 1313.\", \"estimated_claim_or_surcharge_usd\": 211500000, \"z3_smt_invariant\": \"UNSAT: Sloan invariant |(NetIncome-CFO)/Assets| <= 0.10 violated: |-0.1209| > 0.10; M-Score invariant M <= -1.78 violated, data-integrity check required\", \"actionable_memo\": \"Do not deduct under UCC 2-717 on this record. Re-pull audited 10-K, recompute Beneish 8 variables from primary statements, reconcile NetIncome=CFO+Accruals, and require CBP 7501 and vendor AP surcharge invoices before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"NeuroOne Medical Technologies Corporation\", \"identifier\": \"CIK: 0001500198, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; MF-09 Deterministic Verification\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 89475.18 is implausible/outlier and signals input or prior-year denominator corruption. Sloan = (-9999613+7519534)/12822609 = -0.1934, absolute value > 0.10, driven by net loss exceeding operating cash burn. F-Score 0.34 low and TariffRisk -0.52 provides no basis for UCC 2-717 tariff deduction or 19 USC 1313 drawback claim.\", \"estimated_claim_or_surcharge_usd\": 2480079, \"z3_smt_invariant\": \"UNSAT: Sloan invariant |(NetIncome-CFO)/Assets| <= 0.10 violated: |-0.1934| > 0.10; NetIncome = CFO + Accruals => Accruals = -2480079\", \"actionable_memo\": \"Treat as earnings-quality/data-integrity review only. Verify prior-year Beneish inputs, receivables and soft assets from 10-K, and obtain import/AP records before asserting any tariff surcharge recovery; no self-enforcing deduction supported on current data.\"}, {\"index\": 3, \"entity_name\": \"IDENTIV, INC.\", \"identifier\": \"CIK: 0001036044, FY: 2023\", \"statutory_hook\": \"MF-09 Deterministic Verification; Sloan Accrual Anomaly; Beneish M-Score > -1.78\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - Reported NetInc $1,620,000,000,000 exceeds Assets $109,723,000 by ~14764x and Sales $116,383,000 by ~13919x, which is impossible for a filed operating result and proves data corruption/mis-scaling. M-Score 59601.96 unreliable, F-Score 0.0 contradictory. Sloan calculation"
+  },
+  "input_filers": [
+    {
+      "cik": 1271625,
+      "entity_name": "DFC GLOBAL CORP.",
+      "fy": 2013,
+      "assets": 1749600000.0,
+      "sales": 1122300000.0,
+      "net_income": 64200000.0,
+      "cfo": 275700000.0,
+      "beneish_m_score": 96632.95,
+      "dechow_f_score": 0.2,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1600000.0
+    },
+    {
+      "cik": 1500198,
+      "entity_name": "NeuroOne Medical Technologies Corporation",
+      "fy": 2023,
+      "assets": 12822609.0,
+      "sales": 1952441.0,
+      "net_income": -9999613.0,
+      "cfo": -7519534.0,
+      "beneish_m_score": 89475.18,
+      "dechow_f_score": 0.34,
+      "tariff_risk_index": -0.52,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1036044,
+      "entity_name": "IDENTIV, INC.",
+      "fy": 2023,
+      "assets": 109723000.0,
+      "sales": 116383000.0,
+      "net_income": 1620000000000.0,
+      "cfo": 1228000.0,
+      "beneish_m_score": 59601.96,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 0.97,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1122000.0
+    },
+    {
+      "cik": 1218683,
+      "entity_name": "BIG DIGITAL ENERGY, INC.",
+      "fy": 2022,
+      "assets": 145294372.0,
+      "sales": 84385407.0,
+      "net_income": -44963720.0,
+      "cfo": 22953792.0,
+      "beneish_m_score": 45807.21,
+      "dechow_f_score": 0.15,
+      "tariff_risk_index": 1.78,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 26613788.0
+    },
+    {
+      "cik": 278165,
+      "entity_name": "OMNIQ Corp.",
+      "fy": 2014,
+      "assets": 33989318.0,
+      "sales": 37309973.0,
+      "net_income": 301649.0,
+      "cfo": 618761.0,
+      "beneish_m_score": 8175.53,
+      "dechow_f_score": 0.56,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0001\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"DFC GLOBAL CORP.\", \"identifier\": \"CIK: 0001271625, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; MF-02 Public Record Verifiability / MF-09 Deterministic Verification\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 96632.95 is mathematically implausible and indicates corrupted inputs/extreme accrual distortion, not a reliable manipulation proof. Sloan = (64200000-275700000)/1749600000 = -0.1209, exceeds 0.10 threshold in absolute terms. F-Score 0.2 is low, contradicting M-Score. No tariff recovery quantified from SEC data alone without CBP Form 7501/AP surcharge proof under UCC 2-717/2-305(2) or 19 USC 1313.\", \"estimated_claim_or_surcharge_usd\": 211500000, \"z3_smt_invariant\": \"UNSAT: Sloan invariant |(NetIncome-CFO)/Assets| <= 0.10 violated: |-0.1209| > 0.10; M-Score invariant M <= -1.78 violated, data-integrity check required\", \"actionable_memo\": \"Do not deduct under UCC 2-717 on this record. Re-pull audited 10-K, recompute Beneish 8 variables from primary statements, reconcile NetIncome=CFO+Accruals, and require CBP 7501 and vendor AP surcharge invoices before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"NeuroOne Medical Technologies Corporation\", \"identifier\": \"CIK: 0001500198, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; MF-09 Deterministic Verification\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 89475.18 is implausible/outlier and signals input or prior-year denominator corruption. Sloan = (-9999613+7519534)/12822609 = -0.1934, absolute value > 0.10, driven by net loss exceeding operating cash burn. F-Score 0.34 low and TariffRisk -0.52 provides no basis for UCC 2-717 tariff deduction or 19 USC 1313 drawback claim.\", \"estimated_claim_or_surcharge_usd\": 2480079, \"z3_smt_invariant\": \"UNSAT: Sloan invariant |(NetIncome-CFO)/Assets| <= 0.10 violated: |-0.1934| > 0.10; NetIncome = CFO + Accruals => Accruals = -2480079\", \"actionable_memo\": \"Treat as earnings-quality/data-integrity review only. Verify prior-year Beneish inputs, receivables and soft assets from 10-K, and obtain import/AP records before asserting any tariff surcharge recovery; no self-enforcing deduction supported on current data.\"}, {\"index\": 3, \"entity_name\": \"IDENTIV, INC.\", \"identifier\": \"CIK: 0001036044, FY: 2023\", \"statutory_hook\": \"MF-09 Deterministic Verification; Sloan Accrual Anomaly; Beneish M-Score > -1.78\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - Reported NetInc $1,620,000,000,000 exceeds Assets $109,723,000 by ~14764x and Sales $116,383,000 by ~13919x, which is impossible for a filed operating result and proves data corruption/mis-scaling. M-Score 59601.96 unreliable, F-Score 0.0 contradictory. Sloan calculation"
+}

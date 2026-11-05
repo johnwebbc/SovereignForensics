@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0002",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:45:44.349470+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0002",
+    "req_id": "meta_mb_1793846734_LANE1_SEC_0002_dcec",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1735,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 10.31,
+    "response_text": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0002\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SRX Global Inc.\", \"identifier\": \"CIK: 0001471727, FY: 2019\", \"statutory_hook\": \"Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 8010.71 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.02 < 1.0 low Dechow misstatement signal, Sloan = (-6026000 - (-6903000))/53532000 = 0.0164 < 0.10 does not flag Sloan anomaly. No verified tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -6026000 == -6903000 + 877000 holds arithmetically, but Assets/Liabilities/Equity balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.\", \"actionable_memo\": \"DO NOT DEDUCT under UCC 2-717 on this record. Quarantine vendor claim, obtain complete SEC 10-K/Q financial statements, prior-year Beneish inputs, AP vendor master, tariff surcharge invoices and CBP 7501s, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA, and reconcile balance sheet before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"Peekay Boutiques, Inc.\", \"identifier\": \"CIK: 0001595552, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 7562.39 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.43 < 1.0 low Dechow signal, Sloan = (-4181890 - 552869)/52433166 = -0.0903 < 0.10 no positive Sloan flag, TariffRisk 1.0 elevated but undocumented. No verified tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -4181890 == 552869 + -4734759 holds arithmetically, but balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.\", \"actionable_memo\": \"DO NOT DEDUCT under UCC 2-"
+  },
+  "input_filers": [
+    {
+      "cik": 1471727,
+      "entity_name": "SRX Global Inc.",
+      "fy": 2019,
+      "assets": 53532000.0,
+      "sales": 15577000.0,
+      "net_income": -6026000.0,
+      "cfo": -6903000.0,
+      "beneish_m_score": 8010.71,
+      "dechow_f_score": 0.02,
+      "tariff_risk_index": 0.11,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5611000.0
+    },
+    {
+      "cik": 1595552,
+      "entity_name": "Peekay Boutiques, Inc.",
+      "fy": 2015,
+      "assets": 52433166.0,
+      "sales": 41417014.0,
+      "net_income": -4181890.0,
+      "cfo": 552869.0,
+      "beneish_m_score": 7562.39,
+      "dechow_f_score": 0.43,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 7258169.0
+    },
+    {
+      "cik": 1605888,
+      "entity_name": "CIRCLE8 GROUP INC.",
+      "fy": 2024,
+      "assets": 126666609.0,
+      "sales": 442609814.0,
+      "net_income": -15252020.0,
+      "cfo": -5985036.0,
+      "beneish_m_score": 5020.46,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 27337397.0
+    },
+    {
+      "cik": 1098972,
+      "entity_name": "AGENUS INC",
+      "fy": 2015,
+      "assets": 242228484.0,
+      "sales": 24817025.0,
+      "net_income": -357000.0,
+      "cfo": NaN,
+      "beneish_m_score": 4829.68,
+      "dechow_f_score": 0.35,
+      "tariff_risk_index": 0.64,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 171500934.0
+    },
+    {
+      "cik": 1619250,
+      "entity_name": "VALERITAS HOLDINGS INC.",
+      "fy": 2016,
+      "assets": 34516000.0,
+      "sales": 19550000.0,
+      "net_income": -46367000.0,
+      "cfo": NaN,
+      "beneish_m_score": 4753.82,
+      "dechow_f_score": 0.28,
+      "tariff_risk_index": 2.36,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 32286000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0002\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SRX Global Inc.\", \"identifier\": \"CIK: 0001471727, FY: 2019\", \"statutory_hook\": \"Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 8010.71 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.02 < 1.0 low Dechow misstatement signal, Sloan = (-6026000 - (-6903000))/53532000 = 0.0164 < 0.10 does not flag Sloan anomaly. No verified tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -6026000 == -6903000 + 877000 holds arithmetically, but Assets/Liabilities/Equity balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.\", \"actionable_memo\": \"DO NOT DEDUCT under UCC 2-717 on this record. Quarantine vendor claim, obtain complete SEC 10-K/Q financial statements, prior-year Beneish inputs, AP vendor master, tariff surcharge invoices and CBP 7501s, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA, and reconcile balance sheet before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"Peekay Boutiques, Inc.\", \"identifier\": \"CIK: 0001595552, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78 manipulation threshold; Sloan Accrual Anomaly; UCC 2-717 and 19 U.S.C. 1313 not substantiated without CBP Form 7501 and AP surcharge invoices\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 7562.39 >> -1.78 indicates extreme Beneish inputs or data inconsistency, F-Score 0.43 < 1.0 low Dechow signal, Sloan = (-4181890 - 552869)/52433166 = -0.0903 < 0.10 no positive Sloan flag, TariffRisk 1.0 elevated but undocumented. No verified tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome == CFO + Accruals => -4181890 == 552869 + -4734759 holds arithmetically, but balance-sheet identity flagged CRITICAL IMBALANCE and Beneish variables cannot be deterministically verified from provided data.\", \"actionable_memo\": \"DO NOT DEDUCT under UCC 2-"
+}

@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0003",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:45:53.479303+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0003",
+    "req_id": "meta_mb_1793846744_LANE1_SEC_0003_97a8",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1742,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 8.61,
+    "response_text": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0003\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"VirnetX Holding Corporation\", \"identifier\": \"CIK: 0001082324, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / BENEISH OUTLIER - M-Score 4325.28 >> -1.78 signals extreme Beneish distortion, likely driven by Sales $48,000 vs Assets $152,975,000 denominator effects; F-Score 0.32 < 1.0 does not confirm Dechow misstatement; Sloan = (-27,871,000 - (-16,893,000))/152,975,000 = -0.0718, not > 0.10. No verifiable tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome == CFO + Accruals => -27,871,000 == -16,893,000 + (-10,978,000) SAT; Sloan -0.0718 <= 0.10 SAT\", \"actionable_memo\": \"Do not execute UCC 2-717 deduction. Reconcile balance sheet imbalance from primary 10-K, recompute Beneish DSRI/GMI/AQI/SGI components with prior-year comparatives, and require AP vendor master and CBP records before any claim. MF-01/MF-02 fail for tariff recovery.\"}, {\"index\": 2, \"entity_name\": \"First America Resources Corporation\", \"identifier\": \"CIK: 0001525306, FY: 2025\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4270.87 >> -1.78 and F-Score 7.7 > 1.0; Sloan = (211,112 - 458,921)/6,884,472 = -0.0360, not > 0.10, indicating risk is Beneish/Dechow component-driven not Sloan cash-accrual driven. TariffRisk -4.38 is non-economic and unverifiable.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome == CFO + Accruals => 211,112 == 458,921 + (-247,809) SAT; Sloan -0.0360 <= 0.10 SAT\", \"actionable_memo\": \"Escalate for forensic review of RSST accruals, ChgRec, ChgInv, SoftAssets and Beneish inputs from filed 10-K/Q. Do not withhold AP under UCC 2-717 without documented unrefunded tariff surcharge invoices. MF-02/MF-06 require primary-source verification.\"}, {\"index\": 3, \"entity_name\": \"Titan Environmental Solutions Inc.\", \"identifier\": \"CIK: 0001514056, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4175.01 >> -1.78 and F-Score 270.27 >> 1.0, extreme Dechow outlier requiring recomputation; Sloan = (-658,663 - (-312,264))/22,175,474 = -0.0156, not > 0.10. TariffRisk -226.17 is invalid as a tariff exposure measure.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome"
+  },
+  "input_filers": [
+    {
+      "cik": 1082324,
+      "entity_name": "VirnetX Holding Corporation",
+      "fy": 2023,
+      "assets": 152975000.0,
+      "sales": 48000.0,
+      "net_income": -27871000.0,
+      "cfo": -16893000.0,
+      "beneish_m_score": 4325.28,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 36873000.0
+    },
+    {
+      "cik": 1525306,
+      "entity_name": "First America Resources Corporation",
+      "fy": 2025,
+      "assets": 6884472.0,
+      "sales": 18790946.0,
+      "net_income": 211112.0,
+      "cfo": 458921.0,
+      "beneish_m_score": 4270.87,
+      "dechow_f_score": 7.7,
+      "tariff_risk_index": -4.38,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 2765.0
+    },
+    {
+      "cik": 1514056,
+      "entity_name": "Titan Environmental Solutions Inc.",
+      "fy": 2023,
+      "assets": 22175474.0,
+      "sales": 7624584.0,
+      "net_income": -658663.0,
+      "cfo": -312264.0,
+      "beneish_m_score": 4175.01,
+      "dechow_f_score": 270.27,
+      "tariff_risk_index": -226.17,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 2025878,
+      "entity_name": "INDEPENDENCE POWER HOLDINGS, INC.",
+      "fy": 2026,
+      "assets": 92809870.0,
+      "sales": 97207466.0,
+      "net_income": -2758042.0,
+      "cfo": -337267.0,
+      "beneish_m_score": 3842.2,
+      "dechow_f_score": 0.3,
+      "tariff_risk_index": 1.03,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1476278,
+      "entity_name": "MOON RIVER STUDIOS, INC.",
+      "fy": 2013,
+      "assets": 48951444.0,
+      "sales": 3267825.0,
+      "net_income": -117630.0,
+      "cfo": -2099533.0,
+      "beneish_m_score": 3790.14,
+      "dechow_f_score": 0.41,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0003\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"VirnetX Holding Corporation\", \"identifier\": \"CIK: 0001082324, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / BENEISH OUTLIER - M-Score 4325.28 >> -1.78 signals extreme Beneish distortion, likely driven by Sales $48,000 vs Assets $152,975,000 denominator effects; F-Score 0.32 < 1.0 does not confirm Dechow misstatement; Sloan = (-27,871,000 - (-16,893,000))/152,975,000 = -0.0718, not > 0.10. No verifiable tariff recovery.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome == CFO + Accruals => -27,871,000 == -16,893,000 + (-10,978,000) SAT; Sloan -0.0718 <= 0.10 SAT\", \"actionable_memo\": \"Do not execute UCC 2-717 deduction. Reconcile balance sheet imbalance from primary 10-K, recompute Beneish DSRI/GMI/AQI/SGI components with prior-year comparatives, and require AP vendor master and CBP records before any claim. MF-01/MF-02 fail for tariff recovery.\"}, {\"index\": 2, \"entity_name\": \"First America Resources Corporation\", \"identifier\": \"CIK: 0001525306, FY: 2025\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4270.87 >> -1.78 and F-Score 7.7 > 1.0; Sloan = (211,112 - 458,921)/6,884,472 = -0.0360, not > 0.10, indicating risk is Beneish/Dechow component-driven not Sloan cash-accrual driven. TariffRisk -4.38 is non-economic and unverifiable.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome == CFO + Accruals => 211,112 == 458,921 + (-247,809) SAT; Sloan -0.0360 <= 0.10 SAT\", \"actionable_memo\": \"Escalate for forensic review of RSST accruals, ChgRec, ChgInv, SoftAssets and Beneish inputs from filed 10-K/Q. Do not withhold AP under UCC 2-717 without documented unrefunded tariff surcharge invoices. MF-02/MF-06 require primary-source verification.\"}, {\"index\": 3, \"entity_name\": \"Titan Environmental Solutions Inc.\", \"identifier\": \"CIK: 0001514056, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0 concurrent fraud-risk audit; UCC 2-717 / 19 USC 1313 not triggered absent CBP Form 7501 or AP tariff surcharge evidence (MF-02, MF-05)\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK - M-Score 4175.01 >> -1.78 and F-Score 270.27 >> 1.0, extreme Dechow outlier requiring recomputation; Sloan = (-658,663 - (-312,264))/22,175,474 = -0.0156, not > 0.10. TariffRisk -226.17 is invalid as a tariff exposure measure.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"Z3 CHECK: NetIncome"
+}

@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0000",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:45:20.674579+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0000",
+    "req_id": "meta_mb_1793846710_LANE1_SEC_0000_ca5c",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1761,
+    "cached_tok": 0,
+    "out_tok": 1500,
+    "cost_usd": "0.0370",
+    "elapsed_sec": 9.91,
+    "response_text": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0000\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Spirit AeroSystems Holdings, Inc.\", \"identifier\": \"CIK: 0001364885, FY: 2012\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly under SEC 10-K audit; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 reserved for tariff surcharge recovery pending CBP Form 7501 verification\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 989914.0 >> -1.78 signals extreme manipulation probability / data integrity failure, F-Score 0.62 < 1.0 low Dechow misstatement, Sloan ((218900000-544400000)/5415300000) = -0.0601 not > 0.10, CFO exceeds Net Income, no Sloan cash-to-accrual flag. TariffRisk 3.62 requires independent verification, not relied upon.\", \"estimated_claim_or_surcharge_usd\": 325500000, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals => 218900000 == 544400000 + (-325500000); Sloan = -0.0601\", \"actionable_memo\": \"Do not execute UCC 2-717 deduction on unverified tariff amount. Re-perform Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from filed 10-K, resolve balance sheet imbalance causing M-Score 989914.0, obtain CBP 7501s and AP vendor master before any credit memo. Escalate forensic review, preserve reliquidation rights.\"}, {\"index\": 2, \"entity_name\": \"Tengjun Biotechnology Corp.\", \"identifier\": \"CIK: 0001499785, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10 under SEC 10-K audit; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) reserved pending tariff pass-through evidence\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 461797.17 >> -1.78, F-Score 0.4 < 1.0, Sloan ((11346841-1347451)/58629500) = 0.1706 > 0.10 severe cash-to-accrual manipulation, Net Income 8.4x CFO. TariffRisk 0.0, no tariff surcharge claim established.\", \"estimated_claim_or_surcharge_usd\": 9999390, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals => 11346841 == 1347451 + 9999390; Sloan = 0.1706\", \"actionable_memo\": \"Flag earnings quality failure, investigate receivables/inventory accruals DSRI and TATA driving Beneish score, reconcile balance sheet imbalance. No UCC 2-717 tariff deduction authorized on TariffRisk 0.0 without supplier surcharge invoices and CBP refund evidence. Refer for forensic accounting hold.\"}, {\"index\": 3, \"entity_name\": \"FREQUENCY HOLDINGS INC\", \"identifier\": \"CIK: 0001624517, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78, Dechow F-Score > 1.0, and Sloan Accrual Anomaly > 0.10 under SEC filing audit; UCC \u00a7 2-717 reserved pending verified AP surcharge\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE AND MISSTATEMENT - M-Score 211395.69 >> -1.78, F-Score 270.27 >> 1.0 extreme Dechow misstatement risk, Sloan ((4395134-(-762097))/5193490) = 0.9930 >> 0.10, positive Net Income with negative CFO. TariffRisk -0.0, no tariff claim established.\", \"estimated_claim_or_surcharge_usd\": 5157231, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals"
+  },
+  "input_filers": [
+    {
+      "cik": 1364885,
+      "entity_name": "Spirit AeroSystems Holdings,\u00a0Inc.",
+      "fy": 2012,
+      "assets": 5415300000.0,
+      "sales": 5397700000.0,
+      "net_income": 218900000.0,
+      "cfo": 544400000.0,
+      "beneish_m_score": 989914.0,
+      "dechow_f_score": 0.62,
+      "tariff_risk_index": 3.62,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3418900000.0
+    },
+    {
+      "cik": 1499785,
+      "entity_name": "Tengjun Biotechnology Corp.",
+      "fy": 2022,
+      "assets": 58629500.0,
+      "sales": 150136738.0,
+      "net_income": 11346841.0,
+      "cfo": 1347451.0,
+      "beneish_m_score": 461797.17,
+      "dechow_f_score": 0.4,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 517140.0
+    },
+    {
+      "cik": 1624517,
+      "entity_name": "FREQUENCY HOLDINGS INC",
+      "fy": 2024,
+      "assets": 5193490.0,
+      "sales": 4811040.0,
+      "net_income": 4395134.0,
+      "cfo": -762097.0,
+      "beneish_m_score": 211395.69,
+      "dechow_f_score": 270.27,
+      "tariff_risk_index": -0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 6603794.0
+    },
+    {
+      "cik": 1349706,
+      "entity_name": "TurnOnGreen, Inc.",
+      "fy": 2022,
+      "assets": 6653000.0,
+      "sales": 5522000.0,
+      "net_income": -1827000.0,
+      "cfo": -2669000.0,
+      "beneish_m_score": 169847.23,
+      "dechow_f_score": 0.53,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 23214000.0
+    },
+    {
+      "cik": 1648365,
+      "entity_name": "AGRI-FINTECH HOLDINGS,\u00a0INC.",
+      "fy": 2021,
+      "assets": 6545195693.0,
+      "sales": 865838327.0,
+      "net_income": 141970335.0,
+      "cfo": 1353039282.0,
+      "beneish_m_score": 151583.17,
+      "dechow_f_score": 0.24,
+      "tariff_risk_index": 1.75,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 30151784.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0000\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Spirit AeroSystems Holdings, Inc.\", \"identifier\": \"CIK: 0001364885, FY: 2012\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly under SEC 10-K audit; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) and 19 U.S.C. \u00a7 1313 reserved for tariff surcharge recovery pending CBP Form 7501 verification\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 989914.0 >> -1.78 signals extreme manipulation probability / data integrity failure, F-Score 0.62 < 1.0 low Dechow misstatement, Sloan ((218900000-544400000)/5415300000) = -0.0601 not > 0.10, CFO exceeds Net Income, no Sloan cash-to-accrual flag. TariffRisk 3.62 requires independent verification, not relied upon.\", \"estimated_claim_or_surcharge_usd\": 325500000, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals => 218900000 == 544400000 + (-325500000); Sloan = -0.0601\", \"actionable_memo\": \"Do not execute UCC 2-717 deduction on unverified tariff amount. Re-perform Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from filed 10-K, resolve balance sheet imbalance causing M-Score 989914.0, obtain CBP 7501s and AP vendor master before any credit memo. Escalate forensic review, preserve reliquidation rights.\"}, {\"index\": 2, \"entity_name\": \"Tengjun Biotechnology Corp.\", \"identifier\": \"CIK: 0001499785, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10 under SEC 10-K audit; UCC \u00a7 2-717 / UCC \u00a7 2-305(2) reserved pending tariff pass-through evidence\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION - M-Score 461797.17 >> -1.78, F-Score 0.4 < 1.0, Sloan ((11346841-1347451)/58629500) = 0.1706 > 0.10 severe cash-to-accrual manipulation, Net Income 8.4x CFO. TariffRisk 0.0, no tariff surcharge claim established.\", \"estimated_claim_or_surcharge_usd\": 9999390, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals => 11346841 == 1347451 + 9999390; Sloan = 0.1706\", \"actionable_memo\": \"Flag earnings quality failure, investigate receivables/inventory accruals DSRI and TATA driving Beneish score, reconcile balance sheet imbalance. No UCC 2-717 tariff deduction authorized on TariffRisk 0.0 without supplier surcharge invoices and CBP refund evidence. Refer for forensic accounting hold.\"}, {\"index\": 3, \"entity_name\": \"FREQUENCY HOLDINGS INC\", \"identifier\": \"CIK: 0001624517, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78, Dechow F-Score > 1.0, and Sloan Accrual Anomaly > 0.10 under SEC filing audit; UCC \u00a7 2-717 reserved pending verified AP surcharge\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE AND MISSTATEMENT - M-Score 211395.69 >> -1.78, F-Score 270.27 >> 1.0 extreme Dechow misstatement risk, Sloan ((4395134-(-762097))/5193490) = 0.9930 >> 0.10, positive Net Income with negative CFO. TariffRisk -0.0, no tariff claim established.\", \"estimated_claim_or_surcharge_usd\": 5157231, \"z3_smt_invariant\": \"Z3 SAT: NetIncome == CFO + Accruals"
+}
