@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0043",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:04:56.453832+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0043",
+    "req_id": "meta_mb_1793847877_LANE1_SEC_0043_6398",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1730,
+    "cached_tok": 1140,
+    "out_tok": 2406,
+    "cost_usd": "0.0507",
+    "elapsed_sec": 19.41,
+    "response_text": "{\n  \"batch_id\": \"SEC_0043\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"GOLD RESOURCE CORP\",\n      \"identifier\": \"CIK: 0001160791, FY: 2023\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 and UCC \u00a7 2-305(2) tariff-surcharge deduction only if CBP Form 7501 and unrefunded surcharge invoices are verified; 19 U.S.C. \u00a7 1313 drawback requires export/destroyed merchandise proof\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 59.13 >> -1.78 threshold signals extreme Beneish inputs/data anomaly, F-Score 0.18 < 1.0 signals low Dechow misstatement risk, Sloan -0.0975 does not exceed 0.10; do not treat M-Score alone as manipulation proof\",\n      \"estimated_claim_or_surcharge_usd\": 6936200,\n      \"z3_smt_invariant\": \"SAT: NetIncome -6321000 = CFO 14157000 + Accruals -20478000; Sloan = (-6321000-14157000)/210098000 = -0.0975\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $138724000 sales = $6936200 unverified. Verify SEC 10-K source values, Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA inputs, AP vendor master, tariff invoices and any CBP refunds before any UCC \u00a7 2-717 deduction or credit-memo notice.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Rio Bravo Oil, Inc.\",\n      \"identifier\": \"CIK: 0001502774, FY: 2013\",\n      \"statutory_hook\": \"No enforceable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim established on missing Sales/CFO data; verification required under MF-02 Public Record Verifiability\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / INDETERMINATE - M-Score 59.03 >> -1.78 is not reliable with NaN Sales and CFO, F-Score 0.21 < 1.0, Sloan accrual anomaly cannot be computed\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"UNSAT/INDETERMINATE: NetIncome -941 = CFO NaN + Accruals NaN; invariant Net Income = CFO + Accruals cannot be verified from provided data\",\n      \"actionable_memo\": \"No deduction authorized. Retrieve complete FY2013 10-K/Q, balance sheet, income and cash-flow statements, recompute Beneish and Sloan from non-NaN values, and confirm AP/tariff exposure with CBP Form 7501 before estimating any claim.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"EVOKE PHARMA, INC.\",\n      \"identifier\": \"CIK: 0001403708, FY: 2021\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 / UCC \u00a7 2-305(2) not supported at TariffRisk 0.01 without supplier surcharge invoices and CBP refund records; 19 U.S.C. \u00a7 1313 requires qualifying export/destruction\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.75 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.32 < 1.0 low Dechow risk, Sloan -0.1804 does not exceed 0.10 positive-accrual threshold\",\n      \"estimated_claim_or_surcharge_usd\": 809,\n      \"z3_smt_invariant\": \"SAT: NetIncome -8537952 = CFO -6630007 + Accruals -1907945; Sloan = (-8537952+6630007)/10573162 = -0.1804\",\n      \"actionable_memo\": \"Tariff exposure de minimis: 5% x $1618076 x 0.01 = $809, below MF-05 $50000 magnitude. No credit memo. Audit Beneish input integrity and balance-sheet imbalance from primary 10-K before any forensic escalation.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"ARS Pharmaceuticals, Inc.\",\n      \"identifier\": \"CIK: 0001671858, FY: 2024\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 and UCC \u00a7 2-305(2) contingent on documented unilateral 3%-8% tariff surcharges and non-pass-through of CBP refunds; 19 U.S.C. \u00a7 1313 contingent on qualifying drawback merchandise\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.63 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.36 < 1.0 low Dechow risk, Sloan -0.0158 does not exceed 0.10; positive NetIncome with CFO exceeding NetIncome does not show Sloan manipulation\",\n      \"estimated_claim_or_surcharge_usd\": 4457450,\n      \"z3_smt_invariant\": \"SAT: NetIncome 7998000 = CFO 13548000 + Accruals -5550000; Sloan = (7998000-13548000)/351153000 = -0.0158\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $89149000 sales = $4457450 unverified. Verify 10-K Beneish components, AP vendor records, tariff surcharge invoices, importer-of-record status and CBP refund/reliquidation records before any UCC \u00a7 2-717 withholding.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"COFFEESMITHS COLLECTIVE, INC.\",\n      \"identifier\": \"CIK: 0001619055, FY: 2018\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 / UCC \u00a7 2-305(2) contingent on verified supplier tariff surcharges; TariffRisk 3.43 is anomalous and cannot create a 19 U.S.C. \u00a7 1313 drawback claim without CBP Form 7501 and export/destruction proof\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.38 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.37 < 1.0 low Dechow risk, Sloan -0.0231 does not exceed 0.10\",\n      \"estimated_claim_or_surcharge_usd\": 502492,\n      \"z3_smt_invariant\": \"SAT: NetIncome -516094 = CFO -6135 + Accruals -509959; Sloan = (-516094+6135)/22046927 = -0.0231\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $10049846 sales = $502492 unverified; do not scale by anomalous TariffRisk 3.43. Verify FY2018 filing completeness, balance-sheet identity, importer/AP records and any CBP refunds before credit-memo action.\"\n    }\n  ]\n}"
+  },
+  "input_filers": [
+    {
+      "cik": 1160791,
+      "entity_name": "GOLD RESOURCE CORP",
+      "fy": 2023,
+      "assets": 210098000.0,
+      "sales": 138724000.0,
+      "net_income": -6321000.0,
+      "cfo": 14157000.0,
+      "beneish_m_score": 59.13,
+      "dechow_f_score": 0.18,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1502774,
+      "entity_name": "Rio Bravo Oil, Inc.",
+      "fy": 2013,
+      "assets": 18607193.0,
+      "sales": NaN,
+      "net_income": -941.0,
+      "cfo": NaN,
+      "beneish_m_score": 59.03,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2567421.0
+    },
+    {
+      "cik": 1403708,
+      "entity_name": "EVOKE PHARMA, INC.",
+      "fy": 2021,
+      "assets": 10573162.0,
+      "sales": 1618076.0,
+      "net_income": -8537952.0,
+      "cfo": -6630007.0,
+      "beneish_m_score": 58.75,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 6456054.0
+    },
+    {
+      "cik": 1671858,
+      "entity_name": "ARS Pharmaceuticals, Inc.",
+      "fy": 2024,
+      "assets": 351153000.0,
+      "sales": 89149000.0,
+      "net_income": 7998000.0,
+      "cfo": 13548000.0,
+      "beneish_m_score": 58.63,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 16088000.0
+    },
+    {
+      "cik": 1619055,
+      "entity_name": "COFFEESMITHS COLLECTIVE, INC.",
+      "fy": 2018,
+      "assets": 22046927.0,
+      "sales": 10049846.0,
+      "net_income": -516094.0,
+      "cfo": -6135.0,
+      "beneish_m_score": 58.38,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 3.43,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 14871281.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0043\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"GOLD RESOURCE CORP\",\n      \"identifier\": \"CIK: 0001160791, FY: 2023\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 and UCC \u00a7 2-305(2) tariff-surcharge deduction only if CBP Form 7501 and unrefunded surcharge invoices are verified; 19 U.S.C. \u00a7 1313 drawback requires export/destroyed merchandise proof\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 59.13 >> -1.78 threshold signals extreme Beneish inputs/data anomaly, F-Score 0.18 < 1.0 signals low Dechow misstatement risk, Sloan -0.0975 does not exceed 0.10; do not treat M-Score alone as manipulation proof\",\n      \"estimated_claim_or_surcharge_usd\": 6936200,\n      \"z3_smt_invariant\": \"SAT: NetIncome -6321000 = CFO 14157000 + Accruals -20478000; Sloan = (-6321000-14157000)/210098000 = -0.0975\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $138724000 sales = $6936200 unverified. Verify SEC 10-K source values, Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA inputs, AP vendor master, tariff invoices and any CBP refunds before any UCC \u00a7 2-717 deduction or credit-memo notice.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Rio Bravo Oil, Inc.\",\n      \"identifier\": \"CIK: 0001502774, FY: 2013\",\n      \"statutory_hook\": \"No enforceable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim established on missing Sales/CFO data; verification required under MF-02 Public Record Verifiability\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / INDETERMINATE - M-Score 59.03 >> -1.78 is not reliable with NaN Sales and CFO, F-Score 0.21 < 1.0, Sloan accrual anomaly cannot be computed\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"UNSAT/INDETERMINATE: NetIncome -941 = CFO NaN + Accruals NaN; invariant Net Income = CFO + Accruals cannot be verified from provided data\",\n      \"actionable_memo\": \"No deduction authorized. Retrieve complete FY2013 10-K/Q, balance sheet, income and cash-flow statements, recompute Beneish and Sloan from non-NaN values, and confirm AP/tariff exposure with CBP Form 7501 before estimating any claim.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"EVOKE PHARMA, INC.\",\n      \"identifier\": \"CIK: 0001403708, FY: 2021\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 / UCC \u00a7 2-305(2) not supported at TariffRisk 0.01 without supplier surcharge invoices and CBP refund records; 19 U.S.C. \u00a7 1313 requires qualifying export/destruction\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.75 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.32 < 1.0 low Dechow risk, Sloan -0.1804 does not exceed 0.10 positive-accrual threshold\",\n      \"estimated_claim_or_surcharge_usd\": 809,\n      \"z3_smt_invariant\": \"SAT: NetIncome -8537952 = CFO -6630007 + Accruals -1907945; Sloan = (-8537952+6630007)/10573162 = -0.1804\",\n      \"actionable_memo\": \"Tariff exposure de minimis: 5% x $1618076 x 0.01 = $809, below MF-05 $50000 magnitude. No credit memo. Audit Beneish input integrity and balance-sheet imbalance from primary 10-K before any forensic escalation.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"ARS Pharmaceuticals, Inc.\",\n      \"identifier\": \"CIK: 0001671858, FY: 2024\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 and UCC \u00a7 2-305(2) contingent on documented unilateral 3%-8% tariff surcharges and non-pass-through of CBP refunds; 19 U.S.C. \u00a7 1313 contingent on qualifying drawback merchandise\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.63 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.36 < 1.0 low Dechow risk, Sloan -0.0158 does not exceed 0.10; positive NetIncome with CFO exceeding NetIncome does not show Sloan manipulation\",\n      \"estimated_claim_or_surcharge_usd\": 4457450,\n      \"z3_smt_invariant\": \"SAT: NetIncome 7998000 = CFO 13548000 + Accruals -5550000; Sloan = (7998000-13548000)/351153000 = -0.0158\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $89149000 sales = $4457450 unverified. Verify 10-K Beneish components, AP vendor records, tariff surcharge invoices, importer-of-record status and CBP refund/reliquidation records before any UCC \u00a7 2-717 withholding.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"COFFEESMITHS COLLECTIVE, INC.\",\n      \"identifier\": \"CIK: 0001619055, FY: 2018\",\n      \"statutory_hook\": \"UCC \u00a7 2-717 / UCC \u00a7 2-305(2) contingent on verified supplier tariff surcharges; TariffRisk 3.43 is anomalous and cannot create a 19 U.S.C. \u00a7 1313 drawback claim without CBP Form 7501 and export/destruction proof\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.38 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.37 < 1.0 low Dechow risk, Sloan -0.0231 does not exceed 0.10\",\n      \"estimated_claim_or_surcharge_usd\": 502492,\n      \"z3_smt_invariant\": \"SAT: NetIncome -516094 = CFO -6135 + Accruals -509959; Sloan = (-516094+6135)/22046927 = -0.0231\",\n      \"actionable_memo\": \"Hypothetical 5% midpoint surcharge on $10049846 sales = $502492 unverified; do not scale by anomalous TariffRisk 3.43. Verify FY2018 filing completeness, balance-sheet identity, importer/AP records and any CBP refunds before credit-memo action.\"\n    }\n  ]\n}",
+  "meta_parsed": {
+    "batch_id": "SEC_0043",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "GOLD RESOURCE CORP",
+        "identifier": "CIK: 0001160791, FY: 2023",
+        "statutory_hook": "UCC \u00a7 2-717 and UCC \u00a7 2-305(2) tariff-surcharge deduction only if CBP Form 7501 and unrefunded surcharge invoices are verified; 19 U.S.C. \u00a7 1313 drawback requires export/destroyed merchandise proof",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 59.13 >> -1.78 threshold signals extreme Beneish inputs/data anomaly, F-Score 0.18 < 1.0 signals low Dechow misstatement risk, Sloan -0.0975 does not exceed 0.10; do not treat M-Score alone as manipulation proof",
+        "estimated_claim_or_surcharge_usd": 6936200,
+        "z3_smt_invariant": "SAT: NetIncome -6321000 = CFO 14157000 + Accruals -20478000; Sloan = (-6321000-14157000)/210098000 = -0.0975",
+        "actionable_memo": "Hypothetical 5% midpoint surcharge on $138724000 sales = $6936200 unverified. Verify SEC 10-K source values, Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA inputs, AP vendor master, tariff invoices and any CBP refunds before any UCC \u00a7 2-717 deduction or credit-memo notice."
+      },
+      {
+        "index": 2,
+        "entity_name": "Rio Bravo Oil, Inc.",
+        "identifier": "CIK: 0001502774, FY: 2013",
+        "statutory_hook": "No enforceable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim established on missing Sales/CFO data; verification required under MF-02 Public Record Verifiability",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / INDETERMINATE - M-Score 59.03 >> -1.78 is not reliable with NaN Sales and CFO, F-Score 0.21 < 1.0, Sloan accrual anomaly cannot be computed",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/INDETERMINATE: NetIncome -941 = CFO NaN + Accruals NaN; invariant Net Income = CFO + Accruals cannot be verified from provided data",
+        "actionable_memo": "No deduction authorized. Retrieve complete FY2013 10-K/Q, balance sheet, income and cash-flow statements, recompute Beneish and Sloan from non-NaN values, and confirm AP/tariff exposure with CBP Form 7501 before estimating any claim."
+      },
+      {
+        "index": 3,
+        "entity_name": "EVOKE PHARMA, INC.",
+        "identifier": "CIK: 0001403708, FY: 2021",
+        "statutory_hook": "UCC \u00a7 2-717 / UCC \u00a7 2-305(2) not supported at TariffRisk 0.01 without supplier surcharge invoices and CBP refund records; 19 U.S.C. \u00a7 1313 requires qualifying export/destruction",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.75 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.32 < 1.0 low Dechow risk, Sloan -0.1804 does not exceed 0.10 positive-accrual threshold",
+        "estimated_claim_or_surcharge_usd": 809,
+        "z3_smt_invariant": "SAT: NetIncome -8537952 = CFO -6630007 + Accruals -1907945; Sloan = (-8537952+6630007)/10573162 = -0.1804",
+        "actionable_memo": "Tariff exposure de minimis: 5% x $1618076 x 0.01 = $809, below MF-05 $50000 magnitude. No credit memo. Audit Beneish input integrity and balance-sheet imbalance from primary 10-K before any forensic escalation."
+      },
+      {
+        "index": 4,
+        "entity_name": "ARS Pharmaceuticals, Inc.",
+        "identifier": "CIK: 0001671858, FY: 2024",
+        "statutory_hook": "UCC \u00a7 2-717 and UCC \u00a7 2-305(2) contingent on documented unilateral 3%-8% tariff surcharges and non-pass-through of CBP refunds; 19 U.S.C. \u00a7 1313 contingent on qualifying drawback merchandise",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.63 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.36 < 1.0 low Dechow risk, Sloan -0.0158 does not exceed 0.10; positive NetIncome with CFO exceeding NetIncome does not show Sloan manipulation",
+        "estimated_claim_or_surcharge_usd": 4457450,
+        "z3_smt_invariant": "SAT: NetIncome 7998000 = CFO 13548000 + Accruals -5550000; Sloan = (7998000-13548000)/351153000 = -0.0158",
+        "actionable_memo": "Hypothetical 5% midpoint surcharge on $89149000 sales = $4457450 unverified. Verify 10-K Beneish components, AP vendor records, tariff surcharge invoices, importer-of-record status and CBP refund/reliquidation records before any UCC \u00a7 2-717 withholding."
+      },
+      {
+        "index": 5,
+        "entity_name": "COFFEESMITHS COLLECTIVE, INC.",
+        "identifier": "CIK: 0001619055, FY: 2018",
+        "statutory_hook": "UCC \u00a7 2-717 / UCC \u00a7 2-305(2) contingent on verified supplier tariff surcharges; TariffRisk 3.43 is anomalous and cannot create a 19 U.S.C. \u00a7 1313 drawback claim without CBP Form 7501 and export/destruction proof",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 58.38 >> -1.78 indicates Beneish outlier/data anomaly, F-Score 0.37 < 1.0 low Dechow risk, Sloan -0.0231 does not exceed 0.10",
+        "estimated_claim_or_surcharge_usd": 502492,
+        "z3_smt_invariant": "SAT: NetIncome -516094 = CFO -6135 + Accruals -509959; Sloan = (-516094+6135)/22046927 = -0.0231",
+        "actionable_memo": "Hypothetical 5% midpoint surcharge on $10049846 sales = $502492 unverified; do not scale by anomalous TariffRisk 3.43. Verify FY2018 filing completeness, balance-sheet identity, importer/AP records and any CBP refunds before credit-memo action."
+      }
+    ]
+  }
+}

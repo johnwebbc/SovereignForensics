@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0042",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:04:36.526375+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0042",
+    "req_id": "meta_mb_1793847855_LANE1_SEC_0042_c0fe",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1733,
+    "cached_tok": 1140,
+    "out_tok": 2513,
+    "cost_usd": "0.0529",
+    "elapsed_sec": 21.15,
+    "response_text": "{\n  \"batch_id\": \"SEC_0042\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"KAOPU GROUP INC\",\n      \"identifier\": \"CIK: 0001602706, FY: 2016\",\n      \"statutory_hook\": \"Beneish 8-Variable M-Score > -1.78; UCC 2-305(2) Good Faith Open Price Terms; UCC 2-717 Deduction of Damages From Price contingent on verified AP surcharge\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 62.87 >> -1.78 signals high manipulation probability; F-Score 0.23 < 1.0 low Dechow misstatement; Sloan Accrual Anomaly indeterminate due to CFO=$nan, deterministic verification fails. No verified tariff claim without CBP Form 7501/AP records.\",\n      \"estimated_claim_or_surcharge_usd\": 255573,\n      \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN => assert NetIncome(-191304) == CFO + Accruals cannot be satisfied; MF-09 Deterministic Verification FAILED\",\n      \"actionable_memo\": \"MF-02/MF-06: Pull SEC 10-K FY2016 cash flow statement to replace NaN CFO, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Hold UCC 2-717 deduction pending verified supplier tariff invoices; indicative exposure 3.2% x Sales $7,986,658 = $255,573, not self-enforcing until documented.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Siga Technologies INC\",\n      \"identifier\": \"CIK: 0001010086, FY: 2021\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; UCC 2-305(2) IEEPA/Section 301 Tariff Surcharge Good Faith; UCC 2-717; 19 U.S.C. 1313 Duty Drawback if CBP refunds not passed through\",\n      \"forensic_verdict\": \"ELEVATED: IEEPA/SEC 301 TARIFF SURCHARGE DISTORTION - M-Score 61.21 >> -1.78 outlier, but F-Score 0.48 < 1.0 and Sloan -0.0096 does not flag accrual manipulation; Beneish inputs likely distorted by sales/receivables volatility, requires component-level review.\",\n      \"estimated_claim_or_surcharge_usd\": 4357657,\n      \"z3_smt_invariant\": \"SAT: NetIncome(69450766) == CFO(71519228) + Accruals(-2068462); Sloan=(69450766-71519228)/214726575=-0.0096 <= 0.10 PASS\",\n      \"actionable_memo\": \"MF-02/MF-05/MF-07: Verify TariffRisk 3.26% x Sales $133,670,454 = $4,357,657 against CBP Form 7501, supplier AP master and surcharge invoices. If importer retained CBP refunds, issue UCC 2-717 credit-memo deduction notice; do not book recovery on M-Score alone, decompose Beneish variables from 10-K.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"GLOBAL CLEAN ENERGY HOLDINGS, INC.\",\n      \"identifier\": \"CIK: 0000748790, FY: 2020\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; UCC 2-717 inapplicable without verified sales/AP surcharge; MF-09 Deterministic Verification\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / DATA INTEGRITY - M-Score 60.96 >> -1.78 outlier, F-Score 0.33 < 1.0, Sales=$nan prevents DSRI/SGI and tariff exposure calculation; Sloan -0.0393 not severe. Forensic models unreliable until sales verified.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE for revenue invariants: Sales=NaN => DSRI/SGI undefined; SAT for cash: NetIncome(-10550175) == CFO(-2447717) + Accruals(-8102458); Sloan=-0.0393 <= 0.10\",\n      \"actionable_memo\": \"MF-02/MF-09: Reject claim quantification at $0 under MF-05 until FY2020 10-K sales, receivables and AP vendor master are sourced. Recompute Beneish/Dechow after correcting NaN; TariffRisk 1.0 cannot be applied to unknown sales base. No UCC 2-717 withholding authorized on this record.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"ASTROTECH Corp\",\n      \"identifier\": \"CIK: 0001001907, FY: 2015\",\n      \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score > -1.78; UCC 2-717 contingent on verified AP surcharge only\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / SEVERE ACCRUAL ANOMALY - NetInc $10,778,000 vs CFO -$552,000 on Sales $513,000 indicates non-operating/discontinued gain or classification imbalance; M-Score 60.51 >> -1.78, F-Score 0.15 < 1.0, Sloan 0.2562 > 0.10 flags severe cash-to-accrual divergence.\",\n      \"estimated_claim_or_surcharge_usd\": 10260,\n      \"z3_smt_invariant\": \"SAT arithmetically but VIOLATES Sloan invariant: NetIncome(10778000) == CFO(-552000) + Accruals(11330000); Sloan=11330000/44218000=0.2562 > 0.10 FAIL\",\n      \"actionable_memo\": \"MF-02/MF-05: Investigate FY2015 10-K for discontinued operations/asset sale driving NetInc >> Sales. Indicative tariff exposure 2.0% x $513,000 = $10,260 below $50,000 MF-05 threshold - deprioritize tariff recovery, focus on accrual classification and non-recurring gain disclosure. No UCC 2-717 deduction on earnings flag alone.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"Myomo, Inc.\",\n      \"identifier\": \"CIK: 0001369290, FY: 2022\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; UCC 2-305(2) Good Faith; UCC 2-717 contingent on verified AP surcharge; MF-02 Public Record Verifiability\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER WITH SALES DATA ANOMALY - M-Score 60.38 >> -1.78, F-Score 0.22 < 1.0, Sloan -0.0410 not severe; Sales $1,000,000,000 vs Assets $20,095,412 is implausible/rounded placeholder and invalidates SGI/DSRI and tariff base until verified in 10-K.\",\n      \"estimated_claim_or_surcharge_usd\": 200000,\n      \"z3_smt_invariant\": \"SAT for cash: NetIncome(-10372329) == CFO(-9547695) + Accruals(-824634); Sloan=-824634/20095412=-0.0410 <= 0.10 PASS; Sales/Assets=49.76 VIOLATES plausibility invariant\",\n      \"actionable_memo\": \"MF-02/MF-09: Correct FY2022 sales from SEC 10-K before any claim; unverified indicative 0.02% x $1,000,000,000 = $200,000 must not be relied upon. Recompute Beneish components, verify AP/tariff invoices and CBP records; only then assess UCC 2-717 credit memo, otherwise classify as data-quality outlier not recoverable surcharge.\"\n    }\n  ]\n}"
+  },
+  "input_filers": [
+    {
+      "cik": 1602706,
+      "entity_name": "KAOPU GROUP INC",
+      "fy": 2016,
+      "assets": 11519781.0,
+      "sales": 7986658.0,
+      "net_income": -191304.0,
+      "cfo": NaN,
+      "beneish_m_score": 62.87,
+      "dechow_f_score": 0.23,
+      "tariff_risk_index": 3.2,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 553459.0
+    },
+    {
+      "cik": 1010086,
+      "entity_name": "Siga Technologies INC",
+      "fy": 2021,
+      "assets": 214726575.0,
+      "sales": 133670454.0,
+      "net_income": 69450766.0,
+      "cfo": 71519228.0,
+      "beneish_m_score": 61.21,
+      "dechow_f_score": 0.48,
+      "tariff_risk_index": 3.26,
+      "forensic_flag": "ELEVATED: IEEPA/SEC 301 TARIFF SURCHARGE DISTORTION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 748790,
+      "entity_name": "GLOBAL CLEAN ENERGY HOLDINGS, INC.",
+      "fy": 2020,
+      "assets": 206077922.0,
+      "sales": NaN,
+      "net_income": -10550175.0,
+      "cfo": -2447717.0,
+      "beneish_m_score": 60.96,
+      "dechow_f_score": 0.33,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 15854390.0
+    },
+    {
+      "cik": 1001907,
+      "entity_name": "ASTROTECH Corp",
+      "fy": 2015,
+      "assets": 44218000.0,
+      "sales": 513000.0,
+      "net_income": 10778000.0,
+      "cfo": -552000.0,
+      "beneish_m_score": 60.51,
+      "dechow_f_score": 0.15,
+      "tariff_risk_index": 2.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 7693000.0
+    },
+    {
+      "cik": 1369290,
+      "entity_name": "Myomo, Inc.",
+      "fy": 2022,
+      "assets": 20095412.0,
+      "sales": 1000000000.0,
+      "net_income": -10372329.0,
+      "cfo": -9547695.0,
+      "beneish_m_score": 60.38,
+      "dechow_f_score": 0.22,
+      "tariff_risk_index": 0.02,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0042\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"KAOPU GROUP INC\",\n      \"identifier\": \"CIK: 0001602706, FY: 2016\",\n      \"statutory_hook\": \"Beneish 8-Variable M-Score > -1.78; UCC 2-305(2) Good Faith Open Price Terms; UCC 2-717 Deduction of Damages From Price contingent on verified AP surcharge\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 62.87 >> -1.78 signals high manipulation probability; F-Score 0.23 < 1.0 low Dechow misstatement; Sloan Accrual Anomaly indeterminate due to CFO=$nan, deterministic verification fails. No verified tariff claim without CBP Form 7501/AP records.\",\n      \"estimated_claim_or_surcharge_usd\": 255573,\n      \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN => assert NetIncome(-191304) == CFO + Accruals cannot be satisfied; MF-09 Deterministic Verification FAILED\",\n      \"actionable_memo\": \"MF-02/MF-06: Pull SEC 10-K FY2016 cash flow statement to replace NaN CFO, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Hold UCC 2-717 deduction pending verified supplier tariff invoices; indicative exposure 3.2% x Sales $7,986,658 = $255,573, not self-enforcing until documented.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Siga Technologies INC\",\n      \"identifier\": \"CIK: 0001010086, FY: 2021\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; UCC 2-305(2) IEEPA/Section 301 Tariff Surcharge Good Faith; UCC 2-717; 19 U.S.C. 1313 Duty Drawback if CBP refunds not passed through\",\n      \"forensic_verdict\": \"ELEVATED: IEEPA/SEC 301 TARIFF SURCHARGE DISTORTION - M-Score 61.21 >> -1.78 outlier, but F-Score 0.48 < 1.0 and Sloan -0.0096 does not flag accrual manipulation; Beneish inputs likely distorted by sales/receivables volatility, requires component-level review.\",\n      \"estimated_claim_or_surcharge_usd\": 4357657,\n      \"z3_smt_invariant\": \"SAT: NetIncome(69450766) == CFO(71519228) + Accruals(-2068462); Sloan=(69450766-71519228)/214726575=-0.0096 <= 0.10 PASS\",\n      \"actionable_memo\": \"MF-02/MF-05/MF-07: Verify TariffRisk 3.26% x Sales $133,670,454 = $4,357,657 against CBP Form 7501, supplier AP master and surcharge invoices. If importer retained CBP refunds, issue UCC 2-717 credit-memo deduction notice; do not book recovery on M-Score alone, decompose Beneish variables from 10-K.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"GLOBAL CLEAN ENERGY HOLDINGS, INC.\",\n      \"identifier\": \"CIK: 0000748790, FY: 2020\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; UCC 2-717 inapplicable without verified sales/AP surcharge; MF-09 Deterministic Verification\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / DATA INTEGRITY - M-Score 60.96 >> -1.78 outlier, F-Score 0.33 < 1.0, Sales=$nan prevents DSRI/SGI and tariff exposure calculation; Sloan -0.0393 not severe. Forensic models unreliable until sales verified.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE for revenue invariants: Sales=NaN => DSRI/SGI undefined; SAT for cash: NetIncome(-10550175) == CFO(-2447717) + Accruals(-8102458); Sloan=-0.0393 <= 0.10\",\n      \"actionable_memo\": \"MF-02/MF-09: Reject claim quantification at $0 under MF-05 until FY2020 10-K sales, receivables and AP vendor master are sourced. Recompute Beneish/Dechow after correcting NaN; TariffRisk 1.0 cannot be applied to unknown sales base. No UCC 2-717 withholding authorized on this record.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"ASTROTECH Corp\",\n      \"identifier\": \"CIK: 0001001907, FY: 2015\",\n      \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score > -1.78; UCC 2-717 contingent on verified AP surcharge only\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / SEVERE ACCRUAL ANOMALY - NetInc $10,778,000 vs CFO -$552,000 on Sales $513,000 indicates non-operating/discontinued gain or classification imbalance; M-Score 60.51 >> -1.78, F-Score 0.15 < 1.0, Sloan 0.2562 > 0.10 flags severe cash-to-accrual divergence.\",\n      \"estimated_claim_or_surcharge_usd\": 10260,\n      \"z3_smt_invariant\": \"SAT arithmetically but VIOLATES Sloan invariant: NetIncome(10778000) == CFO(-552000) + Accruals(11330000); Sloan=11330000/44218000=0.2562 > 0.10 FAIL\",\n      \"actionable_memo\": \"MF-02/MF-05: Investigate FY2015 10-K for discontinued operations/asset sale driving NetInc >> Sales. Indicative tariff exposure 2.0% x $513,000 = $10,260 below $50,000 MF-05 threshold - deprioritize tariff recovery, focus on accrual classification and non-recurring gain disclosure. No UCC 2-717 deduction on earnings flag alone.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"Myomo, Inc.\",\n      \"identifier\": \"CIK: 0001369290, FY: 2022\",\n      \"statutory_hook\": \"Beneish M-Score > -1.78; UCC 2-305(2) Good Faith; UCC 2-717 contingent on verified AP surcharge; MF-02 Public Record Verifiability\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER WITH SALES DATA ANOMALY - M-Score 60.38 >> -1.78, F-Score 0.22 < 1.0, Sloan -0.0410 not severe; Sales $1,000,000,000 vs Assets $20,095,412 is implausible/rounded placeholder and invalidates SGI/DSRI and tariff base until verified in 10-K.\",\n      \"estimated_claim_or_surcharge_usd\": 200000,\n      \"z3_smt_invariant\": \"SAT for cash: NetIncome(-10372329) == CFO(-9547695) + Accruals(-824634); Sloan=-824634/20095412=-0.0410 <= 0.10 PASS; Sales/Assets=49.76 VIOLATES plausibility invariant\",\n      \"actionable_memo\": \"MF-02/MF-09: Correct FY2022 sales from SEC 10-K before any claim; unverified indicative 0.02% x $1,000,000,000 = $200,000 must not be relied upon. Recompute Beneish components, verify AP/tariff invoices and CBP records; only then assess UCC 2-717 credit memo, otherwise classify as data-quality outlier not recoverable surcharge.\"\n    }\n  ]\n}",
+  "meta_parsed": {
+    "batch_id": "SEC_0042",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "KAOPU GROUP INC",
+        "identifier": "CIK: 0001602706, FY: 2016",
+        "statutory_hook": "Beneish 8-Variable M-Score > -1.78; UCC 2-305(2) Good Faith Open Price Terms; UCC 2-717 Deduction of Damages From Price contingent on verified AP surcharge",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 62.87 >> -1.78 signals high manipulation probability; F-Score 0.23 < 1.0 low Dechow misstatement; Sloan Accrual Anomaly indeterminate due to CFO=$nan, deterministic verification fails. No verified tariff claim without CBP Form 7501/AP records.",
+        "estimated_claim_or_surcharge_usd": 255573,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: CFO=NaN => assert NetIncome(-191304) == CFO + Accruals cannot be satisfied; MF-09 Deterministic Verification FAILED",
+        "actionable_memo": "MF-02/MF-06: Pull SEC 10-K FY2016 cash flow statement to replace NaN CFO, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Hold UCC 2-717 deduction pending verified supplier tariff invoices; indicative exposure 3.2% x Sales $7,986,658 = $255,573, not self-enforcing until documented."
+      },
+      {
+        "index": 2,
+        "entity_name": "Siga Technologies INC",
+        "identifier": "CIK: 0001010086, FY: 2021",
+        "statutory_hook": "Beneish M-Score > -1.78; UCC 2-305(2) IEEPA/Section 301 Tariff Surcharge Good Faith; UCC 2-717; 19 U.S.C. 1313 Duty Drawback if CBP refunds not passed through",
+        "forensic_verdict": "ELEVATED: IEEPA/SEC 301 TARIFF SURCHARGE DISTORTION - M-Score 61.21 >> -1.78 outlier, but F-Score 0.48 < 1.0 and Sloan -0.0096 does not flag accrual manipulation; Beneish inputs likely distorted by sales/receivables volatility, requires component-level review.",
+        "estimated_claim_or_surcharge_usd": 4357657,
+        "z3_smt_invariant": "SAT: NetIncome(69450766) == CFO(71519228) + Accruals(-2068462); Sloan=(69450766-71519228)/214726575=-0.0096 <= 0.10 PASS",
+        "actionable_memo": "MF-02/MF-05/MF-07: Verify TariffRisk 3.26% x Sales $133,670,454 = $4,357,657 against CBP Form 7501, supplier AP master and surcharge invoices. If importer retained CBP refunds, issue UCC 2-717 credit-memo deduction notice; do not book recovery on M-Score alone, decompose Beneish variables from 10-K."
+      },
+      {
+        "index": 3,
+        "entity_name": "GLOBAL CLEAN ENERGY HOLDINGS, INC.",
+        "identifier": "CIK: 0000748790, FY: 2020",
+        "statutory_hook": "Beneish M-Score > -1.78; Sloan Accrual Anomaly; UCC 2-717 inapplicable without verified sales/AP surcharge; MF-09 Deterministic Verification",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / DATA INTEGRITY - M-Score 60.96 >> -1.78 outlier, F-Score 0.33 < 1.0, Sales=$nan prevents DSRI/SGI and tariff exposure calculation; Sloan -0.0393 not severe. Forensic models unreliable until sales verified.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE for revenue invariants: Sales=NaN => DSRI/SGI undefined; SAT for cash: NetIncome(-10550175) == CFO(-2447717) + Accruals(-8102458); Sloan=-0.0393 <= 0.10",
+        "actionable_memo": "MF-02/MF-09: Reject claim quantification at $0 under MF-05 until FY2020 10-K sales, receivables and AP vendor master are sourced. Recompute Beneish/Dechow after correcting NaN; TariffRisk 1.0 cannot be applied to unknown sales base. No UCC 2-717 withholding authorized on this record."
+      },
+      {
+        "index": 4,
+        "entity_name": "ASTROTECH Corp",
+        "identifier": "CIK: 0001001907, FY: 2015",
+        "statutory_hook": "Sloan Accrual Anomaly > 0.10; Beneish M-Score > -1.78; UCC 2-717 contingent on verified AP surcharge only",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / SEVERE ACCRUAL ANOMALY - NetInc $10,778,000 vs CFO -$552,000 on Sales $513,000 indicates non-operating/discontinued gain or classification imbalance; M-Score 60.51 >> -1.78, F-Score 0.15 < 1.0, Sloan 0.2562 > 0.10 flags severe cash-to-accrual divergence.",
+        "estimated_claim_or_surcharge_usd": 10260,
+        "z3_smt_invariant": "SAT arithmetically but VIOLATES Sloan invariant: NetIncome(10778000) == CFO(-552000) + Accruals(11330000); Sloan=11330000/44218000=0.2562 > 0.10 FAIL",
+        "actionable_memo": "MF-02/MF-05: Investigate FY2015 10-K for discontinued operations/asset sale driving NetInc >> Sales. Indicative tariff exposure 2.0% x $513,000 = $10,260 below $50,000 MF-05 threshold - deprioritize tariff recovery, focus on accrual classification and non-recurring gain disclosure. No UCC 2-717 deduction on earnings flag alone."
+      },
+      {
+        "index": 5,
+        "entity_name": "Myomo, Inc.",
+        "identifier": "CIK: 0001369290, FY: 2022",
+        "statutory_hook": "Beneish M-Score > -1.78; UCC 2-305(2) Good Faith; UCC 2-717 contingent on verified AP surcharge; MF-02 Public Record Verifiability",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER WITH SALES DATA ANOMALY - M-Score 60.38 >> -1.78, F-Score 0.22 < 1.0, Sloan -0.0410 not severe; Sales $1,000,000,000 vs Assets $20,095,412 is implausible/rounded placeholder and invalidates SGI/DSRI and tariff base until verified in 10-K.",
+        "estimated_claim_or_surcharge_usd": 200000,
+        "z3_smt_invariant": "SAT for cash: NetIncome(-10372329) == CFO(-9547695) + Accruals(-824634); Sloan=-824634/20095412=-0.0410 <= 0.10 PASS; Sales/Assets=49.76 VIOLATES plausibility invariant",
+        "actionable_memo": "MF-02/MF-09: Correct FY2022 sales from SEC 10-K before any claim; unverified indicative 0.02% x $1,000,000,000 = $200,000 must not be relied upon. Recompute Beneish components, verify AP/tariff invoices and CBP records; only then assess UCC 2-717 credit memo, otherwise classify as data-quality outlier not recoverable surcharge."
+      }
+    ]
+  }
+}
