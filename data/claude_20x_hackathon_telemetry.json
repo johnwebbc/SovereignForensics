@@ -1,8 +1,8 @@
 {
   "updated_at_utc": "2026-11-04T23:54:38.762030+00:00",
-  "total_turns": 8,
-  "total_characters": 135088,
-  "total_time_seconds": 1287.78,
+  "total_turns": 9,
+  "total_characters": 157682,
+  "total_time_seconds": 1437.49,
   "by_model": {
     "opus": {
       "turns": 4,
@@ -10,9 +10,9 @@
       "time_seconds": 662.88
     },
     "fable": {
-      "turns": 3,
-      "characters": 69568,
-      "time_seconds": 592.47
+      "turns": 4,
+      "characters": 92162,
+      "time_seconds": 742.18
     },
     "sonnet": {
       "turns": 1,
