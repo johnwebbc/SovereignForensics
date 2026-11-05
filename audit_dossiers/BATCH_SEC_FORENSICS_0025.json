@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0025",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:59:40.721539+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0025",
+    "req_id": "meta_mb_1793847562_LANE1_SEC_0025_ff0c",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1730,
+    "cached_tok": 1140,
+    "out_tok": 2689,
+    "cost_usd": "0.0564",
+    "elapsed_sec": 17.79,
+    "response_text": "{\"batch_id\": \"SEC_0025\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"MASIMO CORP\", \"identifier\": \"CIK: 0000937556, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 149.04 >> -1.78, F-Score 0.0, Sloan ((22632000000-114209000)/601735000)=37.41 >> 0.10. Reported NetInc $22,632,000,000 exceeds Assets $601,735,000 by 37.6x, deterministic data/filing inconsistency, not credible earnings. TariffRisk 0.93 elevated but secondary to unit/scale error.\", \"estimated_claim_or_surcharge_usd\": 22517791000, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Assets; UNSAT - 22632000000 != 114209000 + implied_accruals within reported Assets 601735000, invariant violated, requires restatement/source verification\", \"actionable_memo\": \"HALT automated deduction. Pull original SEC 10-K for CIK 0000937556 FY2015, verify NetInc units (thousands vs dollars), recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Do not assert UCC 2-717 setoff or 1313 drawback until CBP 7501, vendor AP master, and tariff surcharge invoices independently reconcile. Escalate as probable data ingestion error.\"}, {\"index\": 2, \"entity_name\": \"Power REIT\", \"identifier\": \"CIK: 0001532619, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 146.11 >> -1.78, F-Score 0.4 < 1.0, Sloan ((-321739-2131)/12046201)=-0.0269 < 0.10. No Sloan cash-accrual flag, but extreme Beneish inputs likely distorted by tiny Sales $1,043,892 base and REIT structure. TariffRisk 1.0 inconsistent with REIT operations, requires exposure proof.\", \"estimated_claim_or_surcharge_usd\": 323870, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals; SAT for -321739 == 2131 + (-323870), arithmetic holds, Beneish component invariants UNSAT/outlier - verify DSRI/GMI/AQI denominators\", \"actionable_memo\": \"Verify original 10-K CIK 0001532619 FY2013 Beneish inputs, especially receivables, margins and asset quality on small asset base. Confirm any actual import/tariff AP exposure before invoking UCC 2-305(2), 2-717 or 1313; REIT tariff risk 1.0 is not self-proving. No credit memo without vendor-level surcharge documentation.\"}, {\"index\": 3, \"entity_name\": \"Eagle Pharmaceuticals, Inc.\", \"identifier\": \"CIK: 0000827871, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; Dechow F-Score assessment\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / ACCRUAL FLAG - M-Score 144.85 >> -1.78, F-Score 0.41 < 1.0, Sloan ((81453000-53207000)/214320000)=0.1318 > 0.10 severe threshold. NetInc exceeds CFO by $28,246,000 despite plausible scale vs Assets $214,320,000 and Sales $189,482,000. TariffRisk 0.27 low.\", \"estimated_claim_or_surcharge_usd\": 28246000, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND Sloan <= 0.10; SAT arithmetically 81453000 == 53207000 + 28246000, UNSAT on Sloan <= 0.10 invariant (0.1318), accrual quality fails\", \"actionable_memo\": \"Recompute from 10-K CIK 0000827871 FY2016: receivables, inventory, soft assets, RSST accruals for Dechow. Investigate $28.246M non-cash earnings gap, revenue recognition and reserves. Tariff recovery under UCC 2-717 / 1313 not supported on TariffRisk 0.27 alone; require CBP 7501 and supplier surcharge proof before any AP deduction.\"}, {\"index\": 4, \"entity_name\": \"FINTECH SCION LIMITED\", \"identifier\": \"CIK: 0001623590, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly approaching 0.10; Dechow F-Score assessment\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL PER PROVIDED SCORES - M-Score 143.42 >> -1.78, F-Score 0.68 < 1.0, Sloan ((5918970-16539)/63825261)=0.0925 < 0.10 but near threshold. NetInc $5,918,970 on Sales $3,084,279 (192% margin) with CFO only $16,539 is economically implausible and indicates non-operating/non-cash gains or data error. TariffRisk 0.0.\", \"estimated_claim_or_surcharge_usd\": 5902431, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Sales + OtherIncome_verified; SAT arithmetically 5918970 == 16539 + 5902431, UNSAT on operating plausibility without verified other income, accrual invariant stressed\", \"actionable_memo\": \"Pull 20-F/10-K CIK 0001623590 FY2022, trace $5.902M accrual gap to fair-value, related-party or other income, verify cash, receivables and issuance. No tariff hook: TariffRisk 0.0, do not invoke UCC 2-717 or 19 U.S.C. 1313. Escalate for Beneish component audit and source-unit verification before any claim quantification.\"}, {\"index\": 5, \"entity_name\": \"LIPOCINE INC.\", \"identifier\": \"CIK: 0001535955, FY: 2021\", \"statutory_hook\": \"Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE PER FLAG, MIXED ACCRUALS - M-Score 143.01 >> -1.78, F-Score 0.3 < 1.0, Sloan ((-634399 - (-4411303))/52482439)=0.0720 < 0.10. Net loss smaller than CFO burn due to $3,776,904 positive accrual offset. Scale plausible: Assets $52,482,439, Sales $16,140,838. TariffRisk 1.0 requires proof, inconsistent as standalone signal.\", \"estimated_claim_or_surcharge_usd\": 3776904, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals; SAT -634399 == -4411303 + 3776904, Sloan <= 0.10 SAT (0.0720), Beneish > -1.78 invariant UNSAT - components require verification\", \"actionable_memo\": \"Verify 10-K CIK 0001535955 FY2021 Beneish inputs causing 143.01, check for denominator/unit errors, warrants and non-cash charges explaining accrual offset. Confirm actual import, CBP 7501 and supplier tariff surcharges before any UCC 2-717 deduction or 1313 drawback claim; TariffRisk 1.0 alone is insufficient. Classify as forensic review, not recoverable claim, pending documents.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 937556,
+      "entity_name": "MASIMO CORP",
+      "fy": 2015,
+      "assets": 601735000.0,
+      "sales": 630111000.0,
+      "net_income": 22632000000.0,
+      "cfo": 114209000.0,
+      "beneish_m_score": 149.04,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 0.93,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 30287000.0
+    },
+    {
+      "cik": 1532619,
+      "entity_name": "Power REIT",
+      "fy": 2013,
+      "assets": 12046201.0,
+      "sales": 1043892.0,
+      "net_income": -321739.0,
+      "cfo": 2131.0,
+      "beneish_m_score": 146.11,
+      "dechow_f_score": 0.4,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 282296.0
+    },
+    {
+      "cik": 827871,
+      "entity_name": "Eagle Pharmaceuticals, Inc.",
+      "fy": 2016,
+      "assets": 214320000.0,
+      "sales": 189482000.0,
+      "net_income": 81453000.0,
+      "cfo": 53207000.0,
+      "beneish_m_score": 144.85,
+      "dechow_f_score": 0.41,
+      "tariff_risk_index": 0.27,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 63094000.0
+    },
+    {
+      "cik": 1623590,
+      "entity_name": "FINTECH SCION LIMITED",
+      "fy": 2022,
+      "assets": 63825261.0,
+      "sales": 3084279.0,
+      "net_income": 5918970.0,
+      "cfo": 16539.0,
+      "beneish_m_score": 143.42,
+      "dechow_f_score": 0.68,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1535955,
+      "entity_name": "LIPOCINE INC.",
+      "fy": 2021,
+      "assets": 52482439.0,
+      "sales": 16140838.0,
+      "net_income": -634399.0,
+      "cfo": -4411303.0,
+      "beneish_m_score": 143.01,
+      "dechow_f_score": 0.3,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3098436.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0025\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"MASIMO CORP\", \"identifier\": \"CIK: 0000937556, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 149.04 >> -1.78, F-Score 0.0, Sloan ((22632000000-114209000)/601735000)=37.41 >> 0.10. Reported NetInc $22,632,000,000 exceeds Assets $601,735,000 by 37.6x, deterministic data/filing inconsistency, not credible earnings. TariffRisk 0.93 elevated but secondary to unit/scale error.\", \"estimated_claim_or_surcharge_usd\": 22517791000, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Assets; UNSAT - 22632000000 != 114209000 + implied_accruals within reported Assets 601735000, invariant violated, requires restatement/source verification\", \"actionable_memo\": \"HALT automated deduction. Pull original SEC 10-K for CIK 0000937556 FY2015, verify NetInc units (thousands vs dollars), recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Do not assert UCC 2-717 setoff or 1313 drawback until CBP 7501, vendor AP master, and tariff surcharge invoices independently reconcile. Escalate as probable data ingestion error.\"}, {\"index\": 2, \"entity_name\": \"Power REIT\", \"identifier\": \"CIK: 0001532619, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 146.11 >> -1.78, F-Score 0.4 < 1.0, Sloan ((-321739-2131)/12046201)=-0.0269 < 0.10. No Sloan cash-accrual flag, but extreme Beneish inputs likely distorted by tiny Sales $1,043,892 base and REIT structure. TariffRisk 1.0 inconsistent with REIT operations, requires exposure proof.\", \"estimated_claim_or_surcharge_usd\": 323870, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals; SAT for -321739 == 2131 + (-323870), arithmetic holds, Beneish component invariants UNSAT/outlier - verify DSRI/GMI/AQI denominators\", \"actionable_memo\": \"Verify original 10-K CIK 0001532619 FY2013 Beneish inputs, especially receivables, margins and asset quality on small asset base. Confirm any actual import/tariff AP exposure before invoking UCC 2-305(2), 2-717 or 1313; REIT tariff risk 1.0 is not self-proving. No credit memo without vendor-level surcharge documentation.\"}, {\"index\": 3, \"entity_name\": \"Eagle Pharmaceuticals, Inc.\", \"identifier\": \"CIK: 0000827871, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; Dechow F-Score assessment\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / ACCRUAL FLAG - M-Score 144.85 >> -1.78, F-Score 0.41 < 1.0, Sloan ((81453000-53207000)/214320000)=0.1318 > 0.10 severe threshold. NetInc exceeds CFO by $28,246,000 despite plausible scale vs Assets $214,320,000 and Sales $189,482,000. TariffRisk 0.27 low.\", \"estimated_claim_or_surcharge_usd\": 28246000, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND Sloan <= 0.10; SAT arithmetically 81453000 == 53207000 + 28246000, UNSAT on Sloan <= 0.10 invariant (0.1318), accrual quality fails\", \"actionable_memo\": \"Recompute from 10-K CIK 0000827871 FY2016: receivables, inventory, soft assets, RSST accruals for Dechow. Investigate $28.246M non-cash earnings gap, revenue recognition and reserves. Tariff recovery under UCC 2-717 / 1313 not supported on TariffRisk 0.27 alone; require CBP 7501 and supplier surcharge proof before any AP deduction.\"}, {\"index\": 4, \"entity_name\": \"FINTECH SCION LIMITED\", \"identifier\": \"CIK: 0001623590, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly approaching 0.10; Dechow F-Score assessment\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL PER PROVIDED SCORES - M-Score 143.42 >> -1.78, F-Score 0.68 < 1.0, Sloan ((5918970-16539)/63825261)=0.0925 < 0.10 but near threshold. NetInc $5,918,970 on Sales $3,084,279 (192% margin) with CFO only $16,539 is economically implausible and indicates non-operating/non-cash gains or data error. TariffRisk 0.0.\", \"estimated_claim_or_surcharge_usd\": 5902431, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Sales + OtherIncome_verified; SAT arithmetically 5918970 == 16539 + 5902431, UNSAT on operating plausibility without verified other income, accrual invariant stressed\", \"actionable_memo\": \"Pull 20-F/10-K CIK 0001623590 FY2022, trace $5.902M accrual gap to fair-value, related-party or other income, verify cash, receivables and issuance. No tariff hook: TariffRisk 0.0, do not invoke UCC 2-717 or 19 U.S.C. 1313. Escalate for Beneish component audit and source-unit verification before any claim quantification.\"}, {\"index\": 5, \"entity_name\": \"LIPOCINE INC.\", \"identifier\": \"CIK: 0001535955, FY: 2021\", \"statutory_hook\": \"Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE PER FLAG, MIXED ACCRUALS - M-Score 143.01 >> -1.78, F-Score 0.3 < 1.0, Sloan ((-634399 - (-4411303))/52482439)=0.0720 < 0.10. Net loss smaller than CFO burn due to $3,776,904 positive accrual offset. Scale plausible: Assets $52,482,439, Sales $16,140,838. TariffRisk 1.0 requires proof, inconsistent as standalone signal.\", \"estimated_claim_or_surcharge_usd\": 3776904, \"z3_smt_invariant\": \"Z3: assert NetIncome == CFO + Accruals; SAT -634399 == -4411303 + 3776904, Sloan <= 0.10 SAT (0.0720), Beneish > -1.78 invariant UNSAT - components require verification\", \"actionable_memo\": \"Verify 10-K CIK 0001535955 FY2021 Beneish inputs causing 143.01, check for denominator/unit errors, warrants and non-cash charges explaining accrual offset. Confirm actual import, CBP 7501 and supplier tariff surcharges before any UCC 2-717 deduction or 1313 drawback claim; TariffRisk 1.0 alone is insufficient. Classify as forensic review, not recoverable claim, pending documents.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0025",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "MASIMO CORP",
+        "identifier": "CIK: 0000937556, FY: 2015",
+        "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 149.04 >> -1.78, F-Score 0.0, Sloan ((22632000000-114209000)/601735000)=37.41 >> 0.10. Reported NetInc $22,632,000,000 exceeds Assets $601,735,000 by 37.6x, deterministic data/filing inconsistency, not credible earnings. TariffRisk 0.93 elevated but secondary to unit/scale error.",
+        "estimated_claim_or_surcharge_usd": 22517791000,
+        "z3_smt_invariant": "Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Assets; UNSAT - 22632000000 != 114209000 + implied_accruals within reported Assets 601735000, invariant violated, requires restatement/source verification",
+        "actionable_memo": "HALT automated deduction. Pull original SEC 10-K for CIK 0000937556 FY2015, verify NetInc units (thousands vs dollars), recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and Sloan. Do not assert UCC 2-717 setoff or 1313 drawback until CBP 7501, vendor AP master, and tariff surcharge invoices independently reconcile. Escalate as probable data ingestion error."
+      },
+      {
+        "index": 2,
+        "entity_name": "Power REIT",
+        "identifier": "CIK: 0001532619, FY: 2013",
+        "statutory_hook": "Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 146.11 >> -1.78, F-Score 0.4 < 1.0, Sloan ((-321739-2131)/12046201)=-0.0269 < 0.10. No Sloan cash-accrual flag, but extreme Beneish inputs likely distorted by tiny Sales $1,043,892 base and REIT structure. TariffRisk 1.0 inconsistent with REIT operations, requires exposure proof.",
+        "estimated_claim_or_surcharge_usd": 323870,
+        "z3_smt_invariant": "Z3: assert NetIncome == CFO + Accruals; SAT for -321739 == 2131 + (-323870), arithmetic holds, Beneish component invariants UNSAT/outlier - verify DSRI/GMI/AQI denominators",
+        "actionable_memo": "Verify original 10-K CIK 0001532619 FY2013 Beneish inputs, especially receivables, margins and asset quality on small asset base. Confirm any actual import/tariff AP exposure before invoking UCC 2-305(2), 2-717 or 1313; REIT tariff risk 1.0 is not self-proving. No credit memo without vendor-level surcharge documentation."
+      },
+      {
+        "index": 3,
+        "entity_name": "Eagle Pharmaceuticals, Inc.",
+        "identifier": "CIK: 0000827871, FY: 2016",
+        "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; Dechow F-Score assessment",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / ACCRUAL FLAG - M-Score 144.85 >> -1.78, F-Score 0.41 < 1.0, Sloan ((81453000-53207000)/214320000)=0.1318 > 0.10 severe threshold. NetInc exceeds CFO by $28,246,000 despite plausible scale vs Assets $214,320,000 and Sales $189,482,000. TariffRisk 0.27 low.",
+        "estimated_claim_or_surcharge_usd": 28246000,
+        "z3_smt_invariant": "Z3: assert NetIncome == CFO + Accruals AND Sloan <= 0.10; SAT arithmetically 81453000 == 53207000 + 28246000, UNSAT on Sloan <= 0.10 invariant (0.1318), accrual quality fails",
+        "actionable_memo": "Recompute from 10-K CIK 0000827871 FY2016: receivables, inventory, soft assets, RSST accruals for Dechow. Investigate $28.246M non-cash earnings gap, revenue recognition and reserves. Tariff recovery under UCC 2-717 / 1313 not supported on TariffRisk 0.27 alone; require CBP 7501 and supplier surcharge proof before any AP deduction."
+      },
+      {
+        "index": 4,
+        "entity_name": "FINTECH SCION LIMITED",
+        "identifier": "CIK: 0001623590, FY: 2022",
+        "statutory_hook": "Beneish M-Score > -1.78; Sloan Accrual Anomaly approaching 0.10; Dechow F-Score assessment",
+        "forensic_verdict": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL PER PROVIDED SCORES - M-Score 143.42 >> -1.78, F-Score 0.68 < 1.0, Sloan ((5918970-16539)/63825261)=0.0925 < 0.10 but near threshold. NetInc $5,918,970 on Sales $3,084,279 (192% margin) with CFO only $16,539 is economically implausible and indicates non-operating/non-cash gains or data error. TariffRisk 0.0.",
+        "estimated_claim_or_surcharge_usd": 5902431,
+        "z3_smt_invariant": "Z3: assert NetIncome == CFO + Accruals AND NetIncome <= Sales + OtherIncome_verified; SAT arithmetically 5918970 == 16539 + 5902431, UNSAT on operating plausibility without verified other income, accrual invariant stressed",
+        "actionable_memo": "Pull 20-F/10-K CIK 0001623590 FY2022, trace $5.902M accrual gap to fair-value, related-party or other income, verify cash, receivables and issuance. No tariff hook: TariffRisk 0.0, do not invoke UCC 2-717 or 19 U.S.C. 1313. Escalate for Beneish component audit and source-unit verification before any claim quantification."
+      },
+      {
+        "index": 5,
+        "entity_name": "LIPOCINE INC.",
+        "identifier": "CIK: 0001535955, FY: 2021",
+        "statutory_hook": "Beneish M-Score > -1.78; 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 only upon verified CBP Form 7501 and AP surcharge proof",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE PER FLAG, MIXED ACCRUALS - M-Score 143.01 >> -1.78, F-Score 0.3 < 1.0, Sloan ((-634399 - (-4411303))/52482439)=0.0720 < 0.10. Net loss smaller than CFO burn due to $3,776,904 positive accrual offset. Scale plausible: Assets $52,482,439, Sales $16,140,838. TariffRisk 1.0 requires proof, inconsistent as standalone signal.",
+        "estimated_claim_or_surcharge_usd": 3776904,
+        "z3_smt_invariant": "Z3: assert NetIncome == CFO + Accruals; SAT -634399 == -4411303 + 3776904, Sloan <= 0.10 SAT (0.0720), Beneish > -1.78 invariant UNSAT - components require verification",
+        "actionable_memo": "Verify 10-K CIK 0001535955 FY2021 Beneish inputs causing 143.01, check for denominator/unit errors, warrants and non-cash charges explaining accrual offset. Confirm actual import, CBP 7501 and supplier tariff surcharges before any UCC 2-717 deduction or 1313 drawback claim; TariffRisk 1.0 alone is insufficient. Classify as forensic review, not recoverable claim, pending documents."
+      }
+    ]
+  }
+}

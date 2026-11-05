@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0029",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:00:36.885126+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0029",
+    "req_id": "meta_mb_1793847622_LANE1_SEC_0029_e567",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1734,
+    "cached_tok": 1140,
+    "out_tok": 2409,
+    "cost_usd": "0.0508",
+    "elapsed_sec": 14.07,
+    "response_text": "{\"batch_id\": \"SEC_0029\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"HYPERION DEFI, INC.\", \"identifier\": \"CIK: 0001682639, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 113.94 >> -1.78 signals high manipulation probability. Sales $57,336 vs Net Loss $-27,261,096 on Assets $28,779,374 is economically incoherent. F-Score 0.0 does not mitigate Beneish outlier. No deterministic tariff recovery established.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -27261096 == CFO -23836539 + Accruals -3424557; Sloan = (NI-CFO)/Assets = -0.1190, abs > 0.10 flagged; Balance sheet imbalance flag prevents reliance\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, AP vendor master, and paid surcharge invoices. Demand audited 10-K reconciliation, trial balance, and CFO statement tie-out within 48 hours. Freeze credit pending verification; estimated tariff claim $0 on current evidence.\"}, {\"index\": 2, \"entity_name\": \"ECOSPHERE TECHNOLOGIES INC\", \"identifier\": \"CIK: 0001071760, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan invariant unverifiable due to missing CFO; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 112.87 >> -1.78 signals high manipulation probability. Net Loss $-11,579,215 exceeds Sales $1,119,879 by >10x on Assets $15,051,719. CFO is NaN, so cash-to-accrual verification fails. F-Score 0.35 is not exculpatory.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO = NaN, therefore NetIncome == CFO + Accruals cannot be verified; Sloan = (NI-CFO)/Assets undefined. Deterministic verification MF-09 FAIL\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501 and complete cash flow statement. Demand restated FY2015 10-K with CFO, balance sheet equation Assets = Liabilities + Equity tie-out, and auditor confirmation. Estimated tariff claim $0 until CFO and tariff surcharge are documented.\"}, {\"index\": 3, \"entity_name\": \"BLUE DOLPHIN ENERGY CO\", \"identifier\": \"CIK: 0000793306, FY: 2012\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly evaluated; UCC \u00a7 2-305(2) / \u00a7 2-717 requires documented tariff surcharge not in record provided\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 110.54 >> -1.78 signals high manipulation probability despite near-breakeven Net Income $183,854 on Sales $352,094,714. Thin margin and Beneish inputs require DSRI/GMI/AQI decomposition. F-Score 0.54 below 1.0, Sloan normal, does not clear M-Score.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome 183854 == CFO 252283 + Accruals -68429; Sloan = (183854-252283)/56381926 = -0.0012, within 0.10 threshold; M-Score invariant FAIL vs -1.78\", \"actionable_memo\": \"No UCC \u00a7 2-717 deduction on current evidence. Obtain FY2012 10-K Beneish components DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, reconcile receivables/inventory, and verify any tariff pass-through in COGS before asserting a $50,000+ claim. Estimated tariff claim $0 documented.\"}, {\"index\": 4, \"entity_name\": \"Crown Electrokinetics Corp.\", \"identifier\": \"CIK: 0001761696, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 110.15 >> -1.78 signals high manipulation probability. Net Loss $-25,946,000 exceeds Sales $19,701,000 on Assets $34,983,000, with large negative accruals. F-Score 0.31 below 1.0 does not mitigate Beneish/Sloan flags.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -25946000 == CFO -16158000 + Accruals -9788000; Sloan = (-25946000 - (-16158000))/34983000 = -0.2798, abs > 0.10 severe accrual flag; M-Score FAIL vs -1.78\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without paid tariff invoices, CBP Form 7501, and AP remittance history showing 3%-8% surcharge under UCC \u00a7 2-305(2). Demand FY2024 10-K accrual schedule, impairment and going-concern disclosure. Estimated tariff claim $0 on current evidence.\"}, {\"index\": 5, \"entity_name\": \"LATITUDE 360, INC.\", \"identifier\": \"CIK: 0001376755, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 109.59 >> -1.78 signals high manipulation probability. Net Loss $-50,302,379 is 2.7x Sales $18,429,900 and ~96.8% of Assets $51,973,095, while CFO is positive $571,308, indicating massive non-cash accruals/impairments. F-Score 0.48 does not clear flags.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -50302379 == CFO 571308 + Accruals -50873687; Sloan = (-50302379-571308)/51973095 = -0.9789, abs >> 0.10 severe cash-to-accrual manipulation flag; Balance sheet imbalance FAIL\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, surcharge invoices, and AP proof. Demand FY2014 10-K full accrual, impairment, and balance sheet reconciliation Assets = Liabilities + Equity, plus auditor workpapers. Freeze reliance pending restatement verification; estimated tariff claim $0 documented.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1682639,
+      "entity_name": "HYPERION DEFI,\u00a0INC.",
+      "fy": 2024,
+      "assets": 28779374.0,
+      "sales": 57336.0,
+      "net_income": -27261096.0,
+      "cfo": -23836539.0,
+      "beneish_m_score": 113.94,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": -0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8235471.0
+    },
+    {
+      "cik": 1071760,
+      "entity_name": "ECOSPHERE TECHNOLOGIES INC",
+      "fy": 2015,
+      "assets": 15051719.0,
+      "sales": 1119879.0,
+      "net_income": -11579215.0,
+      "cfo": NaN,
+      "beneish_m_score": 112.87,
+      "dechow_f_score": 0.35,
+      "tariff_risk_index": 8.58,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3153676.0
+    },
+    {
+      "cik": 793306,
+      "entity_name": "BLUE DOLPHIN ENERGY CO",
+      "fy": 2012,
+      "assets": 56381926.0,
+      "sales": 352094714.0,
+      "net_income": 183854.0,
+      "cfo": 252283.0,
+      "beneish_m_score": 110.54,
+      "dechow_f_score": 0.54,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1761696,
+      "entity_name": "Crown Electrokinetics Corp.",
+      "fy": 2024,
+      "assets": 34983000.0,
+      "sales": 19701000.0,
+      "net_income": -25946000.0,
+      "cfo": -16158000.0,
+      "beneish_m_score": 110.15,
+      "dechow_f_score": 0.31,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1376755,
+      "entity_name": "LATITUDE 360, INC.",
+      "fy": 2014,
+      "assets": 51973095.0,
+      "sales": 18429900.0,
+      "net_income": -50302379.0,
+      "cfo": 571308.0,
+      "beneish_m_score": 109.59,
+      "dechow_f_score": 0.48,
+      "tariff_risk_index": 0.65,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 13736912.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0029\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"HYPERION DEFI, INC.\", \"identifier\": \"CIK: 0001682639, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 113.94 >> -1.78 signals high manipulation probability. Sales $57,336 vs Net Loss $-27,261,096 on Assets $28,779,374 is economically incoherent. F-Score 0.0 does not mitigate Beneish outlier. No deterministic tariff recovery established.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -27261096 == CFO -23836539 + Accruals -3424557; Sloan = (NI-CFO)/Assets = -0.1190, abs > 0.10 flagged; Balance sheet imbalance flag prevents reliance\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, AP vendor master, and paid surcharge invoices. Demand audited 10-K reconciliation, trial balance, and CFO statement tie-out within 48 hours. Freeze credit pending verification; estimated tariff claim $0 on current evidence.\"}, {\"index\": 2, \"entity_name\": \"ECOSPHERE TECHNOLOGIES INC\", \"identifier\": \"CIK: 0001071760, FY: 2015\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan invariant unverifiable due to missing CFO; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 112.87 >> -1.78 signals high manipulation probability. Net Loss $-11,579,215 exceeds Sales $1,119,879 by >10x on Assets $15,051,719. CFO is NaN, so cash-to-accrual verification fails. F-Score 0.35 is not exculpatory.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO = NaN, therefore NetIncome == CFO + Accruals cannot be verified; Sloan = (NI-CFO)/Assets undefined. Deterministic verification MF-09 FAIL\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501 and complete cash flow statement. Demand restated FY2015 10-K with CFO, balance sheet equation Assets = Liabilities + Equity tie-out, and auditor confirmation. Estimated tariff claim $0 until CFO and tariff surcharge are documented.\"}, {\"index\": 3, \"entity_name\": \"BLUE DOLPHIN ENERGY CO\", \"identifier\": \"CIK: 0000793306, FY: 2012\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly evaluated; UCC \u00a7 2-305(2) / \u00a7 2-717 requires documented tariff surcharge not in record provided\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 110.54 >> -1.78 signals high manipulation probability despite near-breakeven Net Income $183,854 on Sales $352,094,714. Thin margin and Beneish inputs require DSRI/GMI/AQI decomposition. F-Score 0.54 below 1.0, Sloan normal, does not clear M-Score.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome 183854 == CFO 252283 + Accruals -68429; Sloan = (183854-252283)/56381926 = -0.0012, within 0.10 threshold; M-Score invariant FAIL vs -1.78\", \"actionable_memo\": \"No UCC \u00a7 2-717 deduction on current evidence. Obtain FY2012 10-K Beneish components DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, reconcile receivables/inventory, and verify any tariff pass-through in COGS before asserting a $50,000+ claim. Estimated tariff claim $0 documented.\"}, {\"index\": 4, \"entity_name\": \"Crown Electrokinetics Corp.\", \"identifier\": \"CIK: 0001761696, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 110.15 >> -1.78 signals high manipulation probability. Net Loss $-25,946,000 exceeds Sales $19,701,000 on Assets $34,983,000, with large negative accruals. F-Score 0.31 below 1.0 does not mitigate Beneish/Sloan flags.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -25946000 == CFO -16158000 + Accruals -9788000; Sloan = (-25946000 - (-16158000))/34983000 = -0.2798, abs > 0.10 severe accrual flag; M-Score FAIL vs -1.78\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without paid tariff invoices, CBP Form 7501, and AP remittance history showing 3%-8% surcharge under UCC \u00a7 2-305(2). Demand FY2024 10-K accrual schedule, impairment and going-concern disclosure. Estimated tariff claim $0 on current evidence.\"}, {\"index\": 5, \"entity_name\": \"LATITUDE 360, INC.\", \"identifier\": \"CIK: 0001376755, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 109.59 >> -1.78 signals high manipulation probability. Net Loss $-50,302,379 is 2.7x Sales $18,429,900 and ~96.8% of Assets $51,973,095, while CFO is positive $571,308, indicating massive non-cash accruals/impairments. F-Score 0.48 does not clear flags.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -50302379 == CFO 571308 + Accruals -50873687; Sloan = (-50302379-571308)/51973095 = -0.9789, abs >> 0.10 severe cash-to-accrual manipulation flag; Balance sheet imbalance FAIL\", \"actionable_memo\": \"DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, surcharge invoices, and AP proof. Demand FY2014 10-K full accrual, impairment, and balance sheet reconciliation Assets = Liabilities + Equity, plus auditor workpapers. Freeze reliance pending restatement verification; estimated tariff claim $0 documented.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0029",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "HYPERION DEFI, INC.",
+        "identifier": "CIK: 0001682639, FY: 2024",
+        "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 113.94 >> -1.78 signals high manipulation probability. Sales $57,336 vs Net Loss $-27,261,096 on Assets $28,779,374 is economically incoherent. F-Score 0.0 does not mitigate Beneish outlier. No deterministic tariff recovery established.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT arithmetically: NetIncome -27261096 == CFO -23836539 + Accruals -3424557; Sloan = (NI-CFO)/Assets = -0.1190, abs > 0.10 flagged; Balance sheet imbalance flag prevents reliance",
+        "actionable_memo": "DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, AP vendor master, and paid surcharge invoices. Demand audited 10-K reconciliation, trial balance, and CFO statement tie-out within 48 hours. Freeze credit pending verification; estimated tariff claim $0 on current evidence."
+      },
+      {
+        "index": 2,
+        "entity_name": "ECOSPHERE TECHNOLOGIES INC",
+        "identifier": "CIK: 0001071760, FY: 2015",
+        "statutory_hook": "Beneish M-Score > -1.78; Sloan invariant unverifiable due to missing CFO; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 112.87 >> -1.78 signals high manipulation probability. Net Loss $-11,579,215 exceeds Sales $1,119,879 by >10x on Assets $15,051,719. CFO is NaN, so cash-to-accrual verification fails. F-Score 0.35 is not exculpatory.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: CFO = NaN, therefore NetIncome == CFO + Accruals cannot be verified; Sloan = (NI-CFO)/Assets undefined. Deterministic verification MF-09 FAIL",
+        "actionable_memo": "DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501 and complete cash flow statement. Demand restated FY2015 10-K with CFO, balance sheet equation Assets = Liabilities + Equity tie-out, and auditor confirmation. Estimated tariff claim $0 until CFO and tariff surcharge are documented."
+      },
+      {
+        "index": 3,
+        "entity_name": "BLUE DOLPHIN ENERGY CO",
+        "identifier": "CIK: 0000793306, FY: 2012",
+        "statutory_hook": "Beneish M-Score > -1.78; Sloan Accrual Anomaly evaluated; UCC \u00a7 2-305(2) / \u00a7 2-717 requires documented tariff surcharge not in record provided",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 110.54 >> -1.78 signals high manipulation probability despite near-breakeven Net Income $183,854 on Sales $352,094,714. Thin margin and Beneish inputs require DSRI/GMI/AQI decomposition. F-Score 0.54 below 1.0, Sloan normal, does not clear M-Score.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT: NetIncome 183854 == CFO 252283 + Accruals -68429; Sloan = (183854-252283)/56381926 = -0.0012, within 0.10 threshold; M-Score invariant FAIL vs -1.78",
+        "actionable_memo": "No UCC \u00a7 2-717 deduction on current evidence. Obtain FY2012 10-K Beneish components DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, reconcile receivables/inventory, and verify any tariff pass-through in COGS before asserting a $50,000+ claim. Estimated tariff claim $0 documented."
+      },
+      {
+        "index": 4,
+        "entity_name": "Crown Electrokinetics Corp.",
+        "identifier": "CIK: 0001761696, FY: 2024",
+        "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 110.15 >> -1.78 signals high manipulation probability. Net Loss $-25,946,000 exceeds Sales $19,701,000 on Assets $34,983,000, with large negative accruals. F-Score 0.31 below 1.0 does not mitigate Beneish/Sloan flags.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT arithmetically: NetIncome -25946000 == CFO -16158000 + Accruals -9788000; Sloan = (-25946000 - (-16158000))/34983000 = -0.2798, abs > 0.10 severe accrual flag; M-Score FAIL vs -1.78",
+        "actionable_memo": "DO NOT deduct under UCC \u00a7 2-717 without paid tariff invoices, CBP Form 7501, and AP remittance history showing 3%-8% surcharge under UCC \u00a7 2-305(2). Demand FY2024 10-K accrual schedule, impairment and going-concern disclosure. Estimated tariff claim $0 on current evidence."
+      },
+      {
+        "index": 5,
+        "entity_name": "LATITUDE 360, INC.",
+        "identifier": "CIK: 0001376755, FY: 2014",
+        "statutory_hook": "Beneish M-Score > -1.78 and Sloan Accrual Anomaly > 0.10; No verifiable 19 U.S.C. \u00a7 1313 / UCC \u00a7 2-717 tariff claim on public record provided",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - M-Score 109.59 >> -1.78 signals high manipulation probability. Net Loss $-50,302,379 is 2.7x Sales $18,429,900 and ~96.8% of Assets $51,973,095, while CFO is positive $571,308, indicating massive non-cash accruals/impairments. F-Score 0.48 does not clear flags.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT arithmetically: NetIncome -50302379 == CFO 571308 + Accruals -50873687; Sloan = (-50302379-571308)/51973095 = -0.9789, abs >> 0.10 severe cash-to-accrual manipulation flag; Balance sheet imbalance FAIL",
+        "actionable_memo": "DO NOT deduct under UCC \u00a7 2-717 without CBP Form 7501, surcharge invoices, and AP proof. Demand FY2014 10-K full accrual, impairment, and balance sheet reconciliation Assets = Liabilities + Equity, plus auditor workpapers. Freeze reliance pending restatement verification; estimated tariff claim $0 documented."
+      }
+    ]
+  }
+}

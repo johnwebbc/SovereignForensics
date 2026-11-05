@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0027",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:00:07.566485+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0027",
+    "req_id": "meta_mb_1793847594_LANE1_SEC_0027_e3e3",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1736,
+    "cached_tok": 1140,
+    "out_tok": 2172,
+    "cost_usd": "0.0461",
+    "elapsed_sec": 12.62,
+    "response_text": "{\"batch_id\": \"SEC_0027\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"PACIFIC HEALTH CARE ORGANIZATION, INC.\", \"identifier\": \"CIK: 0001138476, FY: 2019\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"ELEVATED BUT UNCORROBORATED: Reported M-Score 130.11 >> -1.78 is an extreme outlier indicating probable input/data distortion rather than proven manipulation; F-Score 0.33 < 1.0 and Sloan accrual ratio 0.0040 < 0.10 do not corroborate severe accrual manipulation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome 1359777 = CFO 1319093 + Accruals 40684; (NI-CFO)/Assets = 40684/10253952 = 0.00397, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Verify 10-K source inputs for all 8 Beneish variables, investigate balance-sheet imbalance driving the outlier M-Score, and require SEC filing, CBP Form 7501 and AP vendor records before estimating any claim.\"}, {\"index\": 2, \"entity_name\": \"BioNeutral Group, Inc\", \"identifier\": \"CIK: 0001427030, FY: 2012\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.98 >> -1.78 is implausibly extreme and flagged for balance-sheet imbalance; F-Score 0.21 < 1.0, Sloan ratio -0.1405 reflects large negative accruals/losses on only $53,579 sales, requiring source-data validation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -2386369 = CFO -881180 + Accruals -1505189; (NI-CFO)/Assets = -1505189/10716136 = -0.14045, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile the flagged balance-sheet imbalance to the filed 10-K, re-extract receivables, assets and prior-year comparatives used in the M-Score, and require CBP/AP documentation before any recovery estimate.\"}, {\"index\": 3, \"entity_name\": \"AMERICAN RESOURCES CORPORATION\", \"identifier\": \"CIK: 0001590715, FY: 2017\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY AND LOSS RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.76 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.45 < 1.0 does not signal Dechow misstatement, and Sloan ratio -0.4134 reflects losses exceeding cash burn, not positive accrual inflation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -14025466 = CFO -5644574 + Accruals -8380892; (NI-CFO)/Assets = -8380892/20273829 = -0.41336, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile balance-sheet imbalance, impairments and non-cash charges to the 10-K, recompute Beneish inputs from audited comparatives, and require specific tariff surcharge invoices or CBP Form 7501 before estimating any claim.\"}, {\"index\": 4, \"entity_name\": \"ANV SECURITY GROUP INC.\", \"identifier\": \"CIK: 0000353681, FY: 2012\", \"statutory_hook\": \"No verified tariff hook despite TariffRisk input: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; TariffRisk 29.19 is an undefined screening input, not a claim amount\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.74 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.36 < 1.0, Sloan ratio -0.0573 < 0.10, and sales of only $185,175 against $21,014,657 assets indicate stale, mismatched or erroneous inputs\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -1694069 = CFO -490206 + Accruals -1203863; (NI-CFO)/Assets = -1203863/21014657 = -0.05729, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback and do not convert TariffRisk 29.19 into dollars. Verify filer status, filing period and balance-sheet identity from the source filing, recompute Beneish variables, and require import, AP and surcharge records before any estimate.\"}, {\"index\": 5, \"entity_name\": \"PTC Therapeutics, Inc.\", \"identifier\": \"CIK: 0001070081, FY: 2017\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 127.12 >> -1.78 is an implausible outlier flagged for balance-sheet imbalance; F-Score 0.19 < 1.0 and Sloan ratio 0.0289 < 0.10 do not corroborate severe accrual manipulation despite positive net income versus negative CFO\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome 1270000 = CFO -10063000 + Accruals 11333000; (NI-CFO)/Assets = 11333000/391653000 = 0.02894, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Examine non-cash gains, fair-value or tax items explaining NI-CFO divergence in the 10-K, correct the balance-sheet/Beneish input error causing M-Score 127.12, and require CBP Form 7501 and AP surcharge proof before estimating any claim.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1138476,
+      "entity_name": "PACIFIC HEALTH CARE ORGANIZATION, INC.",
+      "fy": 2019,
+      "assets": 10253952.0,
+      "sales": 7330940.0,
+      "net_income": 1359777.0,
+      "cfo": 1319093.0,
+      "beneish_m_score": 130.11,
+      "dechow_f_score": 0.33,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1427030,
+      "entity_name": "BioNeutral Group, Inc",
+      "fy": 2012,
+      "assets": 10716136.0,
+      "sales": 53579.0,
+      "net_income": -2386369.0,
+      "cfo": -881180.0,
+      "beneish_m_score": 128.98,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1744279.0
+    },
+    {
+      "cik": 1590715,
+      "entity_name": "AMERICAN RESOURCES CORPORATION",
+      "fy": 2017,
+      "assets": 20273829.0,
+      "sales": 20820998.0,
+      "net_income": -14025466.0,
+      "cfo": -5644574.0,
+      "beneish_m_score": 128.76,
+      "dechow_f_score": 0.45,
+      "tariff_risk_index": 0.88,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 32575629.0
+    },
+    {
+      "cik": 353681,
+      "entity_name": "ANV SECURITY GROUP INC.",
+      "fy": 2012,
+      "assets": 21014657.0,
+      "sales": 185175.0,
+      "net_income": -1694069.0,
+      "cfo": -490206.0,
+      "beneish_m_score": 128.74,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 29.19,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2566804.0
+    },
+    {
+      "cik": 1070081,
+      "entity_name": "PTC Therapeutics,\u00a0Inc.",
+      "fy": 2017,
+      "assets": 391653000.0,
+      "sales": 194392000.0,
+      "net_income": 1270000.0,
+      "cfo": -10063000.0,
+      "beneish_m_score": 127.12,
+      "dechow_f_score": 0.19,
+      "tariff_risk_index": 2.69,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 142030000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0027\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"PACIFIC HEALTH CARE ORGANIZATION, INC.\", \"identifier\": \"CIK: 0001138476, FY: 2019\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"ELEVATED BUT UNCORROBORATED: Reported M-Score 130.11 >> -1.78 is an extreme outlier indicating probable input/data distortion rather than proven manipulation; F-Score 0.33 < 1.0 and Sloan accrual ratio 0.0040 < 0.10 do not corroborate severe accrual manipulation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome 1359777 = CFO 1319093 + Accruals 40684; (NI-CFO)/Assets = 40684/10253952 = 0.00397, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Verify 10-K source inputs for all 8 Beneish variables, investigate balance-sheet imbalance driving the outlier M-Score, and require SEC filing, CBP Form 7501 and AP vendor records before estimating any claim.\"}, {\"index\": 2, \"entity_name\": \"BioNeutral Group, Inc\", \"identifier\": \"CIK: 0001427030, FY: 2012\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.98 >> -1.78 is implausibly extreme and flagged for balance-sheet imbalance; F-Score 0.21 < 1.0, Sloan ratio -0.1405 reflects large negative accruals/losses on only $53,579 sales, requiring source-data validation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -2386369 = CFO -881180 + Accruals -1505189; (NI-CFO)/Assets = -1505189/10716136 = -0.14045, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile the flagged balance-sheet imbalance to the filed 10-K, re-extract receivables, assets and prior-year comparatives used in the M-Score, and require CBP/AP documentation before any recovery estimate.\"}, {\"index\": 3, \"entity_name\": \"AMERICAN RESOURCES CORPORATION\", \"identifier\": \"CIK: 0001590715, FY: 2017\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY AND LOSS RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.76 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.45 < 1.0 does not signal Dechow misstatement, and Sloan ratio -0.4134 reflects losses exceeding cash burn, not positive accrual inflation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -14025466 = CFO -5644574 + Accruals -8380892; (NI-CFO)/Assets = -8380892/20273829 = -0.41336, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile balance-sheet imbalance, impairments and non-cash charges to the 10-K, recompute Beneish inputs from audited comparatives, and require specific tariff surcharge invoices or CBP Form 7501 before estimating any claim.\"}, {\"index\": 4, \"entity_name\": \"ANV SECURITY GROUP INC.\", \"identifier\": \"CIK: 0000353681, FY: 2012\", \"statutory_hook\": \"No verified tariff hook despite TariffRisk input: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; TariffRisk 29.19 is an undefined screening input, not a claim amount\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.74 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.36 < 1.0, Sloan ratio -0.0573 < 0.10, and sales of only $185,175 against $21,014,657 assets indicate stale, mismatched or erroneous inputs\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome -1694069 = CFO -490206 + Accruals -1203863; (NI-CFO)/Assets = -1203863/21014657 = -0.05729, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback and do not convert TariffRisk 29.19 into dollars. Verify filer status, filing period and balance-sheet identity from the source filing, recompute Beneish variables, and require import, AP and surcharge records before any estimate.\"}, {\"index\": 5, \"entity_name\": \"PTC Therapeutics, Inc.\", \"identifier\": \"CIK: 0001070081, FY: 2017\", \"statutory_hook\": \"No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 127.12 >> -1.78 is an implausible outlier flagged for balance-sheet imbalance; F-Score 0.19 < 1.0 and Sloan ratio 0.0289 < 0.10 do not corroborate severe accrual manipulation despite positive net income versus negative CFO\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT check: NetIncome 1270000 = CFO -10063000 + Accruals 11333000; (NI-CFO)/Assets = 11333000/391653000 = 0.02894, invariant holds arithmetically\", \"actionable_memo\": \"Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Examine non-cash gains, fair-value or tax items explaining NI-CFO divergence in the 10-K, correct the balance-sheet/Beneish input error causing M-Score 127.12, and require CBP Form 7501 and AP surcharge proof before estimating any claim.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0027",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "PACIFIC HEALTH CARE ORGANIZATION, INC.",
+        "identifier": "CIK: 0001138476, FY: 2019",
+        "statutory_hook": "No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan",
+        "forensic_verdict": "ELEVATED BUT UNCORROBORATED: Reported M-Score 130.11 >> -1.78 is an extreme outlier indicating probable input/data distortion rather than proven manipulation; F-Score 0.33 < 1.0 and Sloan accrual ratio 0.0040 < 0.10 do not corroborate severe accrual manipulation",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT check: NetIncome 1359777 = CFO 1319093 + Accruals 40684; (NI-CFO)/Assets = 40684/10253952 = 0.00397, invariant holds arithmetically",
+        "actionable_memo": "Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Verify 10-K source inputs for all 8 Beneish variables, investigate balance-sheet imbalance driving the outlier M-Score, and require SEC filing, CBP Form 7501 and AP vendor records before estimating any claim."
+      },
+      {
+        "index": 2,
+        "entity_name": "BioNeutral Group, Inc",
+        "identifier": "CIK: 0001427030, FY: 2012",
+        "statutory_hook": "No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.98 >> -1.78 is implausibly extreme and flagged for balance-sheet imbalance; F-Score 0.21 < 1.0, Sloan ratio -0.1405 reflects large negative accruals/losses on only $53,579 sales, requiring source-data validation",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT check: NetIncome -2386369 = CFO -881180 + Accruals -1505189; (NI-CFO)/Assets = -1505189/10716136 = -0.14045, invariant holds arithmetically",
+        "actionable_memo": "Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile the flagged balance-sheet imbalance to the filed 10-K, re-extract receivables, assets and prior-year comparatives used in the M-Score, and require CBP/AP documentation before any recovery estimate."
+      },
+      {
+        "index": 3,
+        "entity_name": "AMERICAN RESOURCES CORPORATION",
+        "identifier": "CIK: 0001590715, FY: 2017",
+        "statutory_hook": "No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY AND LOSS RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.76 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.45 < 1.0 does not signal Dechow misstatement, and Sloan ratio -0.4134 reflects losses exceeding cash burn, not positive accrual inflation",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT check: NetIncome -14025466 = CFO -5644574 + Accruals -8380892; (NI-CFO)/Assets = -8380892/20273829 = -0.41336, invariant holds arithmetically",
+        "actionable_memo": "Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Reconcile balance-sheet imbalance, impairments and non-cash charges to the 10-K, recompute Beneish inputs from audited comparatives, and require specific tariff surcharge invoices or CBP Form 7501 before estimating any claim."
+      },
+      {
+        "index": 4,
+        "entity_name": "ANV SECURITY GROUP INC.",
+        "identifier": "CIK: 0000353681, FY: 2012",
+        "statutory_hook": "No verified tariff hook despite TariffRisk input: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; TariffRisk 29.19 is an undefined screening input, not a claim amount",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 128.74 >> -1.78 is an extreme outlier flagged for balance-sheet imbalance; F-Score 0.36 < 1.0, Sloan ratio -0.0573 < 0.10, and sales of only $185,175 against $21,014,657 assets indicate stale, mismatched or erroneous inputs",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT check: NetIncome -1694069 = CFO -490206 + Accruals -1203863; (NI-CFO)/Assets = -1203863/21014657 = -0.05729, invariant holds arithmetically",
+        "actionable_memo": "Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback and do not convert TariffRisk 29.19 into dollars. Verify filer status, filing period and balance-sheet identity from the source filing, recompute Beneish variables, and require import, AP and surcharge records before any estimate."
+      },
+      {
+        "index": 5,
+        "entity_name": "PTC Therapeutics, Inc.",
+        "identifier": "CIK: 0001070081, FY: 2017",
+        "statutory_hook": "No verified tariff hook: UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 require documented supplier surcharge or CBP duty payment, neither evidenced; screening only under Beneish, Dechow and Sloan",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY RISK, NOT PROVEN MISSTATEMENT: Reported M-Score 127.12 >> -1.78 is an implausible outlier flagged for balance-sheet imbalance; F-Score 0.19 < 1.0 and Sloan ratio 0.0289 < 0.10 do not corroborate severe accrual manipulation despite positive net income versus negative CFO",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT check: NetIncome 1270000 = CFO -10063000 + Accruals 11333000; (NI-CFO)/Assets = 11333000/391653000 = 0.02894, invariant holds arithmetically",
+        "actionable_memo": "Do not assert UCC \u00a7 2-717 deduction or \u00a7 1313 drawback. Examine non-cash gains, fair-value or tax items explaining NI-CFO divergence in the 10-K, correct the balance-sheet/Beneish input error causing M-Score 127.12, and require CBP Form 7501 and AP surcharge proof before estimating any claim."
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0028",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:00:22.290542+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0028",
+    "req_id": "meta_mb_1793847608_LANE1_SEC_0028_1134",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1735,
+    "cached_tok": 1140,
+    "out_tok": 2395,
+    "cost_usd": "0.0505",
+    "elapsed_sec": 14.21,
+    "response_text": "{\"batch_id\": \"SEC_0028\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Touchpoint Group Holdings, Inc.\", \"identifier\": \"CIK: 0000225211, FY: 2012\", \"statutory_hook\": \"Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 only if documented tariff surcharge or drawback is verified in AP/CBP records\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - ELEVATED: BENEISH OUTLIER. M-Score 127.06 >> -1.78 threshold. F-Score 0.41 < 1.0. CFO is NaN, so Sloan accrual and cash-earnings reconciliation cannot be verified from provided data.\", \"estimated_claim_or_surcharge_usd\": 585450, \"z3_smt_invariant\": \"UNVERIFIABLE: NetIncome=5260000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate\", \"actionable_memo\": \"Do not book a 2-717 deduction on this screen alone. Pull FY2012 10-K cash-flow statement, receivables, gross margin, asset-quality and leverage inputs to recompute Beneish variables; estimate shown is a 5% sales-based surcharge exposure ceiling (11709000 x 0.05) pending CBP Form 7501 and vendor AP proof.\"}, {\"index\": 2, \"entity_name\": \"PDL BioPharma, Inc.\", \"identifier\": \"CIK: 0000882104, FY: 2016\", \"statutory_hook\": \"Beneish M-Score and Sloan Accrual screening; UCC 2-717 / UCC 2-305(2) only upon documented unilateral tariff surcharge in AP invoices\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 120.11 >> -1.78 threshold despite F-Score 0.39 < 1.0. Sloan accrual ratio is moderate and does not independently confirm severe cash-to-accrual divergence.\", \"estimated_claim_or_surcharge_usd\": 29522400, \"z3_smt_invariant\": \"SAT: 332795000 = 301465000 + 31330000; Sloan=(332795000-301465000)/1215387000=0.0258 < 0.10; Beneish invariant FAIL on M-Score\", \"actionable_memo\": \"Reconcile FY2016 10-K balance-sheet imbalance source before any recovery claim; recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from primary filings. Estimate is a 5% sales-based exposure ceiling (590448000 x 0.05), not a verified tariff claim; require invoice-level surcharge and CBP refund evidence for 2-717 action.\"}, {\"index\": 3, \"entity_name\": \"NATERA, INC.\", \"identifier\": \"CIK: 0001604821, FY: 2016\", \"statutory_hook\": \"Beneish M-Score forensic screening; 19 USC 1313 and UCC 2-717 contingent on verified imported-input duties and unrefunded surcharges\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 118.25 >> -1.78 threshold. F-Score 0.19 < 1.0. Net loss with CFO NaN prevents Sloan verification.\", \"estimated_claim_or_surcharge_usd\": 6620757, \"z3_smt_invariant\": \"UNVERIFIABLE: NetIncome=-5152000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate\", \"actionable_memo\": \"Obtain FY2016 10-K CFO, receivables, inventory and soft-asset schedules to recompute Beneish and Dechow inputs. Estimate is risk-adjusted sales exposure: 217074000 x 0.05 x 0.61 TariffRisk. No AP withholding until tariff surcharge, import content and supplier CBP refund status are documented.\"}, {\"index\": 4, \"entity_name\": \"KAIVAL BRANDS INNOVATIONS GROUP, INC.\", \"identifier\": \"CIK: 0001762239, FY: 2023\", \"statutory_hook\": \"UCC 2-305(2) good-faith open-price and UCC 2-717 deduction screening for imported-product tariff surcharges; 19 USC 1313 drawback contingent on CBP export/destruction proof; Beneish/Sloan forensic screening\", \"forensic_verdict\": \"CRITICAL MANIPULATION AND TARIFF RISK. M-Score 115.09 >> -1.78, F-Score 0.17 < 1.0, TariffRisk 2.02 is highest in batch. Large negative accrual gap indicates earnings/cash divergence requiring reconciliation, though Sloan severe positive-accrual threshold is not met.\", \"estimated_claim_or_surcharge_usd\": 1046961, \"z3_smt_invariant\": \"SAT: -11132772 = -2973254 + (-8159518); Sloan=(-11132772-(-2973254))/19385006=-0.4209, absolute divergence high, positive >0.10 test FAIL\", \"actionable_memo\": \"Prioritize invoice-level audit due to import/tariff exposure: match vendor surcharges 3%-8% to CBP Form 7501 duties, check for supplier drawback/refund pass-through, and recompute Beneish inputs from FY2023 10-K. Estimate uses 8% of sales (13087018 x 0.08) as upper-bound surcharge exposure; execute 2-717 credit only for documented, unrefunded amounts.\"}, {\"index\": 5, \"entity_name\": \"Global Net Lease, Inc.\", \"identifier\": \"CIK: 0001526113, FY: 2013\", \"statutory_hook\": \"Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 not triggered without documented goods tariff surcharge or customs duty\", \"forensic_verdict\": \"ELEVATED MANIPULATION RISK - BENEISH OUTLIER. M-Score 114.46 >> -1.78 threshold. F-Score 0.39 < 1.0. Sloan ratio is effectively zero on provided figures and does not corroborate accrual manipulation; REIT profile makes tariff-surcharge theory weak without AP evidence.\", \"estimated_claim_or_surcharge_usd\": 118530, \"z3_smt_invariant\": \"SAT: -1000 = 0 + (-1000); Sloan=(-1000-0)/214927000=-0.000005 > -0.10 and < 0.10; Beneish invariant FAIL on M-Score\", \"actionable_memo\": \"Treat Beneish result as a recomputation priority, not a tariff claim: verify FY2013 filing inputs distorted by minimal sales (3951000) against large assets (214927000), likely formation-stage effects. Estimate is a nominal 3% sales exposure (3951000 x 0.03); do not pursue 2-717/1313 recovery absent vendor goods invoices and CBP duty records.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 225211,
+      "entity_name": "Touchpoint Group Holdings, Inc.",
+      "fy": 2012,
+      "assets": 45676000.0,
+      "sales": 11709000.0,
+      "net_income": 5260000.0,
+      "cfo": NaN,
+      "beneish_m_score": 127.06,
+      "dechow_f_score": 0.41,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 882104,
+      "entity_name": "PDL BioPharma, Inc.",
+      "fy": 2016,
+      "assets": 1215387000.0,
+      "sales": 590448000.0,
+      "net_income": 332795000.0,
+      "cfo": 301465000.0,
+      "beneish_m_score": 120.11,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 4280000.0
+    },
+    {
+      "cik": 1604821,
+      "entity_name": "NATERA, INC.",
+      "fy": 2016,
+      "assets": 265240000.0,
+      "sales": 217074000.0,
+      "net_income": -5152000.0,
+      "cfo": NaN,
+      "beneish_m_score": 118.25,
+      "dechow_f_score": 0.19,
+      "tariff_risk_index": 0.61,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 23729000.0
+    },
+    {
+      "cik": 1762239,
+      "entity_name": "KAIVAL BRANDS INNOVATIONS GROUP, INC.",
+      "fy": 2023,
+      "assets": 19385006.0,
+      "sales": 13087018.0,
+      "net_income": -11132772.0,
+      "cfo": -2973254.0,
+      "beneish_m_score": 115.09,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 2.02,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2767302.0
+    },
+    {
+      "cik": 1526113,
+      "entity_name": "Global Net Lease, Inc.",
+      "fy": 2013,
+      "assets": 214927000.0,
+      "sales": 3951000.0,
+      "net_income": -1000.0,
+      "cfo": 0.0,
+      "beneish_m_score": 114.46,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0028\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Touchpoint Group Holdings, Inc.\", \"identifier\": \"CIK: 0000225211, FY: 2012\", \"statutory_hook\": \"Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 only if documented tariff surcharge or drawback is verified in AP/CBP records\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - ELEVATED: BENEISH OUTLIER. M-Score 127.06 >> -1.78 threshold. F-Score 0.41 < 1.0. CFO is NaN, so Sloan accrual and cash-earnings reconciliation cannot be verified from provided data.\", \"estimated_claim_or_surcharge_usd\": 585450, \"z3_smt_invariant\": \"UNVERIFIABLE: NetIncome=5260000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate\", \"actionable_memo\": \"Do not book a 2-717 deduction on this screen alone. Pull FY2012 10-K cash-flow statement, receivables, gross margin, asset-quality and leverage inputs to recompute Beneish variables; estimate shown is a 5% sales-based surcharge exposure ceiling (11709000 x 0.05) pending CBP Form 7501 and vendor AP proof.\"}, {\"index\": 2, \"entity_name\": \"PDL BioPharma, Inc.\", \"identifier\": \"CIK: 0000882104, FY: 2016\", \"statutory_hook\": \"Beneish M-Score and Sloan Accrual screening; UCC 2-717 / UCC 2-305(2) only upon documented unilateral tariff surcharge in AP invoices\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 120.11 >> -1.78 threshold despite F-Score 0.39 < 1.0. Sloan accrual ratio is moderate and does not independently confirm severe cash-to-accrual divergence.\", \"estimated_claim_or_surcharge_usd\": 29522400, \"z3_smt_invariant\": \"SAT: 332795000 = 301465000 + 31330000; Sloan=(332795000-301465000)/1215387000=0.0258 < 0.10; Beneish invariant FAIL on M-Score\", \"actionable_memo\": \"Reconcile FY2016 10-K balance-sheet imbalance source before any recovery claim; recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from primary filings. Estimate is a 5% sales-based exposure ceiling (590448000 x 0.05), not a verified tariff claim; require invoice-level surcharge and CBP refund evidence for 2-717 action.\"}, {\"index\": 3, \"entity_name\": \"NATERA, INC.\", \"identifier\": \"CIK: 0001604821, FY: 2016\", \"statutory_hook\": \"Beneish M-Score forensic screening; 19 USC 1313 and UCC 2-717 contingent on verified imported-input duties and unrefunded surcharges\", \"forensic_verdict\": \"CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 118.25 >> -1.78 threshold. F-Score 0.19 < 1.0. Net loss with CFO NaN prevents Sloan verification.\", \"estimated_claim_or_surcharge_usd\": 6620757, \"z3_smt_invariant\": \"UNVERIFIABLE: NetIncome=-5152000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate\", \"actionable_memo\": \"Obtain FY2016 10-K CFO, receivables, inventory and soft-asset schedules to recompute Beneish and Dechow inputs. Estimate is risk-adjusted sales exposure: 217074000 x 0.05 x 0.61 TariffRisk. No AP withholding until tariff surcharge, import content and supplier CBP refund status are documented.\"}, {\"index\": 4, \"entity_name\": \"KAIVAL BRANDS INNOVATIONS GROUP, INC.\", \"identifier\": \"CIK: 0001762239, FY: 2023\", \"statutory_hook\": \"UCC 2-305(2) good-faith open-price and UCC 2-717 deduction screening for imported-product tariff surcharges; 19 USC 1313 drawback contingent on CBP export/destruction proof; Beneish/Sloan forensic screening\", \"forensic_verdict\": \"CRITICAL MANIPULATION AND TARIFF RISK. M-Score 115.09 >> -1.78, F-Score 0.17 < 1.0, TariffRisk 2.02 is highest in batch. Large negative accrual gap indicates earnings/cash divergence requiring reconciliation, though Sloan severe positive-accrual threshold is not met.\", \"estimated_claim_or_surcharge_usd\": 1046961, \"z3_smt_invariant\": \"SAT: -11132772 = -2973254 + (-8159518); Sloan=(-11132772-(-2973254))/19385006=-0.4209, absolute divergence high, positive >0.10 test FAIL\", \"actionable_memo\": \"Prioritize invoice-level audit due to import/tariff exposure: match vendor surcharges 3%-8% to CBP Form 7501 duties, check for supplier drawback/refund pass-through, and recompute Beneish inputs from FY2023 10-K. Estimate uses 8% of sales (13087018 x 0.08) as upper-bound surcharge exposure; execute 2-717 credit only for documented, unrefunded amounts.\"}, {\"index\": 5, \"entity_name\": \"Global Net Lease, Inc.\", \"identifier\": \"CIK: 0001526113, FY: 2013\", \"statutory_hook\": \"Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 not triggered without documented goods tariff surcharge or customs duty\", \"forensic_verdict\": \"ELEVATED MANIPULATION RISK - BENEISH OUTLIER. M-Score 114.46 >> -1.78 threshold. F-Score 0.39 < 1.0. Sloan ratio is effectively zero on provided figures and does not corroborate accrual manipulation; REIT profile makes tariff-surcharge theory weak without AP evidence.\", \"estimated_claim_or_surcharge_usd\": 118530, \"z3_smt_invariant\": \"SAT: -1000 = 0 + (-1000); Sloan=(-1000-0)/214927000=-0.000005 > -0.10 and < 0.10; Beneish invariant FAIL on M-Score\", \"actionable_memo\": \"Treat Beneish result as a recomputation priority, not a tariff claim: verify FY2013 filing inputs distorted by minimal sales (3951000) against large assets (214927000), likely formation-stage effects. Estimate is a nominal 3% sales exposure (3951000 x 0.03); do not pursue 2-717/1313 recovery absent vendor goods invoices and CBP duty records.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0028",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "Touchpoint Group Holdings, Inc.",
+        "identifier": "CIK: 0000225211, FY: 2012",
+        "statutory_hook": "Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 only if documented tariff surcharge or drawback is verified in AP/CBP records",
+        "forensic_verdict": "CRITICAL MANIPULATION RISK - ELEVATED: BENEISH OUTLIER. M-Score 127.06 >> -1.78 threshold. F-Score 0.41 < 1.0. CFO is NaN, so Sloan accrual and cash-earnings reconciliation cannot be verified from provided data.",
+        "estimated_claim_or_surcharge_usd": 585450,
+        "z3_smt_invariant": "UNVERIFIABLE: NetIncome=5260000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate",
+        "actionable_memo": "Do not book a 2-717 deduction on this screen alone. Pull FY2012 10-K cash-flow statement, receivables, gross margin, asset-quality and leverage inputs to recompute Beneish variables; estimate shown is a 5% sales-based surcharge exposure ceiling (11709000 x 0.05) pending CBP Form 7501 and vendor AP proof."
+      },
+      {
+        "index": 2,
+        "entity_name": "PDL BioPharma, Inc.",
+        "identifier": "CIK: 0000882104, FY: 2016",
+        "statutory_hook": "Beneish M-Score and Sloan Accrual screening; UCC 2-717 / UCC 2-305(2) only upon documented unilateral tariff surcharge in AP invoices",
+        "forensic_verdict": "CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 120.11 >> -1.78 threshold despite F-Score 0.39 < 1.0. Sloan accrual ratio is moderate and does not independently confirm severe cash-to-accrual divergence.",
+        "estimated_claim_or_surcharge_usd": 29522400,
+        "z3_smt_invariant": "SAT: 332795000 = 301465000 + 31330000; Sloan=(332795000-301465000)/1215387000=0.0258 < 0.10; Beneish invariant FAIL on M-Score",
+        "actionable_memo": "Reconcile FY2016 10-K balance-sheet imbalance source before any recovery claim; recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from primary filings. Estimate is a 5% sales-based exposure ceiling (590448000 x 0.05), not a verified tariff claim; require invoice-level surcharge and CBP refund evidence for 2-717 action."
+      },
+      {
+        "index": 3,
+        "entity_name": "NATERA, INC.",
+        "identifier": "CIK: 0001604821, FY: 2016",
+        "statutory_hook": "Beneish M-Score forensic screening; 19 USC 1313 and UCC 2-717 contingent on verified imported-input duties and unrefunded surcharges",
+        "forensic_verdict": "CRITICAL MANIPULATION RISK - BALANCE SHEET IMBALANCE FLAG. M-Score 118.25 >> -1.78 threshold. F-Score 0.19 < 1.0. Net loss with CFO NaN prevents Sloan verification.",
+        "estimated_claim_or_surcharge_usd": 6620757,
+        "z3_smt_invariant": "UNVERIFIABLE: NetIncome=-5152000, CFO=NaN => NetIncome = CFO + Accruals cannot be SAT-checked; Sloan ratio indeterminate",
+        "actionable_memo": "Obtain FY2016 10-K CFO, receivables, inventory and soft-asset schedules to recompute Beneish and Dechow inputs. Estimate is risk-adjusted sales exposure: 217074000 x 0.05 x 0.61 TariffRisk. No AP withholding until tariff surcharge, import content and supplier CBP refund status are documented."
+      },
+      {
+        "index": 4,
+        "entity_name": "KAIVAL BRANDS INNOVATIONS GROUP, INC.",
+        "identifier": "CIK: 0001762239, FY: 2023",
+        "statutory_hook": "UCC 2-305(2) good-faith open-price and UCC 2-717 deduction screening for imported-product tariff surcharges; 19 USC 1313 drawback contingent on CBP export/destruction proof; Beneish/Sloan forensic screening",
+        "forensic_verdict": "CRITICAL MANIPULATION AND TARIFF RISK. M-Score 115.09 >> -1.78, F-Score 0.17 < 1.0, TariffRisk 2.02 is highest in batch. Large negative accrual gap indicates earnings/cash divergence requiring reconciliation, though Sloan severe positive-accrual threshold is not met.",
+        "estimated_claim_or_surcharge_usd": 1046961,
+        "z3_smt_invariant": "SAT: -11132772 = -2973254 + (-8159518); Sloan=(-11132772-(-2973254))/19385006=-0.4209, absolute divergence high, positive >0.10 test FAIL",
+        "actionable_memo": "Prioritize invoice-level audit due to import/tariff exposure: match vendor surcharges 3%-8% to CBP Form 7501 duties, check for supplier drawback/refund pass-through, and recompute Beneish inputs from FY2023 10-K. Estimate uses 8% of sales (13087018 x 0.08) as upper-bound surcharge exposure; execute 2-717 credit only for documented, unrefunded amounts."
+      },
+      {
+        "index": 5,
+        "entity_name": "Global Net Lease, Inc.",
+        "identifier": "CIK: 0001526113, FY: 2013",
+        "statutory_hook": "Beneish M-Score forensic screening; UCC 2-717 and 19 USC 1313 not triggered without documented goods tariff surcharge or customs duty",
+        "forensic_verdict": "ELEVATED MANIPULATION RISK - BENEISH OUTLIER. M-Score 114.46 >> -1.78 threshold. F-Score 0.39 < 1.0. Sloan ratio is effectively zero on provided figures and does not corroborate accrual manipulation; REIT profile makes tariff-surcharge theory weak without AP evidence.",
+        "estimated_claim_or_surcharge_usd": 118530,
+        "z3_smt_invariant": "SAT: -1000 = 0 + (-1000); Sloan=(-1000-0)/214927000=-0.000005 > -0.10 and < 0.10; Beneish invariant FAIL on M-Score",
+        "actionable_memo": "Treat Beneish result as a recomputation priority, not a tariff claim: verify FY2013 filing inputs distorted by minimal sales (3951000) against large assets (214927000), likely formation-stage effects. Estimate is a nominal 3% sales exposure (3951000 x 0.03); do not pursue 2-717/1313 recovery absent vendor goods invoices and CBP duty records."
+      }
+    ]
+  }
+}
