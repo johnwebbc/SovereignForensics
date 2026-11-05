@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0011",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:48:30.654746+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0011",
+    "req_id": "meta_mb_1793846902_LANE1_SEC_0011_b69e",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1739,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 8.6,
+    "response_text": "{\"batch_id\": \"SEC_0011\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Fisker Inc./DE\", \"identifier\": \"CIK: 0001720990, FY: 2023\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY FLAG - NOT PROVEN MANIPULATION: M-Score 703.12 >> -1.78 threshold is an extreme outlier consistent with balance-sheet imbalance/input error flagged in source. F-Score 0.14 < 1.0 does not signal Dechow misstatement risk. Sloan = (-471341000 - (-301270000))/1831687000 = -0.0929, not > 0.10. Negative earnings and negative CFO require restatement/input verification before any inference.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome = CFO + Accruals => -471341000 = -301270000 + (-170071000); arithmetic holds for Sloan accruals, but flagged BALANCE SHEET IMBALANCE prevents deterministic Z3 verification of Assets = Liabilities + Equity from provided fields\", \"actionable_memo\": \"Do NOT execute UCC \u00a7 2-717 AP deduction. TariffRisk -0.22 provides no CBP Form 7501, invoice surcharge, or 3%-8% pass-through evidence. Obtain audited 10-K balance sheet, receivables/inventory/depreciation inputs for Beneish recalculation, and recompute M-Score; extreme 703.12 likely reflects distorted DSRI/GMI/AQI inputs during pre-revenue scale-up/distress.\"}, {\"index\": 2, \"entity_name\": \"SUMMER ENERGY HOLDINGS INC\", \"identifier\": \"CIK: 0001396633, FY: 2017\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only\", \"forensic_verdict\": \"ELEVATED BENEISH OUTLIER - NOT PROVEN MANIPULATION: M-Score 656.29 >> -1.78 is mathematically implausible as a calibrated manipulation probability and indicates input distortion/outlier variables. F-Score 0.55 < 1.0 does not signal Dechow misstatement risk. Sloan = (1266608 - (-861401))/33586600 = 0.0634, below 0.10 severe threshold but positive accruals with negative CFO warrant review.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT FOR ARITHMETIC, UNVERIFIED FOR BALANCE SHEET: NetIncome = CFO + Accruals => 1266608 = -861401 + 2128009; Sloan 0.0634 < 0.10; full Assets = Liabilities + Equity invariant cannot be verified from provided fields\", \"actionable_memo\": \"Do NOT execute UCC \u00a7 2-717 AP deduction. TariffRisk 1.0 is a risk index, not invoice-level proof of an unrefunded tariff surcharge or CBP refund. Request 10-K prior-year comparatives to recalculate DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, vendor AP master, and any tariff surcharge invoices before quantifying any claim.\"}, {\"index\": 3, \"entity_name\": \"FREEDOM HOLDING CORP.\", \"identifier\": \"CIK: 0000924805, FY: 2018\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2"
+  },
+  "input_filers": [
+    {
+      "cik": 1720990,
+      "entity_name": "Fisker Inc./DE",
+      "fy": 2023,
+      "assets": 1831687000.0,
+      "sales": 272883000.0,
+      "net_income": -471341000.0,
+      "cfo": -301270000.0,
+      "beneish_m_score": 703.12,
+      "dechow_f_score": 0.14,
+      "tariff_risk_index": -0.22,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1005212000.0
+    },
+    {
+      "cik": 1396633,
+      "entity_name": "SUMMER ENERGY HOLDINGS INC",
+      "fy": 2017,
+      "assets": 33586600.0,
+      "sales": 117683175.0,
+      "net_income": 1266608.0,
+      "cfo": -861401.0,
+      "beneish_m_score": 656.29,
+      "dechow_f_score": 0.55,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 924805,
+      "entity_name": "FREEDOM HOLDING CORP.",
+      "fy": 2018,
+      "assets": 330086000.0,
+      "sales": 55224000.0,
+      "net_income": 19233000.0,
+      "cfo": NaN,
+      "beneish_m_score": 639.18,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 47307,
+      "entity_name": "CRAWFORD UNITED CORPORATION",
+      "fy": 2016,
+      "assets": 15434755.0,
+      "sales": 6645780.0,
+      "net_income": 5152576.0,
+      "cfo": 2513886.0,
+      "beneish_m_score": 607.0,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.67,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 7081848.0
+    },
+    {
+      "cik": 1674416,
+      "entity_name": "CRISPR THERAPEUTICS AG",
+      "fy": 2023,
+      "assets": 2243057000.0,
+      "sales": 914963000.0,
+      "net_income": 377661000.0,
+      "cfo": 538972000.0,
+      "beneish_m_score": 600.05,
+      "dechow_f_score": 0.2,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 523981000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0011\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Fisker Inc./DE\", \"identifier\": \"CIK: 0001720990, FY: 2023\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY FLAG - NOT PROVEN MANIPULATION: M-Score 703.12 >> -1.78 threshold is an extreme outlier consistent with balance-sheet imbalance/input error flagged in source. F-Score 0.14 < 1.0 does not signal Dechow misstatement risk. Sloan = (-471341000 - (-301270000))/1831687000 = -0.0929, not > 0.10. Negative earnings and negative CFO require restatement/input verification before any inference.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: Assert NetIncome = CFO + Accruals => -471341000 = -301270000 + (-170071000); arithmetic holds for Sloan accruals, but flagged BALANCE SHEET IMBALANCE prevents deterministic Z3 verification of Assets = Liabilities + Equity from provided fields\", \"actionable_memo\": \"Do NOT execute UCC \u00a7 2-717 AP deduction. TariffRisk -0.22 provides no CBP Form 7501, invoice surcharge, or 3%-8% pass-through evidence. Obtain audited 10-K balance sheet, receivables/inventory/depreciation inputs for Beneish recalculation, and recompute M-Score; extreme 703.12 likely reflects distorted DSRI/GMI/AQI inputs during pre-revenue scale-up/distress.\"}, {\"index\": 2, \"entity_name\": \"SUMMER ENERGY HOLDINGS INC\", \"identifier\": \"CIK: 0001396633, FY: 2017\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on filing data alone; forensic review under Beneish M-Score and Sloan Accrual Anomaly only\", \"forensic_verdict\": \"ELEVATED BENEISH OUTLIER - NOT PROVEN MANIPULATION: M-Score 656.29 >> -1.78 is mathematically implausible as a calibrated manipulation probability and indicates input distortion/outlier variables. F-Score 0.55 < 1.0 does not signal Dechow misstatement risk. Sloan = (1266608 - (-861401))/33586600 = 0.0634, below 0.10 severe threshold but positive accruals with negative CFO warrant review.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT FOR ARITHMETIC, UNVERIFIED FOR BALANCE SHEET: NetIncome = CFO + Accruals => 1266608 = -861401 + 2128009; Sloan 0.0634 < 0.10; full Assets = Liabilities + Equity invariant cannot be verified from provided fields\", \"actionable_memo\": \"Do NOT execute UCC \u00a7 2-717 AP deduction. TariffRisk 1.0 is a risk index, not invoice-level proof of an unrefunded tariff surcharge or CBP refund. Request 10-K prior-year comparatives to recalculate DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, vendor AP master, and any tariff surcharge invoices before quantifying any claim.\"}, {\"index\": 3, \"entity_name\": \"FREEDOM HOLDING CORP.\", \"identifier\": \"CIK: 0000924805, FY: 2018\", \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2"
+}

@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0014",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:48:59.613377+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0014",
+    "req_id": "meta_mb_1793846930_LANE1_SEC_0014_d25d",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1735,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 8.73,
+    "response_text": "{\n  \"batch_id\": \"SEC_0014\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"GREAT ELM CAPITAL GROUP, INC.\",\n      \"identifier\": \"CIK: 0001082506, FY: 2018\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim evidenced in provided data; Beneish M-Score, Dechow F-Score and Sloan Accrual analysis only\",\n      \"forensic_verdict\": \"CRITICAL DATA INTEGRITY / INCONCLUSIVE MANIPULATION: M-Score 456.1 is orders of magnitude above -1.78 threshold and is not a plausible Beneish output, indicating balance-sheet imbalance or input scaling error. F-Score 0.42 < 1.0 does not signal Dechow misstatement. Sloan = (9422000 - (-3845000)) / 133587000 = 0.0993, just below 0.10 severe-accrual threshold. No tariff recovery established on this record.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome 9422000 = CFO -3845000 + Accruals 13267000; Sloan 0.0993. Beneish inputs UNSAT for plausibility, requires source 10-K re-extraction.\",\n      \"actionable_memo\": \"Do not deduct under UCC 2-717 without AP vendor invoices, CBP Form 7501, and surcharge pass-through proof. Re-extract audited 10-K balance sheet, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from prior-year comparatives, and verify assets/liabilities/equity balance before any claim.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Gaxos.ai Inc.\",\n      \"identifier\": \"CIK: 0001895618, FY: 2025\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim evidenced in provided data; Beneish M-Score, Dechow F-Score and Sloan Accrual analysis only\",\n      \"forensic_verdict\": \"ELEVATED BENEISH OUTLIER / INCONCLUSIVE: M-Score 442.39 >> -1.78 is implausible as a standard Beneish score and indicates corrupted, scaled, or non-comparable inputs, not proof of manipulation. F-Score 0.21 < 1.0 low misstatement risk. Sloan = (-3418197 - (-3280397)) / 17024536 = -0.0081, no accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -3418197 = CFO -3280397 + Accruals -137800; Sloan -0.0081. Beneish variable construction UNVERIFIED.\",\n      \"actionable_memo\": \"No AP deduction authorized on this evidence. Obtain filed 10-K/Q, prior-year financials, receivables/inventory/PP&E schedules, and any supplier tariff invoices/CBP 7501s; recompute Beneish from primary statements before escalation.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"Royal Energy Resources, Inc.\",\n      \"identifier\": \"CIK: 0001102392, FY: 2016\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or"
+  },
+  "input_filers": [
+    {
+      "cik": 1082506,
+      "entity_name": "GREAT ELM CAPITAL GROUP, INC.",
+      "fy": 2018,
+      "assets": 133587000.0,
+      "sales": 5935000.0,
+      "net_income": 9422000.0,
+      "cfo": -3845000.0,
+      "beneish_m_score": 456.1,
+      "dechow_f_score": 0.42,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1640000.0
+    },
+    {
+      "cik": 1895618,
+      "entity_name": "Gaxos.ai Inc.",
+      "fy": 2025,
+      "assets": 17024536.0,
+      "sales": 1933030.0,
+      "net_income": -3418197.0,
+      "cfo": -3280397.0,
+      "beneish_m_score": 442.39,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 285168.0
+    },
+    {
+      "cik": 1102392,
+      "entity_name": "Royal Energy Resources, Inc.",
+      "fy": 2016,
+      "assets": 166242000.0,
+      "sales": 138569000.0,
+      "net_income": -20.0,
+      "cfo": 6552000.0,
+      "beneish_m_score": 437.94,
+      "dechow_f_score": 0.41,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 37904000.0
+    },
+    {
+      "cik": 1357874,
+      "entity_name": "PRECISION BIOSCIENCES INC",
+      "fy": 2020,
+      "assets": 235233000.0,
+      "sales": 24285000.0,
+      "net_income": -92877000.0,
+      "cfo": -71015000.0,
+      "beneish_m_score": 415.79,
+      "dechow_f_score": 0.19,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8814000.0
+    },
+    {
+      "cik": 1606698,
+      "entity_name": "Alpine 4 Holdings, Inc.",
+      "fy": 2017,
+      "assets": 15970950.0,
+      "sales": 10091491.0,
+      "net_income": -2997420.0,
+      "cfo": NaN,
+      "beneish_m_score": 409.2,
+      "dechow_f_score": 0.29,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 15970950.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0014\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"GREAT ELM CAPITAL GROUP, INC.\",\n      \"identifier\": \"CIK: 0001082506, FY: 2018\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim evidenced in provided data; Beneish M-Score, Dechow F-Score and Sloan Accrual analysis only\",\n      \"forensic_verdict\": \"CRITICAL DATA INTEGRITY / INCONCLUSIVE MANIPULATION: M-Score 456.1 is orders of magnitude above -1.78 threshold and is not a plausible Beneish output, indicating balance-sheet imbalance or input scaling error. F-Score 0.42 < 1.0 does not signal Dechow misstatement. Sloan = (9422000 - (-3845000)) / 133587000 = 0.0993, just below 0.10 severe-accrual threshold. No tariff recovery established on this record.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome 9422000 = CFO -3845000 + Accruals 13267000; Sloan 0.0993. Beneish inputs UNSAT for plausibility, requires source 10-K re-extraction.\",\n      \"actionable_memo\": \"Do not deduct under UCC 2-717 without AP vendor invoices, CBP Form 7501, and surcharge pass-through proof. Re-extract audited 10-K balance sheet, recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from prior-year comparatives, and verify assets/liabilities/equity balance before any claim.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"Gaxos.ai Inc.\",\n      \"identifier\": \"CIK: 0001895618, FY: 2025\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim evidenced in provided data; Beneish M-Score, Dechow F-Score and Sloan Accrual analysis only\",\n      \"forensic_verdict\": \"ELEVATED BENEISH OUTLIER / INCONCLUSIVE: M-Score 442.39 >> -1.78 is implausible as a standard Beneish score and indicates corrupted, scaled, or non-comparable inputs, not proof of manipulation. F-Score 0.21 < 1.0 low misstatement risk. Sloan = (-3418197 - (-3280397)) / 17024536 = -0.0081, no accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome -3418197 = CFO -3280397 + Accruals -137800; Sloan -0.0081. Beneish variable construction UNVERIFIED.\",\n      \"actionable_memo\": \"No AP deduction authorized on this evidence. Obtain filed 10-K/Q, prior-year financials, receivables/inventory/PP&E schedules, and any supplier tariff invoices/CBP 7501s; recompute Beneish from primary statements before escalation.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"Royal Energy Resources, Inc.\",\n      \"identifier\": \"CIK: 0001102392, FY: 2016\",\n      \"statutory_hook\": \"No verifiable UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge or"
+}

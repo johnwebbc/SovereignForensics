@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0010",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:48:21.533682+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0010",
+    "req_id": "meta_mb_1793846892_LANE1_SEC_0010_bdcb",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1738,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 9.19,
+    "response_text": "{\"batch_id\": \"SEC_0010\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Simply, Inc.\", \"identifier\": \"CIK: 0001274032, FY: 2021\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; Sloan Accrual Anomaly > 0.10; UCC \u00a7 2-717 / 19 U.S.C. \u00a7 1313 not established without CBP Form 7501 or AP tariff surcharge records\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 789.95 >> -1.78, F-Score 270.27 >> 1.0, Sloan (4277000-(-2209000))/30437000=0.2131 > 0.10. Severe cash-to-accrual divergence, high manipulation/misstatement probability. No verified tariff recovery on public record alone.\", \"estimated_claim_or_surcharge_usd\": 6486000, \"z3_smt_invariant\": \"UNSAT/FLAGGED: Accruals = NetIncome - CFO = 4277000 - (-2209000) = 6486000; Sloan=0.2131 > 0.10; Invariant NetIncome = CFO + Accruals holds arithmetically but accrual magnitude violates Sloan threshold\", \"actionable_memo\": \"Non-advisory forensic calculation only (Circular 230 \u00a7 10.27 guardrail): Halt any UCC \u00a7 2-717 deduction until SEC 10-K/Q reconciliation, DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA inputs, and CBP 7501/AP vendor records are verified. Escalate for balance-sheet imbalance review; do not execute credit memo on M/F-Score alone.\"}, {\"index\": 2, \"entity_name\": \"AMERICAN NANO SILICON TECHNOLOGIES, INC.\", \"identifier\": \"CIK: 0001415917, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; UCC \u00a7 2-305(2) good-faith open price and 19 U.S.C. \u00a7 1313 require documented tariff pass-through and CBP 7501 proof not present in supplied data\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 737.57 >> -1.78 despite F-Score 0.18 < 1.0, TariffRisk 29.98 extreme outlier. Sloan (-2086393-(-1805536))/27057450=-0.0104 within threshold, but Beneish outlier and sales/assets dislocation indicate unreliable inputs/misstatement risk.\", \"estimated_claim_or_surcharge_usd\": 280857, \"z3_smt_invariant\": \"UNSAT/FLAGGED: Accruals = NetIncome - CFO = -2086393 - (-1805536) = -280857; Sloan=-0.0104; M-Score invariant violation vs -1.78 threshold drives UNSAT classification\", \"actionable_memo\": \"Non-advisory forensic calculation only: Quarantine account, verify SEC filing amendments, receivables/inventory/soft assets, and any China-origin tariff surcharges via CBP 7501 before asserting UCC \u00a7 2-717 or \u00a7 1313 drawback. TariffRisk 29.98 requires source-document validation, not automatic deduction.\""
+  },
+  "input_filers": [
+    {
+      "cik": 1274032,
+      "entity_name": "Simply, Inc.",
+      "fy": 2021,
+      "assets": 30437000.0,
+      "sales": 79111000.0,
+      "net_income": 4277000.0,
+      "cfo": -2209000.0,
+      "beneish_m_score": 789.95,
+      "dechow_f_score": 270.27,
+      "tariff_risk_index": 1.11,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3171000.0
+    },
+    {
+      "cik": 1415917,
+      "entity_name": "AMERICAN NANO SILICON TECHNOLOGIES, INC.",
+      "fy": 2013,
+      "assets": 27057450.0,
+      "sales": 798390.0,
+      "net_income": -2086393.0,
+      "cfo": -1805536.0,
+      "beneish_m_score": 737.57,
+      "dechow_f_score": 0.18,
+      "tariff_risk_index": 29.98,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 4220382.0
+    },
+    {
+      "cik": 1597846,
+      "entity_name": "Greenpro Capital Corp.",
+      "fy": 2015,
+      "assets": 9068366.0,
+      "sales": 2946164.0,
+      "net_income": -133671.0,
+      "cfo": -434395.0,
+      "beneish_m_score": 724.45,
+      "dechow_f_score": 0.38,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 136983.0
+    },
+    {
+      "cik": 1514056,
+      "entity_name": "Titan Environmental Solutions Inc.",
+      "fy": 2022,
+      "assets": 8552595.0,
+      "sales": 1582.0,
+      "net_income": -6448875.0,
+      "cfo": -1464960.0,
+      "beneish_m_score": 724.37,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": -0.01,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 802104.0
+    },
+    {
+      "cik": 1628908,
+      "entity_name": "Evolent Health, Inc.",
+      "fy": 2024,
+      "assets": 2680308000.0,
+      "sales": 2554741000.0,
+      "net_income": 1596000.0,
+      "cfo": 142582000.0,
+      "beneish_m_score": 704.55,
+      "dechow_f_score": 270.27,
+      "tariff_risk_index": 1.63,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 178427000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0010\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Simply, Inc.\", \"identifier\": \"CIK: 0001274032, FY: 2021\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; Sloan Accrual Anomaly > 0.10; UCC \u00a7 2-717 / 19 U.S.C. \u00a7 1313 not established without CBP Form 7501 or AP tariff surcharge records\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 789.95 >> -1.78, F-Score 270.27 >> 1.0, Sloan (4277000-(-2209000))/30437000=0.2131 > 0.10. Severe cash-to-accrual divergence, high manipulation/misstatement probability. No verified tariff recovery on public record alone.\", \"estimated_claim_or_surcharge_usd\": 6486000, \"z3_smt_invariant\": \"UNSAT/FLAGGED: Accruals = NetIncome - CFO = 4277000 - (-2209000) = 6486000; Sloan=0.2131 > 0.10; Invariant NetIncome = CFO + Accruals holds arithmetically but accrual magnitude violates Sloan threshold\", \"actionable_memo\": \"Non-advisory forensic calculation only (Circular 230 \u00a7 10.27 guardrail): Halt any UCC \u00a7 2-717 deduction until SEC 10-K/Q reconciliation, DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA inputs, and CBP 7501/AP vendor records are verified. Escalate for balance-sheet imbalance review; do not execute credit memo on M/F-Score alone.\"}, {\"index\": 2, \"entity_name\": \"AMERICAN NANO SILICON TECHNOLOGIES, INC.\", \"identifier\": \"CIK: 0001415917, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly; UCC \u00a7 2-305(2) good-faith open price and 19 U.S.C. \u00a7 1313 require documented tariff pass-through and CBP 7501 proof not present in supplied data\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 737.57 >> -1.78 despite F-Score 0.18 < 1.0, TariffRisk 29.98 extreme outlier. Sloan (-2086393-(-1805536))/27057450=-0.0104 within threshold, but Beneish outlier and sales/assets dislocation indicate unreliable inputs/misstatement risk.\", \"estimated_claim_or_surcharge_usd\": 280857, \"z3_smt_invariant\": \"UNSAT/FLAGGED: Accruals = NetIncome - CFO = -2086393 - (-1805536) = -280857; Sloan=-0.0104; M-Score invariant violation vs -1.78 threshold drives UNSAT classification\", \"actionable_memo\": \"Non-advisory forensic calculation only: Quarantine account, verify SEC filing amendments, receivables/inventory/soft assets, and any China-origin tariff surcharges via CBP 7501 before asserting UCC \u00a7 2-717 or \u00a7 1313 drawback. TariffRisk 29.98 requires source-document validation, not automatic deduction.\""
+}
