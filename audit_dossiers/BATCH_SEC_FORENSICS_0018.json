@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0018",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:49:38.075272+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0018",
+    "req_id": "meta_mb_1793846969_LANE1_SEC_0018_4edb",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1726,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 9.06,
+    "response_text": "{\n  \"batch_id\": \"SEC_0018\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"Athena Bitcoin Global\",\n      \"identifier\": \"CIK: 0001095146, FY: 2025\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; Beneish M-Score and Sloan Accrual forensic review only, no CBP Form 7501, AP surcharge invoice, or drawback record supplied\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 269.66 >> -1.78 threshold signals extreme model outlier, but F-Score 0.21 (<1.0) does not corroborate Dechow misstatement risk and Sloan accrual is negative; M-Score likely distorted by extreme DSRI/GMI/SGI inputs and requires variable-level recalculation from the filed 10-K before any manipulation conclusion\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => 10284000 = 17676000 + (-7392000); Sloan = (10284000-17676000)/78033000 = -0.0947, not >0.10\",\n      \"actionable_memo\": \"Non-advisory calculation only: pull FY2025 10-K and recompute all 8 Beneish variables (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA) from primary statements; do not execute any AP deduction or credit memo absent documented tariff surcharge, CBP refund, and vendor-master evidence. TariffRisk 1.0 is not a dollar claim.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"SOY ENERGY, LLC\",\n      \"identifier\": \"CIK: 0001426780, FY: 2012\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; TariffRisk 0.0 and no CBP Form 7501, AP surcharge invoice, or drawback record supplied\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAGGED - M-Score 267.47 >> -1.78 is an extreme non-credible outlier requiring source-data verification, but F-Score 0.17 (<1.0) and negative Sloan accrual do not corroborate Dechow/Sloan manipulation; stale FY2012 data cannot support a current recovery claim\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome = CFO + Accruals => -1929012 = -718202 + (-1210810); Sloan = (-1929012-(-718202))/27229381 = -0.0445, not >0.10; balance-sheet identity Assets = Liabilities + Equity not verifiable from supplied fields\",\n      \"actionable_memo\": \"Non-advisory calculation only: retrieve the actual FY2012 filing, verify Assets = Liabilities + Equity and all Beneish inputs, and investigate the flagged imbalance at source. No UCC \u00a7 2-717 withholding is authorized on this record; estimated recoverable balance is $0 until primary documents are produced.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"EBET, Inc.\",\n      \"identifier\": \"CIK: 0001829966, FY: 2022\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; no CBP Form 7501, tariff surcharge invoice,"
+  },
+  "input_filers": [
+    {
+      "cik": 1095146,
+      "entity_name": "Athena Bitcoin Global",
+      "fy": 2025,
+      "assets": 78033000.0,
+      "sales": 285391000.0,
+      "net_income": 10284000.0,
+      "cfo": 17676000.0,
+      "beneish_m_score": 269.66,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1426780,
+      "entity_name": "SOY ENERGY, LLC",
+      "fy": 2012,
+      "assets": 27229381.0,
+      "sales": 10389138.0,
+      "net_income": -1929012.0,
+      "cfo": -718202.0,
+      "beneish_m_score": 267.47,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 7782979.0
+    },
+    {
+      "cik": 1829966,
+      "entity_name": "EBET, Inc.",
+      "fy": 2022,
+      "assets": 68901212.0,
+      "sales": 58596620.0,
+      "net_income": -15200024.0,
+      "cfo": -8308198.0,
+      "beneish_m_score": 263.79,
+      "dechow_f_score": 0.41,
+      "tariff_risk_index": 1.08,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1236275,
+      "entity_name": "QXO, INC.",
+      "fy": 2025,
+      "assets": 15887300000.0,
+      "sales": 6842200000.0,
+      "net_income": 28000000.0,
+      "cfo": 261400000.0,
+      "beneish_m_score": 261.82,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.75,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1641489,
+      "entity_name": "vTv Therapeutics Inc.",
+      "fy": 2017,
+      "assets": 54495000.0,
+      "sales": 634000.0,
+      "net_income": -3650000.0,
+      "cfo": NaN,
+      "beneish_m_score": 257.5,
+      "dechow_f_score": 0.19,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 84941000.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0018\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"Athena Bitcoin Global\",\n      \"identifier\": \"CIK: 0001095146, FY: 2025\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; Beneish M-Score and Sloan Accrual forensic review only, no CBP Form 7501, AP surcharge invoice, or drawback record supplied\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 269.66 >> -1.78 threshold signals extreme model outlier, but F-Score 0.21 (<1.0) does not corroborate Dechow misstatement risk and Sloan accrual is negative; M-Score likely distorted by extreme DSRI/GMI/SGI inputs and requires variable-level recalculation from the filed 10-K before any manipulation conclusion\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => 10284000 = 17676000 + (-7392000); Sloan = (10284000-17676000)/78033000 = -0.0947, not >0.10\",\n      \"actionable_memo\": \"Non-advisory calculation only: pull FY2025 10-K and recompute all 8 Beneish variables (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA) from primary statements; do not execute any AP deduction or credit memo absent documented tariff surcharge, CBP refund, and vendor-master evidence. TariffRisk 1.0 is not a dollar claim.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"SOY ENERGY, LLC\",\n      \"identifier\": \"CIK: 0001426780, FY: 2012\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; TariffRisk 0.0 and no CBP Form 7501, AP surcharge invoice, or drawback record supplied\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAGGED - M-Score 267.47 >> -1.78 is an extreme non-credible outlier requiring source-data verification, but F-Score 0.17 (<1.0) and negative Sloan accrual do not corroborate Dechow/Sloan manipulation; stale FY2012 data cannot support a current recovery claim\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome = CFO + Accruals => -1929012 = -718202 + (-1210810); Sloan = (-1929012-(-718202))/27229381 = -0.0445, not >0.10; balance-sheet identity Assets = Liabilities + Equity not verifiable from supplied fields\",\n      \"actionable_memo\": \"Non-advisory calculation only: retrieve the actual FY2012 filing, verify Assets = Liabilities + Equity and all Beneish inputs, and investigate the flagged imbalance at source. No UCC \u00a7 2-717 withholding is authorized on this record; estimated recoverable balance is $0 until primary documents are produced.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"EBET, Inc.\",\n      \"identifier\": \"CIK: 0001829966, FY: 2022\",\n      \"statutory_hook\": \"No substantiated UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim on provided data; no CBP Form 7501, tariff surcharge invoice,"
+}

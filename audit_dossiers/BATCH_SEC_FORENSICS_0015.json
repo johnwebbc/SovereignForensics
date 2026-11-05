@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0015",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:49:10.191830+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0015",
+    "req_id": "meta_mb_1793846940_LANE1_SEC_0015_a145",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1728,
+    "cached_tok": 0,
+    "out_tok": 1500,
+    "cost_usd": "0.0369",
+    "elapsed_sec": 9.96,
+    "response_text": "{\"batch_id\": \"SEC_0015\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"MEDWELLAI, INC.\", \"identifier\": \"CIK: 0001520118, FY: 2021\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE and Beneish outlier. M-Score 379.59 >> -1.78, F-Score 0.97 < 1.0. Sloan accrual = (-1081775 - (-671101))/13363965 = -0.0307, not > 0.10. Extreme M-Score likely driven by distorted inputs/imbalance, not proof of manipulation or recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: -1081775 == -671101 + (-410674) SAT on cash-flow identity; balance-sheet imbalance flag renders full accounting invariant UNVERIFIED\", \"actionable_memo\": \"Do not deduct from AP under UCC 2-717 on this data. Obtain audited 10-K balance sheet, prior-year comparatives for all 8 Beneish variables, and any CBP Form 7501/AP surcharge invoices before asserting a claim; recompute M-Score from source filings.\"}, {\"index\": 2, \"entity_name\": \"China Xuefeng Environmental Engineering Inc.\", \"identifier\": \"CIK: 0001518487, FY: 2016\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER. M-Score 371.6 >> -1.78, F-Score 0.33 < 1.0. Sloan accrual = (5992930 - 5457579)/35297419 = 0.0152, not > 0.10. Profit and CFO are cash-backed on provided totals; extreme M-Score requires variable-level verification and is not standalone proof of misstatement.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: 5992930 == 5457579 + 535351 SAT\", \"actionable_memo\": \"Do not withhold AP or book a tariff recovery. Pull FY2015-2016 10-K comparatives to recompute DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, inspect receivables/inventory and related-party disclosures; require CBP/AP documentation for any surcharge claim.\"}, {\"index\": 3, \"entity_name\": \"Crisp Momentum Inc.\", \"identifier\": \"CIK: 0000924396, FY: 2023\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER with severe operating loss. M-Score 343.53 >> -1.78, F-Score 0.24 < 1.0. Sloan accrual = (-2556714 - (-286527))/5820481 = -0.3900, not > 0.10 positive accrual flag. Sales $81,179 vs loss $-2,556,714 indicates distress/non-operating accrual distortion, not verified manipulation.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: -2556714 == -286527 + (-2270187) SAT\", \"actionable_memo\": \"No UCC"
+  },
+  "input_filers": [
+    {
+      "cik": 1520118,
+      "entity_name": "MEDWELLAI, INC.",
+      "fy": 2021,
+      "assets": 13363965.0,
+      "sales": 1851390.0,
+      "net_income": -1081775.0,
+      "cfo": -671101.0,
+      "beneish_m_score": 379.59,
+      "dechow_f_score": 0.97,
+      "tariff_risk_index": -2.63,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3742658.0
+    },
+    {
+      "cik": 1518487,
+      "entity_name": "China Xuefeng Environmental Engineering Inc.",
+      "fy": 2016,
+      "assets": 35297419.0,
+      "sales": 22187094.0,
+      "net_income": 5992930.0,
+      "cfo": 5457579.0,
+      "beneish_m_score": 371.6,
+      "dechow_f_score": 0.33,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 924396,
+      "entity_name": "Crisp Momentum Inc.",
+      "fy": 2023,
+      "assets": 5820481.0,
+      "sales": 81179.0,
+      "net_income": -2556714.0,
+      "cfo": -286527.0,
+      "beneish_m_score": 343.53,
+      "dechow_f_score": 0.24,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 23022.0
+    },
+    {
+      "cik": 1697412,
+      "entity_name": "MIGOM GLOBAL CORP.",
+      "fy": 2020,
+      "assets": 19280025.0,
+      "sales": 3839242.0,
+      "net_income": NaN,
+      "cfo": 2178574.0,
+      "beneish_m_score": 338.52,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1897245,
+      "entity_name": "HWH     INTERNATIONAL INC.",
+      "fy": 2025,
+      "assets": 6408722.0,
+      "sales": 1253577.0,
+      "net_income": -2630620.0,
+      "cfo": -1750290.0,
+      "beneish_m_score": 334.86,
+      "dechow_f_score": 270.27,
+      "tariff_risk_index": -0.86,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3643358.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0015\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"MEDWELLAI, INC.\", \"identifier\": \"CIK: 0001520118, FY: 2021\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE and Beneish outlier. M-Score 379.59 >> -1.78, F-Score 0.97 < 1.0. Sloan accrual = (-1081775 - (-671101))/13363965 = -0.0307, not > 0.10. Extreme M-Score likely driven by distorted inputs/imbalance, not proof of manipulation or recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: -1081775 == -671101 + (-410674) SAT on cash-flow identity; balance-sheet imbalance flag renders full accounting invariant UNVERIFIED\", \"actionable_memo\": \"Do not deduct from AP under UCC 2-717 on this data. Obtain audited 10-K balance sheet, prior-year comparatives for all 8 Beneish variables, and any CBP Form 7501/AP surcharge invoices before asserting a claim; recompute M-Score from source filings.\"}, {\"index\": 2, \"entity_name\": \"China Xuefeng Environmental Engineering Inc.\", \"identifier\": \"CIK: 0001518487, FY: 2016\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER. M-Score 371.6 >> -1.78, F-Score 0.33 < 1.0. Sloan accrual = (5992930 - 5457579)/35297419 = 0.0152, not > 0.10. Profit and CFO are cash-backed on provided totals; extreme M-Score requires variable-level verification and is not standalone proof of misstatement.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: 5992930 == 5457579 + 535351 SAT\", \"actionable_memo\": \"Do not withhold AP or book a tariff recovery. Pull FY2015-2016 10-K comparatives to recompute DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, inspect receivables/inventory and related-party disclosures; require CBP/AP documentation for any surcharge claim.\"}, {\"index\": 3, \"entity_name\": \"Crisp Momentum Inc.\", \"identifier\": \"CIK: 0000924396, FY: 2023\", \"statutory_hook\": \"No verifiable UCC 2-717 or 19 U.S.C. 1313 tariff/drawback hook on provided data; forensic flag only under Beneish M-Score > -1.78\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER with severe operating loss. M-Score 343.53 >> -1.78, F-Score 0.24 < 1.0. Sloan accrual = (-2556714 - (-286527))/5820481 = -0.3900, not > 0.10 positive accrual flag. Sales $81,179 vs loss $-2,556,714 indicates distress/non-operating accrual distortion, not verified manipulation.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"NetIncome == CFO + Accruals: -2556714 == -286527 + (-2270187) SAT\", \"actionable_memo\": \"No UCC"
+}

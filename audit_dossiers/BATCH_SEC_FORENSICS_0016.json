@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0016",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:49:20.387634+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0016",
+    "req_id": "meta_mb_1793846950_LANE1_SEC_0016_b126",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1748,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0327",
+    "elapsed_sec": 9.68,
+    "response_text": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0016\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"TURTLE BEACH CORPORATION\", \"identifier\": \"CIK: 0001493761, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 326.45 is a non-economic outlier indicating corrupted or imbalanced inputs, not reliable proof of manipulation. Sloan ratio = (26,460,000-18,290,000)/246,968,000 = 0.0331, below 0.10 threshold. F-Score 0.48 below 1.0. No verified recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT: Balance-sheet invariant flagged imbalanced; Sloan identity check SAT: 26,460,000 = 18,290,000 + 8,170,000, accrual ratio 0.0331\", \"actionable_memo\": \"Do not deduct from AP. Re-pull audited FY2014 10-K, recompute all 8 Beneish variables from restated balance sheet, and obtain AP vendor invoices and CBP Form 7501 before asserting any UCC \u00a7 2-717 or 19 U.S.C. \u00a7 1313 claim.\"}, {\"index\": 2, \"entity_name\": \"Jingbo Technology, Inc.\", \"identifier\": \"CIK: 0001647822, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 325.48 is a non-economic outlier indicating corrupted or imbalanced inputs. Sloan ratio = (-6,395,388-102,130)/18,357,783 = -0.3540, negative accruals, not >0.10 cash-earnings inflation pattern. F-Score 0.0 and TariffRisk -3.07 are non-actionable anomalies. No verified recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT: Balance-sheet invariant flagged imbalanced; Sloan identity check SAT: -6,395,388 = 102,130 + (-6,497,518), accrual ratio -0.3540\", \"actionable_memo\": \"Do not deduct from AP. Re-pull audited FY2023 10-K, reconcile assets, liabilities and equity, recompute Beneish and Dechow inputs, and obtain primary tariff documentation before any credit-memo action.\"}, {\"index\": 3, \"entity_name\": \"CHINA TIANFEIHONG WINE INC\", \"identifier\": \"CIK: 0001501225, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly not triggered; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 306.25 far exceeds -1.78 but magnitude is implausible and indicates input or balance-sheet scaling error. Sloan"
+  },
+  "input_filers": [
+    {
+      "cik": 1493761,
+      "entity_name": "TURTLE BEACH CORPORATION",
+      "fy": 2014,
+      "assets": 246968000.0,
+      "sales": 207136000.0,
+      "net_income": 26460000.0,
+      "cfo": 18290000.0,
+      "beneish_m_score": 326.45,
+      "dechow_f_score": 0.48,
+      "tariff_risk_index": 0.26,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 22318000.0
+    },
+    {
+      "cik": 1647822,
+      "entity_name": "Jingbo Technology, Inc.",
+      "fy": 2023,
+      "assets": 18357783.0,
+      "sales": 3723088.0,
+      "net_income": -6395388.0,
+      "cfo": 102130.0,
+      "beneish_m_score": 325.48,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": -3.07,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 18433688.0
+    },
+    {
+      "cik": 1501225,
+      "entity_name": "CHINA TIANFEIHONG WINE INC",
+      "fy": 2014,
+      "assets": 6176037.0,
+      "sales": 8681546.0,
+      "net_income": 1380339.0,
+      "cfo": 1443575.0,
+      "beneish_m_score": 306.25,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 0.02,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 798815.0
+    },
+    {
+      "cik": 1692415,
+      "entity_name": "CO-DIAGNOSTICS, INC.",
+      "fy": 2020,
+      "assets": 71237197.0,
+      "sales": 74552758.0,
+      "net_income": 42478529.0,
+      "cfo": 28165235.0,
+      "beneish_m_score": 305.88,
+      "dechow_f_score": 0.2,
+      "tariff_risk_index": 0.07,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1589149,
+      "entity_name": "GREENWAVE TECHNOLOGY SOLUTIONS, INC.",
+      "fy": 2021,
+      "assets": 38177570.0,
+      "sales": 8098036.0,
+      "net_income": -1632421.0,
+      "cfo": -1037843.0,
+      "beneish_m_score": 302.01,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0016\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"TURTLE BEACH CORPORATION\", \"identifier\": \"CIK: 0001493761, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 326.45 is a non-economic outlier indicating corrupted or imbalanced inputs, not reliable proof of manipulation. Sloan ratio = (26,460,000-18,290,000)/246,968,000 = 0.0331, below 0.10 threshold. F-Score 0.48 below 1.0. No verified recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT: Balance-sheet invariant flagged imbalanced; Sloan identity check SAT: 26,460,000 = 18,290,000 + 8,170,000, accrual ratio 0.0331\", \"actionable_memo\": \"Do not deduct from AP. Re-pull audited FY2014 10-K, recompute all 8 Beneish variables from restated balance sheet, and obtain AP vendor invoices and CBP Form 7501 before asserting any UCC \u00a7 2-717 or 19 U.S.C. \u00a7 1313 claim.\"}, {\"index\": 2, \"entity_name\": \"Jingbo Technology, Inc.\", \"identifier\": \"CIK: 0001647822, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 325.48 is a non-economic outlier indicating corrupted or imbalanced inputs. Sloan ratio = (-6,395,388-102,130)/18,357,783 = -0.3540, negative accruals, not >0.10 cash-earnings inflation pattern. F-Score 0.0 and TariffRisk -3.07 are non-actionable anomalies. No verified recoverable surcharge.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT: Balance-sheet invariant flagged imbalanced; Sloan identity check SAT: -6,395,388 = 102,130 + (-6,497,518), accrual ratio -0.3540\", \"actionable_memo\": \"Do not deduct from AP. Re-pull audited FY2023 10-K, reconcile assets, liabilities and equity, recompute Beneish and Dechow inputs, and obtain primary tariff documentation before any credit-memo action.\"}, {\"index\": 3, \"entity_name\": \"CHINA TIANFEIHONG WINE INC\", \"identifier\": \"CIK: 0001501225, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78; Sloan Accrual Anomaly not triggered; UCC \u00a7 2-717 not invoked absent verified tariff surcharge invoices or CBP Form 7501\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 306.25 far exceeds -1.78 but magnitude is implausible and indicates input or balance-sheet scaling error. Sloan"
+}

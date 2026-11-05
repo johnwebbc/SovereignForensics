@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0019",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:49:47.755535+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0019",
+    "req_id": "meta_mb_1793846978_LANE1_SEC_0019_2856",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1747,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0327",
+    "elapsed_sec": 9.16,
+    "response_text": "{\"batch_id\": \"SEC_0019\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SANGAMO THERAPEUTICS, INC.\", \"identifier\": \"CIK: 0001001233, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim on provided record\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 254.38 >> -1.78 is an extreme computational outlier requiring variable-level recomputation of DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI and TATA; F-Score 0.37 <= 1.0 does not signal Dechow misstatement. Sloan = (-3478000 - (-8082000))/140838000 = 0.0327 <= 0.10, no severe cash-to-accrual flag. No fraud conclusion determinable from summary data alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -3478000 = -8082000 + 4604000; SloanAccrualRatio = 0.0327\", \"actionable_memo\": \"MF-02/MF-09: Do not execute UCC \u00a7 2-717 deduction. Verify Beneish inputs against FY2012-2013 SEC 10-K balance sheet and income statement, recompute M-Score, and obtain CBP Form 7501/AP invoices before asserting any tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim. Estimated recoverable claim is $0 on current verifiable record.\"}, {\"index\": 2, \"entity_name\": \"TON STRATEGY COMPANY\", \"identifier\": \"CIK: 0001566610, FY: 2019\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim on provided record\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 253.11 >> -1.78 is an extreme computational outlier requiring variable-level recomputation; F-Score 0.08 <= 1.0 does not signal Dechow misstatement. Sloan = (-12127000 - (-4157000))/28359000 = -0.2810, negative accrual direction and absolute divergence requires review but does not meet positive >0.10 Sloan flag. TariffRisk -1.34 provides no tariff exposure basis. No fraud conclusion determinable from summary data alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -12127000 = -4157000 + -7970000; SloanAccrualRatio = -0.2810\", \"actionable_memo\": \"MF-02/MF-09: Do not execute UCC \u00a7 2-717 deduction. Verify Beneish inputs against FY2018-2019 SEC filings, investigate negative accruals and prior corporate identity/name changes for CIK 0001566610, and obtain CBP Form 7501/AP invoices before asserting any tariff claim. Estimated recoverable claim is $0 on current verifiable record.\"}, {\"index\": 3, \"entity_name\": \"INTERACTIVE STRENGTH INC.\", \"identifier\": \"CIK: 0001785056, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78, Dechow F-Score > 1.0, and Sloan Accrual Anomaly review; potential UCC \u00a7 2-717 / 19 U.S.C. \u00a7"
+  },
+  "input_filers": [
+    {
+      "cik": 1001233,
+      "entity_name": "SANGAMO THERAPEUTICS, INC.",
+      "fy": 2013,
+      "assets": 140838000.0,
+      "sales": 24133000.0,
+      "net_income": -3478000.0,
+      "cfo": -8082000.0,
+      "beneish_m_score": 254.38,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1566610,
+      "entity_name": "TON STRATEGY COMPANY",
+      "fy": 2019,
+      "assets": 28359000.0,
+      "sales": 9100000.0,
+      "net_income": -12127000.0,
+      "cfo": -4157000.0,
+      "beneish_m_score": 253.11,
+      "dechow_f_score": 0.08,
+      "tariff_risk_index": -1.34,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1785056,
+      "entity_name": "INTERACTIVE STRENGTH INC.",
+      "fy": 2024,
+      "assets": 34170000.0,
+      "sales": 5380000.0,
+      "net_income": -34934000.0,
+      "cfo": -14812000.0,
+      "beneish_m_score": 242.05,
+      "dechow_f_score": 111.53,
+      "tariff_risk_index": 3.75,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1729149,
+      "entity_name": "VIEMED HEALTHCARE, INC.",
+      "fy": 2020,
+      "assets": 112560000.0,
+      "sales": 131309000.0,
+      "net_income": 31530000.0,
+      "cfo": 35110000.0,
+      "beneish_m_score": 233.19,
+      "dechow_f_score": 0.29,
+      "tariff_risk_index": 0.44,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8030000.0
+    },
+    {
+      "cik": 1568319,
+      "entity_name": "Voltari Corp",
+      "fy": 2015,
+      "assets": 12330000.0,
+      "sales": 49000.0,
+      "net_income": -6622000.0,
+      "cfo": -6047000.0,
+      "beneish_m_score": 228.22,
+      "dechow_f_score": 0.15,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2665000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0019\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SANGAMO THERAPEUTICS, INC.\", \"identifier\": \"CIK: 0001001233, FY: 2013\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim on provided record\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 254.38 >> -1.78 is an extreme computational outlier requiring variable-level recomputation of DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI and TATA; F-Score 0.37 <= 1.0 does not signal Dechow misstatement. Sloan = (-3478000 - (-8082000))/140838000 = 0.0327 <= 0.10, no severe cash-to-accrual flag. No fraud conclusion determinable from summary data alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -3478000 = -8082000 + 4604000; SloanAccrualRatio = 0.0327\", \"actionable_memo\": \"MF-02/MF-09: Do not execute UCC \u00a7 2-717 deduction. Verify Beneish inputs against FY2012-2013 SEC 10-K balance sheet and income statement, recompute M-Score, and obtain CBP Form 7501/AP invoices before asserting any tariff surcharge or 19 U.S.C. \u00a7 1313 drawback claim. Estimated recoverable claim is $0 on current verifiable record.\"}, {\"index\": 2, \"entity_name\": \"TON STRATEGY COMPANY\", \"identifier\": \"CIK: 0001566610, FY: 2019\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Sloan Accrual Anomaly review; no verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim on provided record\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 253.11 >> -1.78 is an extreme computational outlier requiring variable-level recomputation; F-Score 0.08 <= 1.0 does not signal Dechow misstatement. Sloan = (-12127000 - (-4157000))/28359000 = -0.2810, negative accrual direction and absolute divergence requires review but does not meet positive >0.10 Sloan flag. TariffRisk -1.34 provides no tariff exposure basis. No fraud conclusion determinable from summary data alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -12127000 = -4157000 + -7970000; SloanAccrualRatio = -0.2810\", \"actionable_memo\": \"MF-02/MF-09: Do not execute UCC \u00a7 2-717 deduction. Verify Beneish inputs against FY2018-2019 SEC filings, investigate negative accruals and prior corporate identity/name changes for CIK 0001566610, and obtain CBP Form 7501/AP invoices before asserting any tariff claim. Estimated recoverable claim is $0 on current verifiable record.\"}, {\"index\": 3, \"entity_name\": \"INTERACTIVE STRENGTH INC.\", \"identifier\": \"CIK: 0001785056, FY: 2024\", \"statutory_hook\": \"Beneish M-Score > -1.78, Dechow F-Score > 1.0, and Sloan Accrual Anomaly review; potential UCC \u00a7 2-717 / 19 U.S.C. \u00a7"
+}
