@@ -14,7 +14,8 @@
 > **Live Z3 SMT Audit API (Modal Cloud):** [https://johnwebbc--taxriskos-forensic-audit.us-east.modal.run](https://johnwebbc--taxriskos-forensic-audit.us-east.modal.run)  
 > **Interactive Local Cockpit:** [`index.html`](./index.html) / [`demo_cockpit.html`](./demo_cockpit.html)  
 > **Modal Warehouse & Z3 Apps:** [`modal_sovereign_forensics_warehouse.py`](./modal_sovereign_forensics_warehouse.py) & [`modal_taxriskos_forensics_app.py`](./modal_taxriskos_forensics_app.py)  
-> **Narrated 3-Minute Demo Video:** [`SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4`](./SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4)
+> **Narrated 3-Minute Demo Video:** [`SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4`](./SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4) | [Modal 1080p Stream](https://johnwebbc--sovereign-forensics-warehouse-fastapi-warehouse-app.us-east.modal.run/demo) | [GitHub Release v1.0.0](https://github.com/johnwebbc/SovereignForensics/releases/tag/v1.0.0)  
+> **Official X Post (Most Viral Track):** [https://x.com/OperatorCapital/status/2118134811428626671](https://x.com/OperatorCapital/status/2118134811428626671)
 
 ---
 
