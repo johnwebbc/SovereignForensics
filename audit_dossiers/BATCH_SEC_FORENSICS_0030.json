@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0030",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:00:57.412087+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0030",
+    "req_id": "meta_mb_1793847638_LANE1_SEC_0030_de2f",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1752,
+    "cached_tok": 1140,
+    "out_tok": 2468,
+    "cost_usd": "0.0520",
+    "elapsed_sec": 18.52,
+    "response_text": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0030\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Sintx Technologies, Inc.\", \"identifier\": \"CIK: 0001269026, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 108.73 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-8652000 - -4680000)/14641000 = -0.2713, indicating large negative accruals, not >0.10 positive Sloan flag. F-Score 0.17 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -8652000 - (-4680000) = -3972000; NetIncome = CFO + Accruals holds arithmetically (-4680000 + -3972000 = -8652000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Re-extract audited 10-K balance sheet, receivables, gross margin, depreciation, leverage and prior-year comparatives; recompute all 8 Beneish variables and investigate revenue of only $95000 against $14641000 assets before any claim.\"}, {\"index\": 2, \"entity_name\": \"Korro Bio, Inc.\", \"identifier\": \"CIK: 0001703647, FY: 2020\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 106.46 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-575000 - 34216000)/264722000 = -0.1314, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.32 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -575000 - 34216000 = -34791000; NetIncome = CFO + Accruals holds arithmetically (34216000 + -34791000 = -575000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Verify 10-K prior-year balance sheet, working capital, deferred revenue and non-cash items explaining positive CFO despite net loss; recompute Beneish and Dechow from source filings.\"}, {\"index\": 3, \"entity_name\": \"IOVANCE BIOTHERAPEUTICS, INC.\", \"identifier\": \"CIK: 0001425205, FY: 2024\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL CONCURRENT SCREEN FAILURE - REQUIRES SOURCE VERIFICATION: M-Score 104.17 >> -1.78 and F-Score 126.36 >> 1.0, but both values are implausibly scaled and likely reflect input or balance-sheet errors rather than proven misstatement. Sloan accrual = (-372177000 - -292757000)/910426000 = -0.0872, below >0.10 positive Sloan threshold. TariffRisk -1.19 provides no tariff-surcharge evidence.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -372177000 - (-292757000) = -79420000; NetIncome = CFO + Accruals holds arithmetically (-292757000 + -79420000 = -372177000), but Beneish/Dechow inputs require re-verification against audited 10-K\", \"actionable_memo\": \"Escalate for manual forensic review only; do not withhold AP. Pull 2024 and 2023 10-K statements, recompute DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, RSST accruals, receivables, inventory and issuance from primary filings, and document any restatement risk.\"}, {\"index\": 4, \"entity_name\": \"Western Refining Logistics, LP\", \"identifier\": \"CIK: 0001581908, FY: 2014\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 103.69 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (71793000 - 118017000)/378273000 = -0.1222, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.37 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = 71793000 - 118017000 = -46224000; NetIncome = CFO + Accruals holds arithmetically (118017000 + -46224000 = 71793000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff/drawback recovery on this screen alone. Verify partnership 10-K, prior-year comparatives, depreciation and working-capital schedules given sales of $3501888000 versus assets of $378273000, then recompute all forensic ratios.\"}, {\"index\": 5, \"entity_name\": \"Future FinTech Group Inc.\", \"identifier\": \"CIK: 0001066923, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY AND MISSTATEMENT SCREEN: M-Score 103.17 >> -1.78 and F-Score 1.79 > 1.0, but M-Score is implausibly scaled and flagged BALANCE SHEET IMBALANCE. Sloan accrual = (-102583700 - 23656500)/190680253 = -0.6621, extreme negative accruals suggesting major non-cash losses, impairments or input errors, not >0.10 positive Sloan flag.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -102583700 - 23656500 = -126240200; NetIncome = CFO + Accruals holds arithmetically (23656500 + -126240200 = -102583700), but underlying Beneish/Dechow inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Prioritize source verification of 2018 10-K impairments, discontinued operations, share-based or derivative losses, receivables and asset quality; recompute Beneish and Dechow before any fraud or recovery determination.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1269026,
+      "entity_name": "Sintx Technologies, Inc.",
+      "fy": 2018,
+      "assets": 14641000.0,
+      "sales": 95000.0,
+      "net_income": -8652000.0,
+      "cfo": -4680000.0,
+      "beneish_m_score": 108.73,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 21.29,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5793000.0
+    },
+    {
+      "cik": 1703647,
+      "entity_name": "Korro Bio, Inc.",
+      "fy": 2020,
+      "assets": 264722000.0,
+      "sales": 36984000.0,
+      "net_income": -575000.0,
+      "cfo": 34216000.0,
+      "beneish_m_score": 106.46,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 192491000.0
+    },
+    {
+      "cik": 1425205,
+      "entity_name": "IOVANCE BIOTHERAPEUTICS,\u00a0INC.",
+      "fy": 2024,
+      "assets": 910426000.0,
+      "sales": 164070000.0,
+      "net_income": -372177000.0,
+      "cfo": -292757000.0,
+      "beneish_m_score": 104.17,
+      "dechow_f_score": 126.36,
+      "tariff_risk_index": -1.19,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1581908,
+      "entity_name": "Western Refining Logistics, LP",
+      "fy": 2014,
+      "assets": 378273000.0,
+      "sales": 3501888000.0,
+      "net_income": 71793000.0,
+      "cfo": 118017000.0,
+      "beneish_m_score": 103.69,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 378273000.0
+    },
+    {
+      "cik": 1066923,
+      "entity_name": "Future FinTech Group Inc.",
+      "fy": 2018,
+      "assets": 190680253.0,
+      "sales": 10463135.0,
+      "net_income": -102583700.0,
+      "cfo": 23656500.0,
+      "beneish_m_score": 103.17,
+      "dechow_f_score": 1.79,
+      "tariff_risk_index": 2.27,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 20343058.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0030\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Sintx Technologies, Inc.\", \"identifier\": \"CIK: 0001269026, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 108.73 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-8652000 - -4680000)/14641000 = -0.2713, indicating large negative accruals, not >0.10 positive Sloan flag. F-Score 0.17 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -8652000 - (-4680000) = -3972000; NetIncome = CFO + Accruals holds arithmetically (-4680000 + -3972000 = -8652000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Re-extract audited 10-K balance sheet, receivables, gross margin, depreciation, leverage and prior-year comparatives; recompute all 8 Beneish variables and investigate revenue of only $95000 against $14641000 assets before any claim.\"}, {\"index\": 2, \"entity_name\": \"Korro Bio, Inc.\", \"identifier\": \"CIK: 0001703647, FY: 2020\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 106.46 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-575000 - 34216000)/264722000 = -0.1314, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.32 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -575000 - 34216000 = -34791000; NetIncome = CFO + Accruals holds arithmetically (34216000 + -34791000 = -575000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Verify 10-K prior-year balance sheet, working capital, deferred revenue and non-cash items explaining positive CFO despite net loss; recompute Beneish and Dechow from source filings.\"}, {\"index\": 3, \"entity_name\": \"IOVANCE BIOTHERAPEUTICS, INC.\", \"identifier\": \"CIK: 0001425205, FY: 2024\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL CONCURRENT SCREEN FAILURE - REQUIRES SOURCE VERIFICATION: M-Score 104.17 >> -1.78 and F-Score 126.36 >> 1.0, but both values are implausibly scaled and likely reflect input or balance-sheet errors rather than proven misstatement. Sloan accrual = (-372177000 - -292757000)/910426000 = -0.0872, below >0.10 positive Sloan threshold. TariffRisk -1.19 provides no tariff-surcharge evidence.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -372177000 - (-292757000) = -79420000; NetIncome = CFO + Accruals holds arithmetically (-292757000 + -79420000 = -372177000), but Beneish/Dechow inputs require re-verification against audited 10-K\", \"actionable_memo\": \"Escalate for manual forensic review only; do not withhold AP. Pull 2024 and 2023 10-K statements, recompute DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, RSST accruals, receivables, inventory and issuance from primary filings, and document any restatement risk.\"}, {\"index\": 4, \"entity_name\": \"Western Refining Logistics, LP\", \"identifier\": \"CIK: 0001581908, FY: 2014\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY HOLD: M-Score 103.69 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (71793000 - 118017000)/378273000 = -0.1222, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.37 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = 71793000 - 118017000 = -46224000; NetIncome = CFO + Accruals holds arithmetically (118017000 + -46224000 = 71793000), but underlying Beneish inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff/drawback recovery on this screen alone. Verify partnership 10-K, prior-year comparatives, depreciation and working-capital schedules given sales of $3501888000 versus assets of $378273000, then recompute all forensic ratios.\"}, {\"index\": 5, \"entity_name\": \"Future FinTech Group Inc.\", \"identifier\": \"CIK: 0001066923, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly\", \"forensic_verdict\": \"CRITICAL DATA-INTEGRITY AND MISSTATEMENT SCREEN: M-Score 103.17 >> -1.78 and F-Score 1.79 > 1.0, but M-Score is implausibly scaled and flagged BALANCE SHEET IMBALANCE. Sloan accrual = (-102583700 - 23656500)/190680253 = -0.6621, extreme negative accruals suggesting major non-cash losses, impairments or input errors, not >0.10 positive Sloan flag.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -102583700 - 23656500 = -126240200; NetIncome = CFO + Accruals holds arithmetically (23656500 + -126240200 = -102583700), but underlying Beneish/Dechow inputs fail balance-sheet invariant verification\", \"actionable_memo\": \"Do not deduct from AP or assert tariff recovery. Prioritize source verification of 2018 10-K impairments, discontinued operations, share-based or derivative losses, receivables and asset quality; recompute Beneish and Dechow before any fraud or recovery determination.\"}]}",
+  "meta_parsed": {
+    "batch_id": "MICRO-BATCH LANE 1 #SEC_0030",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "Sintx Technologies, Inc.",
+        "identifier": "CIK: 0001269026, FY: 2018",
+        "statutory_hook": "No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY HOLD: M-Score 108.73 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-8652000 - -4680000)/14641000 = -0.2713, indicating large negative accruals, not >0.10 positive Sloan flag. F-Score 0.17 below 1.0.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -8652000 - (-4680000) = -3972000; NetIncome = CFO + Accruals holds arithmetically (-4680000 + -3972000 = -8652000), but underlying Beneish inputs fail balance-sheet invariant verification",
+        "actionable_memo": "Do not deduct from AP or assert tariff recovery. Re-extract audited 10-K balance sheet, receivables, gross margin, depreciation, leverage and prior-year comparatives; recompute all 8 Beneish variables and investigate revenue of only $95000 against $14641000 assets before any claim."
+      },
+      {
+        "index": 2,
+        "entity_name": "Korro Bio, Inc.",
+        "identifier": "CIK: 0001703647, FY: 2020",
+        "statutory_hook": "No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY HOLD: M-Score 106.46 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (-575000 - 34216000)/264722000 = -0.1314, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.32 below 1.0.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -575000 - 34216000 = -34791000; NetIncome = CFO + Accruals holds arithmetically (34216000 + -34791000 = -575000), but underlying Beneish inputs fail balance-sheet invariant verification",
+        "actionable_memo": "Do not deduct from AP or assert tariff recovery. Verify 10-K prior-year balance sheet, working capital, deferred revenue and non-cash items explaining positive CFO despite net loss; recompute Beneish and Dechow from source filings."
+      },
+      {
+        "index": 3,
+        "entity_name": "IOVANCE BIOTHERAPEUTICS, INC.",
+        "identifier": "CIK: 0001425205, FY: 2024",
+        "statutory_hook": "No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly",
+        "forensic_verdict": "CRITICAL CONCURRENT SCREEN FAILURE - REQUIRES SOURCE VERIFICATION: M-Score 104.17 >> -1.78 and F-Score 126.36 >> 1.0, but both values are implausibly scaled and likely reflect input or balance-sheet errors rather than proven misstatement. Sloan accrual = (-372177000 - -292757000)/910426000 = -0.0872, below >0.10 positive Sloan threshold. TariffRisk -1.19 provides no tariff-surcharge evidence.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -372177000 - (-292757000) = -79420000; NetIncome = CFO + Accruals holds arithmetically (-292757000 + -79420000 = -372177000), but Beneish/Dechow inputs require re-verification against audited 10-K",
+        "actionable_memo": "Escalate for manual forensic review only; do not withhold AP. Pull 2024 and 2023 10-K statements, recompute DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA, RSST accruals, receivables, inventory and issuance from primary filings, and document any restatement risk."
+      },
+      {
+        "index": 4,
+        "entity_name": "Western Refining Logistics, LP",
+        "identifier": "CIK: 0001581908, FY: 2014",
+        "statutory_hook": "No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY HOLD: M-Score 103.69 is far above -1.78 threshold but implausibly scaled and flagged BALANCE SHEET IMBALANCE, so manipulation inference is not reliable. Sloan accrual = (71793000 - 118017000)/378273000 = -0.1222, indicating negative accruals, not >0.10 positive Sloan flag. F-Score 0.37 below 1.0.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT-RELIABILITY: Accruals = NetIncome - CFO = 71793000 - 118017000 = -46224000; NetIncome = CFO + Accruals holds arithmetically (118017000 + -46224000 = 71793000), but underlying Beneish inputs fail balance-sheet invariant verification",
+        "actionable_memo": "Do not deduct from AP or assert tariff/drawback recovery on this screen alone. Verify partnership 10-K, prior-year comparatives, depreciation and working-capital schedules given sales of $3501888000 versus assets of $378273000, then recompute all forensic ratios."
+      },
+      {
+        "index": 5,
+        "entity_name": "Future FinTech Group Inc.",
+        "identifier": "CIK: 0001066923, FY: 2018",
+        "statutory_hook": "No verified UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 claim on provided data; forensic review only under Beneish M-Score, Dechow F-Score, and Sloan Accrual Anomaly",
+        "forensic_verdict": "CRITICAL DATA-INTEGRITY AND MISSTATEMENT SCREEN: M-Score 103.17 >> -1.78 and F-Score 1.79 > 1.0, but M-Score is implausibly scaled and flagged BALANCE SHEET IMBALANCE. Sloan accrual = (-102583700 - 23656500)/190680253 = -0.6621, extreme negative accruals suggesting major non-cash losses, impairments or input errors, not >0.10 positive Sloan flag.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT-RELIABILITY: Accruals = NetIncome - CFO = -102583700 - 23656500 = -126240200; NetIncome = CFO + Accruals holds arithmetically (23656500 + -126240200 = -102583700), but underlying Beneish/Dechow inputs fail balance-sheet invariant verification",
+        "actionable_memo": "Do not deduct from AP or assert tariff recovery. Prioritize source verification of 2018 10-K impairments, discontinued operations, share-based or derivative losses, receivables and asset quality; recompute Beneish and Dechow before any fraud or recovery determination."
+      }
+    ]
+  }
+}

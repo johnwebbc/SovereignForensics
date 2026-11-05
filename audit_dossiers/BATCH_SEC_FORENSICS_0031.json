@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0031",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:01:11.945467+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0031",
+    "req_id": "meta_mb_1793847657_LANE1_SEC_0031_2c28",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1744,
+    "cached_tok": 1140,
+    "out_tok": 2196,
+    "cost_usd": "0.0466",
+    "elapsed_sec": 14.02,
+    "response_text": "{\"batch_id\": \"SEC_0031\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"BLACKRIDGE TECHNOLOGY INTERNATIONAL, INC.\", \"identifier\": \"CIK: 0001456212, FY: 2017\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 98.03 >> -1.78 Beneish threshold and Sloan accrual ratio -0.6192; claimed earnings manipulation risk requires primary 10-K verification, no tariff recovery established\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -7215820 != CFO -2155621 + Accruals unless Accruals = -5060199; (NI-CFO)/Assets = -0.6192, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2017 10-K, full balance sheet, receivables/inventory, AP master and any tariff invoices; recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and reconcile NI=CFO+Accruals before any claim.\"}, {\"index\": 2, \"entity_name\": \"NEUROMETRIX, INC.\", \"identifier\": \"CIK: 0001289850, FY: 2015\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; CFO is NaN and no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02/MF-09 fail\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED AND DATA INCOMPLETE - M-Score 97.85 >> -1.78 Beneish threshold, F-Score 0.29 < 1.0, Sloan cannot be computed due to missing CFO\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNKNOWN/UNSAT: CFO=NaN so invariant NetIncome = CFO + Accruals is indeterminate; NI=-7766222, Assets=16034490, verification blocked\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2015 10-K cash-flow statement to replace NaN CFO, obtain balance sheet and AP/tariff records; recompute Sloan, Beneish and F-Score from primary filings before any claim.\"}, {\"index\": 3, \"entity_name\": \"Serve Robotics Inc.\", \"identifier\": \"CIK: 0001832483, FY: 2024\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 20.26 is an unexplained score, not a documented surcharge, CBP Form 7501, or AP amount - MF-02/MF-05/MF-06 fail\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FLAG UNVERIFIED - M-Score 96.7 >> -1.78 and F-Score 35.35 >> 1.0 signal stated-model risk, Sloan -0.0633 does not exceed 0.10; requires primary 10-K recomputation, no tariff recovery established\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -24813736 != CFO -15970878 + Accruals unless Accruals = -8842858; (NI-CFO)/Assets = -0.0633, full accrual and balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2024 10-K, RSST accrual components, receivables/inventory/soft assets, issuance history, AP master and tariff/CBP documents; independently recompute Beneish and Dechow inputs before asserting misstatement or surcharge.\"}, {\"index\": 4, \"entity_name\": \"TARGET GROUP INC.\", \"identifier\": \"CIK: 0001586554, FY: 2020\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 0.01, no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 96.41 >> -1.78 Beneish threshold, F-Score 0.21 < 1.0, Sloan -0.3426; sales $30,000 vs assets $16,464,496 and loss $-7,073,871 require primary-filing review\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -7073871 != CFO -1433169 + Accruals unless Accruals = -5640702; (NI-CFO)/Assets = -0.3426, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2020 10-K, complete balance sheet and cash-flow reconciliation, related-party and AP records; verify imbalance flag source data before any forensic or tariff claim.\"}, {\"index\": 5, \"entity_name\": \"CTI BIOPHARMA CORP\", \"identifier\": \"CIK: 0000891293, FY: 2013\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED WITH SEVERE SLOAN SIGNAL - M-Score 96.02 >> -1.78, F-Score 0.32 < 1.0, but Sloan 0.4911 > 0.10 with positive NI $10,196,000 vs CFO $-35,830,000 indicates large accrual-cash divergence requiring investigation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome 10196000 != CFO -35830000 + Accruals unless Accruals = 46026000; (NI-CFO)/Assets = 0.4911, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2013 10-K, accrual composition, non-cash gains, receivables and financing items explaining $46,026,000 NI-CFO gap; recompute Beneish/F-Score/Sloan from audited statements before any claim.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1456212,
+      "entity_name": "BLACKRIDGE TECHNOLOGY INTERNATIONAL, INC.",
+      "fy": 2017,
+      "assets": 8172571.0,
+      "sales": 84023.0,
+      "net_income": -7215820.0,
+      "cfo": -2155621.0,
+      "beneish_m_score": 98.03,
+      "dechow_f_score": 0.46,
+      "tariff_risk_index": 6.44,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 13588410.0
+    },
+    {
+      "cik": 1289850,
+      "entity_name": "NEUROMETRIX, INC.",
+      "fy": 2015,
+      "assets": 16034490.0,
+      "sales": 7299830.0,
+      "net_income": -7766222.0,
+      "cfo": NaN,
+      "beneish_m_score": 97.85,
+      "dechow_f_score": 0.29,
+      "tariff_risk_index": 1.91,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 4543333.0
+    },
+    {
+      "cik": 1832483,
+      "entity_name": "Serve Robotics Inc.",
+      "fy": 2024,
+      "assets": 139600873.0,
+      "sales": 1812483.0,
+      "net_income": -24813736.0,
+      "cfo": -15970878.0,
+      "beneish_m_score": 96.7,
+      "dechow_f_score": 35.35,
+      "tariff_risk_index": 20.26,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1586554,
+      "entity_name": "TARGET GROUP\u00a0INC.",
+      "fy": 2020,
+      "assets": 16464496.0,
+      "sales": 30000.0,
+      "net_income": -7073871.0,
+      "cfo": -1433169.0,
+      "beneish_m_score": 96.41,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3881668.0
+    },
+    {
+      "cik": 891293,
+      "entity_name": "CTI BIOPHARMA CORP",
+      "fy": 2013,
+      "assets": 93723000.0,
+      "sales": 34678000.0,
+      "net_income": 10196000.0,
+      "cfo": -35830000.0,
+      "beneish_m_score": 96.02,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 11046000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0031\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"BLACKRIDGE TECHNOLOGY INTERNATIONAL, INC.\", \"identifier\": \"CIK: 0001456212, FY: 2017\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 98.03 >> -1.78 Beneish threshold and Sloan accrual ratio -0.6192; claimed earnings manipulation risk requires primary 10-K verification, no tariff recovery established\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -7215820 != CFO -2155621 + Accruals unless Accruals = -5060199; (NI-CFO)/Assets = -0.6192, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2017 10-K, full balance sheet, receivables/inventory, AP master and any tariff invoices; recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and reconcile NI=CFO+Accruals before any claim.\"}, {\"index\": 2, \"entity_name\": \"NEUROMETRIX, INC.\", \"identifier\": \"CIK: 0001289850, FY: 2015\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; CFO is NaN and no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02/MF-09 fail\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED AND DATA INCOMPLETE - M-Score 97.85 >> -1.78 Beneish threshold, F-Score 0.29 < 1.0, Sloan cannot be computed due to missing CFO\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNKNOWN/UNSAT: CFO=NaN so invariant NetIncome = CFO + Accruals is indeterminate; NI=-7766222, Assets=16034490, verification blocked\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2015 10-K cash-flow statement to replace NaN CFO, obtain balance sheet and AP/tariff records; recompute Sloan, Beneish and F-Score from primary filings before any claim.\"}, {\"index\": 3, \"entity_name\": \"Serve Robotics Inc.\", \"identifier\": \"CIK: 0001832483, FY: 2024\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 20.26 is an unexplained score, not a documented surcharge, CBP Form 7501, or AP amount - MF-02/MF-05/MF-06 fail\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW FLAG UNVERIFIED - M-Score 96.7 >> -1.78 and F-Score 35.35 >> 1.0 signal stated-model risk, Sloan -0.0633 does not exceed 0.10; requires primary 10-K recomputation, no tariff recovery established\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -24813736 != CFO -15970878 + Accruals unless Accruals = -8842858; (NI-CFO)/Assets = -0.0633, full accrual and balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2024 10-K, RSST accrual components, receivables/inventory/soft assets, issuance history, AP master and tariff/CBP documents; independently recompute Beneish and Dechow inputs before asserting misstatement or surcharge.\"}, {\"index\": 4, \"entity_name\": \"TARGET GROUP INC.\", \"identifier\": \"CIK: 0001586554, FY: 2020\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 0.01, no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 96.41 >> -1.78 Beneish threshold, F-Score 0.21 < 1.0, Sloan -0.3426; sales $30,000 vs assets $16,464,496 and loss $-7,073,871 require primary-filing review\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome -7073871 != CFO -1433169 + Accruals unless Accruals = -5640702; (NI-CFO)/Assets = -0.3426, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2020 10-K, complete balance sheet and cash-flow reconciliation, related-party and AP records; verify imbalance flag source data before any forensic or tariff claim.\"}, {\"index\": 5, \"entity_name\": \"CTI BIOPHARMA CORP\", \"identifier\": \"CIK: 0000891293, FY: 2013\", \"statutory_hook\": \"No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED WITH SEVERE SLOAN SIGNAL - M-Score 96.02 >> -1.78, F-Score 0.32 < 1.0, but Sloan 0.4911 > 0.10 with positive NI $10,196,000 vs CFO $-35,830,000 indicates large accrual-cash divergence requiring investigation\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIED: NetIncome 10196000 != CFO -35830000 + Accruals unless Accruals = 46026000; (NI-CFO)/Assets = 0.4911, balance-sheet identity not proven from supplied aggregates\", \"actionable_memo\": \"Do not deduct under UCC 2-717. Obtain FY2013 10-K, accrual composition, non-cash gains, receivables and financing items explaining $46,026,000 NI-CFO gap; recompute Beneish/F-Score/Sloan from audited statements before any claim.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0031",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "BLACKRIDGE TECHNOLOGY INTERNATIONAL, INC.",
+        "identifier": "CIK: 0001456212, FY: 2017",
+        "statutory_hook": "No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 98.03 >> -1.78 Beneish threshold and Sloan accrual ratio -0.6192; claimed earnings manipulation risk requires primary 10-K verification, no tariff recovery established",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIED: NetIncome -7215820 != CFO -2155621 + Accruals unless Accruals = -5060199; (NI-CFO)/Assets = -0.6192, balance-sheet identity not proven from supplied aggregates",
+        "actionable_memo": "Do not deduct under UCC 2-717. Obtain FY2017 10-K, full balance sheet, receivables/inventory, AP master and any tariff invoices; recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA and reconcile NI=CFO+Accruals before any claim."
+      },
+      {
+        "index": 2,
+        "entity_name": "NEUROMETRIX, INC.",
+        "identifier": "CIK: 0001289850, FY: 2015",
+        "statutory_hook": "No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; CFO is NaN and no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02/MF-09 fail",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED AND DATA INCOMPLETE - M-Score 97.85 >> -1.78 Beneish threshold, F-Score 0.29 < 1.0, Sloan cannot be computed due to missing CFO",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNKNOWN/UNSAT: CFO=NaN so invariant NetIncome = CFO + Accruals is indeterminate; NI=-7766222, Assets=16034490, verification blocked",
+        "actionable_memo": "Do not deduct under UCC 2-717. Obtain FY2015 10-K cash-flow statement to replace NaN CFO, obtain balance sheet and AP/tariff records; recompute Sloan, Beneish and F-Score from primary filings before any claim."
+      },
+      {
+        "index": 3,
+        "entity_name": "Serve Robotics Inc.",
+        "identifier": "CIK: 0001832483, FY: 2024",
+        "statutory_hook": "No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 20.26 is an unexplained score, not a documented surcharge, CBP Form 7501, or AP amount - MF-02/MF-05/MF-06 fail",
+        "forensic_verdict": "CRITICAL: CONCURRENT BENEISH + DECHOW FLAG UNVERIFIED - M-Score 96.7 >> -1.78 and F-Score 35.35 >> 1.0 signal stated-model risk, Sloan -0.0633 does not exceed 0.10; requires primary 10-K recomputation, no tariff recovery established",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIED: NetIncome -24813736 != CFO -15970878 + Accruals unless Accruals = -8842858; (NI-CFO)/Assets = -0.0633, full accrual and balance-sheet identity not proven from supplied aggregates",
+        "actionable_memo": "Do not deduct under UCC 2-717. Obtain FY2024 10-K, RSST accrual components, receivables/inventory/soft assets, issuance history, AP master and tariff/CBP documents; independently recompute Beneish and Dechow inputs before asserting misstatement or surcharge."
+      },
+      {
+        "index": 4,
+        "entity_name": "TARGET GROUP INC.",
+        "identifier": "CIK: 0001586554, FY: 2020",
+        "statutory_hook": "No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; TariffRisk 0.01, no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED - M-Score 96.41 >> -1.78 Beneish threshold, F-Score 0.21 < 1.0, Sloan -0.3426; sales $30,000 vs assets $16,464,496 and loss $-7,073,871 require primary-filing review",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIED: NetIncome -7073871 != CFO -1433169 + Accruals unless Accruals = -5640702; (NI-CFO)/Assets = -0.3426, balance-sheet identity not proven from supplied aggregates",
+        "actionable_memo": "Do not deduct under UCC 2-717. Obtain FY2020 10-K, complete balance sheet and cash-flow reconciliation, related-party and AP records; verify imbalance flag source data before any forensic or tariff claim."
+      },
+      {
+        "index": 5,
+        "entity_name": "CTI BIOPHARMA CORP",
+        "identifier": "CIK: 0000891293, FY: 2013",
+        "statutory_hook": "No verified UCC 2-717 / UCC 2-305(2) / 19 USC 1313 hook on supplied data; no CBP Form 7501, AP vendor record, or tariff surcharge invoice provided - MF-02 fails",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE FLAG UNVERIFIED WITH SEVERE SLOAN SIGNAL - M-Score 96.02 >> -1.78, F-Score 0.32 < 1.0, but Sloan 0.4911 > 0.10 with positive NI $10,196,000 vs CFO $-35,830,000 indicates large accrual-cash divergence requiring investigation",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIED: NetIncome 10196000 != CFO -35830000 + Accruals unless Accruals = 46026000; (NI-CFO)/Assets = 0.4911, balance-sheet identity not proven from supplied aggregates",
+        "actionable_memo": "Do not deduct under UCC 2-717. Obtain FY2013 10-K, accrual composition, non-cash gains, receivables and financing items explaining $46,026,000 NI-CFO gap; recompute Beneish/F-Score/Sloan from audited statements before any claim."
+      }
+    ]
+  }
+}

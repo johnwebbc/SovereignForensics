@@ -1,0 +1,90 @@
+{
+  "batch_id": "LANE1_SEC_0032",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:01:26.229379+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0032",
+    "req_id": "meta_mb_1793847672_LANE1_SEC_0032_f5d9",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1734,
+    "cached_tok": 1140,
+    "out_tok": 2171,
+    "cost_usd": "0.0460",
+    "elapsed_sec": 13.77,
+    "response_text": "{\n  \"batch_id\": \"SEC_0032\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"Keros Therapeutics, Inc.\",\n      \"identifier\": \"CIK: 0001664710, FY: 2024\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, import AP vendor, or 3%-8% tariff surcharge evidence in provided record; TariffRisk 1.0 unverified against $3,550,000 sales\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER NOT CORROBORATED - M-Score 95.74 >> -1.78 is mathematically implausible for standard Beneish 8-variable model and indicates input/balance-sheet distortion, not proof of manipulation. F-Score 0.32 < 1.0 low Dechow misstatement risk. Sloan Accrual = (-104,679,000 - (-70,062,000))/615,886,000 = -0.0562, not > 0.10, no severe positive accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -104679000 = -70062000 + (-34617000); Sloan=-0.0562 <= 0.10; M-Score 95.74 flagged UNRELIABLE_INPUT, F-Score 0.32 < 1.0\",\n      \"actionable_memo\": \"MF-02/MF-05/MF-06 FAIL for recovery: Do not deduct under UCC \u00a7 2-717. Pull FY2024 10-K, receivables, gross margin, depreciation and AP vendor master to recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from source. No $50,000+ verifiable tariff claim established; claim = $0 pending CBP 7501 evidence.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"SCYNEXIS, Inc.\",\n      \"identifier\": \"CIK: 0001178253, FY: 2021\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, exported/destroyed merchandise, or supplier tariff surcharge pass-through evidence in provided record despite TariffRisk 1.0\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / SLOAN FLAG - M-Score 95.22 >> -1.78 is implausible and unreliable as computed. F-Score 0.30 < 1.0 low Dechow risk, contradicting Beneish. Sloan Accrual = (-32,866,000 - (-49,354,000))/119,837,000 = 0.1376 > 0.10, flags severe cash-to-accrual divergence requiring source verification, not a tariff recovery.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome = CFO + Accruals => -32866000 = -49354000 + 16488000; Sloan=0.1376 > 0.10 VIOLATES accrual-quality invariant; M-Score input invariant UNSAT/UNRELIABLE\",\n      \"actionable_memo\": \"MF-02/MF-09 FAIL: Halt any UCC \u00a7 2-717 withholding. Reconcile FY2021 10-K balance sheet, RSST accruals, ChgRec, ChgInv and SoftAssets from SEC source to explain positive $16,488,000 accrual gap and balance-sheet imbalance. No verifiable drawback or surcharge; claim = $0 pending documentary proof.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"MJ Holdings, Inc.\",\n      \"identifier\": \"CIK: 0001456857, FY: 2019\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: TariffRisk 0.01 de minimis, no CBP Form 7501, import goods AP, or tariff surcharge evidence in provided record\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE NOT CORROBORATED - M-Score 95.10 >> -1.78 is implausible for standard Beneish model and indicates corrupted inputs. F-Score 0.38 < 1.0 low Dechow misstatement risk. Sloan Accrual = (-5,007,928 - (-4,622,155))/8,175,755 = -0.0472, not > 0.10, no severe positive accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -5007928 = -4622155 + (-385773); Sloan=-0.0472 <= 0.10; M-Score 95.10 flagged UNRELIABLE_INPUT, F-Score 0.38 < 1.0\",\n      \"actionable_memo\": \"MF-02/MF-05 FAIL: Do not pursue credit-memo deduction. Assets $8,175,755 and sales $897,696 with TariffRisk 0.01 cannot support a verified $50,000+ tariff claim on this record. Rebuild Beneish variables from FY2019 10-K and verify balance-sheet identity Assets = Liabilities + Equity before any forensic conclusion; claim = $0.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"The OLB Group, Inc.\",\n      \"identifier\": \"CIK: 0001314196, FY: 2018\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, goods supplier AP record, or unilateral tariff surcharge evidence in provided record despite TariffRisk 1.0; payment-services revenue not shown as imported goods\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE NOT CORROBORATED - M-Score 93.73 >> -1.78 is implausible and unreliable as computed. F-Score 0.0 < 1.0 indicates no Dechow misstatement signal, contradicting Beneish. Sloan Accrual = (-662,297"
+  },
+  "input_filers": [
+    {
+      "cik": 1664710,
+      "entity_name": "Keros Therapeutics, Inc.",
+      "fy": 2024,
+      "assets": 615886000.0,
+      "sales": 3550000.0,
+      "net_income": -104679000.0,
+      "cfo": -70062000.0,
+      "beneish_m_score": 95.74,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1178253,
+      "entity_name": "SCYNEXIS, Inc.",
+      "fy": 2021,
+      "assets": 119837000.0,
+      "sales": 13163000.0,
+      "net_income": -32866000.0,
+      "cfo": -49354000.0,
+      "beneish_m_score": 95.22,
+      "dechow_f_score": 0.3,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1199000.0
+    },
+    {
+      "cik": 1456857,
+      "entity_name": "MJ Holdings, Inc.",
+      "fy": 2019,
+      "assets": 8175755.0,
+      "sales": 897696.0,
+      "net_income": -5007928.0,
+      "cfo": -4622155.0,
+      "beneish_m_score": 95.1,
+      "dechow_f_score": 0.38,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1011342.0
+    },
+    {
+      "cik": 1314196,
+      "entity_name": "The OLB Group, Inc.",
+      "fy": 2018,
+      "assets": 11999274.0,
+      "sales": 9019876.0,
+      "net_income": -662297.0,
+      "cfo": -54660.0,
+      "beneish_m_score": 93.73,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1227611.0
+    },
+    {
+      "cik": 8504,
+      "entity_name": "AgEagle Aerial Systems Inc.",
+      "fy": 2019,
+      "assets": 6808151.0,
+      "sales": 296677.0,
+      "net_income": -2079683.0,
+      "cfo": -1778138.0,
+      "beneish_m_score": 90.8,
+      "dechow_f_score": 0.23,
+      "tariff_risk_index": 0.32,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 221463.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0032\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"Keros Therapeutics, Inc.\",\n      \"identifier\": \"CIK: 0001664710, FY: 2024\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, import AP vendor, or 3%-8% tariff surcharge evidence in provided record; TariffRisk 1.0 unverified against $3,550,000 sales\",\n      \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER NOT CORROBORATED - M-Score 95.74 >> -1.78 is mathematically implausible for standard Beneish 8-variable model and indicates input/balance-sheet distortion, not proof of manipulation. F-Score 0.32 < 1.0 low Dechow misstatement risk. Sloan Accrual = (-104,679,000 - (-70,062,000))/615,886,000 = -0.0562, not > 0.10, no severe positive accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -104679000 = -70062000 + (-34617000); Sloan=-0.0562 <= 0.10; M-Score 95.74 flagged UNRELIABLE_INPUT, F-Score 0.32 < 1.0\",\n      \"actionable_memo\": \"MF-02/MF-05/MF-06 FAIL for recovery: Do not deduct under UCC \u00a7 2-717. Pull FY2024 10-K, receivables, gross margin, depreciation and AP vendor master to recompute DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from source. No $50,000+ verifiable tariff claim established; claim = $0 pending CBP 7501 evidence.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"SCYNEXIS, Inc.\",\n      \"identifier\": \"CIK: 0001178253, FY: 2021\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, exported/destroyed merchandise, or supplier tariff surcharge pass-through evidence in provided record despite TariffRisk 1.0\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / SLOAN FLAG - M-Score 95.22 >> -1.78 is implausible and unreliable as computed. F-Score 0.30 < 1.0 low Dechow risk, contradicting Beneish. Sloan Accrual = (-32,866,000 - (-49,354,000))/119,837,000 = 0.1376 > 0.10, flags severe cash-to-accrual divergence requiring source verification, not a tariff recovery.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT arithmetically: NetIncome = CFO + Accruals => -32866000 = -49354000 + 16488000; Sloan=0.1376 > 0.10 VIOLATES accrual-quality invariant; M-Score input invariant UNSAT/UNRELIABLE\",\n      \"actionable_memo\": \"MF-02/MF-09 FAIL: Halt any UCC \u00a7 2-717 withholding. Reconcile FY2021 10-K balance sheet, RSST accruals, ChgRec, ChgInv and SoftAssets from SEC source to explain positive $16,488,000 accrual gap and balance-sheet imbalance. No verifiable drawback or surcharge; claim = $0 pending documentary proof.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"MJ Holdings, Inc.\",\n      \"identifier\": \"CIK: 0001456857, FY: 2019\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: TariffRisk 0.01 de minimis, no CBP Form 7501, import goods AP, or tariff surcharge evidence in provided record\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE NOT CORROBORATED - M-Score 95.10 >> -1.78 is implausible for standard Beneish model and indicates corrupted inputs. F-Score 0.38 < 1.0 low Dechow misstatement risk. Sloan Accrual = (-5,007,928 - (-4,622,155))/8,175,755 = -0.0472, not > 0.10, no severe positive accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"SAT: NetIncome = CFO + Accruals => -5007928 = -4622155 + (-385773); Sloan=-0.0472 <= 0.10; M-Score 95.10 flagged UNRELIABLE_INPUT, F-Score 0.38 < 1.0\",\n      \"actionable_memo\": \"MF-02/MF-05 FAIL: Do not pursue credit-memo deduction. Assets $8,175,755 and sales $897,696 with TariffRisk 0.01 cannot support a verified $50,000+ tariff claim on this record. Rebuild Beneish variables from FY2019 10-K and verify balance-sheet identity Assets = Liabilities + Equity before any forensic conclusion; claim = $0.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"The OLB Group, Inc.\",\n      \"identifier\": \"CIK: 0001314196, FY: 2018\",\n      \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) or 19 U.S.C. \u00a7 1313 hook: no CBP Form 7501, goods supplier AP record, or unilateral tariff surcharge evidence in provided record despite TariffRisk 1.0; payment-services revenue not shown as imported goods\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE NOT CORROBORATED - M-Score 93.73 >> -1.78 is implausible and unreliable as computed. F-Score 0.0 < 1.0 indicates no Dechow misstatement signal, contradicting Beneish. Sloan Accrual = (-662,297",
+  "meta_parsed": null
+}

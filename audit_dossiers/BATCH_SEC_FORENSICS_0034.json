@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0034",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:01:57.122669+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0034",
+    "req_id": "meta_mb_1793847700_LANE1_SEC_0034_60d6",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1722,
+    "cached_tok": 1140,
+    "out_tok": 2837,
+    "cost_usd": "0.0593",
+    "elapsed_sec": 16.9,
+    "response_text": "{\"batch_id\": \"SEC_0034\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Future FinTech Group Inc.\", \"identifier\": \"CIK: 0001066923, FY: 2021\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 86.37 >> -1.78 signals high manipulation probability mathematically, but magnitude is non-physical and indicates missing/degenerate prior-year inputs for DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA rather than proof of manipulation. F-Score 0.18 < 1.0 does not corroborate Dechow misstatement risk. CFO is NaN, so Sloan and TATA cannot be deterministically verified. Not actionable as fraud or tariff recovery without complete 10-K comparative financials.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"INDETERMINATE/UNSAT: NetIncome(14205925) = CFO(NaN) + Accruals cannot be satisfied; CFO missing violates deterministic verification MF-09. M-Score invariant unreliable.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not book a claim. Obtain FY2020-2021 10-K balance sheet, income and cash-flow comparatives, recompute all 8 Beneish variables with non-zero denominators, and resolve CFO NaN. TariffRisk 5.1 is unsupported by CBP Form 7501 or AP surcharge record per MF-02/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 2, \"entity_name\": \"Hines Global Income Trust, Inc.\", \"identifier\": \"CIK: 0001585101, FY: 2015\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 85.98 >> -1.78, but with NetInc $0 and CFO $0 in an early-stage REIT with Assets $149,056,249 and Sales $9,410,675, the extreme score is a degenerate-variable artifact, likely zero denominators and start-up comparatives. F-Score 0.38 < 1.0 does not corroborate misstatement. Sloan = (0-0)/149056249 = 0.00, no accrual anomaly. No concurrent forensic corroboration.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT on accrual identity only trivially: NetIncome(0) = CFO(0) + Accruals(0); Sloan 0.00 <= 0.10. Beneish invariant UNSAT for reliability due to probable zero/ missing prior-year inputs.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Pull FY2014-2015 10-K, verify REIT non-GAAP/FFO presentation, recompute Beneish excluding inapplicable REIT variables. TariffRisk 1.0 provides no CBP 7501, vendor or surcharge evidence per MF-02/MF-05/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 3, \"entity_name\": \"Rein Therapeutics, Inc.\", \"identifier\": \"CIK: 0001420565, FY: 2023\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / MODEL INAPPLICABILITY - M-Score 85.87 >> -1.78 with Sales $0 makes DSRI, GMI, SGI undefined or degenerate for a pre-revenue biotech; score is not probative. F-Score 0.33 < 1.0 does not corroborate misstatement. Sloan = (-15732000 - (-19808000))/106008000 = 0.0385 < 0.10, no severe cash-to-accrual anomaly; net loss is cash-supported. Imbalance flag requires source-filing reconciliation, not a fraud conclusion.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome(-15732000) = CFO(-19808000) + Accruals(4076000); 4076000/106008000 = 0.0385 <= 0.10. Beneish invariant INDETERMINATE: Sales=0 creates division-by-zero in SGI/DSRI/GMI.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not book a tariff claim. Reconcile the flagged balance-sheet imbalance directly to the FY2023 10-K Assets = Liabilities + Equity identity, auditor statement and XBRL tags. Pre-revenue status negates tariff surcharge, drawback and Beneish sales-based inference per MF-02; estimated recoverable balance is $0 until a documented counterparty claim exists.\"}, {\"index\": 4, \"entity_name\": \"MVP REIT, Inc.\", \"identifier\": \"CIK: 0001546609, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 84.08 >> -1.78, but magnitude is non-physical for Assets $67,012,000, Sales $2,478,000, NetInc $-1,141,000, CFO $473,000 and indicates early-stage REIT degenerate prior-year inputs. F-Score 0.30 < 1.0 does not corroborate Dechow misstatement. Sloan = (-1141000-473000)/67012000 = -0.0241, absolute value < 0.10, no accrual anomaly; CFO positive despite net loss is conservative, not manipulative.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome(-1141000) = CFO(473000) + Accruals(-1614000); -1614000/67012000 = -0.0241, within +/-0.10. Beneish reliability invariant UNSAT due to probable missing comparatives.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Obtain FY2012-2013 10-K/registration comparatives, recompute Beneish with REIT-appropriate adjustments and verify depreciation/FFO. TariffRisk 1.0 supplies no CBP 7501, AP vendor master or surcharge evidence per MF-02/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 5, \"entity_name\": \"ATLAS LITHIUM CORPORATION\", \"identifier\": \"CIK: 0001540684, FY: 2024\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78 AND Dechow F-Score threshold > 1.0 concurrent trigger; Sloan Accrual Anomaly > 0.10 in absolute terms. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided; TariffRisk -18.1 is not a surcharge measure.\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW RISK - M-Score 83.26 >> -1.78 and F-Score 150.81 >> 1.0 both trigger, but both extreme magnitudes indicate degenerate inputs, likely zero prior sales, issuance, and mining-exploration capitalization, rather than calibrated probabilities. Sales only $748,654 vs NetInc $-40,768,275. Sloan = (-40768275 - (-5962602))/57854608 = -0.6016, a large negative accrual, consistent with non-cash impairments/write-downs depressing income below CFO, not classic income-inflating accrual manipulation. Requires filing-level review; models alone do not prove misstatement.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT on identity: NetIncome(-40768275) = CFO(-5962602) + Accruals(-34805673); -34805673/57854608 = -0.6016, breaches 0.10 absolute bound with negative sign. Beneish/Dechow reliability invariant INDETERMINATE pending prior-year and issuance inputs.\", \"actionable_memo\": \"Escalate for manual forensic review, not automatic deduction: pull FY2023-2024 10-K, identify impairment, stock-compensation, warrant/derivative and RSST accrual drivers, ChgRec, ChgInv, SoftAssets and Issuance behind F-Score 150.81. Do not invoke UCC \u00a7 2-717 or 19 U.S.C. \u00a7 1313; no CBP 7501, export/destruction, vendor surcharge or concrete AP counterparty is documented per MF-02/MF-06. Estimated recoverable balance is $0 until documented.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1066923,
+      "entity_name": "Future FinTech Group Inc.",
+      "fy": 2021,
+      "assets": 91657085.0,
+      "sales": 25050801.0,
+      "net_income": 14205925.0,
+      "cfo": NaN,
+      "beneish_m_score": 86.37,
+      "dechow_f_score": 0.18,
+      "tariff_risk_index": 5.1,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 590761.0
+    },
+    {
+      "cik": 1585101,
+      "entity_name": "Hines Global Income Trust, Inc.",
+      "fy": 2015,
+      "assets": 149056249.0,
+      "sales": 9410675.0,
+      "net_income": 0.0,
+      "cfo": 0.0,
+      "beneish_m_score": 85.98,
+      "dechow_f_score": 0.38,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1420565,
+      "entity_name": "Rein Therapeutics, Inc.",
+      "fy": 2023,
+      "assets": 106008000.0,
+      "sales": 0.0,
+      "net_income": -15732000.0,
+      "cfo": -19808000.0,
+      "beneish_m_score": 85.87,
+      "dechow_f_score": 0.33,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 79674000.0
+    },
+    {
+      "cik": 1546609,
+      "entity_name": "MVP REIT, Inc.",
+      "fy": 2013,
+      "assets": 67012000.0,
+      "sales": 2478000.0,
+      "net_income": -1141000.0,
+      "cfo": 473000.0,
+      "beneish_m_score": 84.08,
+      "dechow_f_score": 0.3,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1540684,
+      "entity_name": "ATLAS LITHIUM CORPORATION",
+      "fy": 2024,
+      "assets": 57854608.0,
+      "sales": 748654.0,
+      "net_income": -40768275.0,
+      "cfo": -5962602.0,
+      "beneish_m_score": 83.26,
+      "dechow_f_score": 150.81,
+      "tariff_risk_index": -18.1,
+      "forensic_flag": "CRITICAL: CONCURRENT BENEISH + DECHOW FRAUD RISK",
+      "bs_imbalance_usd": 698250.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0034\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Future FinTech Group Inc.\", \"identifier\": \"CIK: 0001066923, FY: 2021\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 86.37 >> -1.78 signals high manipulation probability mathematically, but magnitude is non-physical and indicates missing/degenerate prior-year inputs for DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA rather than proof of manipulation. F-Score 0.18 < 1.0 does not corroborate Dechow misstatement risk. CFO is NaN, so Sloan and TATA cannot be deterministically verified. Not actionable as fraud or tariff recovery without complete 10-K comparative financials.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"INDETERMINATE/UNSAT: NetIncome(14205925) = CFO(NaN) + Accruals cannot be satisfied; CFO missing violates deterministic verification MF-09. M-Score invariant unreliable.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not book a claim. Obtain FY2020-2021 10-K balance sheet, income and cash-flow comparatives, recompute all 8 Beneish variables with non-zero denominators, and resolve CFO NaN. TariffRisk 5.1 is unsupported by CBP Form 7501 or AP surcharge record per MF-02/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 2, \"entity_name\": \"Hines Global Income Trust, Inc.\", \"identifier\": \"CIK: 0001585101, FY: 2015\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 85.98 >> -1.78, but with NetInc $0 and CFO $0 in an early-stage REIT with Assets $149,056,249 and Sales $9,410,675, the extreme score is a degenerate-variable artifact, likely zero denominators and start-up comparatives. F-Score 0.38 < 1.0 does not corroborate misstatement. Sloan = (0-0)/149056249 = 0.00, no accrual anomaly. No concurrent forensic corroboration.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT on accrual identity only trivially: NetIncome(0) = CFO(0) + Accruals(0); Sloan 0.00 <= 0.10. Beneish invariant UNSAT for reliability due to probable zero/ missing prior-year inputs.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Pull FY2014-2015 10-K, verify REIT non-GAAP/FFO presentation, recompute Beneish excluding inapplicable REIT variables. TariffRisk 1.0 provides no CBP 7501, vendor or surcharge evidence per MF-02/MF-05/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 3, \"entity_name\": \"Rein Therapeutics, Inc.\", \"identifier\": \"CIK: 0001420565, FY: 2023\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / MODEL INAPPLICABILITY - M-Score 85.87 >> -1.78 with Sales $0 makes DSRI, GMI, SGI undefined or degenerate for a pre-revenue biotech; score is not probative. F-Score 0.33 < 1.0 does not corroborate misstatement. Sloan = (-15732000 - (-19808000))/106008000 = 0.0385 < 0.10, no severe cash-to-accrual anomaly; net loss is cash-supported. Imbalance flag requires source-filing reconciliation, not a fraud conclusion.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome(-15732000) = CFO(-19808000) + Accruals(4076000); 4076000/106008000 = 0.0385 <= 0.10. Beneish invariant INDETERMINATE: Sales=0 creates division-by-zero in SGI/DSRI/GMI.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not book a tariff claim. Reconcile the flagged balance-sheet imbalance directly to the FY2023 10-K Assets = Liabilities + Equity identity, auditor statement and XBRL tags. Pre-revenue status negates tariff surcharge, drawback and Beneish sales-based inference per MF-02; estimated recoverable balance is $0 until a documented counterparty claim exists.\"}, {\"index\": 4, \"entity_name\": \"MVP REIT, Inc.\", \"identifier\": \"CIK: 0001546609, FY: 2013\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 84.08 >> -1.78, but magnitude is non-physical for Assets $67,012,000, Sales $2,478,000, NetInc $-1,141,000, CFO $473,000 and indicates early-stage REIT degenerate prior-year inputs. F-Score 0.30 < 1.0 does not corroborate Dechow misstatement. Sloan = (-1141000-473000)/67012000 = -0.0241, absolute value < 0.10, no accrual anomaly; CFO positive despite net loss is conservative, not manipulative.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT: NetIncome(-1141000) = CFO(473000) + Accruals(-1614000); -1614000/67012000 = -0.0241, within +/-0.10. Beneish reliability invariant UNSAT due to probable missing comparatives.\", \"actionable_memo\": \"Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Obtain FY2012-2013 10-K/registration comparatives, recompute Beneish with REIT-appropriate adjustments and verify depreciation/FFO. TariffRisk 1.0 supplies no CBP 7501, AP vendor master or surcharge evidence per MF-02/MF-06; estimated recoverable balance is $0 until documented.\"}, {\"index\": 5, \"entity_name\": \"ATLAS LITHIUM CORPORATION\", \"identifier\": \"CIK: 0001540684, FY: 2024\", \"statutory_hook\": \"Beneish 8-Variable M-Score threshold > -1.78 AND Dechow F-Score threshold > 1.0 concurrent trigger; Sloan Accrual Anomaly > 0.10 in absolute terms. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided; TariffRisk -18.1 is not a surcharge measure.\", \"forensic_verdict\": \"CRITICAL: CONCURRENT BENEISH + DECHOW RISK - M-Score 83.26 >> -1.78 and F-Score 150.81 >> 1.0 both trigger, but both extreme magnitudes indicate degenerate inputs, likely zero prior sales, issuance, and mining-exploration capitalization, rather than calibrated probabilities. Sales only $748,654 vs NetInc $-40,768,275. Sloan = (-40768275 - (-5962602))/57854608 = -0.6016, a large negative accrual, consistent with non-cash impairments/write-downs depressing income below CFO, not classic income-inflating accrual manipulation. Requires filing-level review; models alone do not prove misstatement.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT on identity: NetIncome(-40768275) = CFO(-5962602) + Accruals(-34805673); -34805673/57854608 = -0.6016, breaches 0.10 absolute bound with negative sign. Beneish/Dechow reliability invariant INDETERMINATE pending prior-year and issuance inputs.\", \"actionable_memo\": \"Escalate for manual forensic review, not automatic deduction: pull FY2023-2024 10-K, identify impairment, stock-compensation, warrant/derivative and RSST accrual drivers, ChgRec, ChgInv, SoftAssets and Issuance behind F-Score 150.81. Do not invoke UCC \u00a7 2-717 or 19 U.S.C. \u00a7 1313; no CBP 7501, export/destruction, vendor surcharge or concrete AP counterparty is documented per MF-02/MF-06. Estimated recoverable balance is $0 until documented.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0034",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "Future FinTech Group Inc.",
+        "identifier": "CIK: 0001066923, FY: 2021",
+        "statutory_hook": "Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 86.37 >> -1.78 signals high manipulation probability mathematically, but magnitude is non-physical and indicates missing/degenerate prior-year inputs for DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA rather than proof of manipulation. F-Score 0.18 < 1.0 does not corroborate Dechow misstatement risk. CFO is NaN, so Sloan and TATA cannot be deterministically verified. Not actionable as fraud or tariff recovery without complete 10-K comparative financials.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "INDETERMINATE/UNSAT: NetIncome(14205925) = CFO(NaN) + Accruals cannot be satisfied; CFO missing violates deterministic verification MF-09. M-Score invariant unreliable.",
+        "actionable_memo": "Do not deduct under UCC \u00a7 2-717 and do not book a claim. Obtain FY2020-2021 10-K balance sheet, income and cash-flow comparatives, recompute all 8 Beneish variables with non-zero denominators, and resolve CFO NaN. TariffRisk 5.1 is unsupported by CBP Form 7501 or AP surcharge record per MF-02/MF-06; estimated recoverable balance is $0 until documented."
+      },
+      {
+        "index": 2,
+        "entity_name": "Hines Global Income Trust, Inc.",
+        "identifier": "CIK: 0001585101, FY: 2015",
+        "statutory_hook": "Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 85.98 >> -1.78, but with NetInc $0 and CFO $0 in an early-stage REIT with Assets $149,056,249 and Sales $9,410,675, the extreme score is a degenerate-variable artifact, likely zero denominators and start-up comparatives. F-Score 0.38 < 1.0 does not corroborate misstatement. Sloan = (0-0)/149056249 = 0.00, no accrual anomaly. No concurrent forensic corroboration.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT on accrual identity only trivially: NetIncome(0) = CFO(0) + Accruals(0); Sloan 0.00 <= 0.10. Beneish invariant UNSAT for reliability due to probable zero/ missing prior-year inputs.",
+        "actionable_memo": "Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Pull FY2014-2015 10-K, verify REIT non-GAAP/FFO presentation, recompute Beneish excluding inapplicable REIT variables. TariffRisk 1.0 provides no CBP 7501, vendor or surcharge evidence per MF-02/MF-05/MF-06; estimated recoverable balance is $0 until documented."
+      },
+      {
+        "index": 3,
+        "entity_name": "Rein Therapeutics, Inc.",
+        "identifier": "CIK: 0001420565, FY: 2023",
+        "statutory_hook": "Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / MODEL INAPPLICABILITY - M-Score 85.87 >> -1.78 with Sales $0 makes DSRI, GMI, SGI undefined or degenerate for a pre-revenue biotech; score is not probative. F-Score 0.33 < 1.0 does not corroborate misstatement. Sloan = (-15732000 - (-19808000))/106008000 = 0.0385 < 0.10, no severe cash-to-accrual anomaly; net loss is cash-supported. Imbalance flag requires source-filing reconciliation, not a fraud conclusion.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT: NetIncome(-15732000) = CFO(-19808000) + Accruals(4076000); 4076000/106008000 = 0.0385 <= 0.10. Beneish invariant INDETERMINATE: Sales=0 creates division-by-zero in SGI/DSRI/GMI.",
+        "actionable_memo": "Do not deduct under UCC \u00a7 2-717 and do not book a tariff claim. Reconcile the flagged balance-sheet imbalance directly to the FY2023 10-K Assets = Liabilities + Equity identity, auditor statement and XBRL tags. Pre-revenue status negates tariff surcharge, drawback and Beneish sales-based inference per MF-02; estimated recoverable balance is $0 until a documented counterparty claim exists."
+      },
+      {
+        "index": 4,
+        "entity_name": "MVP REIT, Inc.",
+        "identifier": "CIK: 0001546609, FY: 2013",
+        "statutory_hook": "Beneish 8-Variable M-Score threshold > -1.78; Dechow F-Score threshold > 1.0; Sloan Accrual Anomaly > 0.10. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided.",
+        "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 84.08 >> -1.78, but magnitude is non-physical for Assets $67,012,000, Sales $2,478,000, NetInc $-1,141,000, CFO $473,000 and indicates early-stage REIT degenerate prior-year inputs. F-Score 0.30 < 1.0 does not corroborate Dechow misstatement. Sloan = (-1141000-473000)/67012000 = -0.0241, absolute value < 0.10, no accrual anomaly; CFO positive despite net loss is conservative, not manipulative.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT: NetIncome(-1141000) = CFO(473000) + Accruals(-1614000); -1614000/67012000 = -0.0241, within +/-0.10. Beneish reliability invariant UNSAT due to probable missing comparatives.",
+        "actionable_memo": "Do not deduct under UCC \u00a7 2-717 and do not allege manipulation on M-Score alone. Obtain FY2012-2013 10-K/registration comparatives, recompute Beneish with REIT-appropriate adjustments and verify depreciation/FFO. TariffRisk 1.0 supplies no CBP 7501, AP vendor master or surcharge evidence per MF-02/MF-06; estimated recoverable balance is $0 until documented."
+      },
+      {
+        "index": 5,
+        "entity_name": "ATLAS LITHIUM CORPORATION",
+        "identifier": "CIK: 0001540684, FY: 2024",
+        "statutory_hook": "Beneish 8-Variable M-Score threshold > -1.78 AND Dechow F-Score threshold > 1.0 concurrent trigger; Sloan Accrual Anomaly > 0.10 in absolute terms. No verifiable UCC \u00a7 2-717, UCC \u00a7 2-305(2), or 19 U.S.C. \u00a7 1313 tariff/drawback claim established on data provided; TariffRisk -18.1 is not a surcharge measure.",
+        "forensic_verdict": "CRITICAL: CONCURRENT BENEISH + DECHOW RISK - M-Score 83.26 >> -1.78 and F-Score 150.81 >> 1.0 both trigger, but both extreme magnitudes indicate degenerate inputs, likely zero prior sales, issuance, and mining-exploration capitalization, rather than calibrated probabilities. Sales only $748,654 vs NetInc $-40,768,275. Sloan = (-40768275 - (-5962602))/57854608 = -0.6016, a large negative accrual, consistent with non-cash impairments/write-downs depressing income below CFO, not classic income-inflating accrual manipulation. Requires filing-level review; models alone do not prove misstatement.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SAT on identity: NetIncome(-40768275) = CFO(-5962602) + Accruals(-34805673); -34805673/57854608 = -0.6016, breaches 0.10 absolute bound with negative sign. Beneish/Dechow reliability invariant INDETERMINATE pending prior-year and issuance inputs.",
+        "actionable_memo": "Escalate for manual forensic review, not automatic deduction: pull FY2023-2024 10-K, identify impairment, stock-compensation, warrant/derivative and RSST accrual drivers, ChgRec, ChgInv, SoftAssets and Issuance behind F-Score 150.81. Do not invoke UCC \u00a7 2-717 or 19 U.S.C. \u00a7 1313; no CBP 7501, export/destruction, vendor surcharge or concrete AP counterparty is documented per MF-02/MF-06. Estimated recoverable balance is $0 until documented."
+      }
+    ]
+  }
+}
