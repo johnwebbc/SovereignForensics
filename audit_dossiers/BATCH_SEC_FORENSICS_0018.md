@@ -1,5 +1,5 @@
 # SovereignForensics // Batch SEC Audit 0018
-**Model:** `muse-wonder-1.0` | **Tokens:** 1726 (Cached: 1140) in / 1500 out | **Cost:** $0.0326
+**Model:** `muse-wonder-1.0` | **Tokens:** 1726 (Cached: 1140) in / 2462 out | **Cost:** $0.0518
 
 ## Filers Screened:
 MICRO-BATCH LANE 1 #SEC_0018 (5 REAL SEC FILERS):
@@ -18,24 +18,51 @@ MICRO-BATCH LANE 1 #SEC_0018 (5 REAL SEC FILERS):
       "index": 1,
       "entity_name": "Athena Bitcoin Global",
       "identifier": "CIK: 0001095146, FY: 2025",
-      "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2) / 19 U.S.C. § 1313 claim on provided data; Beneish M-Score and Sloan Accrual forensic review only, no CBP Form 7501, AP surcharge invoice, or drawback record supplied",
-      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 269.66 >> -1.78 threshold signals extreme model outlier, but F-Score 0.21 (<1.0) does not corroborate Dechow misstatement risk and Sloan accrual is negative; M-Score likely distorted by extreme DSRI/GMI/SGI inputs and requires variable-level recalculation from the filed 10-K before any manipulation conclusion",
+      "statutory_hook": "UCC § 2-717 and UCC § 2-305(2) not established on SEC data alone; 19 U.S.C. § 1313 requires CBP Form 7501 and export/destruction proof",
+      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 269.66 > -1.78, but extreme value indicates likely input/model distortion requiring re-computation from 10-K; F-Score 0.21 < 1.0; Sloan Accrual = (10284000-17676000)/78033000 = -0.0947, below 0.10 threshold. No verified tariff deduction claim.",
       "estimated_claim_or_surcharge_usd": 0,
-      "z3_smt_invariant": "SAT: NetIncome = CFO + Accruals => 10284000 = 17676000 + (-7392000); Sloan = (10284000-17676000)/78033000 = -0.0947, not >0.10",
-      "actionable_memo": "Non-advisory calculation only: pull FY2025 10-K and recompute all 8 Beneish variables (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA) from primary statements; do not execute any AP deduction or credit memo absent documented tariff surcharge, CBP refund, and vendor-master evidence. TariffRisk 1.0 is not a dollar claim."
+      "z3_smt_invariant": "SAT: 10284000 == 17676000 + (-7392000); Sloan=-0.0947",
+      "actionable_memo": "MF-02 FAIL for tariff recovery: obtain supplier invoices, AP vendor master, tariff surcharge lines, and any CBP refund records before any UCC § 2-717 deduction. Recompute Beneish DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from audited statements; do not treat 269.66 as proof of manipulation."
     },
     {
       "index": 2,
       "entity_name": "SOY ENERGY, LLC",
       "identifier": "CIK: 0001426780, FY: 2012",
-      "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2) / 19 U.S.C. § 1313 claim on provided data; TariffRisk 0.0 and no CBP Form 7501, AP surcharge invoice, or drawback record supplied",
-      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE FLAGGED - M-Score 267.47 >> -1.78 is an extreme non-credible outlier requiring source-data verification, but F-Score 0.17 (<1.0) and negative Sloan accrual do not corroborate Dechow/Sloan manipulation; stale FY2012 data cannot support a current recovery claim",
+      "statutory_hook": "No statutory hook established; TariffRisk 0.0 and no CBP Form 7501, supplier surcharge, or drawback evidence under UCC § 2-717, UCC § 2-305(2), or 19 U.S.C. § 1313",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / DATA INTEGRITY RISK - M-Score 267.47 > -1.78 is not reliable without balance-sheet equality verification; F-Score 0.17 < 1.0; Sloan Accrual = (-1929012-(-718202))/27229381 = -0.0445, below 0.10 threshold.",
       "estimated_claim_or_surcharge_usd": 0,
-      "z3_smt_invariant": "SAT arithmetically: NetIncome = CFO + Accruals => -1929012 = -718202 + (-1210810); Sloan = (-1929012-(-718202))/27229381 = -0.0445, not >0.10; balance-sheet identity Assets = Liabilities + Equity not verifiable from supplied fields",
-      "actionable_memo": "Non-advisory calculation only: retrieve the actual FY2012 filing, verify Assets = Liabilities + Equity and all Beneish inputs, and investigate the flagged imbalance at source. No UCC § 2-717 withholding is authorized on this record; estimated recoverable balance is $0 until primary documents are produced."
+      "z3_smt_invariant": "PARTIAL SAT: -1929012 == -718202 + (-1210810); UNSAT-PENDING: Assets == Liabilities + Equity cannot be verified from provided fields",
+      "actionable_memo": "Halt automated claim generation. Reconcile FY2012 Assets, Liabilities, and Equity to the filed balance sheet and correct source extraction. No credit memo, AP deduction, or drawback claim is supportable on this record."
     },
     {
       "index": 3,
       "entity_name": "EBET, Inc.",
       "identifier": "CIK: 0001829966, FY: 2022",
-      "statutory_hook": "No substantiated UCC § 2-717 / UCC § 2-305(2) / 19 U.S.C. § 1313 claim on provided data; no CBP Form 7501, tariff surcharge invoice,
+      "statutory_hook": "UCC § 2-717 and UCC § 2-305(2) not established on SEC data alone; 19 U.S.C. § 1313 requires CBP Form 7501 and export/destruction proof",
+      "forensic_verdict": "ELEVATED: BENEISH OUTLIER - M-Score 263.79 > -1.78, but extreme value requires Beneish input audit; F-Score 0.41 < 1.0; Sloan Accrual = (-15200024-(-8308198))/68901212 = -0.1000, negative and below +0.10 severe-manipulation threshold despite losses and cash burn.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "SAT: -15200024 == -8308198 + (-6891826); Sloan=-0.1000",
+      "actionable_memo": "MF-02 FAIL for tariff recovery: TariffRisk 1.08 is not an invoice. Obtain AP invoices showing discrete 3%-8% surcharges, supplier CBP refund status, and contract price terms before asserting UCC § 2-305(2) bad faith or deducting under § 2-717."
+    },
+    {
+      "index": 4,
+      "entity_name": "QXO, INC.",
+      "identifier": "CIK: 0001236275, FY: 2025",
+      "statutory_hook": "Potential UCC § 2-717 / UCC § 2-305(2) review only if discrete supplier tariff surcharges and non-pass-through of CBP refunds are documented; potential 19 U.S.C. § 1313 review only with CBP Form 7501 and export/destruction proof",
+      "forensic_verdict": "ELEVATED: BENEISH OUTLIER, UNVERIFIED - M-Score 261.82 > -1.78 is an extreme likely model/input artifact requiring recalculation, especially given scale/acquisition activity; F-Score 0.37 < 1.0; Sloan Accrual = (28000000-261400000)/15887300000 = -0.0147, below 0.10 threshold and CFO exceeds Net Income.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "SAT: 28000000 == 261400000 + (-233400000); Sloan=-0.0147",
+      "actionable_memo": "Largest MF-05/MF-06 audit priority due to $6,842,200,000 sales and TariffRisk 1.75, but $0 verified claim at this stage. Sample AP vendor master and supplier invoices for tariff surcharge percentages, trace to CBP entries/refunds, and only then quantify a § 2-717 credit memo; do not estimate recovery from Sales x TariffRisk."
+    },
+    {
+      "index": 5,
+      "entity_name": "vTv Therapeutics Inc.",
+      "identifier": "CIK: 0001641489, FY: 2017",
+      "statutory_hook": "No statutory hook established; missing CFO prevents accrual verification and no CBP Form 7501, supplier surcharge, or drawback evidence under UCC § 2-717, UCC § 2-305(2), or 19 U.S.C. § 1313",
+      "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - CFO is NaN, so Sloan Accrual and MF-09 deterministic verification cannot be performed; M-Score 257.5 > -1.78 is unreliable on incomplete inputs; F-Score 0.19 < 1.0 does not cure missing cash-flow data.",
+      "estimated_claim_or_surcharge_usd": 0,
+      "z3_smt_invariant": "UNSAT/UNVERIFIABLE: CFO=NaN; -3650000 == NaN + Accruals cannot be proven; Sloan undefined",
+      "actionable_memo": "Quarantine from pipeline. Retrieve FY2017 audited cash-flow statement, populate CFO, verify Assets == Liabilities + Equity, and recompute Beneish, Dechow, and Sloan metrics. No AP deduction, credit memo, or manipulation conclusion is supportable until MF-09 passes."
+    }
+  ]
+}
