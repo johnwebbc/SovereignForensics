@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0035",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:02:17.806170+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0035",
+    "req_id": "meta_mb_1793847719_LANE1_SEC_0035_8b96",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1730,
+    "cached_tok": 1140,
+    "out_tok": 2198,
+    "cost_usd": "0.0465",
+    "elapsed_sec": 18.47,
+    "response_text": "{\"batch_id\": \"SEC_0035\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"ENLIGHTIFY INC.\", \"identifier\": \"CIK: 0000857949, FY: 2015\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 82.55 far above -1.78 threshold, Sales $334,932 vs NetInc $44,774,048 and Assets $429,582,618 is internally inconsistent, CFO is NaN so accruals cannot be verified. No tariff claim proven on this record.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=44774048, Assets=429582618\", \"actionable_memo\": \"Do not deduct under UCC 2-717 on this data. Obtain audited 10-K, cash-flow statement, trial balance and AP/CBP records; recompute DSRI,GMI,AQI,SGI,DEPI,SGAI,LVGI,TATA from primary filings before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"PINEAPPLE, INC.\", \"identifier\": \"CIK: 0001654672, FY: 2019\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly >0.10; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL / DATA INCONSISTENCY - M-Score 80.99, NetInc $183,152,000 exceeds Sales $15,000,000 by 12.2x, Sloan=(183152000-(-252261))/12009212=15.27 >>0.10. F-Score 0.01 conflicts, indicating source-data error or severe accrual distortion requiring primary-filing verification.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"VIOLATED: NetIncome - CFO = 183404261; (NetIncome-CFO)/Assets=15.2735 > 0.10 Sloan threshold; NetIncome > Sales invariant failed\", \"actionable_memo\": \"Freeze reliance, do not execute AP deduction. Pull SEC 10-K/Q for CIK 0001654672 FY2019, reconcile net income, receivables, inventory and issuance, and request source CBP/AP documents if a separate tariff surcharge is alleged.\"}, {\"index\": 3, \"entity_name\": \"Verona Pharma plc\", \"identifier\": \"CIK: 0001657312, FY: 2024\", \"statutory_hook\": \"Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 79.19 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(-54369000-(-50222000))/474242000=-0.0087 within normal range and F-Score 0.34 <1.0. Manipulation not proven from these aggregates alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => -54369000 = -50222000 + -4147000; Sloan=-0.0087, but M-Score inputs unverified\", \"actionable_memo\": \"Recompute Beneish variables from audited 20-F/10-K balance sheets for two consecutive years, verify assets/liabilities/equity identity, and obtain any tariff invoices before asserting a 2-717 deduction or 1313 drawback claim.\"}, {\"index\": 4, \"entity_name\": \"JRjr33, Inc.\", \"identifier\": \"CIK: 0001403085, FY: 2013\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 78.93 far above -1.78, NetInc $-4,402,947 on Sales $84,850,502, CFO is NaN so cash-to-accrual reconciliation is impossible. F-Score 0.43 <1.0 conflicts with extreme M-Score, indicating corrupted inputs.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=-4402947, Assets=69822848\", \"actionable_memo\": \"Do not withhold payment on this record. Retrieve FY2012-FY2013 10-K, complete cash-flow statement and balance-sheet identity check, recompute all Beneish/Dechow inputs, and document any specific surcharge separately.\"}, {\"index\": 5, \"entity_name\": \"Syndax Pharmaceuticals, Inc.\", \"identifier\": \"CIK: 0001395937, FY: 2021\", \"statutory_hook\": \"Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 78.87 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(24926000-29131000)/449657000=-0.0094 within normal range and F-Score 0.34 <1.0. No earnings-manipulation or tariff claim proven from these aggregates.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => 24926000 = 29131000 + -4205000; Sloan=-0.0094, but M-Score inputs unverified\", \"actionable_memo\": \"Recompute Beneish/Dechow scores from audited FY2020-FY2021 10-K primary statements, verify Assets=Liabilities+Equity, and require CBP 7501/AP surcharge evidence before any UCC 2-717 credit memo or 1313 drawback filing.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 857949,
+      "entity_name": "ENLIGHTIFY INC.",
+      "fy": 2015,
+      "assets": 429582618.0,
+      "sales": 334932.0,
+      "net_income": 44774048.0,
+      "cfo": NaN,
+      "beneish_m_score": 82.55,
+      "dechow_f_score": 0.2,
+      "tariff_risk_index": 126.39,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 56633144.0
+    },
+    {
+      "cik": 1654672,
+      "entity_name": "PINEAPPLE, INC.",
+      "fy": 2019,
+      "assets": 12009212.0,
+      "sales": 15000000.0,
+      "net_income": 183152000.0,
+      "cfo": -252261.0,
+      "beneish_m_score": 80.99,
+      "dechow_f_score": 0.01,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1657312,
+      "entity_name": "Verona Pharma plc",
+      "fy": 2024,
+      "assets": 474242000.0,
+      "sales": 42279000.0,
+      "net_income": -54369000.0,
+      "cfo": -50222000.0,
+      "beneish_m_score": 79.19,
+      "dechow_f_score": 0.34,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 44724000.0
+    },
+    {
+      "cik": 1403085,
+      "entity_name": "JRjr33, Inc.",
+      "fy": 2013,
+      "assets": 69822848.0,
+      "sales": 84850502.0,
+      "net_income": -4402947.0,
+      "cfo": NaN,
+      "beneish_m_score": 78.93,
+      "dechow_f_score": 0.43,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8298280.0
+    },
+    {
+      "cik": 1395937,
+      "entity_name": "Syndax Pharmaceuticals, Inc.",
+      "fy": 2021,
+      "assets": 449657000.0,
+      "sales": 139709000.0,
+      "net_income": 24926000.0,
+      "cfo": 29131000.0,
+      "beneish_m_score": 78.87,
+      "dechow_f_score": 0.34,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 7136000.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0035\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"ENLIGHTIFY INC.\", \"identifier\": \"CIK: 0000857949, FY: 2015\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 82.55 far above -1.78 threshold, Sales $334,932 vs NetInc $44,774,048 and Assets $429,582,618 is internally inconsistent, CFO is NaN so accruals cannot be verified. No tariff claim proven on this record.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=44774048, Assets=429582618\", \"actionable_memo\": \"Do not deduct under UCC 2-717 on this data. Obtain audited 10-K, cash-flow statement, trial balance and AP/CBP records; recompute DSRI,GMI,AQI,SGI,DEPI,SGAI,LVGI,TATA from primary filings before any credit memo.\"}, {\"index\": 2, \"entity_name\": \"PINEAPPLE, INC.\", \"identifier\": \"CIK: 0001654672, FY: 2019\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly >0.10; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL / DATA INCONSISTENCY - M-Score 80.99, NetInc $183,152,000 exceeds Sales $15,000,000 by 12.2x, Sloan=(183152000-(-252261))/12009212=15.27 >>0.10. F-Score 0.01 conflicts, indicating source-data error or severe accrual distortion requiring primary-filing verification.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"VIOLATED: NetIncome - CFO = 183404261; (NetIncome-CFO)/Assets=15.2735 > 0.10 Sloan threshold; NetIncome > Sales invariant failed\", \"actionable_memo\": \"Freeze reliance, do not execute AP deduction. Pull SEC 10-K/Q for CIK 0001654672 FY2019, reconcile net income, receivables, inventory and issuance, and request source CBP/AP documents if a separate tariff surcharge is alleged.\"}, {\"index\": 3, \"entity_name\": \"Verona Pharma plc\", \"identifier\": \"CIK: 0001657312, FY: 2024\", \"statutory_hook\": \"Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 79.19 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(-54369000-(-50222000))/474242000=-0.0087 within normal range and F-Score 0.34 <1.0. Manipulation not proven from these aggregates alone.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => -54369000 = -50222000 + -4147000; Sloan=-0.0087, but M-Score inputs unverified\", \"actionable_memo\": \"Recompute Beneish variables from audited 20-F/10-K balance sheets for two consecutive years, verify assets/liabilities/equity identity, and obtain any tariff invoices before asserting a 2-717 deduction or 1313 drawback claim.\"}, {\"index\": 4, \"entity_name\": \"JRjr33, Inc.\", \"identifier\": \"CIK: 0001403085, FY: 2013\", \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 78.93 far above -1.78, NetInc $-4,402,947 on Sales $84,850,502, CFO is NaN so cash-to-accrual reconciliation is impossible. F-Score 0.43 <1.0 conflicts with extreme M-Score, indicating corrupted inputs.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=-4402947, Assets=69822848\", \"actionable_memo\": \"Do not withhold payment on this record. Retrieve FY2012-FY2013 10-K, complete cash-flow statement and balance-sheet identity check, recompute all Beneish/Dechow inputs, and document any specific surcharge separately.\"}, {\"index\": 5, \"entity_name\": \"Syndax Pharmaceuticals, Inc.\", \"identifier\": \"CIK: 0001395937, FY: 2021\", \"statutory_hook\": \"Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided\", \"forensic_verdict\": \"CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 78.87 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(24926000-29131000)/449657000=-0.0094 within normal range and F-Score 0.34 <1.0. No earnings-manipulation or tariff claim proven from these aggregates.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => 24926000 = 29131000 + -4205000; Sloan=-0.0094, but M-Score inputs unverified\", \"actionable_memo\": \"Recompute Beneish/Dechow scores from audited FY2020-FY2021 10-K primary statements, verify Assets=Liabilities+Equity, and require CBP 7501/AP surcharge evidence before any UCC 2-717 credit memo or 1313 drawback filing.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0035",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "ENLIGHTIFY INC.",
+        "identifier": "CIK: 0000857949, FY: 2015",
+        "statutory_hook": "Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 82.55 far above -1.78 threshold, Sales $334,932 vs NetInc $44,774,048 and Assets $429,582,618 is internally inconsistent, CFO is NaN so accruals cannot be verified. No tariff claim proven on this record.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=44774048, Assets=429582618",
+        "actionable_memo": "Do not deduct under UCC 2-717 on this data. Obtain audited 10-K, cash-flow statement, trial balance and AP/CBP records; recompute DSRI,GMI,AQI,SGI,DEPI,SGAI,LVGI,TATA from primary filings before any credit memo."
+      },
+      {
+        "index": 2,
+        "entity_name": "PINEAPPLE, INC.",
+        "identifier": "CIK: 0001654672, FY: 2019",
+        "statutory_hook": "Beneish M-Score >-1.78 and Sloan Accrual Anomaly >0.10; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided",
+        "forensic_verdict": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION SIGNAL / DATA INCONSISTENCY - M-Score 80.99, NetInc $183,152,000 exceeds Sales $15,000,000 by 12.2x, Sloan=(183152000-(-252261))/12009212=15.27 >>0.10. F-Score 0.01 conflicts, indicating source-data error or severe accrual distortion requiring primary-filing verification.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "VIOLATED: NetIncome - CFO = 183404261; (NetIncome-CFO)/Assets=15.2735 > 0.10 Sloan threshold; NetIncome > Sales invariant failed",
+        "actionable_memo": "Freeze reliance, do not execute AP deduction. Pull SEC 10-K/Q for CIK 0001654672 FY2019, reconcile net income, receivables, inventory and issuance, and request source CBP/AP documents if a separate tariff surcharge is alleged."
+      },
+      {
+        "index": 3,
+        "entity_name": "Verona Pharma plc",
+        "identifier": "CIK: 0001657312, FY: 2024",
+        "statutory_hook": "Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided",
+        "forensic_verdict": "CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 79.19 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(-54369000-(-50222000))/474242000=-0.0087 within normal range and F-Score 0.34 <1.0. Manipulation not proven from these aggregates alone.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => -54369000 = -50222000 + -4147000; Sloan=-0.0087, but M-Score inputs unverified",
+        "actionable_memo": "Recompute Beneish variables from audited 20-F/10-K balance sheets for two consecutive years, verify assets/liabilities/equity identity, and obtain any tariff invoices before asserting a 2-717 deduction or 1313 drawback claim."
+      },
+      {
+        "index": 4,
+        "entity_name": "JRjr33, Inc.",
+        "identifier": "CIK: 0001403085, FY: 2013",
+        "statutory_hook": "Beneish M-Score >-1.78 and Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no CBP Form 7501, tariff surcharge invoice, or AP record provided",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE / UNVERIFIABLE - M-Score 78.93 far above -1.78, NetInc $-4,402,947 on Sales $84,850,502, CFO is NaN so cash-to-accrual reconciliation is impossible. F-Score 0.43 <1.0 conflicts with extreme M-Score, indicating corrupted inputs.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: NetIncome = CFO + Accruals cannot be checked; CFO=NaN, NetInc=-4402947, Assets=69822848",
+        "actionable_memo": "Do not withhold payment on this record. Retrieve FY2012-FY2013 10-K, complete cash-flow statement and balance-sheet identity check, recompute all Beneish/Dechow inputs, and document any specific surcharge separately."
+      },
+      {
+        "index": 5,
+        "entity_name": "Syndax Pharmaceuticals, Inc.",
+        "identifier": "CIK: 0001395937, FY: 2021",
+        "statutory_hook": "Beneish M-Score >-1.78; Sloan Accrual Anomaly; UCC 2-717 / 19 U.S.C. 1313 not established - no tariff surcharge or drawback record provided",
+        "forensic_verdict": "CRITICAL FLAG BUT ACCRUALS NORMAL ON GIVEN FIGURES - M-Score 78.87 is implausibly extreme and suggests input/balance-sheet imbalance, while Sloan=(24926000-29131000)/449657000=-0.0094 within normal range and F-Score 0.34 <1.0. No earnings-manipulation or tariff claim proven from these aggregates.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "SATISFIABLE ON ACCRUALS: NetIncome = CFO + Accruals => 24926000 = 29131000 + -4205000; Sloan=-0.0094, but M-Score inputs unverified",
+        "actionable_memo": "Recompute Beneish/Dechow scores from audited FY2020-FY2021 10-K primary statements, verify Assets=Liabilities+Equity, and require CBP 7501/AP surcharge evidence before any UCC 2-717 credit memo or 1313 drawback filing."
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0039",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:03:31.822908+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0039",
+    "req_id": "meta_mb_1793847783_LANE1_SEC_0039_7b42",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1745,
+    "cached_tok": 1140,
+    "out_tok": 2656,
+    "cost_usd": "0.0558",
+    "elapsed_sec": 28.68,
+    "response_text": "{\n  \"batch_id\": \"SEC_0039\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"ARROWHEAD PHARMACEUTICALS, INC.\",\n      \"identifier\": \"CIK: 0000879407, FY: 2017\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 69.67 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs, not proven manipulation. CFO=NaN prevents Sloan and Dechow verification. F-Score 0.16 < 1.0 does not independently support misstatement. No UCC \u00a7 2-305(2)/\u00a7 2-717 tariff deduction verified.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"FAIL/UNSAT: NetIncome(-5519741) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/128176505 unsatisfiable; Z3 invariant cannot verify\",\n      \"actionable_memo\": \"Do not withhold AP or claim drawback. Re-extract CFO, average assets, DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from audited 10-K and CBP Form 7501 if any. TariffRisk 1.0 is unanchored without import/surcharge invoices. Re-run Beneish/Dechow after NaN remediation; MF-02 public-record verifiability fails at present.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"PHATHOM PHARMACEUTICALS, INC.\",\n      \"identifier\": \"CIK: 0001783183, FY: 2024\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly; UCC \u00a7 2-717 inapplicable - TariffRisk 0.03, no verified 3%-8% surcharge pass-through failure under UCC \u00a7 2-305(2)\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - DATA INTEGRITY FAILURE, NOT PROVEN MANIPULATION. M-Score 68.73 >> -1.78 is implausible/corrupted. Sloan = (-201592000 - (-137580000))/413842000 = -0.1547, negative accruals inconsistent with positive earnings-inflation hypothesis. F-Score 0.18 < 1.0 low misstatement risk.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"CHECKABLE BUT INPUT-INVALID: NetIncome(-201592000) = CFO(-137580000) + Accruals(-64012000) holds arithmetically; Beneish inputs producing 68.73 violate bounded-variable invariants\",\n      \"actionable_memo\": \"No credit-memo deduction authorized. Accrual magnitude $64,012,000 is a loss-driven CFO/NetIncome gap requiring 10-K reconciliation of non-cash charges, not a recoverable surcharge. Verify Beneish 8 variables from prior/current year filings before any forensic referral. Tariff exposure de minimis at 0.03.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"BIMI Holdings Inc.\",\n      \"identifier\": \"CIK: 0001213660, FY: 2020\",\n      \"statutory_hook\": \"Dechow F-Score Logit Misstatement Multiplier > 1.0; Beneish M-Score; UCC \u00a7 2-717 inapplicable - TariffRisk -0.06, no positive surcharge identified\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE WITH ELEVATED F-SCORE. M-Score 68.26 >> -1.78 implausible/corrupted. F-Score 1.04 > 1.0 marginally signals misstatement risk requiring RSST/ChgRec/ChgInv/SoftAssets review. Sloan = (-1997083 - (-2064792))/33202139 = 0.0020, well below 0.10, no Sloan accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"ARITHMETIC PASS, MODEL FAIL: NetIncome(-1997083) = CFO(-2064792) + Accruals(67709) satisfied; Beneish invariant violated by M-Score 68.26 outside feasible range\",\n      \"actionable_memo\": \"No AP withholding or 19 U.S.C. \u00a7 1313 claim quantified. Prioritize Dechow component audit from 10-K: receivables, inventory, soft assets, issuance and ROA change to validate F-Score 1.04. Negative TariffRisk precludes UCC \u00a7 2-305(2) surcharge recovery. Recompute M-Score from source statements; do not allege manipulation on corrupted score.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"VIVIC CORP.\",\n      \"identifier\": \"CIK: 0001703073, FY: 2024\",\n      \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score; Dechow F-Score; potential UCC \u00a7 2-717 review only after surcharge invoices verified - TariffRisk 0.44\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE AND SEVERE SLOAN ANOMALY. Sloan = (2850514 - (-261488))/5494294 = 0.5664 >> 0.10, indicating earnings entirely accrual-driven with negative CFO despite positive NetIncome. M-Score 68.21 >> -1.78 implausible/corrupted. F-Score 0.44 < 1.0 does not confirm Dechow misstatement.\",\n      \"estimated_claim_or_surcharge_usd\": 3112002,\n      \"z3_smt_invariant\": \"ARITHMETIC PASS, QUALITY FAIL: NetIncome(2850514) = CFO(-261488) + Accruals(3112002) satisfied; Accruals/AverageAssets=0.5664 violates Sloan <=0.10 quality invariant\",\n      \"actionable_memo\": \"Flag $3,112,002 accrual gap for forensic review, not as automatic recoverable cash. Demand receivables/inventory accrual schedules, revenue-recognition support from 10-K/Q, and any supplier tariff invoices before invoking UCC \u00a7 2-717. Illustrative 5% surcharge on $5,950,692 sales at 0.44 risk is unverified and excluded. Recompute Beneish from source data.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"Palvella Therapeutics, Inc.\",\n      \"identifier\": \"CIK: 0001583648, FY: 2017\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 67.81 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs. CFO=NaN prevents Sloan, TATA and Dechow cash-margin verification. F-Score 0.39 < 1.0 does not independently support misstatement. No verified tariff surcharge.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"FAIL/UNSAT: NetIncome(-17647000) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/103876000 unsatisfiable; Z3 invariant cannot verify\",\n      \"actionable_memo\": \"Do not withhold AP or claim 99% drawback under 19 U.S.C. \u00a7 1313. Re-extract CFO and all Beneish/Dechow variables from audited 10-K, and obtain CBP Form 7501/AP vendor records if TariffRisk 1.0 is to be substantiated. MF-02 and MF-09 fail until NaN remediated and M-Score recomputed within feasible bounds.\"\n    }\n  ]\n}"
+  },
+  "input_filers": [
+    {
+      "cik": 879407,
+      "entity_name": "ARROWHEAD PHARMACEUTICALS, INC.",
+      "fy": 2017,
+      "assets": 128176505.0,
+      "sales": 31407709.0,
+      "net_income": -5519741.0,
+      "cfo": NaN,
+      "beneish_m_score": 69.67,
+      "dechow_f_score": 0.16,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 32597058.0
+    },
+    {
+      "cik": 1783183,
+      "entity_name": "PHATHOM PHARMACEUTICALS, INC.",
+      "fy": 2024,
+      "assets": 413842000.0,
+      "sales": 55252000.0,
+      "net_income": -201592000.0,
+      "cfo": -137580000.0,
+      "beneish_m_score": 68.73,
+      "dechow_f_score": 0.18,
+      "tariff_risk_index": 0.03,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 145297000.0
+    },
+    {
+      "cik": 1213660,
+      "entity_name": "BIMI Holdings Inc.",
+      "fy": 2020,
+      "assets": 33202139.0,
+      "sales": 12844902.0,
+      "net_income": -1997083.0,
+      "cfo": -2064792.0,
+      "beneish_m_score": 68.26,
+      "dechow_f_score": 1.04,
+      "tariff_risk_index": -0.06,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5057504.0
+    },
+    {
+      "cik": 1703073,
+      "entity_name": "VIVIC CORP.",
+      "fy": 2024,
+      "assets": 5494294.0,
+      "sales": 5950692.0,
+      "net_income": 2850514.0,
+      "cfo": -261488.0,
+      "beneish_m_score": 68.21,
+      "dechow_f_score": 0.44,
+      "tariff_risk_index": 0.44,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2857044.0
+    },
+    {
+      "cik": 1583648,
+      "entity_name": "Palvella Therapeutics, Inc.",
+      "fy": 2017,
+      "assets": 103876000.0,
+      "sales": 25275000.0,
+      "net_income": -17647000.0,
+      "cfo": NaN,
+      "beneish_m_score": 67.81,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 19606000.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"SEC_0039\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"ARROWHEAD PHARMACEUTICALS, INC.\",\n      \"identifier\": \"CIK: 0000879407, FY: 2017\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 69.67 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs, not proven manipulation. CFO=NaN prevents Sloan and Dechow verification. F-Score 0.16 < 1.0 does not independently support misstatement. No UCC \u00a7 2-305(2)/\u00a7 2-717 tariff deduction verified.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"FAIL/UNSAT: NetIncome(-5519741) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/128176505 unsatisfiable; Z3 invariant cannot verify\",\n      \"actionable_memo\": \"Do not withhold AP or claim drawback. Re-extract CFO, average assets, DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from audited 10-K and CBP Form 7501 if any. TariffRisk 1.0 is unanchored without import/surcharge invoices. Re-run Beneish/Dechow after NaN remediation; MF-02 public-record verifiability fails at present.\"\n    },\n    {\n      \"index\": 2,\n      \"entity_name\": \"PHATHOM PHARMACEUTICALS, INC.\",\n      \"identifier\": \"CIK: 0001783183, FY: 2024\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly; UCC \u00a7 2-717 inapplicable - TariffRisk 0.03, no verified 3%-8% surcharge pass-through failure under UCC \u00a7 2-305(2)\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - DATA INTEGRITY FAILURE, NOT PROVEN MANIPULATION. M-Score 68.73 >> -1.78 is implausible/corrupted. Sloan = (-201592000 - (-137580000))/413842000 = -0.1547, negative accruals inconsistent with positive earnings-inflation hypothesis. F-Score 0.18 < 1.0 low misstatement risk.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"CHECKABLE BUT INPUT-INVALID: NetIncome(-201592000) = CFO(-137580000) + Accruals(-64012000) holds arithmetically; Beneish inputs producing 68.73 violate bounded-variable invariants\",\n      \"actionable_memo\": \"No credit-memo deduction authorized. Accrual magnitude $64,012,000 is a loss-driven CFO/NetIncome gap requiring 10-K reconciliation of non-cash charges, not a recoverable surcharge. Verify Beneish 8 variables from prior/current year filings before any forensic referral. Tariff exposure de minimis at 0.03.\"\n    },\n    {\n      \"index\": 3,\n      \"entity_name\": \"BIMI Holdings Inc.\",\n      \"identifier\": \"CIK: 0001213660, FY: 2020\",\n      \"statutory_hook\": \"Dechow F-Score Logit Misstatement Multiplier > 1.0; Beneish M-Score; UCC \u00a7 2-717 inapplicable - TariffRisk -0.06, no positive surcharge identified\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE WITH ELEVATED F-SCORE. M-Score 68.26 >> -1.78 implausible/corrupted. F-Score 1.04 > 1.0 marginally signals misstatement risk requiring RSST/ChgRec/ChgInv/SoftAssets review. Sloan = (-1997083 - (-2064792))/33202139 = 0.0020, well below 0.10, no Sloan accrual anomaly.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"ARITHMETIC PASS, MODEL FAIL: NetIncome(-1997083) = CFO(-2064792) + Accruals(67709) satisfied; Beneish invariant violated by M-Score 68.26 outside feasible range\",\n      \"actionable_memo\": \"No AP withholding or 19 U.S.C. \u00a7 1313 claim quantified. Prioritize Dechow component audit from 10-K: receivables, inventory, soft assets, issuance and ROA change to validate F-Score 1.04. Negative TariffRisk precludes UCC \u00a7 2-305(2) surcharge recovery. Recompute M-Score from source statements; do not allege manipulation on corrupted score.\"\n    },\n    {\n      \"index\": 4,\n      \"entity_name\": \"VIVIC CORP.\",\n      \"identifier\": \"CIK: 0001703073, FY: 2024\",\n      \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score; Dechow F-Score; potential UCC \u00a7 2-717 review only after surcharge invoices verified - TariffRisk 0.44\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE AND SEVERE SLOAN ANOMALY. Sloan = (2850514 - (-261488))/5494294 = 0.5664 >> 0.10, indicating earnings entirely accrual-driven with negative CFO despite positive NetIncome. M-Score 68.21 >> -1.78 implausible/corrupted. F-Score 0.44 < 1.0 does not confirm Dechow misstatement.\",\n      \"estimated_claim_or_surcharge_usd\": 3112002,\n      \"z3_smt_invariant\": \"ARITHMETIC PASS, QUALITY FAIL: NetIncome(2850514) = CFO(-261488) + Accruals(3112002) satisfied; Accruals/AverageAssets=0.5664 violates Sloan <=0.10 quality invariant\",\n      \"actionable_memo\": \"Flag $3,112,002 accrual gap for forensic review, not as automatic recoverable cash. Demand receivables/inventory accrual schedules, revenue-recognition support from 10-K/Q, and any supplier tariff invoices before invoking UCC \u00a7 2-717. Illustrative 5% surcharge on $5,950,692 sales at 0.44 risk is unverified and excluded. Recompute Beneish from source data.\"\n    },\n    {\n      \"index\": 5,\n      \"entity_name\": \"Palvella Therapeutics, Inc.\",\n      \"identifier\": \"CIK: 0001583648, FY: 2017\",\n      \"statutory_hook\": \"Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO\",\n      \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 67.81 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs. CFO=NaN prevents Sloan, TATA and Dechow cash-margin verification. F-Score 0.39 < 1.0 does not independently support misstatement. No verified tariff surcharge.\",\n      \"estimated_claim_or_surcharge_usd\": 0,\n      \"z3_smt_invariant\": \"FAIL/UNSAT: NetIncome(-17647000) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/103876000 unsatisfiable; Z3 invariant cannot verify\",\n      \"actionable_memo\": \"Do not withhold AP or claim 99% drawback under 19 U.S.C. \u00a7 1313. Re-extract CFO and all Beneish/Dechow variables from audited 10-K, and obtain CBP Form 7501/AP vendor records if TariffRisk 1.0 is to be substantiated. MF-02 and MF-09 fail until NaN remediated and M-Score recomputed within feasible bounds.\"\n    }\n  ]\n}",
+  "meta_parsed": {
+    "batch_id": "SEC_0039",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "ARROWHEAD PHARMACEUTICALS, INC.",
+        "identifier": "CIK: 0000879407, FY: 2017",
+        "statutory_hook": "Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 69.67 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs, not proven manipulation. CFO=NaN prevents Sloan and Dechow verification. F-Score 0.16 < 1.0 does not independently support misstatement. No UCC \u00a7 2-305(2)/\u00a7 2-717 tariff deduction verified.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "FAIL/UNSAT: NetIncome(-5519741) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/128176505 unsatisfiable; Z3 invariant cannot verify",
+        "actionable_memo": "Do not withhold AP or claim drawback. Re-extract CFO, average assets, DSRI/GMI/AQI/SGI/DEPI/SGAI/LVGI/TATA from audited 10-K and CBP Form 7501 if any. TariffRisk 1.0 is unanchored without import/surcharge invoices. Re-run Beneish/Dechow after NaN remediation; MF-02 public-record verifiability fails at present."
+      },
+      {
+        "index": 2,
+        "entity_name": "PHATHOM PHARMACEUTICALS, INC.",
+        "identifier": "CIK: 0001783183, FY: 2024",
+        "statutory_hook": "Beneish M-Score / Sloan Accrual Anomaly; UCC \u00a7 2-717 inapplicable - TariffRisk 0.03, no verified 3%-8% surcharge pass-through failure under UCC \u00a7 2-305(2)",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - DATA INTEGRITY FAILURE, NOT PROVEN MANIPULATION. M-Score 68.73 >> -1.78 is implausible/corrupted. Sloan = (-201592000 - (-137580000))/413842000 = -0.1547, negative accruals inconsistent with positive earnings-inflation hypothesis. F-Score 0.18 < 1.0 low misstatement risk.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "CHECKABLE BUT INPUT-INVALID: NetIncome(-201592000) = CFO(-137580000) + Accruals(-64012000) holds arithmetically; Beneish inputs producing 68.73 violate bounded-variable invariants",
+        "actionable_memo": "No credit-memo deduction authorized. Accrual magnitude $64,012,000 is a loss-driven CFO/NetIncome gap requiring 10-K reconciliation of non-cash charges, not a recoverable surcharge. Verify Beneish 8 variables from prior/current year filings before any forensic referral. Tariff exposure de minimis at 0.03."
+      },
+      {
+        "index": 3,
+        "entity_name": "BIMI Holdings Inc.",
+        "identifier": "CIK: 0001213660, FY: 2020",
+        "statutory_hook": "Dechow F-Score Logit Misstatement Multiplier > 1.0; Beneish M-Score; UCC \u00a7 2-717 inapplicable - TariffRisk -0.06, no positive surcharge identified",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE WITH ELEVATED F-SCORE. M-Score 68.26 >> -1.78 implausible/corrupted. F-Score 1.04 > 1.0 marginally signals misstatement risk requiring RSST/ChgRec/ChgInv/SoftAssets review. Sloan = (-1997083 - (-2064792))/33202139 = 0.0020, well below 0.10, no Sloan accrual anomaly.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "ARITHMETIC PASS, MODEL FAIL: NetIncome(-1997083) = CFO(-2064792) + Accruals(67709) satisfied; Beneish invariant violated by M-Score 68.26 outside feasible range",
+        "actionable_memo": "No AP withholding or 19 U.S.C. \u00a7 1313 claim quantified. Prioritize Dechow component audit from 10-K: receivables, inventory, soft assets, issuance and ROA change to validate F-Score 1.04. Negative TariffRisk precludes UCC \u00a7 2-305(2) surcharge recovery. Recompute M-Score from source statements; do not allege manipulation on corrupted score."
+      },
+      {
+        "index": 4,
+        "entity_name": "VIVIC CORP.",
+        "identifier": "CIK: 0001703073, FY: 2024",
+        "statutory_hook": "Sloan Accrual Anomaly > 0.10; Beneish M-Score; Dechow F-Score; potential UCC \u00a7 2-717 review only after surcharge invoices verified - TariffRisk 0.44",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE AND SEVERE SLOAN ANOMALY. Sloan = (2850514 - (-261488))/5494294 = 0.5664 >> 0.10, indicating earnings entirely accrual-driven with negative CFO despite positive NetIncome. M-Score 68.21 >> -1.78 implausible/corrupted. F-Score 0.44 < 1.0 does not confirm Dechow misstatement.",
+        "estimated_claim_or_surcharge_usd": 3112002,
+        "z3_smt_invariant": "ARITHMETIC PASS, QUALITY FAIL: NetIncome(2850514) = CFO(-261488) + Accruals(3112002) satisfied; Accruals/AverageAssets=0.5664 violates Sloan <=0.10 quality invariant",
+        "actionable_memo": "Flag $3,112,002 accrual gap for forensic review, not as automatic recoverable cash. Demand receivables/inventory accrual schedules, revenue-recognition support from 10-K/Q, and any supplier tariff invoices before invoking UCC \u00a7 2-717. Illustrative 5% surcharge on $5,950,692 sales at 0.44 risk is unverified and excluded. Recompute Beneish from source data."
+      },
+      {
+        "index": 5,
+        "entity_name": "Palvella Therapeutics, Inc.",
+        "identifier": "CIK: 0001583648, FY: 2017",
+        "statutory_hook": "Beneish M-Score / Sloan Accrual Anomaly / MF-09 Deterministic Verification; UCC \u00a7 2-717 and 19 U.S.C. \u00a7 1313 NOT actionable on unverified CFO",
+        "forensic_verdict": "CRITICAL: BALANCE SHEET IMBALANCE - REJECT/QUARANTINE. M-Score 67.81 >> -1.78 threshold is mathematically implausible and indicates corrupted inputs. CFO=NaN prevents Sloan, TATA and Dechow cash-margin verification. F-Score 0.39 < 1.0 does not independently support misstatement. No verified tariff surcharge.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "FAIL/UNSAT: NetIncome(-17647000) = CFO(NaN) + Accruals => Accruals undefined; Sloan=(NetIncome-CFO)/103876000 unsatisfiable; Z3 invariant cannot verify",
+        "actionable_memo": "Do not withhold AP or claim 99% drawback under 19 U.S.C. \u00a7 1313. Re-extract CFO and all Beneish/Dechow variables from audited 10-K, and obtain CBP Form 7501/AP vendor records if TariffRisk 1.0 is to be substantiated. MF-02 and MF-09 fail until NaN remediated and M-Score recomputed within feasible bounds."
+      }
+    ]
+  }
+}

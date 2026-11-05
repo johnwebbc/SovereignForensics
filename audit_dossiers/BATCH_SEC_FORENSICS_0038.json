@@ -1,0 +1,90 @@
+{
+  "batch_id": "LANE1_SEC_0038",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:03:02.625480+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0038",
+    "req_id": "meta_mb_1793847774_LANE1_SEC_0038_7aec",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1736,
+    "cached_tok": 1140,
+    "out_tok": 118,
+    "cost_usd": "0.0050",
+    "elapsed_sec": 8.23,
+    "response_text": ""
+  },
+  "input_filers": [
+    {
+      "cik": 1434601,
+      "entity_name": "Transglobal Management Group, Inc.",
+      "fy": 2026,
+      "assets": 6258966.0,
+      "sales": 990084.0,
+      "net_income": -948452.0,
+      "cfo": -11938.0,
+      "beneish_m_score": 75.49,
+      "dechow_f_score": 0.22,
+      "tariff_risk_index": 0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2207500.0
+    },
+    {
+      "cik": 1501989,
+      "entity_name": "CytomX Therapeutics, Inc.",
+      "fy": 2022,
+      "assets": 339411000.0,
+      "sales": 53163000.0,
+      "net_income": -29064000.0,
+      "cfo": -41313000.0,
+      "beneish_m_score": 74.98,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 6772000.0
+    },
+    {
+      "cik": 1599298,
+      "entity_name": "Summit Therapeutics Inc.",
+      "fy": 2021,
+      "assets": 113374000.0,
+      "sales": 1809000.0,
+      "net_income": -52697000.0,
+      "cfo": -48111000.0,
+      "beneish_m_score": 74.66,
+      "dechow_f_score": 0.47,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 908315,
+      "entity_name": "WINMARK CORPORATION",
+      "fy": 2019,
+      "assets": 61842200.0,
+      "sales": 73298900.0,
+      "net_income": 32149300.0,
+      "cfo": 50647200.0,
+      "beneish_m_score": 72.77,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 0.99,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 49393900.0
+    },
+    {
+      "cik": 1567514,
+      "entity_name": "Intra-Cellular Therapies, Inc.",
+      "fy": 2020,
+      "assets": 717313674.0,
+      "sales": 22812979.0,
+      "net_income": -34835764.0,
+      "cfo": -118169113.0,
+      "beneish_m_score": 69.93,
+      "dechow_f_score": 0.38,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "",
+  "meta_parsed": null
+}

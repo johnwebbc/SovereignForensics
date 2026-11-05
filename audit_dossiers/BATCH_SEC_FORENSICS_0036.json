@@ -1,0 +1,145 @@
+{
+  "batch_id": "LANE1_SEC_0036",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:02:33.134249+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0036",
+    "req_id": "meta_mb_1793847738_LANE1_SEC_0036_ecc0",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1738,
+    "cached_tok": 1140,
+    "out_tok": 2407,
+    "cost_usd": "0.0508",
+    "elapsed_sec": 14.81,
+    "response_text": "{\"batch_id\": \"SEC_0036\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"PACIFIC OAK STRATEGIC OPPORTUNITY REIT II, INC.\", \"identifier\": \"CIK: 0001580673, FY: 2015\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) inapplicable on present record - REIT with no verified imported-goods AP or CBP Form 7501 tariff surcharge; 19 USC 1313 drawback not substantiated\", \"forensic_verdict\": \"CRITICAL DATA FAILURE - DO NOT RELY: M-Score 78.6 is far above Beneish threshold -1.78 and outside plausible model bounds, indicating balance-sheet/input imbalance. Sloan Accrual = (2170000-256000)/139729000 = 0.0137, below 0.10 threshold. F-Score 0.37 below 1.0. No verified tariff claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"ARITHMETIC SAT: 2170000 = 256000 + 1914000 accruals; MODEL UNSAT: Beneish inputs producing M=78.6 violate plausible DSRI/GMI/AQI/SGI bounds\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Obtain audited 10-K balance sheet, receivables, depreciation and AP vendor master; recompute Beneish/Dechow from primary filings. Do not deduct under UCC 2-717 without supplier invoice showing a specific 3%-8% tariff surcharge and corresponding CBP 7501.\"}, {\"index\": 2, \"entity_name\": \"flooidCX Corp.\", \"identifier\": \"CIK: 0001609988, FY: 2023\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) not substantiated - no verified goods invoice, tariff surcharge pass-through, or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL DATA FAILURE AND ACCRUAL FLAG: M-Score 77.4 >> -1.78 and outside plausible Beneish bounds, indicating corrupted inputs. Sloan Accrual = (793677-0)/6500000 = 0.1221 > 0.10 severe accrual flag if CFO is truly zero. F-Score 0.0 below 1.0 and inconsistent with CFO=0 assertion. Manipulation not proven on this record.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"ARITHMETIC SAT ONLY IF CFO=0: 793677 = 0 + 793677 accruals; Sloan 0.1221 FAIL; MODEL UNSAT: M=77.4 violates plausible Beneish variable bounds\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Verify whether CFO is zero, missing, or misclassified in 10-K/Q cash-flow statement; reconcile Net Income = CFO + Accruals to filed statements. No UCC 2-717 deduction until a concrete counterparty invoice and tariff surcharge are documented.\"}, {\"index\": 3, \"entity_name\": \"Rithm Capital Corp.\", \"identifier\": \"CIK: 0001556593, FY: 2022\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) inapplicable on present record - financial/REIT filer, Net Income NaN, no verified imported-goods AP or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: NetInc is NaN, so Sloan Accrual and Net Income = CFO + Accruals cannot be tested. M-Score 77.02 >> -1.78 and outside plausible bounds signals invalid inputs, not proven manipulation. F-Score 0.21 below 1.0. CFO $6,874,063,000 alone proves no claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome=NaN; assert NetIncome == 6874063000 + Accruals cannot be satisfied or evaluated; Beneish M=77.02 input-bound violation\", \"actionable_memo\": \"MF-02/MF-06/MF-09 FAIL: Pull audited 2022 10-K income and cash-flow statements, replace NaN, and recompute all Beneish, Dechow and Sloan variables. No tariff deduction or drawback claim for a financial filer without goods, entry summaries, and AP surcharge invoices.\"}, {\"index\": 4, \"entity_name\": \"Pendrell Corp\", \"identifier\": \"CIK: 0001359555, FY: 2016\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) not substantiated - CFO NaN, no verified imported-goods transaction, tariff surcharge invoice, or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (21420000-NaN)/212393000 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates input corruption. F-Score 0.18 below 1.0. Earnings manipulation and tariff exposure not proven.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN; assert 21420000 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Retrieve filed 2016 10-K cash-flow statement and full Beneish inputs (receivables, margins, depreciation, leverage, accruals). Do not invoke UCC 2-717 withholding absent a specific goods contract, surcharge invoice, and CBP documentation.\"}, {\"index\": 5, \"entity_name\": \"HEALTH-RIGHT DISCOVERIES, INC.\", \"identifier\": \"CIK: 0001537663, FY: 2017\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) and 19 USC 1313 potentially relevant only if imported-goods purchases are documented - none verified; CFO NaN and TariffRisk 0.16 low on present record\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (434183-NaN)/9483169 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates invalid model inputs, not proven manipulation. F-Score 0.12 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN; assert 434183 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation\", \"actionable_memo\": \"MF-02/MF-05/MF-09 FAIL: Obtain 2017 audited financials and cash-flow statement, recompute forensic scores, and only then screen AP for documented imported ingredients/goods, tariff surcharge lines, and CBP Form 7501 entries. No deduction on TariffRisk 0.16 alone.\"}]}"
+  },
+  "input_filers": [
+    {
+      "cik": 1580673,
+      "entity_name": "PACIFIC OAK STRATEGIC OPPORTUNITY REIT II, INC.",
+      "fy": 2015,
+      "assets": 139729000.0,
+      "sales": 17025000.0,
+      "net_income": 2170000.0,
+      "cfo": 256000.0,
+      "beneish_m_score": 78.6,
+      "dechow_f_score": 0.37,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5382000.0
+    },
+    {
+      "cik": 1609988,
+      "entity_name": "flooidCX Corp.",
+      "fy": 2023,
+      "assets": 6500000.0,
+      "sales": 6500000.0,
+      "net_income": 793677.0,
+      "cfo": 0.0,
+      "beneish_m_score": 77.4,
+      "dechow_f_score": 0.0,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1556593,
+      "entity_name": "Rithm Capital Corp.",
+      "fy": 2022,
+      "assets": 39742190000.0,
+      "sales": 4726927000.0,
+      "net_income": NaN,
+      "cfo": 6874063000.0,
+      "beneish_m_score": 77.02,
+      "dechow_f_score": 0.21,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 273621000.0
+    },
+    {
+      "cik": 1359555,
+      "entity_name": "Pendrell Corp",
+      "fy": 2016,
+      "assets": 212393000.0,
+      "sales": 59018000.0,
+      "net_income": 21420000.0,
+      "cfo": NaN,
+      "beneish_m_score": 76.99,
+      "dechow_f_score": 0.18,
+      "tariff_risk_index": 0.97,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 3707000.0
+    },
+    {
+      "cik": 1537663,
+      "entity_name": "HEALTH-RIGHT DISCOVERIES, INC.",
+      "fy": 2017,
+      "assets": 9483169.0,
+      "sales": 2052352.0,
+      "net_income": 434183.0,
+      "cfo": NaN,
+      "beneish_m_score": 76.99,
+      "dechow_f_score": 0.12,
+      "tariff_risk_index": 0.16,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8884950.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0036\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"PACIFIC OAK STRATEGIC OPPORTUNITY REIT II, INC.\", \"identifier\": \"CIK: 0001580673, FY: 2015\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) inapplicable on present record - REIT with no verified imported-goods AP or CBP Form 7501 tariff surcharge; 19 USC 1313 drawback not substantiated\", \"forensic_verdict\": \"CRITICAL DATA FAILURE - DO NOT RELY: M-Score 78.6 is far above Beneish threshold -1.78 and outside plausible model bounds, indicating balance-sheet/input imbalance. Sloan Accrual = (2170000-256000)/139729000 = 0.0137, below 0.10 threshold. F-Score 0.37 below 1.0. No verified tariff claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"ARITHMETIC SAT: 2170000 = 256000 + 1914000 accruals; MODEL UNSAT: Beneish inputs producing M=78.6 violate plausible DSRI/GMI/AQI/SGI bounds\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Obtain audited 10-K balance sheet, receivables, depreciation and AP vendor master; recompute Beneish/Dechow from primary filings. Do not deduct under UCC 2-717 without supplier invoice showing a specific 3%-8% tariff surcharge and corresponding CBP 7501.\"}, {\"index\": 2, \"entity_name\": \"flooidCX Corp.\", \"identifier\": \"CIK: 0001609988, FY: 2023\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) not substantiated - no verified goods invoice, tariff surcharge pass-through, or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL DATA FAILURE AND ACCRUAL FLAG: M-Score 77.4 >> -1.78 and outside plausible Beneish bounds, indicating corrupted inputs. Sloan Accrual = (793677-0)/6500000 = 0.1221 > 0.10 severe accrual flag if CFO is truly zero. F-Score 0.0 below 1.0 and inconsistent with CFO=0 assertion. Manipulation not proven on this record.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"ARITHMETIC SAT ONLY IF CFO=0: 793677 = 0 + 793677 accruals; Sloan 0.1221 FAIL; MODEL UNSAT: M=77.4 violates plausible Beneish variable bounds\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Verify whether CFO is zero, missing, or misclassified in 10-K/Q cash-flow statement; reconcile Net Income = CFO + Accruals to filed statements. No UCC 2-717 deduction until a concrete counterparty invoice and tariff surcharge are documented.\"}, {\"index\": 3, \"entity_name\": \"Rithm Capital Corp.\", \"identifier\": \"CIK: 0001556593, FY: 2022\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) inapplicable on present record - financial/REIT filer, Net Income NaN, no verified imported-goods AP or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: NetInc is NaN, so Sloan Accrual and Net Income = CFO + Accruals cannot be tested. M-Score 77.02 >> -1.78 and outside plausible bounds signals invalid inputs, not proven manipulation. F-Score 0.21 below 1.0. CFO $6,874,063,000 alone proves no claim.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: NetIncome=NaN; assert NetIncome == 6874063000 + Accruals cannot be satisfied or evaluated; Beneish M=77.02 input-bound violation\", \"actionable_memo\": \"MF-02/MF-06/MF-09 FAIL: Pull audited 2022 10-K income and cash-flow statements, replace NaN, and recompute all Beneish, Dechow and Sloan variables. No tariff deduction or drawback claim for a financial filer without goods, entry summaries, and AP surcharge invoices.\"}, {\"index\": 4, \"entity_name\": \"Pendrell Corp\", \"identifier\": \"CIK: 0001359555, FY: 2016\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) not substantiated - CFO NaN, no verified imported-goods transaction, tariff surcharge invoice, or CBP Form 7501; 19 USC 1313 not substantiated\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (21420000-NaN)/212393000 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates input corruption. F-Score 0.18 below 1.0. Earnings manipulation and tariff exposure not proven.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN; assert 21420000 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation\", \"actionable_memo\": \"MF-02/MF-09 FAIL: Retrieve filed 2016 10-K cash-flow statement and full Beneish inputs (receivables, margins, depreciation, leverage, accruals). Do not invoke UCC 2-717 withholding absent a specific goods contract, surcharge invoice, and CBP documentation.\"}, {\"index\": 5, \"entity_name\": \"HEALTH-RIGHT DISCOVERIES, INC.\", \"identifier\": \"CIK: 0001537663, FY: 2017\", \"statutory_hook\": \"UCC 2-717 / UCC 2-305(2) and 19 USC 1313 potentially relevant only if imported-goods purchases are documented - none verified; CFO NaN and TariffRisk 0.16 low on present record\", \"forensic_verdict\": \"CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (434183-NaN)/9483169 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates invalid model inputs, not proven manipulation. F-Score 0.12 below 1.0.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"UNSAT/UNVERIFIABLE: CFO=NaN; assert 434183 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation\", \"actionable_memo\": \"MF-02/MF-05/MF-09 FAIL: Obtain 2017 audited financials and cash-flow statement, recompute forensic scores, and only then screen AP for documented imported ingredients/goods, tariff surcharge lines, and CBP Form 7501 entries. No deduction on TariffRisk 0.16 alone.\"}]}",
+  "meta_parsed": {
+    "batch_id": "SEC_0036",
+    "targets_count": 5,
+    "results": [
+      {
+        "index": 1,
+        "entity_name": "PACIFIC OAK STRATEGIC OPPORTUNITY REIT II, INC.",
+        "identifier": "CIK: 0001580673, FY: 2015",
+        "statutory_hook": "UCC 2-717 / UCC 2-305(2) inapplicable on present record - REIT with no verified imported-goods AP or CBP Form 7501 tariff surcharge; 19 USC 1313 drawback not substantiated",
+        "forensic_verdict": "CRITICAL DATA FAILURE - DO NOT RELY: M-Score 78.6 is far above Beneish threshold -1.78 and outside plausible model bounds, indicating balance-sheet/input imbalance. Sloan Accrual = (2170000-256000)/139729000 = 0.0137, below 0.10 threshold. F-Score 0.37 below 1.0. No verified tariff claim.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "ARITHMETIC SAT: 2170000 = 256000 + 1914000 accruals; MODEL UNSAT: Beneish inputs producing M=78.6 violate plausible DSRI/GMI/AQI/SGI bounds",
+        "actionable_memo": "MF-02/MF-09 FAIL: Obtain audited 10-K balance sheet, receivables, depreciation and AP vendor master; recompute Beneish/Dechow from primary filings. Do not deduct under UCC 2-717 without supplier invoice showing a specific 3%-8% tariff surcharge and corresponding CBP 7501."
+      },
+      {
+        "index": 2,
+        "entity_name": "flooidCX Corp.",
+        "identifier": "CIK: 0001609988, FY: 2023",
+        "statutory_hook": "UCC 2-717 / UCC 2-305(2) not substantiated - no verified goods invoice, tariff surcharge pass-through, or CBP Form 7501; 19 USC 1313 not substantiated",
+        "forensic_verdict": "CRITICAL DATA FAILURE AND ACCRUAL FLAG: M-Score 77.4 >> -1.78 and outside plausible Beneish bounds, indicating corrupted inputs. Sloan Accrual = (793677-0)/6500000 = 0.1221 > 0.10 severe accrual flag if CFO is truly zero. F-Score 0.0 below 1.0 and inconsistent with CFO=0 assertion. Manipulation not proven on this record.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "ARITHMETIC SAT ONLY IF CFO=0: 793677 = 0 + 793677 accruals; Sloan 0.1221 FAIL; MODEL UNSAT: M=77.4 violates plausible Beneish variable bounds",
+        "actionable_memo": "MF-02/MF-09 FAIL: Verify whether CFO is zero, missing, or misclassified in 10-K/Q cash-flow statement; reconcile Net Income = CFO + Accruals to filed statements. No UCC 2-717 deduction until a concrete counterparty invoice and tariff surcharge are documented."
+      },
+      {
+        "index": 3,
+        "entity_name": "Rithm Capital Corp.",
+        "identifier": "CIK: 0001556593, FY: 2022",
+        "statutory_hook": "UCC 2-717 / UCC 2-305(2) inapplicable on present record - financial/REIT filer, Net Income NaN, no verified imported-goods AP or CBP Form 7501; 19 USC 1313 not substantiated",
+        "forensic_verdict": "CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: NetInc is NaN, so Sloan Accrual and Net Income = CFO + Accruals cannot be tested. M-Score 77.02 >> -1.78 and outside plausible bounds signals invalid inputs, not proven manipulation. F-Score 0.21 below 1.0. CFO $6,874,063,000 alone proves no claim.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: NetIncome=NaN; assert NetIncome == 6874063000 + Accruals cannot be satisfied or evaluated; Beneish M=77.02 input-bound violation",
+        "actionable_memo": "MF-02/MF-06/MF-09 FAIL: Pull audited 2022 10-K income and cash-flow statements, replace NaN, and recompute all Beneish, Dechow and Sloan variables. No tariff deduction or drawback claim for a financial filer without goods, entry summaries, and AP surcharge invoices."
+      },
+      {
+        "index": 4,
+        "entity_name": "Pendrell Corp",
+        "identifier": "CIK: 0001359555, FY: 2016",
+        "statutory_hook": "UCC 2-717 / UCC 2-305(2) not substantiated - CFO NaN, no verified imported-goods transaction, tariff surcharge invoice, or CBP Form 7501; 19 USC 1313 not substantiated",
+        "forensic_verdict": "CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (21420000-NaN)/212393000 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates input corruption. F-Score 0.18 below 1.0. Earnings manipulation and tariff exposure not proven.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: CFO=NaN; assert 21420000 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation",
+        "actionable_memo": "MF-02/MF-09 FAIL: Retrieve filed 2016 10-K cash-flow statement and full Beneish inputs (receivables, margins, depreciation, leverage, accruals). Do not invoke UCC 2-717 withholding absent a specific goods contract, surcharge invoice, and CBP documentation."
+      },
+      {
+        "index": 5,
+        "entity_name": "HEALTH-RIGHT DISCOVERIES, INC.",
+        "identifier": "CIK: 0001537663, FY: 2017",
+        "statutory_hook": "UCC 2-717 / UCC 2-305(2) and 19 USC 1313 potentially relevant only if imported-goods purchases are documented - none verified; CFO NaN and TariffRisk 0.16 low on present record",
+        "forensic_verdict": "CRITICAL BALANCE SHEET IMBALANCE - UNVERIFIABLE: CFO is NaN, so Sloan Accrual = (434183-NaN)/9483169 is undefined. M-Score 76.99 >> -1.78 and outside plausible Beneish bounds indicates invalid model inputs, not proven manipulation. F-Score 0.12 below 1.0.",
+        "estimated_claim_or_surcharge_usd": 0,
+        "z3_smt_invariant": "UNSAT/UNVERIFIABLE: CFO=NaN; assert 434183 == CFO + Accruals cannot be evaluated; Beneish M=76.99 input-bound violation",
+        "actionable_memo": "MF-02/MF-05/MF-09 FAIL: Obtain 2017 audited financials and cash-flow statement, recompute forensic scores, and only then screen AP for documented imported ingredients/goods, tariff surcharge lines, and CBP Form 7501 entries. No deduction on TariffRisk 0.16 alone."
+      }
+    ]
+  }
+}

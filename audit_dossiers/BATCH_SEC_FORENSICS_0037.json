@@ -1,0 +1,90 @@
+{
+  "batch_id": "LANE1_SEC_0037",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T03:02:53.885897+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0037",
+    "req_id": "meta_mb_1793847753_LANE1_SEC_0037_96a9",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1745,
+    "cached_tok": 1140,
+    "out_tok": 883,
+    "cost_usd": "0.0203",
+    "elapsed_sec": 20.24,
+    "response_text": "{\n  \"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0037\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"RENNOVA HEALTH, INC.\",\n      \"identifier\": \"CIK: 0000931059, FY: 2015\",\n      \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly >0.10 forensic audit; UCC 2-717 / 19 USC 1313 not established on this record - no verified CBP Form "
+  },
+  "input_filers": [
+    {
+      "cik": 931059,
+      "entity_name": "RENNOVA HEALTH, INC.",
+      "fy": 2015,
+      "assets": 35760754.0,
+      "sales": 57927820.0,
+      "net_income": 2810032.0,
+      "cfo": -2431000.0,
+      "beneish_m_score": 76.09,
+      "dechow_f_score": 0.54,
+      "tariff_risk_index": 1.05,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8327738.0
+    },
+    {
+      "cik": 1410098,
+      "entity_name": "CORMEDIX INC.",
+      "fy": 2014,
+      "assets": 5097762.0,
+      "sales": 189274.0,
+      "net_income": -9133098.0,
+      "cfo": -3618532.0,
+      "beneish_m_score": 75.99,
+      "dechow_f_score": 0.92,
+      "tariff_risk_index": 0.03,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 5526853.0
+    },
+    {
+      "cik": 1414767,
+      "entity_name": "NETCAPITAL INC.",
+      "fy": 2021,
+      "assets": 25715928.0,
+      "sales": 4721003.0,
+      "net_income": 1469660.0,
+      "cfo": -3604.0,
+      "beneish_m_score": 75.89,
+      "dechow_f_score": 0.4,
+      "tariff_risk_index": 1.17,
+      "forensic_flag": "CRITICAL: HIGH-CONVICTION EARNINGS MANIPULATION",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 96271,
+      "entity_name": "TAMPA ELECTRIC COMPANY",
+      "fy": 2019,
+      "assets": 10007000000.0,
+      "sales": 2524000000.0,
+      "net_income": 370000000.0,
+      "cfo": 841000000.0,
+      "beneish_m_score": 75.82,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 6312000000.0
+    },
+    {
+      "cik": 1649744,
+      "entity_name": "DULUTH HOLDINGS INC.",
+      "fy": 2020,
+      "assets": 474050000.0,
+      "sales": 615624000.0,
+      "net_income": 24375000.0,
+      "cfo": 31095000.0,
+      "beneish_m_score": 75.5,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 1.4,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2166000.0
+    }
+  ],
+  "meta_response": "{\n  \"batch_id\": \"MICRO-BATCH LANE 1 #SEC_0037\",\n  \"targets_count\": 5,\n  \"results\": [\n    {\n      \"index\": 1,\n      \"entity_name\": \"RENNOVA HEALTH, INC.\",\n      \"identifier\": \"CIK: 0000931059, FY: 2015\",\n      \"statutory_hook\": \"Beneish M-Score >-1.78 and Sloan Accrual Anomaly >0.10 forensic audit; UCC 2-717 / 19 USC 1313 not established on this record - no verified CBP Form ",
+  "meta_parsed": null
+}
