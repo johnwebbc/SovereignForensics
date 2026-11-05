@@ -1,13 +1,13 @@
 {
   "updated_at_utc": "2026-11-04T23:54:38.762030+00:00",
-  "total_turns": 14,
-  "total_characters": 260144,
-  "total_time_seconds": 2262.01,
+  "total_turns": 15,
+  "total_characters": 276654,
+  "total_time_seconds": 2439.03,
   "by_model": {
     "opus": {
-      "turns": 7,
-      "characters": 113619,
-      "time_seconds": 1162.88
+      "turns": 8,
+      "characters": 130129,
+      "time_seconds": 1339.9
     },
     "fable": {
       "turns": 5,
