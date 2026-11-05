@@ -498,7 +498,174 @@ if HAS_MODAL:
             cockpit_file = REPO_ROOT / "demo_cockpit.html"
             if cockpit_file.exists():
                 return HTMLResponse(content=cockpit_file.read_text(encoding="utf-8"))
-            return HTMLResponse(content="<h1>SovereignForensics Modal Warehouse Online</h1><p>Visit <a href='/api/screen'>/api/screen</a></p>")
+            return HTMLResponse(content="<h1>SovereignForensics Modal Warehouse Online</h1><p>Visit <a href='/api/screen'>/api/screen</a> or <a href='/demo'>/demo</a></p>")
+
+        @web_app.get("/demo", response_class=HTMLResponse)
+        def demo_video_player():
+            video_url = "https://github.com/johnwebbc/SovereignForensics/releases/download/v1.0.0/SOVEREIGN_FORENSICS_META_HACKATHON_3MIN_DEMO.mp4"
+            html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SovereignForensics // 3-Minute Demo Video</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {{
+            --bg: #090d16;
+            --card-bg: #111827;
+            --border: #1f2937;
+            --accent: #38bdf8;
+            --text-main: #f9fafb;
+            --text-dim: #9ca3af;
+        }}
+        * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+        body {{
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+        }}
+        .header {{
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }}
+        .badge {{
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 9999px;
+            padding: 0.2rem 0.65rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }}
+        h1 {{
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }}
+        .meta-desc {{
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }}
+        .video-container {{
+            max-width: 1000px;
+            width: 100%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
+        }}
+        video {{
+            width: 100%;
+            height: auto;
+            display: block;
+            outline: none;
+            max-height: 72vh;
+        }}
+        .player-footer {{
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }}
+        .stat-card {{
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.85rem;
+        }}
+        .stat-label {{
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: 'JetBrains Mono', monospace;
+        }}
+        .stat-val {{
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 0.2rem;
+        }}
+        .links {{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }}
+        .links a {{
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }}
+        .links a:hover {{ text-decoration: underline; }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <span class="badge">Meta Global AI Developer Hackathon</span>
+            <h1>SovereignForensics // 3-Minute Demo</h1>
+            <p class="meta-desc">Autonomous Corporate Forensic Accounting & Statutory Recovery Engine</p>
+        </div>
+        <div class="links">
+            <a href="/" target="_blank">Live Cockpit ↗</a>
+            <a href="https://github.com/johnwebbc/SovereignForensics" target="_blank">GitHub Repo ↗</a>
+            <a href="{video_url}" download>Download MP4 ↓</a>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video controls autoplay muted playsinline preload="metadata">
+            <source src="{video_url}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="player-footer">
+        <div class="stat-card">
+            <div class="stat-label">Model Architecture</div>
+            <div class="stat-val">Meta Muse Glimmer 30B (4 LoRAs)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Verification Engine</div>
+            <div class="stat-val">Z3 SMT Theorem Prover (100% Sat)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Columnar OLAP</div>
+            <div class="stat-val">DuckDB 2.0.0 LTS (0.82s Latency)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Audited Portfolio</div>
+            <div class="stat-val">50 SEC Filers ($677.8M Opportunity)</div>
+        </div>
+    </div>
+</body>
+</html>"""
+            return HTMLResponse(content=html_content)
 
         return web_app
 
