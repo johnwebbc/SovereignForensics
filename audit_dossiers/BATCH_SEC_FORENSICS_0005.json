@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0005",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:47:34.744692+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0005",
+    "req_id": "meta_mb_1793846846_LANE1_SEC_0005_28a6",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1749,
+    "cached_tok": 1652,
+    "out_tok": 1500,
+    "cost_usd": "0.0307",
+    "elapsed_sec": 8.03,
+    "response_text": "{\"batch_id\": \"SEC_0005\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Beam Therapeutics Inc.\", \"identifier\": \"CIK: 0001745999, FY: 2021\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Beneish/F-Score are forensic screens, not statutory recovery hooks.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 1923.58 >> -1.78 threshold, but magnitude indicates likely denominator/data-scaling outlier requiring recomputation from 10-K inputs; F-Score 0.34 < 1.0 low Dechow misstatement risk; Sloan Accrual = (-78,326,000 - (-66,268,000)) / 1,474,453,000 = -0.0082, not > 0.10. No severe cash-to-accrual anomaly and no tariff recovery verified.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"PASS-DETERMINISTIC: NetIncome (-78,326,000) == CFO (-66,268,000) + Accruals (-12,058,000); Accruals == NetIncome - CFO\", \"actionable_memo\": \"Do NOT deduct under UCC \u00a7 2-717 on this record. Recompute Beneish 8 variables (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA) from audited FY2020-FY2021 10-K, verify average assets, and obtain AP vendor master / tariff surcharge invoices and CBP 7501s before asserting any claim. MF-01/MF-05 not satisfied.\"}, {\"index\": 2, \"entity_name\": \"MOON RIVER STUDIOS, INC.\", \"identifier\": \"CIK: 0001476278, FY: 2012\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Beneish/F-Score are forensic screens, not statutory recovery hooks.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 1778.68 >> -1.78 threshold, but magnitude indicates likely denominator/data-scaling outlier requiring recomputation from filing inputs; F-Score 0.36 < 1.0 low Dechow misstatement risk; Sloan Accrual = (-34,506 - (-10,508)) / 20,888,692 = -0.0011, not > 0.10. No severe cash-to-accrual anomaly and no tariff recovery verified; TariffRisk 1.0 is unexplained and uncorroborated.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"PASS-DETERMINISTIC: NetIncome (-34,506) == CFO (-10,508) + Accruals (-23,998); Accruals == NetIncome - CFO\", \"actionable_memo\": \"Do NOT deduct under UCC \u00a7 2-717 on this record. Recompute Beneish 8 variables from audited FY2011-FY2012 filings, verify receivables/sales denominators causing the extreme M-Score, and obtain AP vendor master / tariff surcharge invoices and CBP 7501s before asserting any claim. MF-01/MF-05 not satisfied.\"}, {\"index\": 3, \"entity_name\": \"PALATIN TECHNOLOGIES, INC.\", \"identifier\": \"CIK: 0000911216, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Sloan"
+  },
+  "input_filers": [
+    {
+      "cik": 1745999,
+      "entity_name": "Beam Therapeutics Inc.",
+      "fy": 2021,
+      "assets": 1474453000.0,
+      "sales": 51844000.0,
+      "net_income": -78326000.0,
+      "cfo": -66268000.0,
+      "beneish_m_score": 1923.58,
+      "dechow_f_score": 0.34,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1476278,
+      "entity_name": "MOON RIVER STUDIOS, INC.",
+      "fy": 2012,
+      "assets": 20888692.0,
+      "sales": 3267825.0,
+      "net_income": -34506.0,
+      "cfo": -10508.0,
+      "beneish_m_score": 1778.68,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 911216,
+      "entity_name": "PALATIN TECHNOLOGIES, INC.",
+      "fy": 2018,
+      "assets": 56833273.0,
+      "sales": 67134758.0,
+      "net_income": 24702714.0,
+      "cfo": 12881527.0,
+      "beneish_m_score": 1763.52,
+      "dechow_f_score": 0.16,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 32129553.0
+    },
+    {
+      "cik": 1302946,
+      "entity_name": "TWO RIVERS WATER & FARMING Co",
+      "fy": 2013,
+      "assets": 44452000.0,
+      "sales": 2091000.0,
+      "net_income": -5050000.0,
+      "cfo": -2587000.0,
+      "beneish_m_score": 1730.43,
+      "dechow_f_score": 0.45,
+      "tariff_risk_index": -0.21,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 27978000.0
+    },
+    {
+      "cik": 1712762,
+      "entity_name": "bioAffinity Technologies, Inc.",
+      "fy": 2023,
+      "assets": 12182125.0,
+      "sales": 7900000.0,
+      "net_income": -7937011.0,
+      "cfo": -4070845.0,
+      "beneish_m_score": 1446.58,
+      "dechow_f_score": 0.17,
+      "tariff_risk_index": 0.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 2227615.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0005\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"Beam Therapeutics Inc.\", \"identifier\": \"CIK: 0001745999, FY: 2021\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Beneish/F-Score are forensic screens, not statutory recovery hooks.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 1923.58 >> -1.78 threshold, but magnitude indicates likely denominator/data-scaling outlier requiring recomputation from 10-K inputs; F-Score 0.34 < 1.0 low Dechow misstatement risk; Sloan Accrual = (-78,326,000 - (-66,268,000)) / 1,474,453,000 = -0.0082, not > 0.10. No severe cash-to-accrual anomaly and no tariff recovery verified.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"PASS-DETERMINISTIC: NetIncome (-78,326,000) == CFO (-66,268,000) + Accruals (-12,058,000); Accruals == NetIncome - CFO\", \"actionable_memo\": \"Do NOT deduct under UCC \u00a7 2-717 on this record. Recompute Beneish 8 variables (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA) from audited FY2020-FY2021 10-K, verify average assets, and obtain AP vendor master / tariff surcharge invoices and CBP 7501s before asserting any claim. MF-01/MF-05 not satisfied.\"}, {\"index\": 2, \"entity_name\": \"MOON RIVER STUDIOS, INC.\", \"identifier\": \"CIK: 0001476278, FY: 2012\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Beneish/F-Score are forensic screens, not statutory recovery hooks.\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 1778.68 >> -1.78 threshold, but magnitude indicates likely denominator/data-scaling outlier requiring recomputation from filing inputs; F-Score 0.36 < 1.0 low Dechow misstatement risk; Sloan Accrual = (-34,506 - (-10,508)) / 20,888,692 = -0.0011, not > 0.10. No severe cash-to-accrual anomaly and no tariff recovery verified; TariffRisk 1.0 is unexplained and uncorroborated.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"PASS-DETERMINISTIC: NetIncome (-34,506) == CFO (-10,508) + Accruals (-23,998); Accruals == NetIncome - CFO\", \"actionable_memo\": \"Do NOT deduct under UCC \u00a7 2-717 on this record. Recompute Beneish 8 variables from audited FY2011-FY2012 filings, verify receivables/sales denominators causing the extreme M-Score, and obtain AP vendor master / tariff surcharge invoices and CBP 7501s before asserting any claim. MF-01/MF-05 not satisfied.\"}, {\"index\": 3, \"entity_name\": \"PALATIN TECHNOLOGIES, INC.\", \"identifier\": \"CIK: 0000911216, FY: 2018\", \"statutory_hook\": \"No verified UCC \u00a7 2-717 / UCC \u00a7 2-305(2) / 19 U.S.C. \u00a7 1313 claim established: no CBP Form 7501, supplier tariff surcharge invoice, or unrefunded drawback in the provided record (MF-02, MF-06). Sloan"
+}

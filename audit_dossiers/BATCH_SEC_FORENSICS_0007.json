@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0007",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:47:53.974782+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0007",
+    "req_id": "meta_mb_1793846864_LANE1_SEC_0007_9ea0",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1738,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 9.8,
+    "response_text": "{\"batch_id\": \"SEC_0007\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SKYX Platforms Corp.\", \"identifier\": \"CIK: 0001598981, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; UCC 2-305(2)/2-717 not triggered - TariffRisk -0.0\", \"forensic_verdict\": \"ELEVATED: DECHOW MISSTATEMENT RISK - M-Score 1210.35 >> -1.78 is extreme outlier, F-Score 1.19 > 1.0 signals misstatement risk. Sloan Accrual = (-27035941 - (-12998073))/76341203 = -0.1839, large negative accruals, not >0.10 positive anomaly.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT for identity with Accruals=-14037868: NetIncome = CFO + Accruals (-27035941 = -12998073 + -14037868); Sloan=-0.1839 verified, magnitude >0.10 flagged\", \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K FY2023, recompute Beneish 8 variables and Dechow RSST/ChgRec/ChgInv due to implausible 1210.35 M-Score indicating input/balance-sheet distortion. No UCC 2-717 tariff deduction - TariffRisk -0.0, estimated surcharge $0. Escalate forensic review, do not execute credit memo.\"}, {\"index\": 2, \"entity_name\": \"Nobilis Health Corp.\", \"identifier\": \"CIK: 0001409916, FY: 2016\", \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score > -1.78; 19 USC 1313 / UCC 2-717 review - TariffRisk 1.0\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 1109.6 >> -1.78 extreme outlier, F-Score 0.71 < 1.0. Sloan = (50840000-6715000)/305435000 = 0.1445 > 0.10, severe cash-to-accrual manipulation: earnings far exceed CFO.\", \"estimated_claim_or_surcharge_usd\": 14287200, \"z3_smt_invariant\": \"SAT for identity with Accruals=44125000: NetIncome = CFO + Accruals (50840000 = 6715000 + 44125000); Sloan=0.1445 >0.10 invariant breach flagged\", \"actionable_memo\": \"MF-05/MF-02: Verify SEC filing and receivables/revenue accruals driving $44,125,000 accrual gap. Tariff exposure screened at 5% x Sales x TariffRisk 1.0 = $14,287,200 is a screening estimate only, not a verified surcharge; require CBP Form 7501 / AP vendor records under MF-06 before any UCC 2-717 deduction. Prioritize restatement risk review.\"}, {\"index\": 3, \"entity_name"
+  },
+  "input_filers": [
+    {
+      "cik": 1598981,
+      "entity_name": "SKYX Platforms Corp.",
+      "fy": 2023,
+      "assets": 76341203.0,
+      "sales": 58785762.0,
+      "net_income": -27035941.0,
+      "cfo": -12998073.0,
+      "beneish_m_score": 1210.35,
+      "dechow_f_score": 1.19,
+      "tariff_risk_index": -0.0,
+      "forensic_flag": "ELEVATED: DECHOW MISSTATEMENT RISK",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1409916,
+      "entity_name": "Nobilis Health Corp.",
+      "fy": 2016,
+      "assets": 305435000.0,
+      "sales": 285744000.0,
+      "net_income": 50840000.0,
+      "cfo": 6715000.0,
+      "beneish_m_score": 1109.6,
+      "dechow_f_score": 0.71,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 13281000.0
+    },
+    {
+      "cik": 1501112,
+      "entity_name": "MIX 1 LIFE, INC.",
+      "fy": 2015,
+      "assets": 22755843.0,
+      "sales": 2279226.0,
+      "net_income": -1995519.0,
+      "cfo": -1116850.0,
+      "beneish_m_score": 1007.63,
+      "dechow_f_score": 3.37,
+      "tariff_risk_index": -0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 8333933.0
+    },
+    {
+      "cik": 1070050,
+      "entity_name": "AppTech Payments Corp.",
+      "fy": 2023,
+      "assets": 12519000.0,
+      "sales": 504000.0,
+      "net_income": -16281000.0,
+      "cfo": -8199000.0,
+      "beneish_m_score": 993.25,
+      "dechow_f_score": 0.39,
+      "tariff_risk_index": 0.91,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 1634293,
+      "entity_name": "Exceed World, Inc.",
+      "fy": 2018,
+      "assets": 29239878.0,
+      "sales": 36860282.0,
+      "net_income": 4233254.0,
+      "cfo": NaN,
+      "beneish_m_score": 991.07,
+      "dechow_f_score": 0.55,
+      "tariff_risk_index": -0.01,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 12412857.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0007\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"SKYX Platforms Corp.\", \"identifier\": \"CIK: 0001598981, FY: 2023\", \"statutory_hook\": \"Beneish M-Score > -1.78 and Dechow F-Score > 1.0; UCC 2-305(2)/2-717 not triggered - TariffRisk -0.0\", \"forensic_verdict\": \"ELEVATED: DECHOW MISSTATEMENT RISK - M-Score 1210.35 >> -1.78 is extreme outlier, F-Score 1.19 > 1.0 signals misstatement risk. Sloan Accrual = (-27035941 - (-12998073))/76341203 = -0.1839, large negative accruals, not >0.10 positive anomaly.\", \"estimated_claim_or_surcharge_usd\": 0, \"z3_smt_invariant\": \"SAT for identity with Accruals=-14037868: NetIncome = CFO + Accruals (-27035941 = -12998073 + -14037868); Sloan=-0.1839 verified, magnitude >0.10 flagged\", \"actionable_memo\": \"MF-02/MF-09: Anchor to SEC 10-K FY2023, recompute Beneish 8 variables and Dechow RSST/ChgRec/ChgInv due to implausible 1210.35 M-Score indicating input/balance-sheet distortion. No UCC 2-717 tariff deduction - TariffRisk -0.0, estimated surcharge $0. Escalate forensic review, do not execute credit memo.\"}, {\"index\": 2, \"entity_name\": \"Nobilis Health Corp.\", \"identifier\": \"CIK: 0001409916, FY: 2016\", \"statutory_hook\": \"Sloan Accrual Anomaly > 0.10; Beneish M-Score > -1.78; 19 USC 1313 / UCC 2-717 review - TariffRisk 1.0\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 1109.6 >> -1.78 extreme outlier, F-Score 0.71 < 1.0. Sloan = (50840000-6715000)/305435000 = 0.1445 > 0.10, severe cash-to-accrual manipulation: earnings far exceed CFO.\", \"estimated_claim_or_surcharge_usd\": 14287200, \"z3_smt_invariant\": \"SAT for identity with Accruals=44125000: NetIncome = CFO + Accruals (50840000 = 6715000 + 44125000); Sloan=0.1445 >0.10 invariant breach flagged\", \"actionable_memo\": \"MF-05/MF-02: Verify SEC filing and receivables/revenue accruals driving $44,125,000 accrual gap. Tariff exposure screened at 5% x Sales x TariffRisk 1.0 = $14,287,200 is a screening estimate only, not a verified surcharge; require CBP Form 7501 / AP vendor records under MF-06 before any UCC 2-717 deduction. Prioritize restatement risk review.\"}, {\"index\": 3, \"entity_name"
+}

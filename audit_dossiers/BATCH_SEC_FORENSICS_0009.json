@@ -1,0 +1,89 @@
+{
+  "batch_id": "LANE1_SEC_0009",
+  "lane": "Lane 1: SEC EDGAR IEEPA & Beneish Screen",
+  "timestamp": "2026-11-05T02:48:11.654641+00:00",
+  "metadata": {
+    "batch_slug": "LANE1_SEC_0009",
+    "req_id": "meta_mb_1793846883_LANE1_SEC_0009_3f43",
+    "model": "muse-wonder-1.0",
+    "in_tok": 1743,
+    "cached_tok": 1140,
+    "out_tok": 1500,
+    "cost_usd": "0.0326",
+    "elapsed_sec": 8.19,
+    "response_text": "{\"batch_id\": \"SEC_0009\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"QUANTUM X LABS INC.\", \"identifier\": \"CIK: 0000797542, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 894.66 >> -1.78 Beneish threshold signals extreme manipulation probability/outlier, F-Score 0.36 < 1.0 low Dechow misstatement risk, Sloan Accrual ((300000-4366000)/63695000) = -0.0638 < 0.10 no positive accrual anomaly. Extreme M-Score likely driven by DSRI/GMI/SGI distortion and data imbalance, requires 10-K verification before any UCC 2-717 deduction.\", \"estimated_claim_or_surcharge_usd\": 4830150, \"z3_smt_invariant\": \"SAT: NetIncome(300000) == CFO(4366000) + Accruals(-4066000); Sloan=-0.0638 <= 0.10 invariant holds, Beneish invariant violated M=894.66 > -1.78\", \"actionable_memo\": \"MF-02/MF-09: Pull SEC 10-K FY2022 and CBP Form 7501, recompute 8 Beneish variables, verify balance sheet imbalance source. Do not execute UCC 2-717 AP deduction until imbalance resolved. MF-05 magnitude at 5% of $96,603,000 sales = $4,830,150 upper-bound tariff exposure at TariffRisk 1.0, subject to documented 3%-8% surcharge invoices.\"}, {\"index\": 2, \"entity_name\": \"MICROPAC INDUSTRIES, INC.\", \"identifier\": \"CIK: 0000065759, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 890.03 >> -1.78 signals extreme manipulation probability/outlier, F-Score 0.55 < 1.0 low Dechow risk, Sloan Accrual ((1446000-2349000)/23111000) = -0.0391 < 0.10 no positive accrual anomaly. Negative accruals inconsistent with earnings inflation; M-Score outlier requires forensic recomputation.\", \"estimated_claim_or_surcharge_usd\": 964173, \"z3_smt_invariant\": \"SAT: NetIncome(1446000) == CFO(2349000) + Accruals(-903000); Sloan=-0.0391 <= 0.10 invariant holds, Beneish invariant violated M=890.03 > -1.78\", \"actionable_memo\": \"MF-02/MF-09: Verify FY2014 10-K balance sheet, receivables and asset quality inputs causing M-Score 890.03. TariffRisk 0.98 high for electronics importer; audit AP vendor master for 3%-8% surcharges. Estimated exposure 5% x $19,677,000 x 0.98 = $964,173 recoverable only with CBP 7501 proof under UCC 2-717, no deduction on unverified M-Score alone.\"}, {\"index\": 3, \"entity_name\": \"RMG Networks Holding Corp\", \"identifier\": \"CIK: 0001512074, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 888.33 >> -1.78 signals high manipulation probability/outlier, F-Score 0.68 < 1.0 low Dechow risk, Sloan Accrual ((-4770000+242200"
+  },
+  "input_filers": [
+    {
+      "cik": 797542,
+      "entity_name": "QUANTUM X LABS INC.",
+      "fy": 2022,
+      "assets": 63695000.0,
+      "sales": 96603000.0,
+      "net_income": 300000.0,
+      "cfo": 4366000.0,
+      "beneish_m_score": 894.66,
+      "dechow_f_score": 0.36,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 41680000.0
+    },
+    {
+      "cik": 65759,
+      "entity_name": "MICROPAC INDUSTRIES, INC.",
+      "fy": 2014,
+      "assets": 23111000.0,
+      "sales": 19677000.0,
+      "net_income": 1446000.0,
+      "cfo": 2349000.0,
+      "beneish_m_score": 890.03,
+      "dechow_f_score": 0.55,
+      "tariff_risk_index": 0.98,
+      "forensic_flag": "CRITICAL: BALANCE SHEET IMBALANCE",
+      "bs_imbalance_usd": 1912000.0
+    },
+    {
+      "cik": 1512074,
+      "entity_name": "RMG Networks Holding Corp",
+      "fy": 2016,
+      "assets": 29718000.0,
+      "sales": 40602000.0,
+      "net_income": -4770000.0,
+      "cfo": -2422000.0,
+      "beneish_m_score": 888.33,
+      "dechow_f_score": 0.68,
+      "tariff_risk_index": 0.54,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    },
+    {
+      "cik": 718332,
+      "entity_name": "RAVE RESTAURANT GROUP, INC.",
+      "fy": 2014,
+      "assets": 15968000.0,
+      "sales": 42224000.0,
+      "net_income": -1261000.0,
+      "cfo": 734000.0,
+      "beneish_m_score": 874.02,
+      "dechow_f_score": 0.48,
+      "tariff_risk_index": 1.19,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 740000.0
+    },
+    {
+      "cik": 1621443,
+      "entity_name": "ZYNERBA PHARMACEUTICALS, INC.",
+      "fy": 2017,
+      "assets": 69054309.0,
+      "sales": 278900.0,
+      "net_income": -12551350.0,
+      "cfo": -9786799.0,
+      "beneish_m_score": 842.13,
+      "dechow_f_score": 0.32,
+      "tariff_risk_index": 1.0,
+      "forensic_flag": "ELEVATED: BENEISH OUTLIER",
+      "bs_imbalance_usd": 0.0
+    }
+  ],
+  "meta_response": "{\"batch_id\": \"SEC_0009\", \"targets_count\": 5, \"results\": [{\"index\": 1, \"entity_name\": \"QUANTUM X LABS INC.\", \"identifier\": \"CIK: 0000797542, FY: 2022\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 894.66 >> -1.78 Beneish threshold signals extreme manipulation probability/outlier, F-Score 0.36 < 1.0 low Dechow misstatement risk, Sloan Accrual ((300000-4366000)/63695000) = -0.0638 < 0.10 no positive accrual anomaly. Extreme M-Score likely driven by DSRI/GMI/SGI distortion and data imbalance, requires 10-K verification before any UCC 2-717 deduction.\", \"estimated_claim_or_surcharge_usd\": 4830150, \"z3_smt_invariant\": \"SAT: NetIncome(300000) == CFO(4366000) + Accruals(-4066000); Sloan=-0.0638 <= 0.10 invariant holds, Beneish invariant violated M=894.66 > -1.78\", \"actionable_memo\": \"MF-02/MF-09: Pull SEC 10-K FY2022 and CBP Form 7501, recompute 8 Beneish variables, verify balance sheet imbalance source. Do not execute UCC 2-717 AP deduction until imbalance resolved. MF-05 magnitude at 5% of $96,603,000 sales = $4,830,150 upper-bound tariff exposure at TariffRisk 1.0, subject to documented 3%-8% surcharge invoices.\"}, {\"index\": 2, \"entity_name\": \"MICROPAC INDUSTRIES, INC.\", \"identifier\": \"CIK: 0000065759, FY: 2014\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"CRITICAL: BALANCE SHEET IMBALANCE - M-Score 890.03 >> -1.78 signals extreme manipulation probability/outlier, F-Score 0.55 < 1.0 low Dechow risk, Sloan Accrual ((1446000-2349000)/23111000) = -0.0391 < 0.10 no positive accrual anomaly. Negative accruals inconsistent with earnings inflation; M-Score outlier requires forensic recomputation.\", \"estimated_claim_or_surcharge_usd\": 964173, \"z3_smt_invariant\": \"SAT: NetIncome(1446000) == CFO(2349000) + Accruals(-903000); Sloan=-0.0391 <= 0.10 invariant holds, Beneish invariant violated M=890.03 > -1.78\", \"actionable_memo\": \"MF-02/MF-09: Verify FY2014 10-K balance sheet, receivables and asset quality inputs causing M-Score 890.03. TariffRisk 0.98 high for electronics importer; audit AP vendor master for 3%-8% surcharges. Estimated exposure 5% x $19,677,000 x 0.98 = $964,173 recoverable only with CBP 7501 proof under UCC 2-717, no deduction on unverified M-Score alone.\"}, {\"index\": 3, \"entity_name\": \"RMG Networks Holding Corp\", \"identifier\": \"CIK: 0001512074, FY: 2016\", \"statutory_hook\": \"Beneish M-Score > -1.78 and UCC \u00a7 2-717 / UCC \u00a7 2-305(2) tariff surcharge deduction; 19 U.S.C. \u00a7 1313 drawback review\", \"forensic_verdict\": \"ELEVATED: BENEISH OUTLIER - M-Score 888.33 >> -1.78 signals high manipulation probability/outlier, F-Score 0.68 < 1.0 low Dechow risk, Sloan Accrual ((-4770000+242200"
+}
