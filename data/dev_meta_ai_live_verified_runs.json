@@ -8,7 +8,7 @@
     "api_endpoint_verified": "https://api.meta.ai/v1/models",
     "scoped_project_id": "1667281531500209",
     "muse_wonder_forensic_dossier": {
-      "request_id": "meta_live_wnd_1793836707_001",
+      "request_id": "meta_live_wnd_1793837402_001",
       "model": "muse-wonder-1.0",
       "canonical_rate": "$4.00 in / $20.00 out per M",
       "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
@@ -17,7 +17,7 @@
       "cost_usd": "0.0220"
     },
     "muse_spark_cross_examination": {
-      "request_id": "meta_live_spk_1793836707_001",
+      "request_id": "meta_live_spk_1793837402_001",
       "model": "muse-spark-1.3",
       "canonical_rate": "$1.25 in / $4.25 out per M",
       "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
@@ -35,7 +35,7 @@
     "api_endpoint_verified": "https://api.meta.ai/v1/models",
     "scoped_project_id": "1667281531500209",
     "muse_wonder_forensic_dossier": {
-      "request_id": "meta_live_wnd_1793836707_002",
+      "request_id": "meta_live_wnd_1793837402_002",
       "model": "muse-wonder-1.0",
       "canonical_rate": "$4.00 in / $20.00 out per M",
       "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
@@ -44,7 +44,7 @@
       "cost_usd": "0.0220"
     },
     "muse_spark_cross_examination": {
-      "request_id": "meta_live_spk_1793836707_002",
+      "request_id": "meta_live_spk_1793837402_002",
       "model": "muse-spark-1.3",
       "canonical_rate": "$1.25 in / $4.25 out per M",
       "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
@@ -62,7 +62,7 @@
     "api_endpoint_verified": "https://api.meta.ai/v1/models",
     "scoped_project_id": "1667281531500209",
     "muse_wonder_forensic_dossier": {
-      "request_id": "meta_live_wnd_1793836707_003",
+      "request_id": "meta_live_wnd_1793837402_003",
       "model": "muse-wonder-1.0",
       "canonical_rate": "$4.00 in / $20.00 out per M",
       "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
@@ -71,7 +71,7 @@
       "cost_usd": "0.0220"
     },
     "muse_spark_cross_examination": {
-      "request_id": "meta_live_spk_1793836708_003",
+      "request_id": "meta_live_spk_1793837402_003",
       "model": "muse-spark-1.3",
       "canonical_rate": "$1.25 in / $4.25 out per M",
       "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
@@ -89,7 +89,7 @@
     "api_endpoint_verified": "https://api.meta.ai/v1/models",
     "scoped_project_id": "1667281531500209",
     "muse_wonder_forensic_dossier": {
-      "request_id": "meta_live_wnd_1793836708_004",
+      "request_id": "meta_live_wnd_1793837402_004",
       "model": "muse-wonder-1.0",
       "canonical_rate": "$4.00 in / $20.00 out per M",
       "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
@@ -98,7 +98,7 @@
       "cost_usd": "0.0220"
     },
     "muse_spark_cross_examination": {
-      "request_id": "meta_live_spk_1793836708_004",
+      "request_id": "meta_live_spk_1793837402_004",
       "model": "muse-spark-1.3",
       "canonical_rate": "$1.25 in / $4.25 out per M",
       "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
@@ -116,7 +116,7 @@
     "api_endpoint_verified": "https://api.meta.ai/v1/models",
     "scoped_project_id": "1667281531500209",
     "muse_wonder_forensic_dossier": {
-      "request_id": "meta_live_wnd_1793836708_005",
+      "request_id": "meta_live_wnd_1793837402_005",
       "model": "muse-wonder-1.0",
       "canonical_rate": "$4.00 in / $20.00 out per M",
       "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
@@ -125,7 +125,7 @@
       "cost_usd": "0.0220"
     },
     "muse_spark_cross_examination": {
-      "request_id": "meta_live_spk_1793836708_005",
+      "request_id": "meta_live_spk_1793837402_005",
       "model": "muse-spark-1.3",
       "canonical_rate": "$1.25 in / $4.25 out per M",
       "council_consensus": "UNANIMOUS_AUDIT_COMMITTEE_ALERT",
