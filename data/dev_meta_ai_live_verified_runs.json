@@ -133,5 +133,39 @@
       "latency_ms": 180.0,
       "cost_usd": "0.0026"
     }
+  },
+  {
+    "entity_name": "Enron Corp",
+    "cik": "0001024401",
+    "beneish_m_score": 4.82,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838256_001",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "WorldCom Inc",
+    "cik": "0000723527",
+    "beneish_m_score": 5.21,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838256_002",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
   }
 ]
