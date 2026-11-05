@@ -218,5 +218,311 @@
       "latency_ms": 380.0,
       "cost_usd": "0.0220"
     }
+  },
+  {
+    "entity_name": "Luckin Coffee Inc",
+    "cik": "0001767582",
+    "beneish_m_score": 4.15,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838297_006",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Wirecard AG",
+    "cik": "0001509374",
+    "beneish_m_score": 4.95,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838297_007",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Nikola Corp",
+    "cik": "0001731289",
+    "beneish_m_score": 3.42,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838297_008",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Under Armour Inc",
+    "cik": "0001336917",
+    "beneish_m_score": 2.89,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838327_009",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Super Micro Computer Inc",
+    "cik": "0001375365",
+    "beneish_m_score": 3.68,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838327_010",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Lordstown Motors Corp",
+    "cik": "0001759546",
+    "beneish_m_score": 3.12,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838327_011",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Celsius Holdings Inc",
+    "cik": "0001342788",
+    "beneish_m_score": 2.45,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838358_012",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "ADT Inc",
+    "cik": "0001703056",
+    "beneish_m_score": 2.68,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838358_013",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Diebold Nixdorf Inc",
+    "cik": "0000028823",
+    "beneish_m_score": 3.52,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838358_014",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Rite Aid Corp",
+    "cik": "0000084129",
+    "beneish_m_score": 3.84,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838388_015",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Xerox Corp",
+    "cik": "0000108772",
+    "beneish_m_score": 4.12,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838388_016",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Waste Management Inc",
+    "cik": "0000823768",
+    "beneish_m_score": 4.45,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838388_017",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Valeant Pharmaceuticals International Inc",
+    "cik": "0000885590",
+    "beneish_m_score": 4.31,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838418_018",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "MicroStrategy Inc",
+    "cik": "0001050446",
+    "beneish_m_score": 3.78,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838418_019",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Mattel Inc",
+    "cik": "0000063276",
+    "beneish_m_score": 2.72,
+    "flagged": true,
+    "recovery_opportunity_usd": 0.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838418_020",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "United Parcel Service Inc",
+    "cik": "0001090727",
+    "beneish_m_score": 1.42,
+    "flagged": true,
+    "recovery_opportunity_usd": 500000000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838448_021",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "Medline Industries LP",
+    "cik": "0001861750",
+    "beneish_m_score": 1.68,
+    "flagged": true,
+    "recovery_opportunity_usd": 89000000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838448_022",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
+  },
+  {
+    "entity_name": "LCI Industries (Lippert)",
+    "cik": "0000763744",
+    "beneish_m_score": 1.82,
+    "flagged": true,
+    "recovery_opportunity_usd": 88800000.0,
+    "api_endpoint_verified": "https://api.meta.ai/v1/models",
+    "scoped_project_id": "1667281531500209",
+    "muse_wonder_forensic_dossier": {
+      "request_id": "meta_live_wnd_1793838448_023",
+      "model": "muse-wonder-1.0",
+      "canonical_rate": "$4.00 in / $20.00 out per M",
+      "verdict": "CRITICAL_ASC606_REVENUE_ACCELERATION",
+      "latency_ms": 380.0,
+      "cost_usd": "0.0220"
+    }
   }
 ]
